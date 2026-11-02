@@ -1,0 +1,3 @@
+interface:
+  display_name: "KMP Storage and Backup"
+  short_description: "Design, implement and audit Apex Companion cross-platform durable persistence, atomic backup, KMP reposit"

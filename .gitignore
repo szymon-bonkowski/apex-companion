@@ -1,0 +1,48 @@
+# Gradle / Kotlin / IDE
+.gradle/
+.idea/
+**/build/
+/local.properties
+*.iml
+*.hprof
+/captures/
+
+# Android distribution/debug
+*.apk
+*.aab
+*.apks
+
+# Xcode / Apple local artifacts (do NOT ignore the iosApp Xcode project)
+DerivedData/
+**/xcuserdata/
+*.xcuserstate
+*.ipa
+*.dSYM/
+*.dSYM.zip
+*.mobileprovision
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Signing / secrets
+*.jks
+*.keystore
+*.pem
+*.p12
+*.pfx
+*.cer
+.env
+.env.*
+!.env.example
+secrets.properties
+apikey.properties
+**/credentials.json
+
+# Python / local tools
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/

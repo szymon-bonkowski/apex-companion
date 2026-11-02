@@ -1,0 +1,6 @@
+<resources>
+    <string name="map_widget_name">Map rotation</string>
+    <string name="map_widget_description">Current and next map with source status. Mode is configured independently for each widget.</string>
+    <string name="map_widget_loading">Apex Companion\nUNAVAILABLE · Open app for source status</string>
+    <string name="app_name">Apex Companion</string>
+</resources>

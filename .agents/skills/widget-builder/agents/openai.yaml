@@ -1,0 +1,3 @@
+interface:
+  display_name: "Native Widget Builder"
+  short_description: "Build or verify Apex Companion native Android Glance and iOS WidgetKit map, Ranked goal or session widget"

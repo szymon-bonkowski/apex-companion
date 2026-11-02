@@ -1,0 +1,3 @@
+interface:
+  display_name: "Architecture Review"
+  short_description: "Review Apex Companion Kotlin Multiplatform architecture, ADR changes, cross-platform data contracts, Widg"

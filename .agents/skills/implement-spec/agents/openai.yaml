@@ -1,0 +1,3 @@
+interface:
+  display_name: "KMP Implement Spec"
+  short_description: "Implement an approved Apex Companion Android+iOS KMP feature from a version spec. Use for shared Compose,"

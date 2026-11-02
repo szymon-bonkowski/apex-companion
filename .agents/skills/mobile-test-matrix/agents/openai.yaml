@@ -1,0 +1,3 @@
+interface:
+  display_name: "Mobile Test Matrix"
+  short_description: "Execute evidence-based Apex Companion Android+iOS UI, widget, shared logic, persistence and background te"

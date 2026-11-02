@@ -1,0 +1,3 @@
+interface:
+  display_name: "KMP Project Bootstrap"
+  short_description: "Inspect and verify a Kotlin Multiplatform Wizard Android+iOS shared Compose UI project for Apex Companion"

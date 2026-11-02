@@ -1,0 +1,11 @@
+TEAM_ID=
+
+PRODUCT_NAME=Apex Companion
+PRODUCT_BUNDLE_IDENTIFIER=io.github.szymonbonkowski.apexcompanion.ApexCompanion$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
+
+// Provisional: register this identifier for the selected signing team before
+// final stabilization. Both app and extension must use the identical group.
+APP_GROUP_IDENTIFIER=group.io.github.szymonbonkowski.apexcompanion

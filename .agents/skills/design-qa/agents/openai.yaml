@@ -1,0 +1,3 @@
+interface:
+  display_name: "Cross-platform Design QA"
+  short_description: "Review Apex Companion shared Compose screens and original Android Glance/iOS WidgetKit widget visuals for"

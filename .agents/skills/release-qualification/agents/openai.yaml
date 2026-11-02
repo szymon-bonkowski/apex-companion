@@ -1,0 +1,3 @@
+interface:
+  display_name: "Mobile Release Qualification"
+  short_description: "Verify Apex Companion Android signed APK/GitHub distribution and compliant iOS Xcode/TestFlight/App Store"

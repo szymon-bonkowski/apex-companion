@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-02",
+  "status": "v0.1 Maps complete for authorized developer use",
+  "publicLive": "Blocked; release unavailable pending grant/topology",
+  "ios": "Implemented \u2014 Not Verified; no Apple tools/build/tests attempted",
+  "hostTests": {
+    "passed": 46,
+    "skipped": 1,
+    "failed": 0
+  },
+  "androidTests": [
+    {
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "realProvider": {
+    "productionAdapterHttpStatus": 200,
+    "privateContractTestPassed": true,
+    "observedModes": [
+      "battle_royale",
+      "ltm",
+      "ranked",
+      "wildcard"
+    ],
+    "rawResponsePrivateOutsideRepository": true,
+    "privateResponseSha256": "ae7f4c698a715a6d6a8470fdf4f3a4598c708d0cfcd0e8c49cd0086cc2c69d72"
+  },
+  "realAndroid": {
+    "allFourModesCurrentNextVerified": true,
+    "modeSelectionMadeNoExtraAttempt": true,
+    "offlineFailureRetainedCacheAsStale": true,
+    "onlineRecoveryClearedError": true,
+    "freshProcessRestartMadeNoDuplicateRequest": true
+  },
+  "debugLint": {
+    "errors": 0,
+    "warnings": 20
+  },
+  "releaseLint": {
+    "errors": 0,
+    "warnings": 22
+  },
+  "artifacts": [
+    {
+      "path": "androidApp/build/outputs/apk/debug/androidApp-debug.apk",
+      "sha256": "880b6a94c4c51a789b8aaac65f80144597ccb1da75b4205a6b3b82632deb5633",
+      "suppliedCredentialAbsent": true,
+      "debugReaderPresent": true,
+      "releaseGatePresent": false
+    },
+    {
+      "path": "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk",
+      "sha256": "062168d265754ee14d07b1f0e1eae272f9b5b9c81d4fdd46470e2dac76a3aedf",
+      "suppliedCredentialAbsent": true,
+      "debugReaderPresent": false,
+      "releaseGatePresent": true
+    },
+    {
+      "path": "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk",
+      "sha256": "23f21d7376f0d442fc1d094767db1c6d1ce96b4c01882408142bafe82b2f346f",
+      "suppliedCredentialAbsent": true,
+      "debugReaderPresent": false,
+      "releaseGatePresent": false
+    }
+  ]
+}

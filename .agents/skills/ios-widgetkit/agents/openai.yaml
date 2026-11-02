@@ -1,0 +1,3 @@
+interface:
+  display_name: "iOS WidgetKit Integration"
+  short_description: "Configure and validate Apex Companion iOS WidgetKit extension, SwiftUI families, App Group entitlements a"
