@@ -53,3 +53,9 @@ Tapping a map widget opens Maps screen; tapping a goal widget opens the appropri
 - iOS: app/extension App Group signatures match, snapshots readable after termination, `WidgetCenter` reload is best-effort, timeline dates sane.
 - Android: Samsung One UI launcher and AOSP emulator if available; at least one real phone prior to release.
 - Confirm no extra provider calls proportional to number of widgets.
+
+## v0.2 implemented Ranked widgets
+
+Android registers Rank Progress, Ranked Goal and Predator Threshold Glance providers, responsive at 150×150, 250×180 and 300×220dp. They show normalized cached values, MANUAL/LIVE/STALE/UNAVAILABLE, source/time and an Open app action. Progress/goal instances have independent detail settings; cutoff instances select their own platform. A player-to-cutoff gap is emitted only for that linked player's platform and selected provider RP; unrelated platform/manual comparisons abstain. Cutoffs are dynamic and imply no guaranteed position.
+
+Every instance reads `AndroidRankedRuntime.widgetSnapshot()` from the committed repository. It does not synchronize the provider. The existing unique map sync work now also refreshes ranked data and publishes all widgets; local boundary work includes ranked freshness and local midnight. Android OS scheduling remains best effort. WidgetKit source implements corresponding widgets and AppIntent configuration from the shared sanitized timeline; Apple verification is deferred. See the v0.2 implementation report for executed tests and platform limits.

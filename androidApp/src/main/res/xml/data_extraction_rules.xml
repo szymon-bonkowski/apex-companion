@@ -2,8 +2,14 @@
 <data-extraction-rules>
     <cloud-backup>
         <exclude domain="file" path="developer-als-key.private" />
+        <exclude domain="file" path="ranked-profile-v1.json" />
+        <exclude domain="file" path="ranked-profile-v1.json.bak" />
+        <exclude domain="file" path="ranked-profile-v1.json.new" />
     </cloud-backup>
     <device-transfer>
         <exclude domain="file" path="developer-als-key.private" />
+        <exclude domain="file" path="ranked-profile-v1.json" />
+        <exclude domain="file" path="ranked-profile-v1.json.bak" />
+        <exclude domain="file" path="ranked-profile-v1.json.new" />
     </device-transfer>
 </data-extraction-rules>

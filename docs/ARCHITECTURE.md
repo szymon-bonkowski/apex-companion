@@ -1,6 +1,6 @@
 # Apex Companion — technical architecture
 
-**State:** v0.1 Maps architecture implemented for private developer use; public provider access remains gated. **Adopted:** 2026-11-02, updated for Android + iOS with Kotlin Multiplatform and scope removal. Accepted decisions are in [ADR register](ADR.md).
+**State:** v0.1 Maps and v0.2 Ranked/Profile architecture implemented for private developer use; public provider access remains gated. **Adopted:** 2026-11-02, updated for Android + iOS with Kotlin Multiplatform and scope removal. Accepted decisions are in [ADR register](ADR.md).
 
 **Milestone verification policy (owner decision, 2026-11-02):** Android and Linux-compatible shared checks are required during intermediate versions. Continue implementing iOS source, marked `Implemented — Not Verified`; do not attempt iOS builds, tests, simulators or Apple tooling until final stabilization/release preparation. Deferred iOS verification alone does not block intermediate completion. Unimplemented functionality is `Planned`; unavailable implementation dependencies are `Blocked`. See [ADR 0007](adr/0007-intermediate-platform-validation.md).
 
@@ -144,3 +144,9 @@ Public live features stay disabled unless the provider explicitly allows redistr
 ## v0.1 concrete implementation
 
 `shared/maps` owns normalized schedules, typed parser records, repository StateFlow, per-playlist observation times, persisted failures and KMP widget timelines. `shared/network` implements bounded streaming Ktor transport with explicit authorized access routes; public release and iOS hosts use the unconfigured provider; Android debug alone supports an explicitly provisioned private runtime credential, excluded from backups and binaries. Android uses an AtomicFile normalized repository record and per-instance Glance preferences; iOS source uses private atomic Foundation cache plus separate sanitized App Group projection. JSON tree parsing avoids introducing a compiler plugin; records are manually validated before domain construction. No database migration/library was needed for this small versioned schedule cache. Android compile/tests establish only Android compatibility of these library selections.
+
+## v0.2 concrete implementation
+
+`shared/ranked` owns nullable provider identity/rank/RP, current-state-only repositories, immutable goals and local-calendar deterministic arithmetic. Manual RP/source preferences and goals remain independent of linked identity; disconnection removes private snapshot data. Separate normalized ranked and global Predator record codecs reuse the existing AtomicFile/Foundation adapters; map storage is untouched. `ProviderRequestBudget` spans map/profile/Predator within the app process, with repository-backed endpoint cooldown/backoff restored at startup. The existing unique WorkManager handles all configured provider work and local widget boundaries.
+
+The shared Compose app adds Ranked, Profile and minimum source/privacy/date settings alongside Maps. Three Glance widgets consume shared sanitized projections. The existing iOS App Group bridge/extension gains matching source, marked Implemented — Not Verified. No new persistence library, endpoint scheduler, private history, public credential route or backend is introduced. [Implementation evidence](validation/v0.2-report.md).

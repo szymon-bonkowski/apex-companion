@@ -17,6 +17,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import io.github.szymonbonkowski.apexcompanion.maps.*
+import io.github.szymonbonkowski.apexcompanion.ranked.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
@@ -38,14 +39,26 @@ private val appColors = darkColorScheme(
 
 /** Shared UI for Android and iOS; platform hosts supply durable repositories and snapshot publication. */
 @Composable
-fun App(repository: RotationRepository? = null, onProjectionChanged: suspend (String) -> Unit = {}) {
+fun App(
+    repository: RotationRepository? = null,
+    onProjectionChanged: suspend (String) -> Unit = {},
+    rankedRepository: RankedRepository? = null,
+    onRankedProjectionChanged: suspend (String) -> Unit = {},
+) {
     val fallback = remember { RotationRepository(UnconfiguredRotationProvider, object : RotationStore {
         override suspend fun read(): String? = null
         override suspend fun write(value: String) {}
     }, RotationClock { Clock.System.now().epochSeconds }) }
+    val rankedFallback = remember { RankedRepository(UnconfiguredRankedProvider, object : RotationStore {
+        override suspend fun read(): String? = null
+        override suspend fun write(value: String) {}
+    }, RotationClock { Clock.System.now().epochSeconds }) }
+    val ranked = rankedRepository ?: rankedFallback
+    val rankedState by ranked.state.collectAsState()
     val maps = repository ?: fallback
     val state by maps.state.collectAsState()
     var now by remember { mutableStateOf(Clock.System.now().epochSeconds) }
+    var screen by rememberSaveable { mutableStateOf("Maps") }
     var mode by rememberSaveable { mutableStateOf("battle_royale") }
     var demo by rememberSaveable { mutableStateOf(false) }
     val demoCache = remember(demo) { if (demo) demoRotation(now) else null }
@@ -53,13 +66,17 @@ fun App(repository: RotationRepository? = null, onProjectionChanged: suspend (St
     val scope = rememberCoroutineScope()
     val uriHandler = LocalUriHandler.current
     var projectionError by remember { mutableStateOf(false) }
+    var rankedProjectionError by remember { mutableStateOf(false) }
 
-    LaunchedEffect(maps, lifecycle) {
+    LaunchedEffect(maps, ranked, lifecycle) {
         lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
             maps.initialize()
+            ranked.initialize()
+            launch { ranked.refresh(); if (ranked.state.value.profile != null) ranked.refreshPredator() }
             launch { maps.refresh() }
             var lastTick = Clock.System.now().epochSeconds
             var nextSync = lastTick + ROTATION_FRESH_SECONDS
+            var nextRankedSync = lastTick + PROFILE_FRESH_SECONDS
             while (isActive) {
                 now = Clock.System.now().epochSeconds
                 val crossedBoundary = maps.state.value.cache?.playlists.orEmpty().any { playlist ->
@@ -71,6 +88,10 @@ fun App(repository: RotationRepository? = null, onProjectionChanged: suspend (St
                 if ((now >= nextSync || crossedBoundary) && maps.state.value.error != RotationError.ACCESS_NOT_CONFIGURED) {
                     launch { maps.refresh() }
                     nextSync = now + ROTATION_FRESH_SECONDS
+                }
+                if (now >= nextRankedSync) {
+                    launch { ranked.refresh(); if (ranked.state.value.profile != null) ranked.refreshPredator() }
+                    nextRankedSync = now + PROFILE_FRESH_SECONDS
                 }
                 lastTick = now
                 delay(1000)
@@ -89,11 +110,30 @@ fun App(repository: RotationRepository? = null, onProjectionChanged: suspend (St
     val view = if (demo) projectRotation(demoCache, selected.id, now) else maps.view(selected.id, now)
     val zone = TimeZone.currentSystemDefault()
 
+    val today = Instant.fromEpochSeconds(now).toLocalDateTime(zone).date
+    // Native projections include future freshness/midnight entries. Publish on state/day changes only.
+    LaunchedEffect(rankedState, today) {
+        try {
+            onRankedProjectionChanged(RankedWidgetCodec.encode(rankedState, now, today))
+            rankedProjectionError = false
+        } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+        catch (_: Exception) { rankedProjectionError = true }
+    }
+
     MaterialTheme(colorScheme = appColors) {
         Surface(Modifier.fillMaxSize()) {
-            Column(Modifier.safeContentPadding().fillMaxSize().verticalScroll(rememberScrollState())
-                .padding(horizontal = 20.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            Column(Modifier.safeContentPadding().fillMaxSize().padding(horizontal = 20.dp, vertical = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text("APEX COMPANION", style = MaterialTheme.typography.labelLarge, color = appColors.primary)
+                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf("Maps", "Ranked progress", "Profile", "Settings").forEach { destination ->
+                        FilterChip(selected = screen == destination, onClick = { screen = destination }, label = { Text(destination) })
+                    }
+                }
+                key(screen) {
+                Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                if (screen == "Maps") {
                 Text("Map rotation", style = MaterialTheme.typography.headlineLarge)
                 Text("Your next drop, at a glance.", style = MaterialTheme.typography.bodyLarge)
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -153,7 +193,17 @@ fun App(repository: RotationRepository? = null, onProjectionChanged: suspend (St
                 TextButton(onClick = { uriHandler.openUri("https://apexlegendsstatus.com") }) {
                     Text(if (demo) "Source information: Apex Legends Status" else "Data provider: Apex Legends Status")
                 }
+                } else {
+                    when (screen) {
+                        "Ranked progress" -> RankedScreen(ranked, now, today)
+                        "Profile" -> ProfileScreen(ranked, now)
+                        "Settings" -> RankedSettingsScreen(ranked)
+                    }
+                    if (rankedProjectionError) Notice("Ranked widget update unavailable", "The app could not publish the ranked widget snapshot. Open the app again to retry.")
+                }
                 Text("Independent fan utility. This project is not endorsed by or affiliated with EA or its licensors.", style = MaterialTheme.typography.bodySmall)
+                }
+                }
             }
         }
     }

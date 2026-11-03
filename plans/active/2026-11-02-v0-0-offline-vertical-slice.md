@@ -51,3 +51,5 @@ Provider/network credentials, live map, linked profiles, actual matches, OCR, st
 ## Exit verification
 
 Pending. All A0.1-A0.10 from v0.0 spec require actual command/device evidence. iOS launch/widget checks are explicitly deferred to final stabilization, never inferred from Android success. Remaining Android/shared v0.0 features are still planned.
+
+2026-11-03 scope update: v0.2 implements the previously missing manual/linked RP goal calculator and minimum source/date/privacy settings, with Android/shared evidence in [v0.2 report](../../docs/validation/v0.2-report.md). This does not complete the v0.0 plan: backup/import, Today/About, additional settings and broad platform polish remain unimplemented. Keep this plan active.

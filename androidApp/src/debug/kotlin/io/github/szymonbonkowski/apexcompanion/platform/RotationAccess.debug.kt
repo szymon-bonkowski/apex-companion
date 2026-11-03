@@ -10,12 +10,13 @@ import java.io.File
 internal fun rotationRuntimeConfig(context: Context): RotationRuntimeConfig {
     val file = File(context.filesDir, "developer-als-key.private")
     if (!file.isFile) return RotationRuntimeConfig(UnconfiguredRotationProvider, false)
-    val provider = ApexStatusRotationProvider(rotationHttpClient(OkHttp.create()),
-        RotationAccess.AuthorizedDeveloper {
+    val access = RotationAccess.AuthorizedDeveloper {
             require(file.length() in 1..4096)
             file.readText().trim().also { key ->
                 require(key.isNotEmpty() && key.all { it.code in 33..126 })
             }
-        })
-    return RotationRuntimeConfig(provider, true, file.lastModified())
+        }
+    val client = rotationHttpClient(OkHttp.create())
+    return RotationRuntimeConfig(ApexStatusRotationProvider(client, access), true, file.lastModified(),
+        ApexStatusRankedProvider(client, access))
 }

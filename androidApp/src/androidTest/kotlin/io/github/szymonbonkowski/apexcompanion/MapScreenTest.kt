@@ -30,7 +30,13 @@ class MapScreenTest {
             assertTrue(device.wait(Until.hasObject(By.text("DEMO · Synthetic schedule")), 5_000))
             assertTrue(device.hasObject(By.text("Example Harbor")))
             device.findObject(By.text("Live maps")).click()
-            assertTrue(device.wait(Until.hasObject(By.text("Rotation unavailable")), 5_000))
+            val unavailable = device.wait(Until.hasObject(By.text("Rotation unavailable")), 5_000)
+            if (!unavailable) {
+                val context = InstrumentationRegistry.getInstrumentation().targetContext
+                device.takeScreenshot(File(context.filesDir, "map-ui-failure.png"))
+                device.dumpWindowHierarchy(File(context.filesDir, "map-ui-failure.xml"))
+            }
+            assertTrue(unavailable)
             assertFalse(device.hasObject(By.text("DEMO · Synthetic schedule")))
         }
     }

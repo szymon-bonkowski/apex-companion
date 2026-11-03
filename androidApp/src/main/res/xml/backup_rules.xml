@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <full-backup-content>
     <exclude domain="file" path="developer-als-key.private" />
+        <exclude domain="file" path="ranked-profile-v1.json" />
+        <exclude domain="file" path="ranked-profile-v1.json.bak" />
+        <exclude domain="file" path="ranked-profile-v1.json.new" />
 </full-backup-content>

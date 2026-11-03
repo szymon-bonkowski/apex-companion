@@ -32,3 +32,9 @@ The actual Swift/Xcode paths and names are defined when the target is created; d
 A Mac with supported Xcode and an iOS simulator/device is required. Check signed extension installation, app-group data access, disabled/invalid entitlements, preview sizes, timeline rollover across DST, app termination, stale data, VoiceOver and system widget reload throttling. Keep actual Xcode scheme/build commands in the ExecPlan after inspecting the generated project. Linux Gradle success **does not** satisfy iOS acceptance.
 
 Sources: [Apple WidgetKit: keeping widgets up to date](https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date), [KMP iOS integration](https://kotlinlang.org/docs/multiplatform/multiplatform-ios-integration-overview.html).
+
+## v0.2 source handoff — Implemented — Not Verified
+
+The existing extension's synchronized source group includes `RankedWidget.swift`; the widget bundle registers Rank Progress, Ranked Goal and Predator cutoff alongside Maps. Shared `MainViewController` supplies independent private ranked/global stores and publishes the sanitized ranked projection through `IosRotationStorageBridge`. Swift writes it atomically as `ranked-widget-v1.json` in the existing App Group, then reloads the three kinds. No UID/name/key is exported to the extension, which performs no networking or RP arithmetic. Private ranked storage is excluded from backup.
+
+All iOS framework/Swift/Xcode compilation, AppIntent compatibility, URL handling, signing, App Group provisioning, simulator/device/widget/accessibility tests remain deferred to final stabilization under ADR0007. No Apple tooling was run. The iOS online provider remains unconfigured; this source handoff does not imply public API approval or iOS validation.

@@ -2,7 +2,7 @@
 
 **A free, independent, open-source Apex Legends companion app for Android and iOS, built with Kotlin Multiplatform.**
 
-> **Project state (2026-11-02):** v0.1 Maps is implemented for authorized local developer use, including real-data Android checks. Android/shared validation is recorded in [the v0.1 report](docs/validation/v0.1-report.md). Public live activation is blocked pending approved provider access and actual response verification. iOS integration/WidgetKit source is implemented but **not verified**; all Apple checks are deferred to final stabilization. No provider credentials are embedded. The original v0.0 goals/settings/backup features were absent in the supplied code and remain planned.
+> **Project state (2026-11-03):** v0.2 Ranked & Player Profile is implemented for authorized local developer use, alongside preserved v0.1 Maps. Android/shared and real-provider evidence are recorded in [the v0.2 report](docs/validation/v0.2-report.md). Profiles, offline manual RP/goals, Predator cutoff and three Android ranked widgets are implemented. Public live activation remains blocked; no credential is embedded. iOS source is **Implemented — Not Verified** and Apple checks are deferred to final stabilization. The broader v0.0 backup/import, Today/About and additional settings remain incomplete.
 
 The experience centers on map rotation, ranked progress, goals, carefully labeled data freshness and high-quality home-screen widgets. Core rules and UI are shared where practical; Android widgets use Glance and iOS widgets use SwiftUI/WidgetKit. The project has no ads, subscriptions, forced account creation or mandatory telemetry.
 
@@ -27,7 +27,7 @@ Apex Legends Status is an **unofficial** source. Its key and redistribution rest
 4. [Architecture](docs/ARCHITECTURE.md)
 5. [Roadmap](docs/ROADMAP.md)
 6. [AI agent contract](AGENTS.md) and [Codex handoff](docs/CODEX_HANDOFF.md)
-7. [Active v0.0 plan](plans/active/2026-11-02-v0-0-offline-vertical-slice.md)
+7. [Remaining v0.0 plan](plans/active/2026-11-02-v0-0-offline-vertical-slice.md)
 
 ## Documentation overlay, not a replacement Wizard project
 

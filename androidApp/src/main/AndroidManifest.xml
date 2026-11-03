@@ -37,6 +37,18 @@
                 <action android:name="android.intent.action.DATE_CHANGED" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".widget.RankProgressWidgetReceiver" android:exported="true" android:label="Rank progress">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/rank_progress_widget_info" />
+        </receiver>
+        <receiver android:name=".widget.RankedGoalWidgetReceiver" android:exported="true" android:label="Ranked goal">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/ranked_goal_widget_info" />
+        </receiver>
+        <receiver android:name=".widget.PredatorThresholdWidgetReceiver" android:exported="true" android:label="Predator threshold">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/predator_threshold_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

@@ -239,7 +239,6 @@ struct MapWidgetView: View {
     }
 }
 
-@main
 struct ApexCompanionMapWidget: Widget {
     let kind = "ApexCompanionMap"
 
@@ -250,5 +249,16 @@ struct ApexCompanionMapWidget: Widget {
         .configurationDisplayName("Map rotation")
         .description("Current and next map from the app’s validated cache. No widget network requests.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+    }
+}
+
+// Implemented — Not Verified. Existing extension target includes this source folder.
+@main
+struct ApexCompanionWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        ApexCompanionMapWidget()
+        RankProgressNativeWidget()
+        RankedGoalNativeWidget()
+        PredatorNativeWidget()
     }
 }

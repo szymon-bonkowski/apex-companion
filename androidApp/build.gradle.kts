@@ -14,6 +14,7 @@ dependencies {
     implementation(project(":shared"))
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.work.runtime)
+    implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.ktor.client.okhttp)
@@ -37,8 +38,8 @@ android {
         applicationId = "io.github.szymonbonkowski.apexcompanion"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     packaging {

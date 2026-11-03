@@ -20,4 +20,9 @@
 
 ## Source-of-truth rules
 
-Accepted ADR/Architecture outrank specs and active plans, after explicit owner/legal instructions. An implementation plan must not introduce a paused feature or silently switch Android+iOS architecture to Android-only. The project package is **documentation-only** until the owner generates the real KMP Wizard codebase; neither Android nor iOS implementation is claimed delivered. Source descriptions are evidence, not automatic public redistribution permission.
+Accepted ADR/Architecture outrank specs and active plans, after explicit owner/legal instructions. An implementation plan must not introduce a paused feature or silently switch Android+iOS architecture to Android-only. The Wizard-generated project exists. v0.1 Maps and v0.2 Ranked/Profile have Android/shared evidence; iOS source is Implemented — Not Verified under ADR0007. Remaining starter plans are not proof of implementation. Source descriptions are evidence, not automatic public redistribution permission.
+
+## Current implementation evidence
+
+- [v0.2 Ranked/Profile report](validation/v0.2-report.md), [provider contract](validation/v0.2-provider-contract.md), [machine-readable evidence](validation/v0.2-evidence.json).
+- [v0.1 Maps report](validation/v0.1-report.md) and [remaining v0.0 scope](../plans/active/2026-11-02-v0-0-offline-vertical-slice.md).

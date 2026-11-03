@@ -3,6 +3,7 @@ package io.github.szymonbonkowski.apexcompanion.platform
 import android.content.Context
 import android.util.AtomicFile
 import io.github.szymonbonkowski.apexcompanion.maps.*
+import io.github.szymonbonkowski.apexcompanion.network.ProviderRequestBudget
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +14,10 @@ import java.io.File
 class AndroidMapRuntime private constructor(private val context: Context) {
     private val config = rotationRuntimeConfig(context)
     val networkEnabled = config.networkEnabled
-    val repository = RotationRepository(config.provider,
+    internal val budget = ProviderRequestBudget(RotationClock { System.currentTimeMillis() / 1000 })
+    internal val rankedProvider = budget.ranked(config.rankedProvider)
+    internal val configurationRevision = config.configurationRevision
+    val repository = RotationRepository(budget.rotation(config.provider),
         AndroidRotationStore(File(context.filesDir, "rotation-cache-v1.json")),
         RotationClock { System.currentTimeMillis() / 1000 })
 
@@ -31,6 +35,8 @@ class AndroidMapRuntime private constructor(private val context: Context) {
                 } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
                 catch (_: Exception) { /* Keep the persisted failure and show the existing storage/access state. */ }
             }
+            val state = repository.state.value
+            budget.restore(if (state.error == RotationError.RATE_LIMITED) state.retryAtSeconds else null, state.forbidden)
             initialized = true
         }
     }

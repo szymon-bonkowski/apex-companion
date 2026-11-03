@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-03",
+  "scope": "authorized local developer v0.2; public release disabled; iOS not verified",
+  "host": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2
+  },
+  "androidInstrumentation": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "lint": {
+    "debug": {
+      "Warning": 29
+    },
+    "release": {
+      "Warning": 31
+    }
+  },
+  "artifacts": {
+    "androidApp/build/outputs/apk/debug/androidApp-debug.apk": {
+      "sha256": "75fdbc6780589d6a2c7d203f564685bbae5709d7511015d843de1ab3b7f975f4",
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": true
+    },
+    "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk": {
+      "sha256": "a1645d30926f442abbc51c90207af4721a96d5e35706391589f701979990edf8",
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": false
+    },
+    "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk": {
+      "sha256": "531c65e9999f76035077fa3f31fb3959041b8306363166cec6529f065ac94f4e",
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": false
+    }
+  },
+  "repositoryCredentialScan": {
+    "filesScanned": 346,
+    "credentialAbsent": true
+  },
+  "liveHostContract": {
+    "tests": 1,
+    "passed": 1,
+    "source": "/tmp/apex-v02-live-contract.log",
+    "duration": "9s Gradle build"
+  },
+  "liveAndroidCheck": {
+    "tests": 1,
+    "passed": 1,
+    "source": "/tmp/apex-v02-android-live.log",
+    "durationSeconds": 43.619
+  },
+  "manualEditorColdRestart": {
+    "passed": true,
+    "source": "/tmp/apex-v02-manual-editor-check.log"
+  },
+  "syntheticVisualChecks": {
+    "tests": 5,
+    "passed": 5,
+    "durationSeconds": 21.471,
+    "captures": "docs/validation/v0.2-captures"
+  },
+  "finalGradleGate": {
+    "successful": true,
+    "durationSeconds": 36,
+    "tasks": 176,
+    "source": "/tmp/apex-v02-release-readiness.log"
+  },
+  "mapCachePreservation": {
+    "actualNormalizedV01RecordRestoredByteForByte": true
+  }
+}

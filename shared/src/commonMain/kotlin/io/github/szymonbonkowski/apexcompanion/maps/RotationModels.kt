@@ -1,6 +1,6 @@
 package io.github.szymonbonkowski.apexcompanion.maps
 
-enum class DataState { LIVE, STALE, UNAVAILABLE, DEMO }
+enum class DataState { LIVE, STALE, UNAVAILABLE, DEMO, MANUAL }
 enum class RotationError { ACCESS_NOT_CONFIGURED, FORBIDDEN, RATE_LIMITED, NETWORK, TIMEOUT, SERVER, SCHEMA, STORAGE }
 
 data class Playlist(val id: String, val label: String)

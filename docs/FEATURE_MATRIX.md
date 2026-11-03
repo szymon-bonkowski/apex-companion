@@ -1,6 +1,6 @@
 # Feature feasibility and provenance matrix
 
-This records planned product scope. The v0.1 map scope is implemented for private developer use; public activation is gated. For exact verification states see [v0.1 evidence](validation/v0.1-report.md). Product target is Android + iOS; KMP shares logic but not native widgets.
+This records planned product scope. v0.1 Maps and v0.2 Ranked/Profile/goals/Predator/widgets are implemented for private developer use; public activation is gated. For exact verification states see [v0.2 evidence](validation/v0.2-report.md). Product target is Android + iOS; KMP shares logic but not native widgets.
 
 | Capability | Input | First milestone | Gate |
 |---|---|---|---|
@@ -10,7 +10,7 @@ This records planned product scope. The v0.1 map scope is implemented for privat
 | Live map and next change | `/maprotation?version=2` | v0.1 | Source access, permission, verified schema, cache |
 | Live profile/rank/RP | `/bridge` authorized source | v0.2 | UID/platform correct; missing fields gracefully handled |
 | Predator threshold | `/predator` | v0.2 | Provider policy and source validation |
-| Server health | `/servers` | v0.2 | Source, timestamp, approved access |
+| Server health | `/servers` | Optional future scope | Not implemented in v0.2; source, timestamp, approved access required |
 | RP delta and sessions | Consecutive compatible observations | v0.3 | Only interval delta, never individual match count |
 | Actual match stats | Confirmed manual entry / on-device OCR | v0.4 | User review and duplicate protection |
 | Map/legend performance | Confirmed MatchRecords | v0.4+ | No inference from RP polls |

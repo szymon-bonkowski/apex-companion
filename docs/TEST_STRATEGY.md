@@ -42,3 +42,7 @@ Android: `:androidApp:assembleDebug` and actual generated KMP Android shared tes
 ## Definition of done
 
 A feature is complete only when every spec acceptance criterion is supported by a real command result or observed UI/device evidence. Intermediate completion requires Android/shared evidence and feasible iOS source with explicit unverified status. Deferred iOS checks alone do not block it; final verified Apple support requires actual Xcode/device evidence (ADR 0007).
+
+## v0.2 executed coverage
+
+See [v0.2 implementation report](validation/v0.2-report.md) for exact commands/counts. Common host tests cover current profile normalization, UID routing, missing/unknown ranks/divisions, manual/live selection, immutable goals/local calendar/DST, stale/backoff/reset/restart/corruption and shared widget timeline/privacy. Android instrumentation covers profile controls, goals/maps separation, AtomicFile interrupted writes, disconnection, native Glance values/sizes and independent instances. The explicitly opt-in host and Android live tests use only external/private runtime developer provisioning and report no player values. They are skipped by default. No Apple tests were run; source-only iOS verification is deferred.

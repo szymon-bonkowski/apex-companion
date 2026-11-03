@@ -1,6 +1,6 @@
 # Capability-led roadmap — Apex Companion
 
-**Status:** v0.1 map scope is complete for private developer use with Android/shared and real provider evidence; public activation remains blocked. v0.0 has unimplemented goals/settings/backup requirements. See [v0.1 report](validation/v0.1-report.md). Android and iOS are equal intended products from the start. KMP domain/shared Compose UI comes first; native Glance and WidgetKit widgets have separate platform acceptance. iOS tests need Xcode/macOS. Dates and iteration counts are not promised.
+**Status:** v0.1 Maps and v0.2 Ranked/Profile are implemented for authorized private developer use. [v0.2 evidence](validation/v0.2-report.md) separates Android/shared validation from iOS source, which is Implemented — Not Verified under ADR0007. Public activation remains blocked. v0.2 supplies the missing minimum goal/settings foundations; backup/import, broader v0.0 navigation/settings and platform polish remain separate work.
 
 ## Dependencies
 
