@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-03",
+  "scope": "v0.3 local review milestone; public provider disabled; iOS source unverified",
+  "baseline": {
+    "branch": "feat/v0.2-ranked-profile",
+    "commit": "c736c9efad76416db6bc7b82ff19c88820c1f612"
+  },
+  "workingBranch": "feat/v0.3-ranked-observations",
+  "host": {
+    "tests": 170,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "passed": 168
+  },
+  "androidInstrumentation": {
+    "tests": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 19
+  },
+  "androidAppUnitTests": "NO-SOURCE",
+  "newHistoryHostTests": 76,
+  "newHistoryAndroidTests": 8,
+  "lint": {
+    "debug": {
+      "errors": 0,
+      "warnings": 29
+    },
+    "release": {
+      "errors": 0,
+      "warnings": 31
+    }
+  },
+  "artifacts": {
+    "androidApp/build/outputs/apk/debug/androidApp-debug.apk": {
+      "sha256": "d27f488f87a0c81e88f2c68798c16e60adec47ab251b8518ae217be7c21dfb31",
+      "bytes": 17705102,
+      "entriesScanned": 1151,
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": true
+    },
+    "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk": {
+      "sha256": "797fd277b5c4df5c881584a9d4e0388b0ba7f99e73d0d83ec83b06cd84a0164a",
+      "bytes": 12740876,
+      "entriesScanned": 1143,
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": false
+    },
+    "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk": {
+      "sha256": "019b71b2e7efdca42827511fd6a575b59a91caab0d25303676c7d5b1dc7fbf78",
+      "bytes": 548877,
+      "entriesScanned": 11,
+      "credentialAbsent": true,
+      "privateDeveloperFileReaderString": false
+    }
+  },
+  "repositoryCredentialScan": {
+    "filesScanned": 370,
+    "credentialAbsent": true,
+    "actualExternalCredentialUsedForScan": true
+  },
+  "finalGradleGate": {
+    "command": "./gradlew :androidApp:assembleDebug :androidApp:assembleRelease :shared:testAndroidHostTest :androidApp:testDebugUnitTest :androidApp:lintDebug :androidApp:lintRelease :androidApp:connectedDebugAndroidTest",
+    "successful": true,
+    "durationSeconds": 347,
+    "tasks": 176,
+    "source": "/tmp/apex-v03-final-gate.log"
+  },
+  "actualAndroid": {
+    "device": "Pixel_10_Pro_XL AVD emulator-5554",
+    "androidVersion": "17",
+    "apiLevel": 37,
+    "physicalDeviceTested": false,
+    "systemDocumentExportImportCancellation": true,
+    "uiOptInContextTrend": true,
+    "uiSessionsRestoreAndPartial": true,
+    "uiBackupPreviewConfirmationDeleteRestoreTwice": true,
+    "atomicFileInterruptedImportRecovery": true
+  },
+  "coldProcessRestart": {
+    "passed": true,
+    "command": "python3 /tmp/apex-v03-cold-restart.py",
+    "source": "/tmp/apex-v03-cold-restart.log",
+    "activeIdStartAnchorPreserved": true,
+    "interruptedNewFileDiscarded": true,
+    "missingEndRpUnknown": true,
+    "protectedRecordsRestoredByteForByte": true
+  },
+  "syntheticCaptures": [
+    "docs/validation/v0.3-captures/cold-restored-session.png",
+    "docs/validation/v0.3-captures/v03-history-chart.png",
+    "docs/validation/v0.3-captures/v03-import-preview.png",
+    "docs/validation/v0.3-captures/v03-session-detail.png"
+  ],
+  "liveProviderTests": "Not run for v0.3; opt-in host2 and Android1 skipped separately; no actual-upstream v0.3 capture claim",
+  "ios": {
+    "status": "Implemented \u2014 Not Verified",
+    "appleToolsRun": false,
+    "deferredValidation": "ADR0007 final stabilization"
+  },
+  "publicProviderActivation": false,
+  "gitCommitPushTagMergeReleaseDeploymentPerformed": false
+}

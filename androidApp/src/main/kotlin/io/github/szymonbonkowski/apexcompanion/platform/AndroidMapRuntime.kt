@@ -55,26 +55,27 @@ class AndroidMapRuntime private constructor(private val context: Context) {
 }
 
 /** Versioned records include normalized schedules/retry metadata only. Never raw API JSON or auth. */
-class AndroidRotationStore(file: File) : RotationStore {
+class AndroidRotationStore(file: File, private val maxBytes: Int = 524_288) : RotationStore {
+    init { require(maxBytes in 1..4_194_304) }
     private val atomic = AtomicFile(file)
     override suspend fun read(): String? = withContext(Dispatchers.IO) {
         synchronized(atomic) {
             if (!atomic.baseFile.exists() && !File(atomic.baseFile.path + ".bak").exists()) null
             else atomic.openRead().use { input ->
-                val bytes = ByteArray(524_289)
+                val bytes = ByteArray(maxBytes + 1)
                 var count = 0
                 while (count < bytes.size) {
                     val read = input.read(bytes, count, bytes.size - count)
                     if (read < 0) break
                     count += read
                 }
-                require(count <= 524_288) { "Unsupported cache size" }
+                require(count <= maxBytes) { "Unsupported cache size" }
                 bytes.decodeToString(0, count, throwOnInvalidSequence = true)
             }
         }
     }
     override suspend fun write(value: String) = withContext(Dispatchers.IO) {
-        require(value.toByteArray(Charsets.UTF_8).size <= 524_288)
+        require(value.toByteArray(Charsets.UTF_8).size <= maxBytes)
         synchronized(atomic) {
             val output = atomic.startWrite()
             try {

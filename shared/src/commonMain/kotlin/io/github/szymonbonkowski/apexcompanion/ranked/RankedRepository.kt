@@ -1,6 +1,7 @@
 package io.github.szymonbonkowski.apexcompanion.ranked
 
 import io.github.szymonbonkowski.apexcompanion.maps.*
+import io.github.szymonbonkowski.apexcompanion.history.*
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -8,7 +9,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.datetime.LocalDate
 
-/** Single current state only: no inferred matches, deltas, seasons or observation history. */
+/** Current profile and independent goal state. Optional private history owns portable user settings. */
 data class RankedRepositoryState(
     val profile: RankedSnapshot? = null, val goal: RankGoal? = null, val manualRp: Long? = null,
     val useManual: Boolean = false, val manualUpdatedAtSeconds: Long? = null,
@@ -27,6 +28,7 @@ class RankedRepository(
         override suspend fun read() = value
         override suspend fun write(value: String) { this.value = value }
     },
+    private val history: HistoryRepository? = null,
 ) {
     private val lock = Mutex()
     private val mutable = MutableStateFlow(RankedRepositoryState())
@@ -42,6 +44,12 @@ class RankedRepository(
         try { predatorStore.read()?.let { next = RankedRecordCodec.withPredator(next, it) } }
         catch (e: CancellationException) { throw e }
         catch (_: Exception) { next = next.copy(predatorError = RankedError.STORAGE) }
+        history?.let { h ->
+            h.initialize()
+            if (next.error != RankedError.STORAGE && !h.adoptLegacy(next.portableSettings())) next = next.copy(error = RankedError.STORAGE)
+            h.state.value.record.settings?.let { next = next.withSettings(it) }
+            if (h.state.value.readOnly) next = next.copy(error = RankedError.STORAGE)
+        }
         mutable.value = next
         initialized = true
     }
@@ -70,13 +78,19 @@ class RankedRepository(
             return when (result) {
                 is RankedResult.Success -> {
                     val profile = result.value
-                    if (profile.identity.platform != lookup.platform || (lookup.byUid && profile.identity.uid != lookup.value)) {
+                    if (profile.identity.platform != lookup.platform || (lookup.byUid && profile.identity.uid != lookup.value) ||
+                        profile.observedAtSeconds < 0 || profile.observedAtSeconds > completedAt) {
                         failProfile(before, RankedError.SCHEMA, null, completedAt)
                     } else {
                         val next = before.copy(profile = profile, useManual = if (connecting) false else before.useManual,
                             error = null, refreshing = false, retryAtSeconds = null, failureCount = 0,
                             forbidden = false, lastAttemptSeconds = completedAt)
-                        if (commit(next)) RefreshOutcome.UPDATED else RefreshOutcome.FAILED
+                        if (!commit(next)) RefreshOutcome.FAILED
+                        else if (history != null) {
+                            val changed = before.profile?.identity?.historyIdentity() != profile.identity.historyIdentity() || (before.useManual && !next.useManual)
+                            if (history.acceptProfile(profile, next.portableSettings(), changed)) RefreshOutcome.UPDATED
+                            else { mutable.value = state.value.copy(error = RankedError.STORAGE); RefreshOutcome.FAILED }
+                        } else RefreshOutcome.UPDATED
                     }
                 }
                 is RankedResult.Failure -> failProfile(before, result.error, result.retryAfterSeconds, completedAt)
@@ -123,17 +137,45 @@ class RankedRepository(
         catch (_: Exception) { mutable.value = before.copy(predatorError = RankedError.STORAGE); return@withLock RefreshOutcome.FAILED }
         if (next.predatorError == null) RefreshOutcome.UPDATED else RefreshOutcome.FAILED
     }
-    suspend fun disconnect() = mutate {
-        it.copy(profile = null, useManual = true, error = null, retryAtSeconds = null, lastAttemptSeconds = null,
-            failureCount = 0, forbidden = false)
+    suspend fun disconnect(): Boolean = lock.withLock {
+        initializeLocked()
+        if (history?.contextChanged() == false) return@withLock false
+        if (!savePortableLocked(state.value.portableSettings().copy(useManual = true))) return@withLock false
+        commit(state.value.copy(profile = null, useManual = true, error = null, retryAtSeconds = null, lastAttemptSeconds = null,
+            failureCount = 0, forbidden = false))
     }
-    suspend fun saveGoal(goal: RankGoal?) = mutate { it.copy(goal = goal) }
-    suspend fun completeGoal() = mutate { it.copy(goal = it.goal?.copy(completed = true)) }
-    suspend fun setManualRp(rp: Long?): Boolean {
+    suspend fun saveGoal(goal: RankGoal?) = changeSettings { it.copy(goal = goal) }
+    suspend fun completeGoal() = changeSettings { it.copy(goal = it.goal?.copy(completed = true)) }
+    suspend fun setManualRp(rp: Long?): Boolean = lock.withLock {
         require(rp == null || rp in 0..MAX_RP)
-        return mutate { it.copy(manualRp = rp, manualUpdatedAtSeconds = if (rp == null) null else clock.nowSeconds()) }
+        initializeLocked()
+        val time = if (rp == null) null else clock.nowSeconds()
+        val settings = state.value.portableSettings().copy(manualRp = rp, manualUpdatedAtSeconds = time)
+        if (history == null) savePortableLocked(settings)
+        else if (!history.saveManualSettings(settings)) false
+        else { mutable.value = state.value.withSettings(settings); true }
     }
-    suspend fun setUseManual(value: Boolean) = mutate { it.copy(useManual = value) }
+    suspend fun setUseManual(value: Boolean): Boolean = lock.withLock {
+        initializeLocked()
+        if (value != state.value.useManual && history?.contextChanged() == false) return@withLock false
+        savePortableLocked(state.value.portableSettings().copy(useManual = value))
+    }
+    suspend fun importHistory(preview: ImportPreview): Boolean = lock.withLock {
+        initializeLocked()
+        val h = history ?: return@withLock false
+        if (!h.applyImport(preview, state.value.profile?.identity?.historyIdentity())) return@withLock false
+        h.state.value.record.settings?.let { mutable.value = state.value.withSettings(it) }
+        true
+    }
+    private suspend fun changeSettings(change: (PortableRankedSettings) -> PortableRankedSettings): Boolean = lock.withLock {
+        initializeLocked(); savePortableLocked(change(state.value.portableSettings()))
+    }
+    private suspend fun savePortableLocked(settings: PortableRankedSettings): Boolean {
+        val h = history
+        return if (h == null) commit(state.value.withSettings(settings)) else {
+            if (!h.saveSettings(settings)) false else { mutable.value = state.value.withSettings(settings); true }
+        }
+    }
     /** Persist both endpoint latches before the platform records a new credential revision. */
     suspend fun resetAccessFailure(): Boolean = lock.withLock {
         initializeLocked()
@@ -162,3 +204,6 @@ class RankedRepository(
     }
     private fun retryDelay(failures: Int, retry: Long?) = maxOf((30L * (1L shl (failures - 1))).coerceAtMost(1800), retry?.coerceIn(0, 86400) ?: 0)
 }
+
+private fun RankedRepositoryState.portableSettings() = PortableRankedSettings(goal, manualRp, useManual, manualUpdatedAtSeconds)
+private fun RankedRepositoryState.withSettings(s: PortableRankedSettings) = copy(goal = s.goal, manualRp = s.manualRp, useManual = s.useManual, manualUpdatedAtSeconds = s.manualUpdatedAtSeconds)

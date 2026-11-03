@@ -235,7 +235,7 @@ fun ColumnScope.ProfileScreen(repository: RankedRepository, now: Long) {
                     catch (cancelled: CancellationException) { throw cancelled }
                     catch (_: Exception) { localError = "Profile could not be disconnected from local storage." }
                 } }) { Text("Disconnect profile") }
-                Text("Disconnect removes this profile and its cached private data. Your personal goal and manual RP remain.",
+                Text("Disconnect removes this profile and its cached snapshot. Saved history is retained privately and hidden until its matching profile is linked again. Delete saved history in Settings. Your personal goal and manual RP remain.",
                     style = MaterialTheme.typography.bodySmall)
             }
         }
@@ -289,7 +289,6 @@ fun ColumnScope.RankedSettingsScreen(repository: RankedRepository) {
     ManualRpEditor(repository, state.manualRp, state.useManual, state.profile != null)
     RankedNotice("Local dates", "Goals use calendar dates in ${TimeZone.currentSystemDefault().id}. Changing your system timezone changes the current local day used for daily RP calculations.")
     RankedNotice("Privacy", "Profiles, goals and manual RP are stored locally. No analytics, advertisements, or mandatory account. Widget projections omit the player's name and UID.")
-    Text("Backup/import and additional v0.0 settings are not implemented in this milestone.", style = MaterialTheme.typography.bodySmall)
 }
 
 @Composable

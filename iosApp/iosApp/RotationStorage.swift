@@ -101,6 +101,47 @@ final class RotationStorage: NSObject, IosRotationStorageBridge {
         } catch { return false }
     }
 
+    // Implemented — Not Verified. A distinct, backup-excluded private directory owns history.
+    // Errors return an invalid record sentinel so shared initialization fails closed, not empty.
+    private let historyLock = NSLock()
+    private func historyURL() throws -> URL {
+        guard let root = files.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+            throw CocoaError(.fileNoSuchFile)
+        }
+        var directory = root.appendingPathComponent("ApexCompanionPrivateHistory", isDirectory: true)
+        try files.createDirectory(at: directory, withIntermediateDirectories: true)
+        var attributes = URLResourceValues()
+        attributes.isExcludedFromBackup = true
+        try directory.setResourceValues(attributes)
+        return directory.appendingPathComponent("ranked-history-v1.json")
+    }
+    func readHistoryCache() -> String? {
+        historyLock.lock()
+        defer { historyLock.unlock() }
+        do {
+            let url = try historyURL()
+            guard files.fileExists(atPath: url.path) else { return nil }
+            return try readBoundedHistoryJSON(at: url, maxBytes: 4_194_304)
+        } catch { return "UNREADABLE_PRIVATE_HISTORY_RECORD" }
+    }
+    func writeHistoryCache(value: String) -> Bool {
+        historyLock.lock()
+        defer { historyLock.unlock() }
+        guard let data = value.data(using: .utf8), data.count <= 4_194_304 else { return false }
+        do {
+            let url = try historyURL()
+            try data.write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            return true
+        } catch { return false }
+    }
+    func exportHistoryDocument(value: String, completion: IosHistoryDocumentCompletion) {
+        HistoryDocumentPicker.shared.exportJSON(value) { completion.complete(value: $0) }
+    }
+    func importHistoryDocument(completion: IosHistoryDocumentCompletion) {
+        HistoryDocumentPicker.shared.importJSON { completion.complete(value: $0) }
+    }
+    func cancelHistoryDocument() { HistoryDocumentPicker.shared.cancel() }
+
     func clear() {
         for name in ["ranked-cache-v1.json", "predator-cache-v1.json"] {
             if let url = privateURL(name) { try? files.removeItem(at: url) }
@@ -111,6 +152,7 @@ final class RotationStorage: NSObject, IosRotationStorageBridge {
             try? files.removeItem(at: directory.appendingPathComponent(snapshotName))
             try? files.removeItem(at: directory.appendingPathComponent("ranked-widget-v1.json"))
         }
+        if let url = try? historyURL() { try? files.removeItem(at: url) }
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

@@ -1,6 +1,14 @@
 # Changelog
 
-Record shipped features only once verified builds exist. Planning entries are **not** releases.
+Implementation entries describe verified local builds, not published releases. Planning entries are **not** releases.
+
+## Unreleased — v0.3 local implementation (2026-11-03)
+
+- Opt-in immutable RP observations, explicit user season/split confirmation and compatible interval trends; no inferred matches.
+- Durable user-controlled sessions with honest partial/unknown RP and observation windows.
+- Bounded atomic private history/settings, legacy v0.2 compatibility and native JSON document export/import with preview, identity isolation, duplicate protection and explicit deletion.
+- Shared Compose history/session/settings UI, Android instrumentation and source-only iOS Foundation/document picker bridges.
+- Android/shared validation is documented in the v0.3 report. iOS Implemented — Not Verified; public provider gate unchanged. No release/commit/push performed.
 
 ## Unreleased — planning update (2026-11-02)
 
@@ -10,4 +18,4 @@ Record shipped features only once verified builds exist. Planning entries are **
 - Added KMP Wizard overlay instructions, iOS WidgetKit/App Group specification and platform-specific validation/release gates.
 - Updated plans, specs, local agent skills and documentation integrity checks.
 
-**No released Android app, iOS app, APK/IPA, signed widget extension or API integration exists in this starter kit.**
+**No public release is claimed. Local Android builds/provider development exist; iOS source remains unverified.**

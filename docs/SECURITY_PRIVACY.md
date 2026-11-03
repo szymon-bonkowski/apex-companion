@@ -31,3 +31,9 @@ Use OS system document pickers for backup, Android Photo Picker and iOS PhotosPi
 - **Not allowed:** obfuscation/JNI as secret protection, unbounded BYOK proxy, bypassing provider quotas, hidden server collection or EA login password requests.
 
 Respond to secret exposure by revoking it, reviewing distributed artifacts and assessing impact; deleting a git line alone is insufficient. See [SECURITY.md](../SECURITY.md).
+
+## v0.3 history and backup controls
+
+History recording is off by default and explicitly enabled in shared Settings. Only validated accepted refreshes or explicit manual saves record evidence; no chart/session/widget initiates polling. Private history retains RP, UTC times, optional UID/platform, context/source and session boundaries. Disconnect hides the disconnected identity's retained history and closes tracking; another profile cannot see it. Confirmed history deletion removes all observation/session/context/import records and turns recording off while preserving independent goals/manual RP and current/global caches. External exported backups are not removed.
+
+Private history/settings use a separate bounded 4 MiB atomic record, excluded from Android cloud backup/device transfer (including .new/.bak) and a backup-excluded private iOS directory. No history enters the WidgetKit App Group. Explicit native document export uses an allowlist; import validates bounds/schema/relationships/identity, previews warnings and commits one full record only after confirmation. UIDs can be present in a backup; users choose its location. Provider secrets/configuration/responses/caches, private paths, screenshots, diagnostic logs and OS widget IDs are excluded. Public access gates and permissions are unchanged. Backups are unsigned user-controlled data; restoring recorded provenance does not independently authenticate an upstream event. iOS source is Implemented — Not Verified.

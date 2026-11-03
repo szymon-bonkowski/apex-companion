@@ -4,4 +4,7 @@
         <exclude domain="file" path="ranked-profile-v1.json" />
         <exclude domain="file" path="ranked-profile-v1.json.bak" />
         <exclude domain="file" path="ranked-profile-v1.json.new" />
+        <exclude domain="file" path="ranked-history-v1.json" />
+        <exclude domain="file" path="ranked-history-v1.json.bak" />
+        <exclude domain="file" path="ranked-history-v1.json.new" />
 </full-backup-content>

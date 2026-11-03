@@ -10,14 +10,18 @@ import androidx.glance.appwidget.updateAll
 import androidx.compose.runtime.produceState
 import io.github.szymonbonkowski.apexcompanion.platform.AndroidMapRuntime
 import io.github.szymonbonkowski.apexcompanion.platform.AndroidRankedRuntime
+import io.github.szymonbonkowski.apexcompanion.platform.AndroidHistoryDocuments
 import io.github.szymonbonkowski.apexcompanion.widget.MapRotationWidget
 import io.github.szymonbonkowski.apexcompanion.widget.MapSyncScheduler
 
 class MainActivity : ComponentActivity() {
+    internal lateinit var historyDocuments: AndroidHistoryDocuments
+        private set
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT))
         super.onCreate(savedInstanceState)
+        historyDocuments = AndroidHistoryDocuments(this)
         val runtime = AndroidMapRuntime.get(this)
         MapSyncScheduler.ensurePeriodic(this)
         val ranked = AndroidRankedRuntime.get(applicationContext)
@@ -30,7 +34,8 @@ class MainActivity : ComponentActivity() {
                 value = true
             }
             if (initialized.value) {
-                App(runtime.repository, rankedRepository = ranked.repository, onRankedProjectionChanged = {
+                App(runtime.repository, rankedRepository = ranked.repository,
+                    historyRepository = ranked.history, historyDocuments = historyDocuments, onRankedProjectionChanged = {
                     ranked.publish()
                 }, onProjectionChanged = {
                     MapRotationWidget().updateAll(applicationContext)

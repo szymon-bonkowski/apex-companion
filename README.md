@@ -2,7 +2,7 @@
 
 **A free, independent, open-source Apex Legends companion app for Android and iOS, built with Kotlin Multiplatform.**
 
-> **Project state (2026-11-03):** v0.2 Ranked & Player Profile is implemented for authorized local developer use, alongside preserved v0.1 Maps. Android/shared and real-provider evidence are recorded in [the v0.2 report](docs/validation/v0.2-report.md). Profiles, offline manual RP/goals, Predator cutoff and three Android ranked widgets are implemented. Public live activation remains blocked; no credential is embedded. iOS source is **Implemented — Not Verified** and Apple checks are deferred to final stabilization. The broader v0.0 backup/import, Today/About and additional settings remain incomplete.
+> **Project state (2026-11-03):** v0.3 adds opt-in private RP history, explicit season/split confirmation, persistent sessions, honest trend charts and native document backup/restore of history plus goal/manual settings. Existing Maps, Profile, goals, Predator and native widgets are retained. Android/shared verification is recorded in [the v0.3 implementation report](docs/validation/v0.3-report.md); public provider activation remains blocked and no credential is embedded. iOS source is **Implemented — Not Verified** under ADR0007. Broader v0.0 Today/About, extra settings and platform polish remain incomplete.
 
 The experience centers on map rotation, ranked progress, goals, carefully labeled data freshness and high-quality home-screen widgets. Core rules and UI are shared where practical; Android widgets use Glance and iOS widgets use SwiftUI/WidgetKit. The project has no ads, subscriptions, forced account creation or mandatory telemetry.
 
@@ -63,3 +63,9 @@ Install `androidApp/build/outputs/apk/debug/androidApp-debug.apk`. The Maps scre
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [LEGAL_ASSETS.md](docs/LEGAL_ASSETS.md). Original source and documentation are MIT-licensed; this grants no right to redistribute third-party game art or API content.
 
 **This project is not endorsed by or affiliated with EA or its licensors.** Apex Legends and related trademarks belong to their respective owners.
+
+## Private ranked history
+
+Open Settings to opt into local recording. Provider refreshes retain RP evidence only after successful validation and persistence; manual saves are explicitly USER_RECORDED. Because the current provider has no verified split, confirm the known season/split before future intervals can be linked. Unknown samples remain unknown; a confirmation/new split creates a baseline. History and Sessions show observation windows rather than inferred matches. Session start/stop works offline and active sessions survive process restarts.
+
+Export/import uses the system document picker and an explicit confirmation preview. Backups contain user settings and private history (potentially UIDs), never provider keys/configuration/raw responses or widget IDs. Restore validates and atomically merges one logical record. Disconnect retains isolated history; Settings can explicitly delete all history while keeping goals/manual RP. Externally saved backups remain your responsibility. Source-only iOS implementation requires later Apple verification.

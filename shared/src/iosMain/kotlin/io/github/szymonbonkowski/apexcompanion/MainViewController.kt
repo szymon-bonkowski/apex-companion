@@ -3,9 +3,15 @@ package io.github.szymonbonkowski.apexcompanion
 import androidx.compose.ui.window.ComposeUIViewController
 import io.github.szymonbonkowski.apexcompanion.maps.*
 import io.github.szymonbonkowski.apexcompanion.ranked.*
+import io.github.szymonbonkowski.apexcompanion.history.*
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.time.Clock
+
+/** Explicit object callback avoids Kotlin function-type/Swift Unit bridging ambiguity. */
+interface IosHistoryDocumentCompletion { fun complete(value: String?) }
 
 /** Implemented — Not Verified. Swift owns atomic private files and the sanitized App Group copy. */
 interface IosRotationStorageBridge {
@@ -17,6 +23,11 @@ interface IosRotationStorageBridge {
     fun readPredatorCache(): String?
     fun writePredatorCache(value: String): Boolean
     fun publishRankedWidgetSnapshot(value: String): Boolean
+    fun readHistoryCache(): String?
+    fun writeHistoryCache(value: String): Boolean
+    fun exportHistoryDocument(value: String, completion: IosHistoryDocumentCompletion)
+    fun importHistoryDocument(completion: IosHistoryDocumentCompletion)
+    fun cancelHistoryDocument()
 }
 
 private class IosRotationStore(private val bridge: IosRotationStorageBridge) : RotationStore {
@@ -35,13 +46,46 @@ private class IosRankedStore(private val bridge: IosRotationStorageBridge, priva
         }
     }
 }
+/** Implemented — Not Verified. Full private history never enters the WidgetKit App Group. */
+private class IosHistoryStore(private val bridge: IosRotationStorageBridge) : RotationStore {
+    override suspend fun read(): String? = withContext(Dispatchers.Default) { bridge.readHistoryCache() }
+    override suspend fun write(value: String) = withContext(Dispatchers.Default) {
+        check(value.encodeToByteArray().size <= HISTORY_MAX_BYTES && bridge.writeHistoryCache(value)) {
+            "Local history could not be committed"
+        }
+    }
+}
+private class IosHistoryDocuments(private val bridge: IosRotationStorageBridge) : HistoryDocuments {
+    override suspend fun exportJson(value: String): Boolean = withContext(Dispatchers.Main) {
+        require(value.encodeToByteArray().size <= HISTORY_MAX_BYTES)
+        val result = suspendCancellableCoroutine<String?> { continuation ->
+            continuation.invokeOnCancellation { bridge.cancelHistoryDocument() }
+            bridge.exportHistoryDocument(value, object : IosHistoryDocumentCompletion {
+                override fun complete(value: String?) { if (continuation.isActive) continuation.resume(value) }
+            })
+        }
+        check(result == null || result == "SAVED") { "Backup document could not be saved" }
+        result == "SAVED"
+    }
+    override suspend fun importJson(): String? = withContext(Dispatchers.Main) {
+        suspendCancellableCoroutine { continuation ->
+            continuation.invokeOnCancellation { bridge.cancelHistoryDocument() }
+            bridge.importHistoryDocument(object : IosHistoryDocumentCompletion {
+                override fun complete(value: String?) { if (continuation.isActive) continuation.resume(value) }
+            })
+        }
+    }
+}
 fun MainViewController(storage: IosRotationStorageBridge) = run {
     // Public access stays disabled. No developer credential route is installed on iOS.
     val clock = RotationClock { Clock.System.now().epochSeconds }
     val repository = RotationRepository(UnconfiguredRotationProvider, IosRotationStore(storage), clock)
-    val ranked = RankedRepository(UnconfiguredRankedProvider, IosRankedStore(storage, false), clock, IosRankedStore(storage, true))
+    val history = HistoryRepository(IosHistoryStore(storage), clock)
+    val documents = IosHistoryDocuments(storage)
+    val ranked = RankedRepository(UnconfiguredRankedProvider, IosRankedStore(storage, false), clock, IosRankedStore(storage, true), history = history)
     ComposeUIViewController {
         App(repository = repository, rankedRepository = ranked,
+            historyRepository = history, historyDocuments = documents,
             onProjectionChanged = { projection -> withContext(Dispatchers.Default) {
                 check(storage.publishWidgetSnapshot(projection)) { "Widget snapshot could not be committed" }
             } },

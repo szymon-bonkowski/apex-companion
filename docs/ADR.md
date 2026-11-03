@@ -12,4 +12,6 @@ Accepted ADRs bind implementation until deliberately superseded. Platform scope,
 | [0006](adr/0006-ocr-opt-in.md) | Proposed | Local OCR with explicit human confirmation on both OSes |
 | [0007](adr/0007-intermediate-platform-validation.md) | Accepted (owner instruction) | iOS verification deferred to final stabilization; source stays unverified |
 
+| [0008](adr/0008-private-history-transaction.md) | Accepted (v0.3 implementation) | Private history/settings atomic restore, context and identity policy |
+
 The former pack event-ledger design was **withdrawn**, not migrated. Packs/heirlooms are not in current scope. See [BACKLOG.md](BACKLOG.md) and [REQUIREMENTS.md](REQUIREMENTS.md).

@@ -1,6 +1,6 @@
 # Capability-led roadmap — Apex Companion
 
-**Status:** v0.1 Maps and v0.2 Ranked/Profile are implemented for authorized private developer use. [v0.2 evidence](validation/v0.2-report.md) separates Android/shared validation from iOS source, which is Implemented — Not Verified under ADR0007. Public activation remains blocked. v0.2 supplies the missing minimum goal/settings foundations; backup/import, broader v0.0 navigation/settings and platform polish remain separate work.
+**Status:** v0.1 Maps, v0.2 Ranked/Profile and v0.3 private RP history/sessions/trends/backup are implemented for authorized private developer use. [v0.3 evidence](validation/v0.3-report.md) separates Android/shared validation from iOS source, which is Implemented — Not Verified under ADR0007. Public activation remains blocked. v0.2 supplies the missing minimum goal/settings foundations; v0.3 supplies the earlier missing backup/import; broader v0.0 navigation/settings and platform polish remain separate work.
 
 ## Dependencies
 
@@ -38,9 +38,9 @@ Link explicitly selected public profile (UID/platform), preserve offline goal, s
 
 ## v0.3 — RP observation and sessions
 
-Time-stamped RP snapshots, valid same-split intervals, manual session boundaries and trend views. **Never** convert net delta to a fictional match. Versioned cross-platform export and restore.
+Implemented opt-in timestamped RP evidence, user-confirmed context, valid same-split intervals, persistent manual session boundaries and trend views. **Never** convert net delta to a fictional match. Versioned cross-platform export and restore.
 
-**Exit:** split reset/unknown/gap tests, persisted sessions across restart, Android/iOS feature verification. [Spec](specs/v0-3-observations.md).
+**Exit achieved for the intermediate milestone:** split reset/unknown/gap tests, persisted sessions across restart, Android/shared verification and feasible iOS source marked Implemented — Not Verified under ADR0007. [Spec](specs/v0-3-observations.md).
 
 ## v0.4 — Confirmed match import
 

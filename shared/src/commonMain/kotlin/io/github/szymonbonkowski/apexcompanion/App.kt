@@ -18,6 +18,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import io.github.szymonbonkowski.apexcompanion.maps.*
 import io.github.szymonbonkowski.apexcompanion.ranked.*
+import io.github.szymonbonkowski.apexcompanion.history.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
@@ -44,6 +45,8 @@ fun App(
     onProjectionChanged: suspend (String) -> Unit = {},
     rankedRepository: RankedRepository? = null,
     onRankedProjectionChanged: suspend (String) -> Unit = {},
+    historyRepository: HistoryRepository? = null,
+    historyDocuments: HistoryDocuments? = null,
 ) {
     val fallback = remember { RotationRepository(UnconfiguredRotationProvider, object : RotationStore {
         override suspend fun read(): String? = null
@@ -125,9 +128,13 @@ fun App(
             Column(Modifier.safeContentPadding().fillMaxSize().padding(horizontal = 20.dp, vertical = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text("APEX COMPANION", style = MaterialTheme.typography.labelLarge, color = appColors.primary)
-                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    listOf("Maps", "Ranked progress", "Profile", "Settings").forEach { destination ->
-                        FilterChip(selected = screen == destination, onClick = { screen = destination }, label = { Text(destination) })
+                Column {
+                    listOf(listOf("Maps", "Ranked progress", "Profile", "Settings"), listOf("History", "Sessions")).forEach { destinations ->
+                        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            destinations.forEach { destination ->
+                                FilterChip(selected = screen == destination, onClick = { screen = destination }, label = { Text(destination) })
+                            }
+                        }
                     }
                 }
                 key(screen) {
@@ -197,7 +204,12 @@ fun App(
                     when (screen) {
                         "Ranked progress" -> RankedScreen(ranked, now, today)
                         "Profile" -> ProfileScreen(ranked, now)
-                        "Settings" -> RankedSettingsScreen(ranked)
+                        "History" -> if (historyRepository != null) HistoryScreen(historyRepository, ranked, now) else Text("History requires durable platform storage.")
+                        "Sessions" -> if (historyRepository != null) SessionsScreen(historyRepository, ranked, now) else Text("Sessions require durable platform storage.")
+                        "Settings" -> {
+                            RankedSettingsScreen(ranked)
+                            if (historyRepository != null) HistorySettingsScreen(historyRepository, ranked, historyDocuments, now)
+                        }
                     }
                     if (rankedProjectionError) Notice("Ranked widget update unavailable", "The app could not publish the ranked widget snapshot. Open the app again to retry.")
                 }

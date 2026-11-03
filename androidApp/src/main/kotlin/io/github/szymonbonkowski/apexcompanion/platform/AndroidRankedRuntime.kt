@@ -1,6 +1,8 @@
 package io.github.szymonbonkowski.apexcompanion.platform
 
 import android.content.Context
+import io.github.szymonbonkowski.apexcompanion.history.HistoryRepository
+import io.github.szymonbonkowski.apexcompanion.history.HISTORY_MAX_BYTES
 import io.github.szymonbonkowski.apexcompanion.maps.RotationClock
 import io.github.szymonbonkowski.apexcompanion.ranked.*
 import io.github.szymonbonkowski.apexcompanion.widget.updateAllRankedWidgets
@@ -14,10 +16,13 @@ import java.io.File
 /** Shares the map runtime's private route and global request budget; never starts a scheduler. */
 class AndroidRankedRuntime private constructor(private val context: Context) {
     private val maps = AndroidMapRuntime.get(context)
+    val history = HistoryRepository(
+        AndroidRotationStore(File(context.filesDir, "ranked-history-v1.json"), HISTORY_MAX_BYTES),
+        RotationClock { System.currentTimeMillis() / 1000 })
     val repository = RankedRepository(maps.rankedProvider,
         AndroidRotationStore(File(context.filesDir, "ranked-profile-v1.json")),
         RotationClock { System.currentTimeMillis() / 1000 },
-        AndroidRotationStore(File(context.filesDir, "predator-cache-v1.json")))
+        AndroidRotationStore(File(context.filesDir, "predator-cache-v1.json")), history = history)
     private val lock = Mutex()
     private var initialized = false
     suspend fun initialize() = lock.withLock {
