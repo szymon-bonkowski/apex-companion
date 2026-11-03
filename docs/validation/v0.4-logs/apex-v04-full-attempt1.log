@@ -1,0 +1,262 @@
+Calculating task graph as configuration cache cannot be reused because file 'androidApp/build.gradle.kts' has changed.
+
+> Configure project :shared
+w: ⚠️ Native task 'iosSimulatorArm64Test' is disabled
+Task 'iosSimulatorArm64Test' for target 'ios_simulator_arm64' cannot run on the current host (linux-x86_64).
+Reason: simulator tests require macOS
+Solution: To suppress this warning, add 'kotlin.native.ignoreDisabledTargets=true' to gradle.properties.
+
+
+> Task :shared:androidPreBuild UP-TO-DATE
+> Task :androidApp:generateDebugAssets UP-TO-DATE
+> Task :androidApp:generateReleaseAssets UP-TO-DATE
+> Task :shared:generateAndroidMainAssets UP-TO-DATE
+> Task :shared:preAndroidMainBuild UP-TO-DATE
+> Task :androidApp:preBuild UP-TO-DATE
+> Task :androidApp:preDebugBuild UP-TO-DATE
+> Task :shared:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :shared:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:generateComposeResClass UP-TO-DATE
+> Task :shared:generateExpectResourceCollectorsForCommonMain UP-TO-DATE
+> Task :shared:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:kmpPartiallyResolvedDependenciesChecker
+> Task :shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidApp:javaPreCompileDebug UP-TO-DATE
+> Task :androidApp:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :shared:writeAndroidMainAarMetadata UP-TO-DATE
+> Task :androidApp:desugarDebugFileDependencies UP-TO-DATE
+> Task :shared:generateAndroidMainEmptyResourceFiles UP-TO-DATE
+> Task :androidApp:mapDebugSourceSetPaths UP-TO-DATE
+> Task :androidApp:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :shared:copyNonXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :shared:mapAndroidMainSourceSetPaths UP-TO-DATE
+> Task :shared:processAndroidMainManifest UP-TO-DATE
+> Task :shared:prepareComposeResourcesTaskForCommonMain UP-TO-DATE
+> Task :androidApp:extractDeepLinksDebug UP-TO-DATE
+> Task :shared:mergeAndroidMainJniLibFolders UP-TO-DATE
+> Task :shared:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :androidApp:mergeDebugJniLibFolders UP-TO-DATE
+> Task :androidApp:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :shared:mergeAndroidMainNativeLibs NO-SOURCE
+> Task :shared:generateResourceAccessorsForAndroidMain NO-SOURCE
+> Task :androidApp:preReleaseBuild UP-TO-DATE
+> Task :shared:generateResourceAccessorsForCommonMain UP-TO-DATE
+> Task :androidApp:writeDebugAppMetadata UP-TO-DATE
+> Task :androidApp:validateSigningDebug UP-TO-DATE
+> Task :androidApp:generateDebugResources UP-TO-DATE
+> Task :shared:copyAndroidMainComposeResourcesToAndroidAssets UP-TO-DATE
+> Task :androidApp:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :shared:copyAndroidMainJniLibsProjectOnly UP-TO-DATE
+> Task :shared:generateActualResourceCollectorsForAndroidMain UP-TO-DATE
+> Task :shared:packageAndroidMainResources UP-TO-DATE
+> Task :androidApp:packageDebugResources UP-TO-DATE
+> Task :shared:mergeAndroidMainAssets UP-TO-DATE
+> Task :shared:parseAndroidMainLocalResources UP-TO-DATE
+> Task :androidApp:checkDebugDuplicateClasses UP-TO-DATE
+> Task :shared:generateAndroidMainRFile UP-TO-DATE
+> Task :androidApp:processDebugNavigationResources UP-TO-DATE
+> Task :androidApp:parseDebugLocalResources UP-TO-DATE
+> Task :androidApp:checkDebugAarMetadata UP-TO-DATE
+> Task :androidApp:compileDebugNavigationResources UP-TO-DATE
+> Task :shared:compileAndroidMainLibraryResources UP-TO-DATE
+> Task :androidApp:generateDebugRFile UP-TO-DATE
+> Task :androidApp:processReleaseNavigationResources FROM-CACHE
+> Task :androidApp:mergeDebugAssets UP-TO-DATE
+> Task :androidApp:mergeExtDexDebug UP-TO-DATE
+> Task :androidApp:compressDebugAssets UP-TO-DATE
+> Task :androidApp:mergeDebugNativeLibs UP-TO-DATE
+> Task :androidApp:stripDebugDebugSymbols UP-TO-DATE
+> Task :androidApp:processDebugMainManifest UP-TO-DATE
+> Task :androidApp:mergeDebugResources UP-TO-DATE
+> Task :androidApp:processDebugManifest UP-TO-DATE
+> Task :androidApp:generateReleaseResources FROM-CACHE
+> Task :androidApp:processDebugManifestForPackage UP-TO-DATE
+> Task :androidApp:mergeReleaseJniLibFolders
+> Task :androidApp:javaPreCompileRelease FROM-CACHE
+> Task :androidApp:mapReleaseSourceSetPaths
+> Task :androidApp:extractDeepLinksRelease FROM-CACHE
+> Task :shared:compileAndroidMain UP-TO-DATE
+> Task :shared:bundleAndroidMainClassesToCompileJar UP-TO-DATE
+> Task :shared:compressAndroidMainJavaRes UP-TO-DATE
+> Task :androidApp:createReleaseCompatibleScreenManifests
+> Task :shared:bundleLibRuntimeToDirAndroidMain UP-TO-DATE
+> Task :androidApp:mergeLibDexDebug UP-TO-DATE
+> Task :androidApp:checkReleaseAarMetadata
+> Task :androidApp:mergeReleaseStartupProfile UP-TO-DATE
+> Task :androidApp:compileDebugKotlin UP-TO-DATE
+> Task :androidApp:desugarReleaseFileDependencies FROM-CACHE
+> Task :androidApp:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:prepareAndroidMainArtProfile UP-TO-DATE
+> Task :androidApp:compileReleaseNavigationResources FROM-CACHE
+> Task :androidApp:compressDebugJavaRes UP-TO-DATE
+> Task :androidApp:mergeReleaseNativeLibs
+> Task :androidApp:checkReleaseDuplicateClasses
+> Task :androidApp:processDebugResources UP-TO-DATE
+> Task :androidApp:dexBuilderDebug UP-TO-DATE
+> Task :androidApp:mergeDebugJavaResource UP-TO-DATE
+> Task :androidApp:mergeProjectDexDebug UP-TO-DATE
+> Task :androidApp:packageDebug UP-TO-DATE
+> Task :androidApp:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :androidApp:assembleDebug UP-TO-DATE
+> Task :androidApp:packageReleaseResources FROM-CACHE
+> Task :shared:prepareLintJarForPublish UP-TO-DATE
+> Task :androidApp:mergeReleaseAssets
+> Task :androidApp:parseReleaseLocalResources FROM-CACHE
+> Task :androidApp:extractProguardFiles
+> Task :androidApp:generateReleaseRFile FROM-CACHE
+> Task :androidApp:compressReleaseAssets FROM-CACHE
+> Task :shared:mergeAndroidMainJavaResource
+> Task :shared:bundleAndroidMainClassesToRuntimeJar
+> Task :shared:extractAndroidMainAnnotations FROM-CACHE
+> Task :androidApp:stripReleaseDebugSymbols
+> Task :androidApp:extractReleaseNativeSymbolTables FROM-CACHE
+> Task :androidApp:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :shared:checkAndroidMainAarMetadata
+> Task :androidApp:writeReleaseAppMetadata
+> Task :androidApp:writeReleaseSigningConfigVersions
+> Task :androidApp:mergeReleaseResources FROM-CACHE
+> Task :shared:preAndroidHostTestBuild UP-TO-DATE
+> Task :shared:compressAndroidHostTestJavaRes NO-SOURCE
+> Task :shared:generateAndroidHostTestAssets UP-TO-DATE
+> Task :shared:createFullJarAndroidMain
+> Task :shared:mergeAndroidHostTestAssets
+> Task :shared:checkAndroidHostTestAarMetadata
+> Task :androidApp:mergeReleaseArtProfile
+> Task :shared:generateAndroidHostTestResources FROM-CACHE
+> Task :shared:mapAndroidHostTestSourceSetPaths
+> Task :androidApp:processReleaseMainManifest
+> Task :shared:convertXmlValueResourcesForAndroidHostTest NO-SOURCE
+> Task :shared:copyNonXmlValueResourcesForAndroidHostTest NO-SOURCE
+> Task :androidApp:extractReleaseVersionControlInfo
+> Task :shared:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :shared:prepareComposeResourcesTaskForAndroidHostTest NO-SOURCE
+> Task :shared:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :shared:generateResourceAccessorsForAndroidHostTest NO-SOURCE
+> Task :androidApp:processReleaseManifest
+> Task :shared:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :shared:extractAndroidHostTestJavaRes
+> Task :shared:generateResourceAccessorsForCommonTest NO-SOURCE
+> Task :androidApp:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :androidApp:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:androidJar
+> Task :androidApp:compileDebugUnitTestKotlin NO-SOURCE
+> Task :androidApp:compressDebugUnitTestJavaRes NO-SOURCE
+> Task :androidApp:extractDebugUnitTestJavaRes
+> Task :androidApp:preDebugAndroidTestBuild SKIPPED
+> Task :androidApp:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :androidApp:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :androidApp:generateDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:packageDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :androidApp:parseDebugAndroidTestLocalResources UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestRFile UP-TO-DATE
+> Task :androidApp:compileDebugAndroidTestKotlin UP-TO-DATE
+> Task :androidApp:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :androidApp:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :androidApp:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :androidApp:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :androidApp:compressDebugAndroidTestJavaRes UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :androidApp:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :androidApp:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :androidApp:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :androidApp:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :androidApp:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :androidApp:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :androidApp:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestManifest UP-TO-DATE
+> Task :androidApp:processDebugAndroidTestManifest UP-TO-DATE
+> Task :androidApp:processDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:dexBuilderDebugAndroidTest UP-TO-DATE
+> Task :androidApp:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :androidApp:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :androidApp:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :androidApp:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :androidApp:packageDebugAndroidTest UP-TO-DATE
+> Task :androidApp:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :shared:mergeAndroidHostTestManifest
+> Task :androidApp:collectReleaseDependencies
+> Task :androidApp:processReleaseManifestForPackage
+> Task :shared:syncAndroidMainLibJars
+> Task :shared:processAndroidHostTestManifest
+> Task :shared:mergeAndroidHostTestResources FROM-CACHE
+> Task :shared:bundleAndroidMainLocalLintAar
+> Task :androidApp:bundleDebugClassesToRuntimeJar
+> Task :androidApp:testDebugUnitTest NO-SOURCE
+> Task :shared:processAndroidHostTestResources FROM-CACHE
+> Task :shared:packageAndroidHostTestForUnitTest
+> Task :shared:generateAndroidHostTestConfig
+> Task :androidApp:generateDebugUnitTestLintModel
+> Task :shared:generateAndroidHostTestLintModel
+> Task :androidApp:generateDebugAndroidTestLintModel
+> Task :androidApp:generateDebugLintReportModel
+> Task :androidApp:sdkReleaseDependencyData
+> Task :androidApp:mergeExtDexRelease FROM-CACHE
+> Task :androidApp:processReleaseResources
+> Task :androidApp:optimizeReleaseResources
+
+> Task :androidApp:connectedDebugAndroidTest
+Running tests on devices: ApexCompanion_API37(AVD) - 17
+
+> Task :androidApp:compileReleaseKotlin
+> Task :androidApp:compileReleaseJavaWithJavac NO-SOURCE
+> Task :androidApp:compressReleaseJavaRes
+> Task :androidApp:generateReleaseLintVitalReportModel
+> Task :androidApp:generateReleaseLintReportModel
+> Task :androidApp:mergeReleaseJavaResource
+> Task :androidApp:dexBuilderRelease
+> Task :androidApp:mergeReleaseGlobalSynthetics FROM-CACHE
+
+> Task :shared:compileAndroidHostTest
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/network/RotationTransportTest.kt:54:97 Cast is redundant.
+
+> Task :androidApp:lintAnalyzeDebugUnitTest
+> Task :shared:testAndroidHostTest
+> Task :androidApp:mergeDexRelease
+> Task :androidApp:compileReleaseArtProfile
+> Task :androidApp:lintVitalAnalyzeRelease
+> Task :androidApp:lintVitalReportRelease SKIPPED
+> Task :androidApp:lintVitalRelease SKIPPED
+> Task :androidApp:lintAnalyzeDebugAndroidTest
+> Task :androidApp:packageRelease
+> Task :androidApp:assembleRelease
+> Task :androidApp:createReleaseApkListingFileRedirect
+> Task :shared:lintAnalyzeAndroidHostTest
+> Task :androidApp:lintAnalyzeDebug
+
+> Task :androidApp:lintReportDebug
+Wrote HTML report to file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/lint-results-debug.html
+Wrote SARIF report to file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/lint-results-debug.sarif
+
+> Task :androidApp:lintDebug
+> Task :androidApp:lintAnalyzeRelease
+
+> Task :androidApp:lintReportRelease
+Wrote HTML report to file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/lint-results-release.html
+Wrote SARIF report to file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/lint-results-release.sarif
+
+> Task :androidApp:lintRelease
+> Task :androidApp:connectedDebugAndroidTest FAILED
+
+[Incubating] Problems report is available at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':androidApp:connectedDebugAndroidTest'.
+> There were failing tests. See the report at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/androidTests/connected/debug/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 5m 34s
+176 actionable tasks: 65 executed, 19 from cache, 92 up-to-date
+Configuration cache entry stored.

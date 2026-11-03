@@ -9,6 +9,8 @@
 		<key>CFBundleURLName</key><string>Apex Companion Maps</string>
 		<key>CFBundleURLSchemes</key><array><string>apexcompanion</string></array>
 	</dict></array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Synchronize private match results with your explicitly paired PC on the local network.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 </dict>

@@ -8,7 +8,7 @@ Two RP snapshots cannot identify how many matches occurred between them. `13,000
 
 - **Snapshot**: the provider's ranked score at a particular fetch, with identity/platform, game mode, season/split context, timestamp and confidence.
 - **Interval**: difference between two compatible snapshots. Fields: `fromId`, `toId`, `netRp`, `duration`, `attributedMatches: unknown`, `quality`.
-- **Match record**: created only from an authorized match feed or user-confirmed manual/screenshot information, with a unique ID and explicit source. Never generated automatically from an interval alone.
+- **Match record**: created from user-confirmed manual/screenshot information or distinctly observed screen evidence under ADR0009 machine acceptance policy, with a unique ID and explicit source. Never generated automatically from an interval alone.
 
 ## Observation algorithm
 
@@ -49,7 +49,7 @@ daily = ceil(remaining / daysRemaining)  when daysRemaining > 0
 - Deadline passed: show `Deadline passed` and remaining, not divide-by-zero or negative daily.
 - No valid split end: ask for a **manual deadline**; do not auto-invent current split dates.
 - Rank names and threshold table: versioned external configuration, not immutable constants; show RP numeric progress even if tier mapping unavailable.
-- Average RP per game: only from explicitly confirmed match records. If only intervals exist, label a statistic `observed RP per hour/session` not per-game.
+- Average RP per game: from confirmed match records by default, with an explicitly labeled optional AUTO_ACCEPTED cohort under ADR0009. If only intervals exist, label a statistic `observed RP per hour/session` not per-game.
 - Rank forecast: optional and transparent scenario, with assumptions visible and no probability claim.
 
 ## Example test sequence
@@ -67,7 +67,7 @@ Further tests: duplicate observation ID, out-of-order fetch, timezone/DST shift,
 
 ## Aggregation honesty
 
-A season graph may connect snapshots with a line but must **not** label each segment a match. A `Today +359 RP` summary is valid if it compares same-split first and latest reliable snapshots, identifies the observation window, and clearly distinguishes it from a true game's results. "6 games" requires confirmed match records or a user-entered count.
+A season graph may connect snapshots with a line but must **not** label each segment a match. A `Today +359 RP` summary is valid if it compares same-split first and latest reliable snapshots, identifies the observation window, and clearly distinguishes it from a true game's results. "6 games" requires saved eligible match records with provenance, never an RP sampling gap.
 
 ## v0.3 implementation policy
 

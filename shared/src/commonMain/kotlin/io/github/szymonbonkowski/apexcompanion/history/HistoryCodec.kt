@@ -118,16 +118,18 @@ object HistoryCodec {
         r.contexts.forEach { require(it.confirmedAtSeconds <= now) }
         r.observations.forEach { o ->
             require(o.observedAtSeconds <= now)
-            if (o.verification == ContextVerification.USER_CONFIRMED) {
-                val c = r.contexts.single { it.id == o.contextId }
+            val c = r.contexts.firstOrNull { it.id == o.contextId }
+            if (o.verification == ContextVerification.USER_CONFIRMED) requireNotNull(c)
+            if (c != null) {
                 require(c.identity == o.identity && c.source == o.source && c.mode == o.mode && c.season == o.season && c.split == o.split && o.observedAtSeconds >= c.confirmedAtSeconds)
             }
         }
         r.sessions.forEach { s ->
             require(s.startedAtSeconds <= now && (s.endedAtSeconds == null || s.endedAtSeconds <= now))
             s.contextId?.let { id ->
-                require(r.contexts.any { it.id == id && it.identity == s.identity && it.source == s.source && it.mode == s.mode } ||
-                    r.observations.any { it.contextId == id && it.verification == ContextVerification.UPSTREAM && it.identity == s.identity && it.source == s.source && it.mode == s.mode })
+                val c = r.contexts.firstOrNull { it.id == id }
+                if (c != null) require(c.identity == s.identity && c.source == s.source && c.mode == s.mode && c.confirmedAtSeconds <= s.startedAtSeconds)
+                else require(r.observations.any { it.contextId == id && it.verification == ContextVerification.UPSTREAM && it.identity == s.identity && it.source == s.source && it.mode == s.mode })
             }
             listOfNotNull(s.startObservationId, s.endObservationId).forEach { id ->
                 val o = r.observations.single { it.id == id }

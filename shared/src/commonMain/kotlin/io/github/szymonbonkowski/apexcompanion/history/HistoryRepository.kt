@@ -163,6 +163,7 @@ class HistoryRepository(private val store: RotationStore, private val clock: Rot
                 add("Personal goal and manual RP settings will be replaced by the backup. Recording stays under your current control; imported context is not activated.")
                 add("Profile linking, provider caches and widgets are not restored. External backups remain your responsibility.")
                 add("Backup provenance is recorded metadata from an unsigned user file; importing does not independently authenticate provider events.")
+                if (backup.batchId in r.importedBatchIds) add("This batch ID was seen before; it does not verify identical contents. Confirming validates and merges this file again: new records may be added and its goal/manual settings restored. Conflicting record IDs are rejected.")
                 if (backup.record.sessions.any { it.endedAtSeconds == null }) add("The backup contains an active session; it will resume its original start time.")
                 if (linkedIdentity == null && backup.record.observations.any { it.identity != null }) add("Provider history is archived until you explicitly link its matching UID/platform.")
             }, backup.batchId in r.importedBatchIds)
@@ -180,6 +181,8 @@ class HistoryRepository(private val store: RotationStore, private val clock: Rot
         require(r.observations.none { it.source == ObservationSource.USER_RECORDED && it.identity != null }) { "Manual history must remain independent." }
     }
     private fun merge(current: HistoryRecord, backup: HistoryBackup): HistoryRecord {
+        // Batch IDs are advisory, not fingerprints. Even a repeated batch is fully
+        // validated/merged so an explicitly confirmed settings restore still works.
         fun <T> combine(a: List<T>, b: List<T>, id: (T) -> String): List<T> {
             val byId = a.associateBy(id)
             b.forEach { v -> require(byId[id(v)] == null || byId[id(v)] == v) { "A record ID collides with different saved data." } }

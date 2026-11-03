@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-03T18:25:24.295300+00:00",
+  "baseline": "51c3708d42db00f10086b9766d1afc021962a63b",
+  "branch": "feat/v0.4-auto-match-capture",
+  "milestoneComplete": false,
+  "automaticApexTrackingAchieved": false,
+  "productionAutoAcceptanceEnabled": false,
+  "androidSharedGate": {
+    "command": [
+      "./gradlew",
+      ":androidApp:assembleDebug",
+      ":androidApp:assembleRelease",
+      ":shared:testAndroidHostTest",
+      ":androidApp:testDebugUnitTest",
+      ":androidApp:lintDebug",
+      ":androidApp:lintRelease",
+      ":androidApp:connectedDebugAndroidTest",
+      "--console=plain"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 573.539
+  },
+  "shared": {
+    "total": 214,
+    "passed": 212,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "files": [
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.SharedCommonTest.xml",
+        "sha256": "8d829aa77b2586298de4fad70640af4aa2f8be45dcdf0768357b939cec8812ab"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.SharedLogicAndroidHostTest.xml",
+        "sha256": "1c89719b3b629773990c2e2dbd25e6be83a281c6c90f8e965f1dc6fc180367ff"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistoryCodecTest.xml",
+        "sha256": "4cb98ccb1f679e4bf8a9dc642afabb1fed337e81dca9afbff8d3b84bada00f64"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistoryFollowUpTest.xml",
+        "sha256": "a7a1785d8e8e56d3252e4b573e8102437e4f071ceb1486b1d375b12f795eebdc"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistoryImportTest.xml",
+        "sha256": "4e617e0b4c31566620710894b67901aa911605a883dbf13d8bbb05d688101ca3"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistoryIntervalTest.xml",
+        "sha256": "e2a55f768fc4cf67795c4f826f8aa6d1f90f09f3b2e5a0454c3358e1882c7cbd"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistoryRepositoryTest.xml",
+        "sha256": "4b09ca9e2fc53c0edb21aa4168a121b3509cb1c1b8c5a04544374b98098747cd"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.HistorySessionTest.xml",
+        "sha256": "9245727133378a5c2279679a5bf891261d41afeecf2f4942dd8eba75fbb52e43"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.history.RankedHistoryIntegrationTest.xml",
+        "sha256": "35f6d40c49186cf6d39f8772913980bc226fe01b1788fbc5d08d116f887af9a0"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.maps.RotationParsingTests.xml",
+        "sha256": "e93eef4c778767b492aeeacfea231606c9f2c08934088d7250bfa24e7f89003f"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.maps.RotationRepositoryTests.xml",
+        "sha256": "23f322ca089751c8bfd2ddaedfcb96d8f94bd67b496a4353c71a74e91005abc9"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.matches.MatchJournalTest.xml",
+        "sha256": "b1642ca55a0b0b9a8a1c19e20a1cc2ca86b1fd96248df04a73e65046a5bf3f04"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.matches.MatchSyncTest.xml",
+        "sha256": "167cbdd651c9c56008375a5f06113d949e645c269241ad821946e0d8c8234c81"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.network.ProviderLiveContractTest.xml",
+        "sha256": "f955a6f7fe257a631620b841ee666b44e9148deca6fe98062144c968124606ec"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.network.RankedLiveContractTest.xml",
+        "sha256": "e42cb1e76240222bfbe4c4eb52f79919b5c0194dec88710ff1961354362a4afd"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.network.RotationTransportTest.xml",
+        "sha256": "2473e3ae704ec6daa253a82a4e57bc7b2d20db959e8596e146daf1dfa846455f"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.ranked.RankedProviderTests.xml",
+        "sha256": "f522bede61026b4a1858bc0a5e0d526828458a4690d8520f2aa08b87f70cb695"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.ranked.RankedRepositoryTest.xml",
+        "sha256": "022928302e5ecf5c8ed3f448fb9771b00f7e0cfc80f05f2bdf0a1170ccf40f38"
+      },
+      {
+        "path": "shared/build/test-results/testAndroidHostTest/TEST-io.github.szymonbonkowski.apexcompanion.ranked.RankedWidgetTest.xml",
+        "sha256": "d3f403121a768b4fc5515198df599f3a6a3d0da56011db4dea442c7cbeaeecbd"
+      }
+    ]
+  },
+  "android": {
+    "total": 28,
+    "passed": 27,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "files": [
+      {
+        "path": "androidApp/build/outputs/androidTest-results/connected/debug/TEST-ApexCompanion_API37(AVD) - 17.xml",
+        "sha256": "5e2029b05052a638e8b943f850da7ea03e2aea4ff1fb690831d0e8d673f2b779"
+      }
+    ]
+  },
+  "companion": {
+    "counters": {
+      "total": "40",
+      "executed": "40",
+      "passed": "40",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "trxSha256": "eace8f66384bef44db13412299d8b32e23d02c384ba0474efc0db5e13dd73eae",
+    "runtime": "Linux self-contained net10.0, no Windows execution"
+  },
+  "syntheticOcr": {
+    "schemaVersion": 1,
+    "dataset": "original-synthetic-v1",
+    "realApexFixtureCount": 0,
+    "heldOutRealFixtureCount": 0,
+    "syntheticOnly": true,
+    "layout": "english-prototype-v1",
+    "autoAcceptanceEnabled": false,
+    "platform": "Arch Linux",
+    "runtime": "10.0.14",
+    "measuredUtc": "2026-11-03T16:53:54.7579838+00:00",
+    "resultClassification": {
+      "positives": 4,
+      "negatives": 6,
+      "falsePositive": 0,
+      "falseNegative": 0
+    },
+    "fields": {
+      "kills": {
+        "expected": 3,
+        "exact": 3,
+        "wrong": 0,
+        "missing": 0
+      },
+      "assists": {
+        "expected": 3,
+        "exact": 3,
+        "wrong": 0,
+        "missing": 0
+      },
+      "damage": {
+        "expected": 4,
+        "exact": 4,
+        "wrong": 0,
+        "missing": 0
+      },
+      "placement": {
+        "expected": 4,
+        "exact": 4,
+        "wrong": 0,
+        "missing": 0
+      },
+      "rpDelta": {
+        "expected": 3,
+        "exact": 3,
+        "wrong": 0,
+        "missing": 0
+      }
+    },
+    "elapsedMilliseconds": 2473.7629,
+    "parentPeakWorkingSetBytes": 60203008,
+    "resourceScope": "Linux serial replay elapsed time; parent .NET working set excludes Tesseract children. Not Windows/game overhead.",
+    "examples": [
+      {
+        "id": "results-1920",
+        "expectedScreen": "RESULTS",
+        "actualScreen": "RESULTS",
+        "fields": {
+          "kills": {
+            "expected": 3,
+            "actual": 3,
+            "confidence": 0.89422897
+          },
+          "assists": {
+            "expected": 2,
+            "actual": 2,
+            "confidence": 0.90498795
+          },
+          "damage": {
+            "expected": 1234,
+            "actual": 1234,
+            "confidence": 0.91995605
+          },
+          "placement": {
+            "expected": 4,
+            "actual": 4,
+            "confidence": 0.90911842
+          },
+          "rpDelta": {
+            "expected": 123,
+            "actual": 123,
+            "confidence": 0.89994331
+          }
+        },
+        "elapsedMilliseconds": 327.7709
+      },
+      {
+        "id": "results-1280",
+        "expectedScreen": "RESULTS",
+        "actualScreen": "RESULTS",
+        "fields": {
+          "kills": {
+            "expected": 0,
+            "actual": 0,
+            "confidence": 0.76686607
+          },
+          "assists": {
+            "expected": 1,
+            "actual": 1,
+            "confidence": 0.9127742000000001
+          },
+          "damage": {
+            "expected": 426,
+            "actual": 426,
+            "confidence": 0.89337456
+          },
+          "placement": {
+            "expected": 12,
+            "actual": 12,
+            "confidence": 0.92286461
+          },
+          "rpDelta": {
+            "expected": -45,
+            "actual": -45,
+            "confidence": 0.87663544
+          }
+        },
+        "elapsedMilliseconds": 254.3434
+      },
+      {
+        "id": "results-2560",
+        "expectedScreen": "RESULTS",
+        "actualScreen": "RESULTS",
+        "fields": {
+          "kills": {
+            "expected": 12,
+            "actual": 12,
+            "confidence": 0.89976112
+          },
+          "assists": {
+            "expected": 7,
+            "actual": 7,
+            "confidence": 0.90349075
+          },
+          "damage": {
+            "expected": 3865,
+            "actual": 3865,
+            "confidence": 0.9205481
+          },
+          "placement": {
+            "expected": 1,
+            "actual": 1,
+            "confidence": 0.91210144
+          },
+          "rpDelta": {
+            "expected": 285,
+            "actual": 285,
+            "confidence": 0.91751305
+          }
+        },
+        "elapsedMilliseconds": 299.8021
+      },
+      {
+        "id": "missing-fields",
+        "expectedScreen": "RESULTS",
+        "actualScreen": "RESULTS",
+        "fields": {
+          "damage": {
+            "expected": 100,
+            "actual": 100,
+            "confidence": 0.91841576
+          },
+          "placement": {
+            "expected": 8,
+            "actual": 8,
+            "confidence": 0.90883759
+          }
+        },
+        "elapsedMilliseconds": 242.782
+      },
+      {
+        "id": "menu",
+        "expectedScreen": "MENU",
+        "actualScreen": "MENU",
+        "fields": {},
+        "elapsedMilliseconds": 231.9569
+      },
+      {
+        "id": "loading",
+        "expectedScreen": "LOADING",
+        "actualScreen": "LOADING",
+        "fields": {},
+        "elapsedMilliseconds": 191.4961
+      },
+      {
+        "id": "spectator",
+        "expectedScreen": "SPECTATOR",
+        "actualScreen": "SPECTATOR",
+        "fields": {},
+        "elapsedMilliseconds": 240.065
+      },
+      {
+        "id": "session-summary",
+        "expectedScreen": "SESSION_SUMMARY",
+        "actualScreen": "SESSION_SUMMARY",
+        "fields": {},
+        "elapsedMilliseconds": 241.4866
+      },
+      {
+        "id": "changed-ui",
+        "expectedScreen": "UNKNOWN",
+        "actualScreen": "UNKNOWN",
+        "fields": {},
+        "elapsedMilliseconds": 233.7452
+      },
+      {
+        "id": "gameplay",
+        "expectedScreen": "IN_MATCH",
+        "actualScreen": "IN_MATCH",
+        "fields": {},
+        "elapsedMilliseconds": 210.1906
+      }
+    ]
+  },
+  "windows": {
+    "status": "Implemented — Not Verified",
+    "crossPublished": true,
+    "exeSha256": "d9f24f7d6b61d492fa5feb00f549fa96ea9f961bd4e527d45b5362cd658227ba",
+    "archiveSha256": "b3cfc5ac956b7d8389cb027b2e44fabacad6061a0b298fae82b596bcdc4f21f0",
+    "archiveBytes": 68316541,
+    "packageFiles": 416,
+    "gameExecution": false
+  },
+  "mockLifecycle": {
+    "linuxMockSigtermExit": 0,
+    "duplicateWriterRejected": true,
+    "credentialsUnchangedOnDuplicate": true,
+    "pairingStableAcrossProcessRestart": true,
+    "passed": true
+  },
+  "postServerRestartAndroid": {
+    "passed": true,
+    "scope": "same native pinned HTTPS/auth/replay test after server restart, no re-pairing or token rotation"
+  },
+  "ios": {
+    "status": "Implemented — Not Verified",
+    "appleToolsExecuted": false
+  },
+  "artifacts": [
+    {
+      "path": "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk",
+      "sha256": "98deb9279a6e0f25b3c103bdda84f7efc10931f7459c1671c44308e4fe96e32c",
+      "bytes": 659650,
+      "zipEntriesScanned": 11,
+      "releasePrivateReaderPresent": false
+    },
+    {
+      "path": "androidApp/build/outputs/apk/debug/androidApp-debug.apk",
+      "sha256": "4f80b6ec8c6277de635ceaa6c10f73d253f84dd4faf487c710693217b17f6bb8",
+      "bytes": 17999625,
+      "zipEntriesScanned": 1152,
+      "releasePrivateReaderPresent": false
+    },
+    {
+      "path": "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk",
+      "sha256": "c13f30baef7ed7cfc15b1554c1c2e287785812e58b8743442fc83e3e86b147d3",
+      "bytes": 12855600,
+      "zipEntriesScanned": 1143,
+      "releasePrivateReaderPresent": false
+    }
+  ],
+  "privacyAudit": {
+    "repositoryFilesScanned": 478,
+    "windowsPackageFilesScanned": 416,
+    "generatedPairingTokenAvailable": true,
+    "developerProviderCredentialAvailable": false,
+    "hits": [],
+    "limitation": "Known-value and private-key-marker scan, source/manifest review; not a proof that arbitrary unknown secrets cannot exist."
+  },
+  "coldRestart": {
+    "test": "actual-android-cold-process-match-restart",
+    "synthetic": true,
+    "passed": true,
+    "syntheticStoreSha256": "57c6b335b39203a49f27296d139cf06d1b67a4c84a602d504dfee1f420d52bbc",
+    "originalFilesRestored": true
+  },
+  "remaining": [
+    "No real Windows WGC/Apex execution",
+    "No representative or held-out real Apex OCR fixtures; production automatic acceptance disabled",
+    "Native mobile OCR engine not implemented",
+    "iOS native compilation/runtime/privacy/lifecycle verification deferred by ADR0007",
+    "Desktop installer/signing and journal archive/pruning UI not implemented",
+    "No physical-device/full accessibility or Windows gaming overhead measurement"
+  ],
+  "failedAttempts": [
+    {
+      "scope": "First integrated full Android/shared gate",
+      "reason": "212 shared tests passed, 3 legacy History UI tests failed due ambiguous navigation and clipped coordinate clicks; explicit accessible navigation/action selectors corrected, assertions retained; failed XML/log archived."
+    },
+    {
+      "scope": "Initial Android UI instrumentation",
+      "reason": "Clipped controls, stale composition selectors and insufficient awaited dialog actions; corrected real accessibility actions and full visibility; earlier runs not counted."
+    },
+    {
+      "scope": "Second full gate and focused legacy checks",
+      "reason": "Navigation desc wrappers needed their actionable parent; then a sibling description below +150 was clipped. Corrected full visibility and actual action selectors; original behavioral assertions retained."
+    },
+    {
+      "scope": "Shared incremental artifacts",
+      "reason": "Empty compile/runtime bundle caused unresolved imports/NoClassDefFoundError; cause unproven, isolated clean/rebuild recovered; Gradle execution serialized."
+    },
+    {
+      "scope": "Android17 Linux TLS initial attempt",
+      "reason": "Local network permission blocked connection; added explicit ACCESS_LOCAL_NETWORK consent and fail-closed checks."
+    },
+    {
+      "scope": "Native picker selection attempts1–5",
+      "reason": "Android17 Collections/device albums and final Add confirmation required updated test navigation; selected6 passed."
+    },
+    {
+      "scope": "First cold-process checker",
+      "reason": "Fresh install lacked no_backup; exec-out merged remote cat errors. Revised shell-v2 presence/status checks, mkdir and protected temporary recovery copies; actual restart passed without an existing match file being lost."
+    },
+    {
+      "scope": "Ordinary framework-dependent dotnet test",
+      "reason": "Host lacks Microsoft.AspNetCore.App runtime; aborted, not a pass. Self-contained linux-x64 final run passed."
+    }
+  ],
+  "priorIntegratedAttempts": [
+    {
+      "attempt": 1,
+      "command": [
+        "./gradlew",
+        ":androidApp:assembleDebug",
+        ":androidApp:assembleRelease",
+        ":shared:testAndroidHostTest",
+        ":androidApp:testDebugUnitTest",
+        ":androidApp:lintDebug",
+        ":androidApp:lintRelease",
+        ":androidApp:connectedDebugAndroidTest",
+        "--console=plain"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 334.91
+    },
+    {
+      "attempt": 2,
+      "command": [
+        "./gradlew",
+        ":androidApp:assembleDebug",
+        ":androidApp:assembleRelease",
+        ":shared:testAndroidHostTest",
+        ":androidApp:testDebugUnitTest",
+        ":androidApp:lintDebug",
+        ":androidApp:lintRelease",
+        ":androidApp:connectedDebugAndroidTest",
+        "--console=plain"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 325.202
+    },
+    {
+      "attempt": 3,
+      "command": [
+        "./gradlew",
+        ":androidApp:assembleDebug",
+        ":androidApp:assembleRelease",
+        ":shared:testAndroidHostTest",
+        ":androidApp:testDebugUnitTest",
+        ":androidApp:lintDebug",
+        ":androidApp:lintRelease",
+        ":androidApp:connectedDebugAndroidTest",
+        "--console=plain"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 637.074
+    },
+    {
+      "attempt": 4,
+      "command": [
+        "./gradlew",
+        ":androidApp:assembleDebug",
+        ":androidApp:assembleRelease",
+        ":shared:testAndroidHostTest",
+        ":androidApp:testDebugUnitTest",
+        ":androidApp:lintDebug",
+        ":androidApp:lintRelease",
+        ":androidApp:connectedDebugAndroidTest",
+        "--console=plain"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 632.928
+    }
+  ],
+  "screenshots": {
+    "v04-cold-process-matches.png": {
+      "sha256": "e72dc8fa37119b964a4f292433b982b7b7db67e8221715459e92e55d805d3b48",
+      "bytes": 163356,
+      "synthetic": true,
+      "visuallyInspected": true
+    },
+    "v04-match-detail.png": {
+      "sha256": "d25dc371dd5c539f2731f9a433408eaa5708d32b66972404be1718bd5643d687",
+      "bytes": 157368,
+      "synthetic": true,
+      "visuallyInspected": true
+    },
+    "v04-match-list.png": {
+      "sha256": "5cb33ac1f11574b6a2c724d9bf4626c40842296e1f048b89af973da236787765",
+      "bytes": 170420,
+      "synthetic": true,
+      "visuallyInspected": true
+    },
+    "v04-match-statistics.png": {
+      "sha256": "af0c307633acc62008a0f98ba8fd039e3ce15a0b4d475766731d5af21e03c277",
+      "bytes": 188729,
+      "synthetic": true,
+      "visuallyInspected": true
+    }
+  },
+  "lint": {
+    "debug": {
+      "errors": 0,
+      "warnings": 30
+    },
+    "release": {
+      "errors": 0,
+      "warnings": 32
+    }
+  },
+  "sourceManifest": {
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/HistoryDocumentsInstrumentedTest.kt": "a15993f4e75387d40fae261bbe928076c78eaedb911d6e182032d7a5dd2ced4a",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/HistoryPersistenceInstrumentedTest.kt": "42b265c3b8cf85ff3ed347cc33037aaae95de48cda524ada99abad3389e32934",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/HistoryScreenTest.kt": "7d34555eb7c3d7db12bce88738b12bad884efbf0a1b829fede52fd60c5cea427",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MapScreenTest.kt": "966239824c990527fb126cd1ae3ff1988d3592820d57b41ea042e17964e8c6ad",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchPlatformInstrumentedTest.kt": "61d47d370b406fe5dac3e5c9ded2e470934b1e584ac63feccf338fb62ae69956",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchScreenTest.kt": "bad91a6bcca44c0daa16087369da0ba913e7d5c59a04ab186eb4643002c11dc0",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/RankedDeveloperLiveTest.kt": "763c2a61c7e676750f2694f9efcd39c92ed3844f3fb6ec39703e6714c996e0e5",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/RankedPersistenceInstrumentedTest.kt": "39108c8341b568bf4a625de4427c0f4e034b72d6c09b1dcac98810c8641c0702",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/RankedScreenTest.kt": "e02c97cb43c67b6ef4a73723eb8f1bf0f04454a35cef5f15207b1b6afcdc2b6d",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/widget/MapWidgetInstrumentedTest.kt": "f19d57b55fbb0c9a2d748ed4d54d4fe3cf1a687198b07493941da67dc0ee8ba8",
+    "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/widget/RankedWidgetInstrumentedTest.kt": "72d26bc303e109e04a1599481d0238aa06743162ec703eb2a308fd2e68f9477d",
+    "androidApp/src/debug/AndroidManifest.xml": "ae72edbc860dabf36b855c5bb6e06181763a8445c9bab68ec0b96f1fba108d62",
+    "androidApp/src/debug/kotlin/io/github/szymonbonkowski/apexcompanion/platform/RotationAccess.debug.kt": "37c3e7884c625f8699afd4e9202a97f8a9d5d69cbafc287c7c5210f34838670c",
+    "androidApp/src/main/AndroidManifest.xml": "a38fc6519f42e0f66096896201bfca840fca49ba41884df96a4c37bde5f4beac",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/MainActivity.kt": "b1fbe31d059321aedac7c4596bd53666dce557badb143c6965ef74ee38961e8b",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidHistoryDocuments.kt": "1ac7dfb324ebea506622d1c9b3b76d063110d0f52b758aae854360cad8312482",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidMapRuntime.kt": "f8cf2db40bed1e1c619630df8a0e2a57c0801fd685351b6f24ce4b2010cdfcf0",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidMatchNetworkPermission.kt": "7cf569fab752f1716f356109bd3908585c6dfc1a2b023c0f45b6aaf05b8089f6",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidMatchRuntime.kt": "a4efd5aa404a8ff5f182bafe45b5677356b7af79ac646560ff2080b20dfe625e",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidMatchScreenshots.kt": "91607106d78ed255a392fbdc4b4ae9d3220af2161e66d2186f9a2143a09ed2dc",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidRankedRuntime.kt": "f70c018287310e61d6e2ed29843e745a2ba49d133034bc241d590523e88f22d9",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/RotationRuntimeConfig.kt": "51adc12f291bc9aee6f552577302182bb0b7b692b05e829a2281239da6203f38",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/MapRotationWidget.kt": "14c145238eb40c8bd8c3d27217e7031bb097eb7869901c4748c6fd0e355c7000",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/MapSyncScheduler.kt": "2987be9f81ff18006567ab43d19a8785fa7e4f35e8232b9b681a0777fec6eba6",
+    "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/RankedWidgets.kt": "20455c1a3930d3892ba1a9d56e62ae373a8b73c30a394d98a4740efc65ebc4b7",
+    "androidApp/src/main/res/drawable-v24/ic_launcher_foreground.xml": "01d1a6a6c1234eb7fe270d097eb283d72b9c95ae5118886f1b6573aad280f1f7",
+    "androidApp/src/main/res/drawable/ic_launcher_background.xml": "8bbfb2b06f73da00618068979faaccfdea6639c62b08c204fe066008e1b19d1f",
+    "androidApp/src/main/res/layout/map_widget_loading.xml": "f1e881263f31630b37c5764a93e2e9bc4f4ce067a6a1b361a802fe5835a67614",
+    "androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "993b38e238eaf485eca875727e0a128293d612a52e20ea8e2ef84a15493bb06e",
+    "androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml": "993b38e238eaf485eca875727e0a128293d612a52e20ea8e2ef84a15493bb06e",
+    "androidApp/src/main/res/values/strings.xml": "35e6b3bf60b9f7cfca72f7331a3f38592f6595c50c10e8b302a4198083d328c8",
+    "androidApp/src/main/res/xml/backup_rules.xml": "46045f60275508c1f0fe48d30a62b8ff3e38341fdfeb421c412f926792115c49",
+    "androidApp/src/main/res/xml/data_extraction_rules.xml": "876a1bbdf483ff20c19dff1c09771f1d54940ccfc50b2813d36c9518d83e17e3",
+    "androidApp/src/main/res/xml/map_rotation_widget_info.xml": "242a58832a8b276cd2fd67da02e9888133d58a3faec607829acab36a00dbb098",
+    "androidApp/src/main/res/xml/predator_threshold_widget_info.xml": "bce7ac2e32707e610b485bb9d6ed06d9073f620fed24e2971a43b2b793c79bda",
+    "androidApp/src/main/res/xml/rank_progress_widget_info.xml": "bce7ac2e32707e610b485bb9d6ed06d9073f620fed24e2971a43b2b793c79bda",
+    "androidApp/src/main/res/xml/ranked_goal_widget_info.xml": "bce7ac2e32707e610b485bb9d6ed06d9073f620fed24e2971a43b2b793c79bda",
+    "androidApp/src/release/kotlin/io/github/szymonbonkowski/apexcompanion/platform/RotationAccess.release.kt": "d077d298438c8937f9f2dfd9bbe7e8b4127970d153ec3e51d28b8d1ccde53b72",
+    "companion/src/ApexCompanion.Capture.Core/AcceptancePolicy.cs": "de511def399ef7d4e418257a7e9c5d7d93fec65d70f7b215cf43f1863e96bd67",
+    "companion/src/ApexCompanion.Capture.Core/ApexCompanion.Capture.Core.csproj": "918a8e18e79ad33d0bfdea54a00ff15fb3a10ed7cca073667476922c6674fbcd",
+    "companion/src/ApexCompanion.Capture.Core/CaptureMachine.cs": "0b3cad9c71f9ea87b4f332b0fc6260ed5410887416ce7f0a5009bbd69d2639c0",
+    "companion/src/ApexCompanion.Capture.Core/Journal.cs": "fc17098576e858cad6cebe766d0ea4b6e831b8b818215148913aa688935fe822",
+    "companion/src/ApexCompanion.Capture.Core/MatchRecord.cs": "4ca958946ce98894e683835f7f98759b78730110424117d4064e3c04f72563d3",
+    "companion/src/ApexCompanion.Capture.Core/Recognition.cs": "646658c36528d2cd1a1d1382a0e62b89d4c05e5d5d219aba8021edcc006e8da2",
+    "companion/src/ApexCompanion.Capture.Mock/ApexCompanion.Capture.Mock.csproj": "644bf4f48b6b94079fe2a77e7b837dd886e2855fdb00c21d199d546a9e973e4a",
+    "companion/src/ApexCompanion.Capture.Mock/Program.cs": "6ff0be76c708df067a6cd984de50e2f3194c061a4ce9611f97b8796a32e9c9d1",
+    "companion/src/ApexCompanion.Capture.Replay/ApexCompanion.Capture.Replay.csproj": "8204caee8263415dd996f4e0c0e12d1978718e8f7179bc74e2e3b226bb99efd5",
+    "companion/src/ApexCompanion.Capture.Replay/Program.cs": "a3dbdd5edc12cc589736d1698f344875ee853579b613698d3fff24a882a870f2",
+    "companion/src/ApexCompanion.Capture.Server/ApexCompanion.Capture.Server.csproj": "f7c89b538d4b928f466abc9c93c02bfc61d35dea04a545aa68937c189488f5ab",
+    "companion/src/ApexCompanion.Capture.Server/LocalSyncServer.cs": "fc8165db0c8cc72d05c91d7e6581204b5ad6ff64f7106c98c1e42ca91df1a262",
+    "companion/src/ApexCompanion.Capture.Server/PairingSecrets.cs": "bbc70a6cb2b6d6d481f9678af0d69097932e7632a85d9e5e717d3acf23fb754c",
+    "companion/src/ApexCompanion.Capture.Windows/ApexCompanion.Capture.Windows.csproj": "c66a821415c77d37dc9169dad9bee10bed230fa462c98f81bf24857116ba2a93",
+    "companion/src/ApexCompanion.Capture.Windows/CaptureForm.cs": "c2d0bc3c6fd5fc89fb21256b1ddabb8fc587fa81c885a1425326cd0a02d11bbf",
+    "companion/src/ApexCompanion.Capture.Windows/Program.cs": "999e20c99fedaae1b9b4e62fe9dd26539811fb7395fcf50eaac30690d11bb870",
+    "companion/src/ApexCompanion.Capture.Windows/SyntheticResultsWindow.cs": "40e4e570aba72cabe73829abd669c959d043ec1dc17f9d9ca283dcce2d9f8df5",
+    "companion/src/ApexCompanion.Capture.Windows/WindowCapture.cs": "cc09a494193c0f44af7855431f93f0acd50df24191287d33a292a3de0b21f127",
+    "iosApp/WidgetExtension/Info.plist": "cf240db1f4d0918aee9b09556b49abbf8f27d2edb2e1f26f691103ed9cf1932c",
+    "iosApp/WidgetExtension/MapWidget.swift": "be88c9c178f1afbb583e67a6e610f51473c23dfe20be3c923692ee42e116a1c6",
+    "iosApp/WidgetExtension/RankedWidget.swift": "69c716b1c4541cfe9a358447727928edd37780a4ade1c170c60e2ebc334afde4",
+    "iosApp/iosApp/ContentView.swift": "cca21925a23adcc387b57c17707c0fec9650cddf8c19de64b8a6ceb2823e6337",
+    "iosApp/iosApp/HistoryDocumentPicker.swift": "5b0ba17de7f8263196762dc1b2a5fadf1a2328c4ddb6ce244e512b12a7f90720",
+    "iosApp/iosApp/Info.plist": "29af03b56f02389b38cb03a5e7267c1091a7fc5d9b4128039753d97a6c59e8a9",
+    "iosApp/iosApp/MatchPlatform.swift": "8f3ff2ca8329f827e65e27c94624ea3029ff4441a437a6720c42f04fd03cdfb2",
+    "iosApp/iosApp/RotationStorage.swift": "84197ea2b76d98aa12c19a5165e29afa30c6a4db34b7daa4816f1c61218128ee",
+    "iosApp/iosApp/iOSApp.swift": "f0a62db951200b0246d6ddfdb12aa28c690b07b10ace44293aad93e0ee66d4c8",
+    "shared/src/androidHostTest/kotlin/io/github/szymonbonkowski/apexcompanion/SharedLogicAndroidHostTest.kt": "f67f49dd2102e0065a9fbee7b28e88a6fb5defb0c1c6a8fafa65347ba1f901a5",
+    "shared/src/androidHostTest/kotlin/io/github/szymonbonkowski/apexcompanion/network/ProviderLiveContractTest.kt": "0e37aa055c66edb47b3da62c7451100ba612278787b6d04f3649d10cb0b7f61b",
+    "shared/src/androidHostTest/kotlin/io/github/szymonbonkowski/apexcompanion/network/RankedLiveContractTest.kt": "3f2dadfeaada5c38e3e03e9781fa5c7136c074735cdc71a6f7c655a420eac056",
+    "shared/src/androidMain/kotlin/io/github/szymonbonkowski/apexcompanion/Platform.android.kt": "8cd2f3b15c976f194dd8d0b0f6d1cd9bc3fe3c74b315f849cc65fd5901ade6f3",
+    "shared/src/commonMain/composeResources/drawable/compose-multiplatform.xml": "b236686cab2cbd8a1396bfee4d976de07a3d6ceee32f8fac631759bf70d069a4",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/App.kt": "7d7cbeef063ccd5589cdb7b7586f173d385f5fc7eb0197b9de5bb4a135b5e184",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/Greeting.kt": "8a147e3c05f94ea3c8ba613108c2fc56cf1a91f93045deff945a9ca37c8e1296",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/GreetingUtil.kt": "58c7f33f4e2234d85623cc933bc79db4b23e8b344e7569b91390acf0dcbcc139",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/Platform.kt": "731fb47f1f6aae3b9a8b226beb3f0b86b91cfe4827c53a26e11fbcf16efa1e9d",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryCodec.kt": "c14a01548e7445063a3f9ea8e501b9f3d843faeb4bf4c51f5a3a428f23daf019",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryModels.kt": "55dddd9c7e5cbc60b4d859f8dd35100e651e7f53d60f0caad54a6ea6974010fb",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryRepository.kt": "ce66d60036c25eaa751a14db52102ec19f46e241b49ba9b3c5ef6ac500420a68",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryScreens.kt": "6ac724a96d8d77ac96dffd0b2c71dd3f44e38b3a540ccc3bbd05ce68b95324bb",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/maps/RotationModels.kt": "b3ef3e3e3da03911d00ded9752b34dd1139cdeaecc3d674ccbe9e8e89cf02298",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/maps/RotationParser.kt": "69cdb518586f22b06461bb5a0592db333c080c55d4856e10b45dc41dd890565d",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/maps/RotationRepository.kt": "0d8bf246fbd39a303983a55cf8d88db316adb3bac365c025d18815fa553ea776",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/maps/RotationWidgetCodec.kt": "eeba159e1312a210b03dae271daee417f48a5fc1de91191d530f6c0af2c08ef3",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchCodec.kt": "da1930529119a5aa3ee806ba7c780539aa489560d6c4dba5a8da046c745fc13b",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchModels.kt": "adc022ab4b9b3664a6a20274cedc02b16f903d3aadea60d3ed68b5d1f426a853",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchPlatform.kt": "a0757f8f417a15091ab6d7b713447534ff3b29735524c69b46427473df3a8fa0",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchRepository.kt": "4e6b875ce36e2909802de34769913cf854d73871d0dffd3b3a5c96fd4b31431d",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchScreens.kt": "91676dfd5a80de005c841d87b6947ea5698f8c4bc27841024c6060aaff255a43",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchSync.kt": "7481020a2ad0d0c02204b647fabd2b5cdc57949015bcbc319002e69ab318622b",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/network/ProviderRequestBudget.kt": "9624c3bcb1e553a4b118535f3a75f5db57ae298fcafd2d16dabab17088f153d4",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/network/RankedTransport.kt": "2161e4f6e84f33811314c44e850943306ac684e5bbd99b504b70302e46ee4c22",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/network/RotationTransport.kt": "af82f820a6f6e99383dcd0299e159bb0a808d6ae4144998e9a8bfcbc5fd5a52e",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/ApexRankedParser.kt": "4e30c27a4b77ba3be935003f3fd77e1226a2dfefd7c8e68bf2cd24ccc574041f",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedGoals.kt": "1be572161ffc415e8887aaf1d054d0b8b9258f0130bd25128ff78b607d83a974",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedModels.kt": "15c245cfd25b2c58aa00d37ae17d53d3e5b4b9274cb575bc66c97c36f043f46d",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedRecordCodec.kt": "f5e32f3f4999472a0e249caba71b540f4e48117527d0c4e482a1e0665157807b",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedRepository.kt": "9177664b127f1d12994c1f95606cc5073a5417e0443786dc94290fdb4b30cee8",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedScreens.kt": "a93e25702ce069f978d99c25adf5460c6821cd26e29687ebc50e652b1ca931f2",
+    "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedWidgetCodec.kt": "72443249c69c96bd5e05667cd2d918f26932c6b983ca2c4cfef5a58c61097bbe",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/SharedCommonTest.kt": "c1488bbecec246733ab56dc2517302d751270a84c0a368c31918fd790eed9d91",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryCodecTest.kt": "3281239d10a16d4908b4fedee2bc7ce3882bbb544dae95fc8cb51faa6a7c872f",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryFixtures.kt": "2cfdab5783c41e041152a10d6d318dc67fc6d75069b78d12bc00baa16b8fe788",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryFollowUpTest.kt": "6bc76fd3437895f82f450a2f50aedfc92a3c5ad8c4c8423dc1e7bdeadea271f9",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryImportTest.kt": "2ab7bd81a16423c521066a0b839a6f0f7f7194d571834e63a03b5b8ba2b6e019",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryIntervalTest.kt": "e461ff62a32a06094d599eccfd427571f03327d88cd1f7d624a27ac7a9395b0c",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryRepositoryTest.kt": "cb1ddfa4871d5fcf2f041befd0ac7aab369d00f0a111dfc09d6fedad2ef28045",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistorySessionTest.kt": "226d1e81a2a46ca8e88af4a8540153ae5e7745c57fd663c3bb57042cb0e7dc4d",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/history/RankedHistoryIntegrationTest.kt": "30ec1ee421cc08802ee7856529739e169d8f779d9897ebcffdafdb42df686a58",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/maps/RotationTests.kt": "b8f1c310821c1c036b92a0beef10ea1ba890df35a37ac5bc871ca11c0ce8afa2",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchJournalTest.kt": "10cabbf6d50238446d78cd73984ba58922d74613396d3be7edc4329c7972203e",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchSyncTest.kt": "43a9dcdacb4f59843ea88a1f1efbd1d7072d1198521dab028183b8ac28bcff0d",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/network/RotationTransportTest.kt": "d08609e8e3a27f67863ce56932f1fee08e5c526996865fd1555f39b2a12b66e9",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedProviderTests.kt": "97ed2108229f4a9534e9703428557cab3d951d1fb2b3b8a340b4c4ef9772e4f2",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedRepositoryTest.kt": "21fa9b48e5d36473e99a510c28199d875d6f5e3b1df056faa8ae09e2523af032",
+    "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedWidgetTest.kt": "6ba89fdd7644e88ad202d1a0105015ca8ae06a9c754fc797b2461f800ba5ea50",
+    "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/IosMatchRuntime.kt": "de3d1c5ab016796f920977ce152a424bdc32e5c13b05e5c0ca21809c211ecee5",
+    "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/MainViewController.kt": "aa756803451900e485647ac276db4c6344891fcc0505bc24bc2adfdba7d9d2b8",
+    "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/Platform.ios.kt": "342960aa6d66c700220e23c53f2fd194ca5d7909ed185a67b685a31a62dd5252",
+    "shared/src/iosTest/kotlin/io/github/szymonbonkowski/apexcompanion/SharedLogicIOSTest.kt": "59aeb419f38b2a785d6aa7b9bc3f77dc5500eb0f15527462c4c8b0a3bcd1930c"
+  },
+  "cleanup": {
+    "mockListenerStopped": true,
+    "syntheticPairingSecretsRemoved": true,
+    "androidFixtureRemoved": true,
+    "testApkRemoved": true,
+    "debugAppInstalledAndOpened": true
+  }
+}

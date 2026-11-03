@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4 in progress — automatic collection and match history
+
+- Shared strict durable match journal, original machine provenance/corrections, explicit manual/screenshot-assisted entry, denominated analytics and match-only portable archive; existing RP history/settings remain compatible.
+- Optional Windows selected-window WGC/Tesseract utility and local pinned HTTPS queue; native Android/iOS pairing/storage/picker adapters and shared foreground sync.
+- Automatic acceptance disabled pending real Apex corpus/Windows verification. Mobile OCR not implemented. iOS source Implemented — Not Verified. See docs/validation/v0.4-report.md; this is not a completed release.
+
+
 Implementation entries describe verified local builds, not published releases. Planning entries are **not** releases.
 
 ## Unreleased — v0.3 local implementation (2026-11-03)

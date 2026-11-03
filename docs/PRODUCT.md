@@ -9,7 +9,7 @@ Apex Companion is a free, independent companion for Apex Legends players on **An
 1. **Five-second glance:** from Android launcher or iOS Home Screen, see current/next map (or a clearly identified DEMO/stale state) and time to rotation, with an explicit source timestamp.
 2. **Plan Ranked progress:** type current/goal RP and deadline offline; later optionally link a public profile (platform + UID) to populate RP.
 3. **Track actual progression:** start/stop a manual session and inspect honest intervals between RP observations; no invented match counts.
-4. **Record a match:** at v0.4, enter scores manually or import a screenshot through the platform picker, review OCR suggestions and confirm.
+4. **Record a match:** at v0.4, optionally collect observed result screens with a Windows companion and sync locally; retain machine provenance, uncertain candidates and independent manual/screenshot-assisted entry. Automatic acceptance requires measured layout quality.
 5. **Preserve user control:** export/import local data, remove linked identity and operate without a subscription or login.
 
 ## Product invariants
@@ -27,7 +27,7 @@ Apex Companion is a free, independent companion for Apex Legends players on **An
 - Claiming access to unauthorized complete match histories or inventing per-game stats from RP samples.
 - Copying Wingman's UI, shipping unlicensed EA imagery or presenting Apex Companion as official.
 - Mandatory cloud accounts, paid features or source-limit circumvention.
-- Desktop/web clients during this roadmap.
+- General-purpose desktop/web clients; the optional v0.4 Windows capture utility is the narrow maintainer-approved exception (ADR0009).
 
 ## Quality measures
 

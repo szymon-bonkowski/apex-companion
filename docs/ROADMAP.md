@@ -10,7 +10,7 @@ flowchart TD
   A --> C[v0.2 Ranked profiles + widgets]
   B --> C
   C --> D[v0.3 RP observation sessions]
-  D --> E[v0.4 Confirmed match journal]
+  D --> E[v0.4 Automatic capture + match journal]
   C --> F[v0.5 Platform polish]
   E --> F
   F --> G[v1.0 Public mobile release readiness]
@@ -42,11 +42,13 @@ Implemented opt-in timestamped RP evidence, user-confirmed context, valid same-s
 
 **Exit achieved for the intermediate milestone:** split reset/unknown/gap tests, persisted sessions across restart, Android/shared verification and feasible iOS source marked Implemented — Not Verified under ADR0007. [Spec](specs/v0-3-observations.md).
 
-## v0.4 — Confirmed match import
+## v0.4 — Automatic match tracking and match history
 
-Manual match journal and optional on-device OCR using native Android/iOS pickers and a reviewed local OCR engine/adapter. User confirms all parsed values before insertion. Map/legend aggregates use only confirmed records.
+Maintainer scope change adds an optional Windows selected-window capture companion, local OCR, explicit machine provenance and authenticated local phone sync alongside shared durable match journal, statistics and manual/screenshot fallbacks. [ADR0009](adr/0009-windows-match-capture.md) reconciles the former mobile-only scope; [ADR0010](adr/0010-match-journal-storage.md) preserves v0.3 data.
 
-**Exit:** cancellation and duplicate tests, platform permission/privacy review and measured OCR quality. [Spec](specs/v0-4-match-import.md).
+**In progress, primary automatic objective unfinished:** auto-acceptance is disabled until representative real Apex OCR/layout quality and actual Windows capture-to-phone behavior are demonstrated. Synthetic fixtures establish mechanics only. Native mobile screenshot picking/manual drafts do not claim implemented OCR. Android/shared evidence and exact remaining boundaries are recorded in the [v0.4 report](validation/v0.4-report.md). iOS source remains Implemented — Not Verified.
+
+**Exit:** successive real matches collected without per-match entry, truthful provenance, no duplicates/overwrite, secure offline/reconnect sync, complete independent manual journal, measured recognition quality, Android/shared regression and explicit Windows/iOS statuses. [Spec](specs/v0-4-match-import.md).
 
 ## v0.5 — Polished mobile companion
 

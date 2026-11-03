@@ -1,0 +1,143 @@
+Reusing configuration cache.
+> Task :shared:generateAndroidMainAssets UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :androidApp:preBuild UP-TO-DATE
+> Task :androidApp:preDebugBuild UP-TO-DATE
+> Task :shared:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :androidApp:generateDebugAssets UP-TO-DATE
+> Task :shared:androidPreBuild UP-TO-DATE
+> Task :shared:kmpPartiallyResolvedDependenciesChecker
+> Task :shared:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :shared:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidApp:preDebugAndroidTestBuild SKIPPED
+> Task :shared:preAndroidMainBuild UP-TO-DATE
+> Task :shared:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :shared:generateResourceAccessorsForAndroidMain NO-SOURCE
+> Task :androidApp:mapDebugSourceSetPaths
+> Task :androidApp:generateDebugResources
+> Task :shared:generateAndroidMainEmptyResourceFiles
+> Task :androidApp:extractDeepLinksDebug
+> Task :androidApp:createDebugCompatibleScreenManifests
+> Task :shared:copyNonXmlValueResourcesForCommonMain
+> Task :shared:mapAndroidMainSourceSetPaths
+> Task :shared:prepareComposeResourcesTaskForCommonMain
+> Task :shared:generateExpectResourceCollectorsForCommonMain
+> Task :shared:generateComposeResClass
+> Task :androidApp:processDebugAndroidTestNavigationResources
+> Task :shared:writeAndroidMainAarMetadata
+> Task :androidApp:generateDebugAndroidTestResources
+> Task :androidApp:javaPreCompileDebugAndroidTest
+> Task :androidApp:javaPreCompileDebug
+> Task :shared:copyAndroidMainComposeResourcesToAndroidAssets
+> Task :androidApp:processDebugNavigationResources
+> Task :shared:generateResourceAccessorsForCommonMain
+> Task :androidApp:desugarDebugFileDependencies
+> Task :shared:packageAndroidMainResources
+> Task :shared:generateActualResourceCollectorsForAndroidMain
+> Task :androidApp:packageDebugAndroidTestResources
+> Task :shared:mergeAndroidMainJniLibFolders
+> Task :androidApp:mergeDebugJniLibFolders
+> Task :shared:mergeAndroidMainNativeLibs NO-SOURCE
+> Task :shared:mergeAndroidMainAssets
+> Task :androidApp:compileDebugNavigationResources
+> Task :shared:compileAndroidMainLibraryResources
+> Task :shared:copyAndroidMainJniLibsProjectOnly
+> Task :androidApp:writeDebugAppMetadata
+> Task :androidApp:checkDebugAarMetadata
+> Task :shared:parseAndroidMainLocalResources
+> Task :androidApp:mergeDebugAndroidTestAssets
+> Task :androidApp:validateSigningDebug
+> Task :androidApp:mergeDebugAssets
+> Task :androidApp:parseDebugAndroidTestLocalResources
+> Task :androidApp:compressDebugAndroidTestAssets
+> Task :shared:generateAndroidMainRFile
+> Task :androidApp:checkDebugAndroidTestDuplicateClasses
+> Task :androidApp:writeDebugSigningConfigVersions
+> Task :androidApp:checkDebugAndroidTestAarMetadata
+> Task :androidApp:checkDebugDuplicateClasses
+> Task :androidApp:mapDebugAndroidTestSourceSetPaths
+> Task :androidApp:desugarDebugAndroidTestFileDependencies
+> Task :androidApp:generateDebugAndroidTestRFile
+> Task :androidApp:mergeDebugNativeLibs
+> Task :androidApp:compressDebugAssets
+> Task :androidApp:compileDebugAndroidTestNavigationResources
+> Task :androidApp:packageDebugResources
+> Task :androidApp:validateSigningDebugAndroidTest
+> Task :androidApp:mergeDebugAndroidTestJniLibFolders
+> Task :androidApp:writeDebugAndroidTestSigningConfigVersions
+> Task :androidApp:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :androidApp:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :shared:processAndroidMainManifest
+> Task :androidApp:parseDebugLocalResources
+> Task :androidApp:generateDebugRFile
+> Task :androidApp:mergeDebugAndroidTestManifest
+> Task :androidApp:processDebugAndroidTestManifest
+> Task :androidApp:stripDebugDebugSymbols
+> Task :androidApp:processDebugMainManifest
+> Task :androidApp:processDebugManifest
+> Task :androidApp:processDebugManifestForPackage
+> Task :androidApp:mergeDebugAndroidTestResources
+> Task :androidApp:mergeExtDexDebugAndroidTest
+> Task :androidApp:processDebugAndroidTestResources
+> Task :androidApp:generateDebugGlobalSynthetics
+> Task :androidApp:generateDebugAndroidTestGlobalSynthetics
+> Task :androidApp:mergeDebugResources
+> Task :androidApp:processDebugResources
+
+> Task :shared:compileAndroidMain
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedGoals.kt:34:54 Unnecessary safe call on a non-null receiver of type 'RankedSnapshot'.
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedGoals.kt:42:63 Unnecessary safe call on a non-null receiver of type 'RankedSnapshot'.
+
+> Task :shared:compressAndroidMainJavaRes
+> Task :shared:bundleAndroidMainClassesToCompileJar
+> Task :shared:bundleLibRuntimeToDirAndroidMain
+> Task :androidApp:mergeExtDexDebug
+> Task :androidApp:compileDebugKotlin
+> Task :androidApp:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidApp:compressDebugJavaRes
+> Task :androidApp:bundleDebugClassesToCompileJar
+> Task :androidApp:mergeDebugJavaResource
+> Task :androidApp:dexBuilderDebug
+> Task :androidApp:mergeProjectDexDebug
+> Task :androidApp:mergeLibDexDebugAndroidTest
+> Task :androidApp:mergeLibDexDebug
+> Task :androidApp:packageDebug
+> Task :androidApp:createDebugApkListingFileRedirect
+
+> Task :androidApp:compileDebugAndroidTestKotlin
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchScreenTest.kt:159:41 Unnecessary non-null assertion (!!) on a non-null receiver of type 'UiObject2'.
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchScreenTest.kt:166:15 Unnecessary non-null assertion (!!) on a non-null receiver of type 'UiObject2'.
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchScreenTest.kt:166:33 Unnecessary non-null assertion (!!) on a non-null receiver of type 'UiObject2'.
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MatchScreenTest.kt:213:29 'val externalMediaDirs: Array<(out) File!>!' is deprecated. Deprecated in Java.
+
+> Task :androidApp:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :androidApp:compressDebugAndroidTestJavaRes
+> Task :androidApp:mergeDebugAndroidTestJavaResource
+> Task :androidApp:dexBuilderDebugAndroidTest
+> Task :androidApp:mergeProjectDexDebugAndroidTest
+> Task :androidApp:packageDebugAndroidTest
+> Task :androidApp:createDebugAndroidTestApkListingFileRedirect
+
+> Task :androidApp:connectedDebugAndroidTest
+Running tests on devices: ApexCompanion_API37(AVD) - 17
+
+> Task :androidApp:connectedDebugAndroidTest FAILED
+
+[Incubating] Problems report is available at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':androidApp:connectedDebugAndroidTest'.
+> There were failing tests. See the report at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/build/reports/androidTests/connected/debug/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 2m 19s
+91 actionable tasks: 91 executed
+Configuration cache entry reused.

@@ -17,11 +17,13 @@ Priority: **P0** first offline vertical slice, **P1** authorized online/ranked b
 | FR-011 | P1 | Manual session and timestamped RP observation intervals | Intervals never turn into fabricated matches; split resets handled |
 | FR-012 | P1 | Optional favorite-map notifications | Permission/opt-in and platform-specific best-effort timing |
 | FR-013 | P1 | Predator cutoff and server status, if permitted | Mode/platform/source/time explicit, rate-budgeted |
-| FR-014 | P2 | Locally confirmed match journal and screenshot OCR | Never auto-save unverified OCR fields; picker privacy checks |
-| FR-015 | P2 | Map/legend aggregate insights based on confirmed matches | Provenance and denominator visible |
+| FR-014 | P0 | Match journal, Windows result capture and secure local sync; screenshot OCR fallback | ADR0009 machine provenance; auto-accept only measured validated layouts, uncertain stays review; picker privacy checks |
+| FR-015 | P1 | Map/legend aggregate insights based on saved eligible matches | Confirmed default; explicit automatic policy, provenance and field denominators visible |
 | FR-016 | P2 | Season recap share cards | Original assets, user opt-in sharing |
 | FR-017 | P2 | Squad overview | Limited explicitly added identities, compliant query budget |
 | FR-018 | P2 | Wear OS companion | Separate Android-only optional extension, not required for iOS parity |
+
+The maintainer v0.4 scope extension (ADR0009) promotes FR-014 to P0 and FR-015 to P1 for that milestone: automatic Windows collection and secure phone sync are the primary objective. This does not activate public providers or convert RP intervals into matches.
 
 ## Cross-platform nonfunctional requirements
 

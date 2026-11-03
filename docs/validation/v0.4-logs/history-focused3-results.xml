@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="3" failures="1" errors="0" skipped="0" time="0.000" timestamp="2026-11-03T17:19:16" hostname="localhost">
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" tests="3" failures="1" errors="0" skipped="0" time="397.979" timestamp="2026-11-03T17:19:16" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="125.857">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest$optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals$1.invokeSuspend(HistoryScreenTest.kt:91)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals(HistoryScreenTest.kt:47)
+</failure>
+    </testcase>
+    <testcase name="backupPreviewRequiresConfirmationAndDeletePreservesRestoredGoal" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="202.410" />
+    <testcase name="sessionUiRestoresActiveStateAndDistinguishesManualFromPartial" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="69.712" />
+  </testsuite>
+</testsuites>

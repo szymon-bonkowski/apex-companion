@@ -1,0 +1,16 @@
+  Determining projects to restore...
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/ApexCompanion.Capture.Core.csproj (in 160 ms).
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/ApexCompanion.Capture.Server.csproj (in 167 ms).
+  1 of 3 projects are up-to-date for restore.
+  ApexCompanion.Capture.Core -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/bin/Release/net10.0/ApexCompanion.Capture.Core.dll
+  ApexCompanion.Capture.Server -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/bin/Release/net10.0/ApexCompanion.Capture.Server.dll
+  ApexCompanion.Capture.Tests -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/linux-x64/ApexCompanion.Capture.Tests.dll
+Test run for /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/linux-x64/ApexCompanion.Capture.Tests.dll (.NETCoreApp,Version=v10.0)
+VSTest version 18.0.2-dev (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+WARNING: Overwriting results file: /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/TestResults/capture-tests-final.trx
+Results File: /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/TestResults/capture-tests-final.trx
+
+Passed!  - Failed:     0, Passed:    40, Skipped:     0, Total:    40, Duration: 372 ms - ApexCompanion.Capture.Tests.dll (net10.0)

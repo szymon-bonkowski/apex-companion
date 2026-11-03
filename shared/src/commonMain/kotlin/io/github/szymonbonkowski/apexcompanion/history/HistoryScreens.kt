@@ -324,7 +324,7 @@ fun ColumnScope.HistorySettingsScreen(history: HistoryRepository, ranked: Ranked
             Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("${candidate.observationCount} observations · ${candidate.sessionCount} sessions")
                 Text("Exported ${historyTime(candidate.backup.exportedAtSeconds)}")
-                if (candidate.alreadyImported) Text("This backup was already imported. Repeating the import adds no duplicates.")
+                if (candidate.batchPreviouslyImported) Text("Previously seen batch ID · review and confirm this restore again.")
                 candidate.warnings.forEach { Text(it) }
                 Text("Confirm to merge this history and restore the included personal goal/manual settings. No profile will be linked.")
             }

@@ -101,5 +101,87 @@
     "deferredValidation": "ADR0007 final stabilization"
   },
   "publicProviderActivation": false,
-  "gitCommitPushTagMergeReleaseDeploymentPerformed": false
+  "gitCommitPushTagMergeReleaseDeploymentPerformed": false,
+  "followUp": {
+    "date": "2026-11-03",
+    "sourceBaseline": "51c3708",
+    "wireSchemaVersion": 1,
+    "batchPolicy": "Advisory seen ID, not a content fingerprint; every confirmed repeat validates and merges, allowing explicit settings restore and nonconflicting new records.",
+    "host": {
+      "tests": 179,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 177
+    },
+    "newCommonTests": 9,
+    "androidInstrumentation": {
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 19
+    },
+    "androidAppUnitTests": "NO-SOURCE",
+    "lint": {
+      "debug": {
+        "errors": 0,
+        "warnings": 29
+      },
+      "release": {
+        "errors": 0,
+        "warnings": 31
+      }
+    },
+    "finalGradleGate": {
+      "command": "./gradlew :androidApp:assembleDebug :androidApp:assembleRelease :shared:testAndroidHostTest :androidApp:testDebugUnitTest :androidApp:lintDebug :androidApp:lintRelease :androidApp:connectedDebugAndroidTest",
+      "successful": true,
+      "durationSeconds": 328,
+      "tasks": 176,
+      "source": "/tmp/apex-v03-follow-up-final.log"
+    },
+    "priorFailure": {
+      "source": "/tmp/apex-v03-follow-up-regression.log",
+      "attempts": 2,
+      "cause": "Existing RankedScreenTest cached a stale accessibility node after replacing composition; bounded fresh clickable-chip queries retry only stale nodes. Assertions unchanged.",
+      "focusedRerun": {
+        "successful": true,
+        "durationSeconds": 8,
+        "source": "/tmp/apex-v03-follow-up-navigation.log"
+      }
+    },
+    "artifacts": [
+      {
+        "path": "androidApp/build/outputs/apk/debug/androidApp-debug.apk",
+        "sha256": "a97cf5b07c5b81dc6d27bb7466726405d9f616d0f0386b00b2baa88df7f74b76",
+        "bytes": 17705277,
+        "entriesScanned": 1151,
+        "credentialMatches": 0,
+        "developerReaderInDex": true
+      },
+      {
+        "path": "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk",
+        "sha256": "d1c27be0f69948521352dc55eaf08218b037051fac81a3309f3968a7dd6822ad",
+        "bytes": 12740876,
+        "entriesScanned": 1143,
+        "credentialMatches": 0,
+        "developerReaderInDex": false
+      },
+      {
+        "path": "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk",
+        "sha256": "08b8b72a18ee1340cc2497a2ed6d2d1edb7b18d35485ec962054284605040f69",
+        "bytes": 549147,
+        "entriesScanned": 11,
+        "credentialMatches": 0,
+        "developerReaderInDex": false
+      }
+    ],
+    "repositoryCredentialScan": {
+      "filesScanned": 372,
+      "credentialAbsent": true
+    },
+    "appleToolsRun": false,
+    "publicProviderActivation": false,
+    "commitTagPushPerformed": false
+  }
 }

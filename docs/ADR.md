@@ -15,3 +15,6 @@ Accepted ADRs bind implementation until deliberately superseded. Platform scope,
 | [0008](adr/0008-private-history-transaction.md) | Accepted (v0.3 implementation) | Private history/settings atomic restore, context and identity policy |
 
 The former pack event-ledger design was **withdrawn**, not migrated. Packs/heirlooms are not in current scope. See [BACKLOG.md](BACKLOG.md) and [REQUIREMENTS.md](REQUIREMENTS.md).
+
+| [0009](adr/0009-windows-match-capture.md) | Accepted (owner v0.4 instruction) | Optional Windows capture, machine provenance and pinned local synchronization |
+| [0010](adr/0010-match-journal-storage.md) | Accepted (v0.4 implementation) | Separate bounded atomic match journal and match-only archive |

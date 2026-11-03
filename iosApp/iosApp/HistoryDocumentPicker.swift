@@ -6,11 +6,14 @@ import UniformTypeIdentifiers
 /// The synchronized iosApp source group includes this file in the app, never the widget target.
 final class HistoryDocumentPicker: NSObject, UIDocumentPickerDelegate {
     static let shared = HistoryDocumentPicker()
+    static let matches = HistoryDocumentPicker(maxBytes: 16_777_216, exportName: "apex-companion-matches-backup.json")
     private var completion: ((String?) -> Void)?
     private var exporting = false
     private var picker: UIDocumentPickerViewController?
     private var temporaryDirectory: URL?
-    private let maxBytes = 4_194_304
+    private let maxBytes: Int
+    private let exportName: String
+    init(maxBytes: Int = 4_194_304, exportName: String = "apex-companion-backup.json") { self.maxBytes = maxBytes; self.exportName = exportName; super.init() }
 
     private func presenter() -> UIViewController? {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene })
@@ -31,7 +34,7 @@ final class HistoryDocumentPicker: NSObject, UIDocumentPickerDelegate {
                 let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
                 try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
                 self.temporaryDirectory = directory
-                let file = directory.appendingPathComponent("apex-companion-backup.json")
+                let file = directory.appendingPathComponent(self.exportName)
                 try data.write(to: file, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
                 let picker = UIDocumentPickerViewController(forExporting: [file], asCopy: true)
                 self.completion = completion

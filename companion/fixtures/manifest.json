@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "dataset": "original-synthetic-v1",
+  "rights": "Original synthetic text and geometric backgrounds; no game artwork or player data.",
+  "samples": [
+    {
+      "id": "results-1920",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "results-1920-header.png",
+      "statisticsImage": "results-1920-stats.png",
+      "screen": "RESULTS",
+      "fields": {
+        "kills": 3,
+        "assists": 2,
+        "damage": 1234,
+        "placement": 4,
+        "rpDelta": 123
+      }
+    },
+    {
+      "id": "results-1280",
+      "width": 1280,
+      "height": 720,
+      "headerImage": "results-1280-header.png",
+      "statisticsImage": "results-1280-stats.png",
+      "screen": "RESULTS",
+      "fields": {
+        "kills": 0,
+        "assists": 1,
+        "damage": 426,
+        "placement": 12,
+        "rpDelta": -45
+      }
+    },
+    {
+      "id": "results-2560",
+      "width": 2560,
+      "height": 1440,
+      "headerImage": "results-2560-header.png",
+      "statisticsImage": "results-2560-stats.png",
+      "screen": "RESULTS",
+      "fields": {
+        "kills": 12,
+        "assists": 7,
+        "damage": 3865,
+        "placement": 1,
+        "rpDelta": 285
+      }
+    },
+    {
+      "id": "missing-fields",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "missing-fields-header.png",
+      "statisticsImage": "missing-fields-stats.png",
+      "screen": "RESULTS",
+      "fields": {
+        "damage": 100,
+        "placement": 8
+      }
+    },
+    {
+      "id": "menu",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "menu-header.png",
+      "statisticsImage": "menu-stats.png",
+      "screen": "MENU",
+      "fields": {}
+    },
+    {
+      "id": "loading",
+      "width": 1280,
+      "height": 720,
+      "headerImage": "loading-header.png",
+      "statisticsImage": "loading-stats.png",
+      "screen": "LOADING",
+      "fields": {}
+    },
+    {
+      "id": "spectator",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "spectator-header.png",
+      "statisticsImage": "spectator-stats.png",
+      "screen": "SPECTATOR",
+      "fields": {}
+    },
+    {
+      "id": "session-summary",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "session-summary-header.png",
+      "statisticsImage": "session-summary-stats.png",
+      "screen": "SESSION_SUMMARY",
+      "fields": {}
+    },
+    {
+      "id": "changed-ui",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "changed-ui-header.png",
+      "statisticsImage": "changed-ui-stats.png",
+      "screen": "UNKNOWN",
+      "fields": {}
+    },
+    {
+      "id": "gameplay",
+      "width": 1920,
+      "height": 1080,
+      "headerImage": "gameplay-header.png",
+      "statisticsImage": "gameplay-stats.png",
+      "screen": "IN_MATCH",
+      "fields": {}
+    }
+  ]
+}

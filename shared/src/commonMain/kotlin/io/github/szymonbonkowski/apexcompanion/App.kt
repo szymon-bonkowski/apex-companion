@@ -12,6 +12,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -19,6 +21,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import io.github.szymonbonkowski.apexcompanion.maps.*
 import io.github.szymonbonkowski.apexcompanion.ranked.*
 import io.github.szymonbonkowski.apexcompanion.history.*
+import io.github.szymonbonkowski.apexcompanion.matches.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
@@ -47,6 +50,10 @@ fun App(
     onRankedProjectionChanged: suspend (String) -> Unit = {},
     historyRepository: HistoryRepository? = null,
     historyDocuments: HistoryDocuments? = null,
+    matchRepository: MatchRepository? = null,
+    matchSync: MatchSyncController? = null,
+    matchDocuments: HistoryDocuments? = null,
+    matchScreenshots: MatchScreenshotPicker? = null,
 ) {
     val fallback = remember { RotationRepository(UnconfiguredRotationProvider, object : RotationStore {
         override suspend fun read(): String? = null
@@ -101,6 +108,16 @@ fun App(
             }
         }
     }
+    LaunchedEffect(matchRepository, matchSync, lifecycle) {
+        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            matchRepository?.initialize()
+            matchSync?.initialize()
+            while (isActive) {
+                if (matchSync?.state?.value?.paired == true && !matchSync.state.value.busy) matchSync.synchronize()
+                delay(30_000) // Foreground only; lifecycle cancellation stops retries.
+            }
+        }
+    }
     LaunchedEffect(state.cache, state.error) {
         try {
             onProjectionChanged(RotationWidgetCodec.encode(state.cache, now, state.error))
@@ -129,10 +146,10 @@ fun App(
                 verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text("APEX COMPANION", style = MaterialTheme.typography.labelLarge, color = appColors.primary)
                 Column {
-                    listOf(listOf("Maps", "Ranked progress", "Profile", "Settings"), listOf("History", "Sessions")).forEach { destinations ->
-                        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(listOf("Maps", "Ranked progress", "Profile", "Settings"), listOf("History", "Sessions", "Matches", "Capture sync")).forEachIndexed { rowIndex, destinations ->
+                        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).semantics { contentDescription = if (rowIndex == 0) "Main destinations" else "Tracking destinations" }, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             destinations.forEach { destination ->
-                                FilterChip(selected = screen == destination, onClick = { screen = destination }, label = { Text(destination) })
+                                FilterChip(selected = screen == destination, onClick = { screen = destination }, label = { Text(destination) }, modifier = Modifier.semantics { contentDescription = "Navigate to $destination" })
                             }
                         }
                     }
@@ -206,6 +223,8 @@ fun App(
                         "Profile" -> ProfileScreen(ranked, now)
                         "History" -> if (historyRepository != null) HistoryScreen(historyRepository, ranked, now) else Text("History requires durable platform storage.")
                         "Sessions" -> if (historyRepository != null) SessionsScreen(historyRepository, ranked, now) else Text("Sessions require durable platform storage.")
+                        "Matches" -> if (matchRepository != null) MatchHistoryScreen(matchRepository, rankedState.profile?.identity?.historyIdentity(), matchDocuments, now, matchScreenshots) else Text("Match History requires durable platform storage.")
+                        "Capture sync" -> if (matchSync != null) MatchSyncScreen(matchSync, rankedState.profile?.identity?.historyIdentity()) else Text("Local sync requires a native secure pairing adapter.")
                         "Settings" -> {
                             RankedSettingsScreen(ranked)
                             if (historyRepository != null) HistorySettingsScreen(historyRepository, ranked, historyDocuments, now)

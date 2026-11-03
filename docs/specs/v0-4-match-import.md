@@ -1,21 +1,31 @@
-# v0.4 specification — user-confirmed match journal and optional OCR
+# v0.4 — Automatic match tracking and match history
 
-**Status:** Research-gated. **Dependencies:** durable history v0.3 and [OCR design](../OCR_IMPORT.md).
+Status: IMPLEMENTATION IN PROGRESS; automatic Apex objective is not verified. Maintainer instruction 2026-11-03 extends the former manual-only scope through [ADR0009](../adr/0009-windows-match-capture.md). [ADR0010](../adr/0010-match-journal-storage.md) preserves the v0.3 transaction. No public release or provider activation.
 
-## User flow
+## Priority and end-to-end flow
+P0: durable shared mobile match journal; optional selected-window Windows screen capture; authenticated opt-in local PC-to-phone queue. P1: accurate aggregates, manual entry, private native screenshot fallback and evidence. Start capture once, detect distinct observed results, extract only visible fields, validate temporal evidence, queue eligible records, then foreground phone sync. No reconstruction from RP observations.
 
-1. Player may enter a match manually (mode, optional map/legend, kills, assists, damage, placement, RP delta, timestamp) with explicit user source.
-2. Player may choose a results screenshot via **Android system Photo Picker** or **iOS PhotosPicker**; do not request full photo library access by default.
-3. Platform-local on-device OCR suggests fields and confidence, keeping missing/ambiguous data blank. No cloud upload.
-4. Player reviews/edits all parsed fields and explicitly confirms or cancels. Only confirmation creates `MatchRecord`.
-5. Potential duplicate image/signature prompts review, does not silently discard user edits.
-6. Aggregates for legend/map are computed only from confirmed records, not sampled RP intervals.
+Windows.Graphics.Capture is the consent capture direction, .NET WinForms utility, local Tesseract5 OCR. Capture runtime and Apex compatibility require actual Windows evidence. Raw images stay transient. A versioned layout/parser and persisted state machine prevent repeated result screens/restarts/alt-tab cycles from manufacturing games. The initial synthetic layout is not an Apex parser; auto-acceptance is disabled until a representative rights-cleared real corpus passes held-out field and classifier measurements. Review candidates stay uncertain; desktop user confirmation may queue them. This is an explicit unfinished primary gate, never milestone completion by replacing automation with manual work.
 
-## Acceptance
+## Match contract
+Shared MatchRecord schema1: stable ID, optional exact UID/platform, mode UNKNOWN/BATTLE_ROYALE/RANKED/MIXTAPE, nullable map/legend/kills/assists/damage/placement/RP delta, UTC seconds and timestamp source, original source MANUAL/SCREENSHOT/WINDOWS_CAPTURE, quality REVIEW_REQUIRED/AUTO_ACCEPTED/USER_CONFIRMED, evidence event ID, parser version, per-field confidence and revision. Original normalized evidence retained for corrected machine records. No missing value becomes zero; observed collection time is not match start/duration. Defensive bounds are storage validation limits, not assertions about game rules. No automatic session association.
 
-- Cancel/import error leaves no new record and clears unneeded temporary image/draft.
-- False OCR value remains editable and never auto-commits.
-- Repeat import warns on duplicate; final import has one confirmed record.
-- Both platforms' pickers, permissions and selected OCR license/on-device execution audited.
-- Measured OCR field accuracy documented from representative rights-cleared corpus; functionality works without OCR by manual entry.
-- No screenshot or incidental username uploaded without explicit separate consent.
+Manual and screenshot records require explicit user confirmation. AUTO_ACCEPTED requires validated layout, actual distinct result evidence, resolved repeated readings, field validation, duplicate check and an approved acceptance policy. It remains machine-derived after insertion. REVIEW_REQUIRED never contributes to aggregates. Default metrics use USER_CONFIRMED; explicit include-automatic policy displays automatic/confirmed counts and each field denominator. Unknown map/legend excluded from corresponding groups. No wins/losses inferred, no RP polls converted to match counts.
+
+## Persistence and backup
+Separate bounded atomic matches-v1.json, max16MiB/10000 records; fail read-only on corruption/future schema without overwriting bytes. No implicit truncation. Sync cursors/records share a commit; deletion tombstones prevent replay resurrection. Explicit previewed restore may restore deleted matches. Original IDs/events and user edits remain protected on replay/conflicts.
+
+Match-only archive APEX_COMPANION_MATCH_BACKUP/schema1 contains records and normalized original evidence; no pairing, screenshots, frames, paths or capture/network configuration. Existing v0.3 private history/settings backup and migrations remain unchanged. Both archives have separate preview/confirmation, each one atomic transaction; there is no claimed combined two-store atomic restore.
+
+## Local sync and UI
+Out-of-band pairing: private IPv4 HTTPS endpoint, exact SHA256 certificate pin, random256bit token, companion ID and selected identity. Native secrets protected by DPAPI/Keystore/Keychain and excluded from backup. Reject public endpoints, redirects, wrong pins, unauthorized devices, foreign identities and schema errors. PC listener opt-in, selected LAN interface only. Foreground pull max100 records/batch, bounded1MiB response, max20 batches, atomically save before ACK; retry after offline/ACK failure is safe. Unpair locally and revoke PC token; offline unpair explains remote revocation. No guaranteed continuous mobile background delivery. [Wire contract](../contracts/match-sync-v1.md).
+
+Shared Matches screens: list/date/mode/known fields/source, mode/map/legend/quality filters, detail/missing-data explanations, correction preserving original identity, statistics with denominators, explicit manual review, duplicate warnings, previewed backup/restore and separately confirmed match deletion. Capture sync screen displays pairing/last sync/error and explicit synchronization. Preserve Maps, Ranked, Player Profile, RP History, Sessions, Goals, Predator and widgets.
+
+## Screenshot fallback boundary
+Android system Photo Picker and source-only iOS PhotosUI picker decode/hash bounded images transiently without gallery permission. The initial fallback opens an editable draft with **no OCR predictions** and an explicit unavailable message. No mobile OCR engine is bundled, no measured real-screen quality exists, and screenshot OCR is not implemented. This is permitted as a precise blocker under the maintainer brief; choosing an image is not described as OCR. Confirmed screenshot-assisted records keep image digest/event source but not pixels; cancel discards draft. See [OCR design/status](../OCR_IMPORT.md).
+
+## Mandatory acceptance and reporting
+Common tests: schema/provenance/nullable bounds, identities, duplicates/conflicts, corrections, aggregates, session eligibility, corrupt/future storage, failed atomic writes/restart, backup repeat, cursor/replay/offline/authorization. Android: real storage, foreground pinned HTTPS mock, UI/manual/detail/stats/backup/delete/reimport/restart, Photo Picker and existing full regression. Capture: synthetic/offline transition/negative/duplicate/restart/layout/OCR fixtures plus later real held-out Apex corpus. Report per-field extraction accuracy and false positives/negatives only for the measured corpus; synthetic evidence cannot establish game accuracy.
+
+Windows capture+ordinary-window+permitted Apex successive-match phone synchronization must be demonstrated before calling the automatic objective achieved. iOS remains Implemented — Not Verified under ADR0007; no Apple tooling during this milestone. Keep the ExecPlan active if mandatory implementation or primary Windows validation is missing. No game internals, privileged capture/bypass, game assets, AGPL code, cloud, provider activation, publication or Git remote mutation.

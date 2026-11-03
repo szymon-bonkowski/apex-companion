@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="28" failures="3" errors="0" skipped="1" time="0.000" timestamp="2026-11-03T17:31:11" hostname="localhost">
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="11.835" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="systemPickerExportsThenReadsPortableJsonAndCancellationDoesNotChangeData" classname="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" time="11.835" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.329" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="oversizedInvalidUtf8AndFutureRecordsFailClosedWithoutOverwrite" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.080" />
+    <testcase name="interruptedImportKeepsCommittedBytesThenRestoresIdempotently" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.180" />
+    <testcase name="offlineStopWithMissingEndRemainsPartialInsteadOfZero" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.017" />
+    <testcase name="activeSessionAndObservationAnchorsSurviveReopenWithoutExtraSamples" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.052" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" tests="3" failures="2" errors="0" skipped="0" time="396.396" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="151.142" />
+    <testcase name="backupPreviewRequiresConfirmationAndDeletePreservesRestoredGoal" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="198.765">
+      <failure>java.lang.AssertionError: Missing expected UI: Delete saved history
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.scrollToSelector(HistoryScreenTest.kt:298)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.scrollTo(HistoryScreenTest.kt:279)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.access$scrollTo(HistoryScreenTest.kt:25)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest$backupPreviewRequiresConfirmationAndDeletePreservesRestoredGoal$1.invokeSuspend(HistoryScreenTest.kt:180)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.backupPreviewRequiresConfirmationAndDeletePreservesRestoredGoal(HistoryScreenTest.kt:145)
+</failure>
+    </testcase>
+    <testcase name="sessionUiRestoresActiveStateAndDistinguishesManualFromPartial" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="46.489">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest$sessionUiRestoresActiveStateAndDistinguishesManualFromPartial$1.invokeSuspend(HistoryScreenTest.kt:127)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.sessionUiRestoresActiveStateAndDistinguishesManualFromPartial(HistoryScreenTest.kt:99)
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MapScreenTest" tests="2" failures="0" errors="0" skipped="0" time="4.847" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="durableCacheRecoversAfterNetworkFailureAndNeverExtendsExpiredMap" classname="io.github.szymonbonkowski.apexcompanion.MapScreenTest" time="0.025" />
+    <testcase name="unavailableAndDemoRemainDistinctAcrossModesAndRecreation" classname="io.github.szymonbonkowski.apexcompanion.MapScreenTest" time="4.822" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" tests="6" failures="0" errors="0" skipped="0" time="16.607" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="pairingIsKeystoreEncryptedPersistsAndCanBeRevokedLocally" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.062" />
+    <testcase name="actualSystemPhotoPickerCancellationReturnsNoDraft" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="4.979" />
+    <testcase name="unreadableFutureAndOversizedJournalFailClosedWithoutOverwrite" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.004" />
+    <testcase name="linuxMockPinnedHttpsRejectsUnauthorizedAndImportsReplaySafely" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="5.631" />
+    <testcase name="actualPhotoPickerSelectedSyntheticImageProducesDigestOnlyDraft" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="5.903" />
+    <testcase name="matchAtomicFileRestartsRecoversInterruptedWriteAndPreservesRankedBytes" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.028" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" tests="2" failures="0" errors="0" skipped="0" time="173.615" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="manualResultCorrectionStatisticsAndRepeatRestoreUseActualControls" classname="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" time="105.808" />
+    <testcase name="automaticAggregatesRequireOptInAndScreenshotDraftRequiresConfirmation" classname="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" time="67.807" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest" tests="1" failures="0" errors="0" skipped="1" time="0.003" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="authorizedAndroidProfileUiCacheColdStoreAndDisconnect" classname="io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest" time="0.003">
+      <skipped>org.junit.AssumptionViolatedException: Authorized developer test is opt-in
+	at org.junit.Assume.assumeTrue(Assume.java:68)
+	at io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest$authorizedAndroidProfileUiCacheColdStoreAndDisconnect$1.invokeSuspend(RankedDeveloperLiveTest.kt:22)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest.authorizedAndroidProfileUiCacheColdStoreAndDisconnect(RankedDeveloperLiveTest.kt:21)
+</skipped>
+    </testcase>
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedPersistenceInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="0.062" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="androidAtomicRecordsRestoreGoalsProfilesAndGlobalCacheWithoutTouchingMaps" classname="io.github.szymonbonkowski.apexcompanion.RankedPersistenceInstrumentedTest" time="0.062" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" tests="3" failures="1" errors="0" skipped="0" time="18.508" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="profileNameHintAndInvalidLookupAreVisible" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="3.044" />
+    <testcase name="profileScreenResolvesNameLinksUidAndDisconnectKeepsManualGoal" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="11.055">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.RankedScreenTest$profileScreenResolvesNameLinksUidAndDisconnectKeepsManualGoal$1.invokeSuspend(RankedScreenTest.kt:112)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.RankedScreenTest.profileScreenResolvesNameLinksUidAndDisconnectKeepsManualGoal(RankedScreenTest.kt:80)
+</failure>
+    </testcase>
+    <testcase name="manualRankedGoalSurvivesRepositoryRestartAndKeepsMapsSeparate" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="4.409" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" tests="3" failures="0" errors="0" skipped="0" time="3.461" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="sourceScheduleRendersCurrentNextAndNeverKeepsExpiredMapLive" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="0.968" />
+    <testcase name="twoInstancesRenderAndKeepIndependentModes" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="2.475" />
+    <testcase name="refreshWithoutAuthorizedProviderCreatesNoNetworkWork" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="0.018" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" tests="2" failures="0" errors="0" skipped="0" time="2.956" timestamp="2026-11-03T17:31:11" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="boundInstancesKeepIndependentConfiguration" classname="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" time="1.803" />
+    <testcase name="nativeCardsShowCachedLiveStaleManualAndGoalValuesWithoutRequests" classname="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" time="1.153" />
+  </testsuite>
+</testsuites>

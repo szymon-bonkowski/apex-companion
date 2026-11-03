@@ -1,21 +1,11 @@
-# Match screenshot import — Android + iOS research-stage design
+# Local screen recognition and screenshot fallback — v0.4
 
-**Not part of v0.0.** The optional v0.4 feature enables private, human-reviewed entry when an authoritative match-history feed is unavailable. `shared` owns parsing/field validation and MatchRecord semantics; platform pickers and OCR engine bindings are native.
+The primary v0.4 direction is automatic Windows result capture and local phone synchronization, accepted by explicit maintainer instruction in [ADR0009](adr/0009-windows-match-capture.md). The former user-confirmed mobile OCR policy remains applicable to screenshots; it does not grant machine records user-confirmed provenance.
 
-```mermaid
-flowchart LR
-  P[Android Photo Picker / iOS PhotosPicker] --> D[Temporary local decode]
-  D --> O[Platform on-device OCR adapter]
-  O --> Parse[Shared field parser + confidence]
-  Parse --> Review[Shared user review and edit]
-  Review -->|Confirm| J[(Local MatchRecord)]
-  Review -->|Cancel| X[Discard draft]
-```
+Windows uses ordinary consent-based Windows.Graphics.Capture and local Tesseract5, separate capture/classification/region/OCR/normalization/temporal-state stages, transient frames and versioned layouts. Only normalized allowlisted values persist. Raw names/full OCR text and pixels are not sync data. No video retention or cloud inference. The supplied synthetic layout exercises mechanics, not the actual Apex UI. Automatic acceptance stays disabled pending representative rights-cleared held-out results/non-results fixtures, measured per-field precision/recall and real Windows end-to-end evidence. See [Windows setup](WINDOWS_COMPANION.md) and [feasibility](validation/v0.4-capture-feasibility.md).
 
-Never automatically commit OCR results or upload user images. Examine platform OCR choices (e.g. Android ML Kit vs local OSS alternative, Apple Vision on iOS), licenses and F-Droid implications before implementation. No need for blanket gallery, camera or recording permission for this feature.
+Mobile fallback selects a user-owned image through Android Photo Picker or iOS PhotosUI system picker, bounds decode and computes local evidence digest. It opens a transient editable draft with empty predictions and an explicit OCR-unavailable explanation. **Native mobile OCR is not implemented:** no vetted engine and representative real-screen corpus are bundled. Picker/manual-from-image support must not be reported as OCR. No blanket photo-library, camera, recording or storage permission is requested. iOS source remains Implemented — Not Verified under ADR0007.
 
-Different seasons, translations and screen layouts complicate extraction. Parse only visible evidence for map, legend, kills, assists, damage, placement, RP change and timing. Missing/uncertain fields remain editable blanks. If screenshot depicts a whole session, **do not** interpret it as one match. User confirmation is the only path from transient `ScreenshotDraft` to durable `MatchRecord`.
+Confirmation creates a SCREENSHOT/USER_CONFIRMED record with original digest/parser identifier; cancellation creates no record and retains no image. Manual entry works without picking an image. A digest/normalized-fields match warns about possible duplication; immutable event/ID conflicts reject safely rather than silently rewriting existing data. Unknown fields remain null, repeated OCR readings would be suggestions only, and session summaries must never be interpreted as one game.
 
-Use a local content hash and normalized fields to warn of possible duplicates, never silently discard. If OCR and remote RP intervals disagree, preserve both sources without overwriting user-confirmed or observed history. Delete temporary images on cancel and avoid storing incidentally recognized player names.
-
-Before release, run a rights-cleared cross-platform sample corpus with documented per-field errors, cancel/duplicate/rotated image cases, accessibility and network-leak checks. Manual match entry remains a supported fallback.
+Before adding a mobile engine: review OSS licensing/F-Droid implications, platform availability, bounded memory/cancellation and image orientation; acquire rights-cleared corpus with resolution/scaling/language variants and separate tuning/held-out subsets; measure each field and classifier errors; verify no network use and no image persistence. No claim of EA/anti-cheat approval follows from OS APIs or offline OCR.

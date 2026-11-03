@@ -1,0 +1,8 @@
+  Determining projects to restore...
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/ApexCompanion.Capture.Server.csproj (in 162 ms).
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/ApexCompanion.Capture.Core.csproj (in 157 ms).
+  1 of 3 projects are up-to-date for restore.
+  ApexCompanion.Capture.Core -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/bin/Release/net10.0/ApexCompanion.Capture.Core.dll
+  ApexCompanion.Capture.Server -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/bin/Release/net10.0/ApexCompanion.Capture.Server.dll
+  ApexCompanion.Capture.Windows -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Windows/bin/Release/net10.0-windows10.0.19041.0/win-x64/ApexCompanion.Capture.Windows.dll
+  ApexCompanion.Capture.Windows -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/artifacts/windows-win-x64/

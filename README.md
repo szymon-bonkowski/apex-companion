@@ -2,7 +2,7 @@
 
 **A free, independent, open-source Apex Legends companion app for Android and iOS, built with Kotlin Multiplatform.**
 
-> **Project state (2026-11-03):** v0.3 adds opt-in private RP history, explicit season/split confirmation, persistent sessions, honest trend charts and native document backup/restore of history plus goal/manual settings. Existing Maps, Profile, goals, Predator and native widgets are retained. Android/shared verification is recorded in [the v0.3 implementation report](docs/validation/v0.3-report.md); public provider activation remains blocked and no credential is embedded. iOS source is **Implemented — Not Verified** under ADR0007. Broader v0.0 Today/About, extra settings and platform polish remain incomplete.
+> **Project state (2026-11-03):** v0.4 implementation adds a durable match journal, shared manual/detail/statistics screens, native screenshot-assisted drafts and secure local PC sync, preserving v0.1–v0.3 functionality. The Windows WGC/Tesseract companion source crosscompiles, but **real Apex automatic capture is not verified and production auto-acceptance is disabled**. Native mobile OCR is not implemented. See [v0.4 report](docs/validation/v0.4-report.md) and [last completed v0.3 evidence](docs/validation/v0.3-report.md). iOS source is **Implemented — Not Verified** under ADR0007; public providers remain gated.
 
 The experience centers on map rotation, ranked progress, goals, carefully labeled data freshness and high-quality home-screen widgets. Core rules and UI are shared where practical; Android widgets use Glance and iOS widgets use SwiftUI/WidgetKit. The project has no ads, subscriptions, forced account creation or mandatory telemetry.
 
@@ -63,6 +63,12 @@ Install `androidApp/build/outputs/apk/debug/androidApp-debug.apk`. The Maps scre
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [LEGAL_ASSETS.md](docs/LEGAL_ASSETS.md). Original source and documentation are MIT-licensed; this grants no right to redistribute third-party game art or API content.
 
 **This project is not endorsed by or affiliated with EA or its licensors.** Apex Legends and related trademarks belong to their respective owners.
+
+## v0.4 implementation status
+
+Optional Windows collection and local phone sync extend the former manual-only journal scope. Shared Matches screens provide durable manual records, correction, provenance filters, per-field statistics and separate match backup/restore. Capture sync pairs an explicit local HTTPS endpoint by certificate pin and private token; no cloud or public provider activation. [Windows setup](docs/WINDOWS_COMPANION.md), [wire protocol](docs/contracts/match-sync-v1.md), [implementation/verification report](docs/validation/v0.4-report.md).
+
+**Automatic Apex tracking is not yet achieved:** the companion's initial layout fixtures are synthetic, automatic acceptance is disabled, and real Windows/Apex capture-to-phone verification is outstanding. Native mobile screenshot picking opens an editable manual draft; mobile OCR is not implemented. iOS additions are Implemented — Not Verified. Existing v0.3 history/settings backup stays separate from match backup; neither includes pairing secrets or screen images. No release/publication authorized.
 
 ## Private ranked history
 

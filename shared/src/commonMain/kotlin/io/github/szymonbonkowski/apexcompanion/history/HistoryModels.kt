@@ -34,6 +34,7 @@ data class RankedContext(
     init {
         require(validHistoryId(id)); require(validHistoryText(season) && validHistoryText(split))
         requireHistoryTime(confirmedAtSeconds); require(providerSeason == null || validHistoryText(providerSeason))
+        require(providerSeason == null || providerSeason == season) { "Provider season contradicts confirmed season." }
         require(source != ObservationSource.PROVIDER || identity != null)
         require(source != ObservationSource.USER_RECORDED || identity == null)
     }
@@ -136,8 +137,9 @@ data class HistoryRecord(
 )
 data class HistoryState(val record: HistoryRecord = HistoryRecord(), val error: String? = null, val readOnly: Boolean = false)
 data class HistoryBackup(val batchId: String, val exportedAtSeconds: Long, val record: HistoryRecord)
+/** batchPreviouslyImported is an advisory ID marker, not proof this file's contents were applied. */
 data class ImportPreview(val backup: HistoryBackup, val observationCount: Int, val sessionCount: Int,
-    val warnings: List<String>, val alreadyImported: Boolean)
+    val warnings: List<String>, val batchPreviouslyImported: Boolean)
 
 /** Native system picker boundary. Cancellation is null/false; no automatic sharing. */
 interface HistoryDocuments {

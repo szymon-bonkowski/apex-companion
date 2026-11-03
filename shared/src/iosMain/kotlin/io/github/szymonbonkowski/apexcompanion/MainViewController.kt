@@ -4,6 +4,7 @@ import androidx.compose.ui.window.ComposeUIViewController
 import io.github.szymonbonkowski.apexcompanion.maps.*
 import io.github.szymonbonkowski.apexcompanion.ranked.*
 import io.github.szymonbonkowski.apexcompanion.history.*
+import io.github.szymonbonkowski.apexcompanion.matches.*
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlinx.coroutines.Dispatchers
@@ -76,16 +77,20 @@ private class IosHistoryDocuments(private val bridge: IosRotationStorageBridge) 
         }
     }
 }
-fun MainViewController(storage: IosRotationStorageBridge) = run {
+fun MainViewController(storage: IosRotationStorageBridge, matchStorage: IosMatchStorageBridge) = run {
     // Public access stays disabled. No developer credential route is installed on iOS.
     val clock = RotationClock { Clock.System.now().epochSeconds }
     val repository = RotationRepository(UnconfiguredRotationProvider, IosRotationStore(storage), clock)
     val history = HistoryRepository(IosHistoryStore(storage), clock)
     val documents = IosHistoryDocuments(storage)
+    val matches = MatchRepository(IosMatchStore(matchStorage), clock)
+    val matchSync = MatchSyncController(matches, IosMatchSyncPlatform(matchStorage), clock)
     val ranked = RankedRepository(UnconfiguredRankedProvider, IosRankedStore(storage, false), clock, IosRankedStore(storage, true), history = history)
     ComposeUIViewController {
         App(repository = repository, rankedRepository = ranked,
             historyRepository = history, historyDocuments = documents,
+            matchRepository = matches, matchSync = matchSync, matchDocuments = IosMatchDocuments(matchStorage),
+            matchScreenshots = IosMatchScreenshots(matchStorage),
             onProjectionChanged = { projection -> withContext(Dispatchers.Default) {
                 check(storage.publishWidgetSnapshot(projection)) { "Widget snapshot could not be committed" }
             } },

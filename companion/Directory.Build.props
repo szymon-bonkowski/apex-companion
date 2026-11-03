@@ -1,0 +1,3 @@
+<Project>
+<PropertyGroup><AllowMissingPrunePackageData>true</AllowMissingPrunePackageData><Deterministic>true</Deterministic></PropertyGroup>
+</Project>

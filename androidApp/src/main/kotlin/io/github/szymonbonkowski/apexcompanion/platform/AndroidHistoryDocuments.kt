@@ -15,7 +15,7 @@ import java.io.ByteArrayOutputStream
 import kotlin.coroutines.resume
 
 /** Activity-owned SAF launchers. No storage permission, persisted URI grant or automatic sharing. */
-class AndroidHistoryDocuments(private val activity: ComponentActivity) : HistoryDocuments, DefaultLifecycleObserver {
+class AndroidHistoryDocuments(private val activity: ComponentActivity, private val maxBytes: Int = HISTORY_MAX_BYTES, private val exportName: String = "apex-companion-backup.json") : HistoryDocuments, DefaultLifecycleObserver {
     private var pending: CancellableContinuation<Uri?>? = null
     private var busy = false
     private val createDocument = activity.registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { finish(it) }
@@ -38,7 +38,7 @@ class AndroidHistoryDocuments(private val activity: ComponentActivity) : History
             pending = continuation
             continuation.invokeOnCancellation { if (pending === continuation) pending = null }
             try {
-                if (exporting) createDocument.launch("apex-companion-backup.json")
+                if (exporting) createDocument.launch(exportName)
                 else openDocument.launch(arrayOf("application/json", "text/plain", "application/octet-stream"))
             } catch (failure: Exception) {
                 pending = null
@@ -50,7 +50,7 @@ class AndroidHistoryDocuments(private val activity: ComponentActivity) : History
 
     override suspend fun exportJson(value: String): Boolean {
         val bytes = value.toByteArray(Charsets.UTF_8)
-        require(bytes.size <= HISTORY_MAX_BYTES) { "Backup exceeds size limit" }
+        require(bytes.size <= maxBytes) { "Backup exceeds size limit" }
         val uri = pick(exporting = true) ?: return false
         return withContext(Dispatchers.IO) {
             activity.contentResolver.openOutputStream(uri, "wt")?.use { output ->
@@ -68,10 +68,10 @@ class AndroidHistoryDocuments(private val activity: ComponentActivity) : History
                 val output = ByteArrayOutputStream()
                 val buffer = ByteArray(8192)
                 while (true) {
-                    val count = input.read(buffer, 0, minOf(buffer.size, HISTORY_MAX_BYTES + 1 - output.size()))
+                    val count = input.read(buffer, 0, minOf(buffer.size, maxBytes + 1 - output.size()))
                     if (count < 0) break
                     output.write(buffer, 0, count)
-                    require(output.size() <= HISTORY_MAX_BYTES) { "Backup exceeds size limit" }
+                    require(output.size() <= maxBytes) { "Backup exceeds size limit" }
                 }
                 output.toByteArray().decodeToString(throwOnInvalidSequence = true)
             } ?: error("Document could not be opened")

@@ -1,0 +1,7 @@
+{
+  "test": "actual-android-cold-process-match-restart",
+  "synthetic": true,
+  "passed": true,
+  "syntheticStoreSha256": "57c6b335b39203a49f27296d139cf06d1b67a4c84a602d504dfee1f420d52bbc",
+  "originalFilesRestored": true
+}

@@ -1,0 +1,26 @@
+  Determining projects to restore...
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/ApexCompanion.Capture.Core.csproj (in 359 ms).
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/ApexCompanion.Capture.Server.csproj (in 366 ms).
+  Restored /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/ApexCompanion.Capture.Tests.csproj (in 375 ms).
+  ApexCompanion.Capture.Core -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Core/bin/Release/net10.0/ApexCompanion.Capture.Core.dll
+  ApexCompanion.Capture.Server -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/src/ApexCompanion.Capture.Server/bin/Release/net10.0/ApexCompanion.Capture.Server.dll
+  ApexCompanion.Capture.Tests -> /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/ApexCompanion.Capture.Tests.dll
+Test run for /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/ApexCompanion.Capture.Tests.dll (.NETCoreApp,Version=v10.0)
+VSTest version 18.0.2-dev (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Testhost process for source(s) '/home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/ApexCompanion.Capture.Tests.dll' exited with error: You must install or update .NET to run this application.
+App: /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/tests/ApexCompanion.Capture.Tests/bin/Release/net10.0/testhost.dll
+Architecture: x64
+Framework: 'Microsoft.AspNetCore.App', version '10.0.0' (x64)
+.NET location: /usr/share/dotnet/
+No frameworks were found.
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.AspNetCore.App&framework_version=10.0.0&arch=x64&rid=arch-x64&os=arch
+. Please check the diagnostic logs for more information.
+Results File: /home/boniek/Programming Projects/AndroidStudio/Apex Companion/companion/TestResults/capture-tests-final.trx
+
+Test Run Aborted.

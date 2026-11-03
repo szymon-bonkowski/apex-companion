@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "dataset": "original-synthetic-v1",
+  "realApexFixtureCount": 0,
+  "heldOutRealFixtureCount": 0,
+  "syntheticOnly": true,
+  "layout": "english-prototype-v1",
+  "autoAcceptanceEnabled": false,
+  "platform": "Arch Linux",
+  "runtime": "10.0.14",
+  "measuredUtc": "2026-11-03T16:53:54.7579838+00:00",
+  "resultClassification": {
+    "positives": 4,
+    "negatives": 6,
+    "falsePositive": 0,
+    "falseNegative": 0
+  },
+  "fields": {
+    "kills": {
+      "expected": 3,
+      "exact": 3,
+      "wrong": 0,
+      "missing": 0
+    },
+    "assists": {
+      "expected": 3,
+      "exact": 3,
+      "wrong": 0,
+      "missing": 0
+    },
+    "damage": {
+      "expected": 4,
+      "exact": 4,
+      "wrong": 0,
+      "missing": 0
+    },
+    "placement": {
+      "expected": 4,
+      "exact": 4,
+      "wrong": 0,
+      "missing": 0
+    },
+    "rpDelta": {
+      "expected": 3,
+      "exact": 3,
+      "wrong": 0,
+      "missing": 0
+    }
+  },
+  "elapsedMilliseconds": 2473.7629,
+  "parentPeakWorkingSetBytes": 60203008,
+  "resourceScope": "Linux serial replay elapsed time; parent .NET working set excludes Tesseract children. Not Windows/game overhead.",
+  "examples": [
+    {
+      "id": "results-1920",
+      "expectedScreen": "RESULTS",
+      "actualScreen": "RESULTS",
+      "fields": {
+        "kills": {
+          "expected": 3,
+          "actual": 3,
+          "confidence": 0.89422897
+        },
+        "assists": {
+          "expected": 2,
+          "actual": 2,
+          "confidence": 0.90498795
+        },
+        "damage": {
+          "expected": 1234,
+          "actual": 1234,
+          "confidence": 0.91995605
+        },
+        "placement": {
+          "expected": 4,
+          "actual": 4,
+          "confidence": 0.90911842
+        },
+        "rpDelta": {
+          "expected": 123,
+          "actual": 123,
+          "confidence": 0.89994331
+        }
+      },
+      "elapsedMilliseconds": 327.7709
+    },
+    {
+      "id": "results-1280",
+      "expectedScreen": "RESULTS",
+      "actualScreen": "RESULTS",
+      "fields": {
+        "kills": {
+          "expected": 0,
+          "actual": 0,
+          "confidence": 0.76686607
+        },
+        "assists": {
+          "expected": 1,
+          "actual": 1,
+          "confidence": 0.9127742000000001
+        },
+        "damage": {
+          "expected": 426,
+          "actual": 426,
+          "confidence": 0.89337456
+        },
+        "placement": {
+          "expected": 12,
+          "actual": 12,
+          "confidence": 0.92286461
+        },
+        "rpDelta": {
+          "expected": -45,
+          "actual": -45,
+          "confidence": 0.87663544
+        }
+      },
+      "elapsedMilliseconds": 254.3434
+    },
+    {
+      "id": "results-2560",
+      "expectedScreen": "RESULTS",
+      "actualScreen": "RESULTS",
+      "fields": {
+        "kills": {
+          "expected": 12,
+          "actual": 12,
+          "confidence": 0.89976112
+        },
+        "assists": {
+          "expected": 7,
+          "actual": 7,
+          "confidence": 0.90349075
+        },
+        "damage": {
+          "expected": 3865,
+          "actual": 3865,
+          "confidence": 0.9205481
+        },
+        "placement": {
+          "expected": 1,
+          "actual": 1,
+          "confidence": 0.91210144
+        },
+        "rpDelta": {
+          "expected": 285,
+          "actual": 285,
+          "confidence": 0.91751305
+        }
+      },
+      "elapsedMilliseconds": 299.8021
+    },
+    {
+      "id": "missing-fields",
+      "expectedScreen": "RESULTS",
+      "actualScreen": "RESULTS",
+      "fields": {
+        "damage": {
+          "expected": 100,
+          "actual": 100,
+          "confidence": 0.91841576
+        },
+        "placement": {
+          "expected": 8,
+          "actual": 8,
+          "confidence": 0.90883759
+        }
+      },
+      "elapsedMilliseconds": 242.782
+    },
+    {
+      "id": "menu",
+      "expectedScreen": "MENU",
+      "actualScreen": "MENU",
+      "fields": {},
+      "elapsedMilliseconds": 231.9569
+    },
+    {
+      "id": "loading",
+      "expectedScreen": "LOADING",
+      "actualScreen": "LOADING",
+      "fields": {},
+      "elapsedMilliseconds": 191.4961
+    },
+    {
+      "id": "spectator",
+      "expectedScreen": "SPECTATOR",
+      "actualScreen": "SPECTATOR",
+      "fields": {},
+      "elapsedMilliseconds": 240.065
+    },
+    {
+      "id": "session-summary",
+      "expectedScreen": "SESSION_SUMMARY",
+      "actualScreen": "SESSION_SUMMARY",
+      "fields": {},
+      "elapsedMilliseconds": 241.4866
+    },
+    {
+      "id": "changed-ui",
+      "expectedScreen": "UNKNOWN",
+      "actualScreen": "UNKNOWN",
+      "fields": {},
+      "elapsedMilliseconds": 233.7452
+    },
+    {
+      "id": "gameplay",
+      "expectedScreen": "IN_MATCH",
+      "actualScreen": "IN_MATCH",
+      "fields": {},
+      "elapsedMilliseconds": 210.1906
+    }
+  ]
+}

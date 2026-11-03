@@ -13,8 +13,11 @@ This records planned product scope. v0.1 Maps, v0.2 Ranked/Profile/goals/Predato
 | Server health | `/servers` | Optional future scope | Not implemented in v0.2; source, timestamp, approved access required |
 | RP delta and sessions | Opted-in compatible observations and explicit user session boundaries | v0.3 | Implemented; user-confirmed split needed when provider lacks one; unknown intervals abstain |
 | Portable backup/restore | Allowlisted user settings/history via native document pickers | v0.3 | Implemented; strict bounded validation/preview/confirmation and one atomic commit; iOS source unverified |
-| Actual match stats | Confirmed manual entry / on-device OCR | v0.4 | User review and duplicate protection |
-| Map/legend performance | Confirmed MatchRecords | v0.4+ | No inference from RP polls |
+| Actual match journal | Manual/screenshot-assisted fields and local Windows evidence | v0.4 | Shared source/quality/duplicate protection; real automatic capture not verified |
+| Windows automatic capture | Consent WGC + local Tesseract | v0.4 | Runtime unverified; synthetic layout only; auto-accept disabled pending real corpus |
+| Local match sync | Pinned HTTPS authenticated foreground pull | v0.4 | Explicit LAN pairing, native protected secrets, durable cursor/retry |
+| Mobile screenshot OCR | Native Photo Picker / PhotosUI draft | v0.4 | Picker/manual draft implemented; native OCR engine and real corpus blocked |
+| Map/legend performance | Confirmed default / explicit AUTO_ACCEPTED cohort | v0.4 | Field denominators and provenance; no inference from RP polls |
 | Actual split end / rank thresholds | Verified source or manual entry | v0.2+ | Versioned evidence; otherwise unknown |
 | Original themes, accessibility | Shared UI and native widget family variants | v0.5 | Both mobile platforms tested |
 | iOS distribution | Xcode signing/TestFlight/App Store route | v1.0 | Apple account/permissions and store policies |

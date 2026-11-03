@@ -39,7 +39,7 @@ class RankedScreenTest {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             scenario.onActivity { it.setContent { App(rankedRepository = first) } }
             assertTrue(device.wait(Until.hasObject(By.text("Map rotation")), 10_000))
-            device.findObject(By.text("Ranked progress")).click()
+            clickNavigation(device, "Ranked progress")
             assertTrue(device.wait(Until.hasObject(By.text("13460 RP")), 5_000))
             assertTrue(device.hasObject(By.text("MANUAL · User entered")))
             scrollTo(device, "2540 RP remaining")
@@ -48,12 +48,14 @@ class RankedScreenTest {
             val restarted = repository(store)
             restarted.initialize()
             scenario.onActivity { it.setContent { App(rankedRepository = restarted) } }
+            // Wait for replacement semantics before querying navigation nodes from the old composition.
+            InstrumentationRegistry.getInstrumentation().waitForIdleSync()
             // A repository replacement keeps the screen's scroll position. Navigate away
             // and back before checking the top card rather than assuming it resets.
-            device.findObject(By.text("Maps")).click()
-            device.findObject(By.text("Ranked progress")).click()
+            clickNavigation(device, "Maps")
+            clickNavigation(device, "Ranked progress")
             assertTrue(device.wait(Until.hasObject(By.text("13460 RP")), 5_000))
-            device.findObject(By.text("Maps")).click()
+            clickNavigation(device, "Maps")
             assertTrue(device.wait(Until.hasObject(By.text("Rotation unavailable")), 5_000))
             assertFalse(device.hasObject(By.text("13460 RP")))
         }
@@ -106,9 +108,19 @@ class RankedScreenTest {
             device.takeScreenshot(File(InstrumentationRegistry.getInstrumentation().targetContext.filesDir, "ranked-profile-synthetic.png"))
             assertEquals(1, attempts)
             scrollTo(device, "Disconnect profile")
-            device.findObject(By.text("Disconnect profile")).click()
+            device.waitForIdle(750)
+            if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+            val disconnect = device.findObject(By.clickable(true).hasDescendant(By.text("Disconnect profile")))
+            assertNotNull("Visible disconnect button", disconnect); disconnect.click()
+            val end = System.currentTimeMillis() + 5000
+            while (repo.state.value.profile != null && System.currentTimeMillis() < end) android.os.SystemClock.sleep(50)
+            if (repo.state.value.profile != null) {
+                val folder = File(InstrumentationRegistry.getInstrumentation().targetContext.externalMediaDirs.first(), "additional_test_output").apply { mkdirs() }
+                device.dumpWindowHierarchy(File(folder, "v04-profile-disconnect-failure.xml"))
+            }
+            assertNull("Actual disconnect action must persist", repo.state.value.profile)
+            if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
             assertTrue(device.wait(Until.gone(By.text("UID: 123456")), 5_000))
-            assertNull(repo.state.value.profile)
             assertEquals(9000L, repo.state.value.manualRp)
             assertEquals(16000L, repo.state.value.goal?.targetRp)
             assertFalse(store.value!!.contains("Synthetic player"))
@@ -116,21 +128,38 @@ class RankedScreenTest {
         }
     }
 
+    private fun clickNavigation(device: UiDevice, text: String) {
+        val deadline = android.os.SystemClock.uptimeMillis() + 5000
+        do {
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= 37)
+                    InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+                val chip = device.findObject(By.clickable(true).hasDescendant(By.text(text)))
+                if (chip != null) { chip.click(); return }
+            } catch (_: androidx.test.uiautomator.StaleObjectException) {
+                // Re-query the clickable chip while replacement semantics settle.
+            }
+            android.os.SystemClock.sleep(50)
+        } while (android.os.SystemClock.uptimeMillis() < deadline)
+        fail("Navigation control unavailable after composition replacement: $text")
+    }
+
     private fun scrollTo(device: UiDevice, text: String) {
-        repeat(30) {
-            if (device.hasObject(By.text(text))) return
-            val scroller = device.findObjects(By.scrollable(true)).lastOrNull()
-            if (scroller != null) scroller.scroll(Direction.DOWN, 0.2f, 700)
-            else device.swipe(device.displayWidth / 2, device.displayHeight * 4 / 5,
-                device.displayWidth / 2, device.displayHeight * 3 / 5, 80)
-            device.waitForIdle()
-            Thread.sleep(150)
+        repeat(40) {
+            if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+            val target = device.findObject(By.text(text))
+            val viewport = device.findObject(By.clazz("android.widget.ScrollView"))?.visibleBounds
+            if (target != null && (viewport == null || (target.visibleBounds.height() >= 30 && target.visibleBounds.top >= viewport.top + 8 && target.visibleBounds.bottom <= viewport.bottom - 50))) return
+            // Nested platform choices and navigation rows are horizontal; scroll the
+            // actual vertical content rather than the last arbitrary scrollable node.
+            if (viewport != null) device.swipe(viewport.right - 12, viewport.bottom - viewport.height()/6,
+                viewport.right - 12, viewport.bottom - viewport.height()/6 - viewport.height()/4, 80)
+            device.waitForIdle(300)
         }
-        if (!device.hasObject(By.text(text))) {
-            val context = InstrumentationRegistry.getInstrumentation().targetContext
-            device.takeScreenshot(File(context.filesDir, "ranked-ui-failure.png"))
-            device.dumpWindowHierarchy(File(context.filesDir, "ranked-ui-failure.xml"))
-        }
-        assertTrue("Missing expected UI: $text", device.hasObject(By.text(text)))
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val folder = File(context.externalMediaDirs.first(), "additional_test_output").apply { mkdirs() }
+        device.takeScreenshot(File(folder, "v04-ranked-ui-failure.png"))
+        device.dumpWindowHierarchy(File(folder, "v04-ranked-ui-failure.xml"))
+        fail("Missing visible UI: $text")
     }
 }

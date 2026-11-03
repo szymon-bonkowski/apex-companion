@@ -88,6 +88,7 @@ class HistoryScreenTest {
             scrollTo("RP unknown")
             scrollTo("+150 RP")
             assertTrue(device.hasObject(By.text("+150 RP")))
+            scrollTo("User-confirmed season/split · observation interval")
             assertTrue(device.hasObject(By.text("User-confirmed season/split · observation interval")))
             val observations = fixture.history.state.value.record.observations
             assertEquals(listOf(13000L, 13000L, 13150L), observations.map { it.rp })
@@ -123,8 +124,14 @@ class HistoryScreenTest {
             await { restored.history.state.value.record.sessions.single().endedAtSeconds != null }
             scrollTo("Session details")
             clickText("Session details")
+            if (!device.wait(Until.hasObject(By.text("Close")), 1500)) {
+                var details = device.findObject(By.text("Session details")) ?: error("Session details button missing")
+                while (!details.isClickable && details.parent != null) details = details.parent
+                details.click()
+            }
+            assertTrue(device.wait(Until.hasObject(By.text("Close")), 5_000))
             assertTrue(device.wait(Until.hasObject(By.text("MANUAL · +150 RP")), 5_000))
-            assertTrue(device.hasObject(By.textContains("Observation window:")))
+            assertTrue(device.wait(Until.hasObject(By.textContains("Observation window:")), 5_000))
             capture("v03-session-detail.png")
             clickText("Close")
             navigate("History"); navigate("Sessions")
@@ -178,12 +185,12 @@ class HistoryScreenTest {
             assertEquals(2, HistoryCodec.import(documents.exported!!, target.now).record.observations.size)
             assertFalse(documents.exported!!.contains("rankName"))
             scrollTo("Delete saved history", clickable = true)
-            device.findObject(By.clickable(true).hasDescendant(By.text("Delete saved history"))).click()
+            clickText("Delete saved history")
             assertTrue(device.wait(Until.hasObject(By.text("Delete all saved history?")), 5_000))
             assertEquals(2, target.history.state.value.record.observations.size)
             clickText("Cancel")
             assertEquals(2, target.history.state.value.record.observations.size)
-            device.findObject(By.clickable(true).hasDescendant(By.text("Delete saved history"))).click()
+            clickText("Delete saved history")
             assertTrue(device.wait(Until.hasObject(By.text("Delete all saved history?")), 5_000))
             clickText("Delete history")
             await { target.history.state.value.record.observations.isEmpty() }
@@ -206,21 +213,30 @@ class HistoryScreenTest {
         assertTrue(device.wait(Until.hasObject(By.text("Maps")), 10_000))
     }
     private fun navigate(destination: String) {
-        repeat(5) {
-            if (device.hasObject(By.text(destination))) {
-                val node = device.findObject(By.text(destination))
-                if (node.parent.isChecked) return
-                node.parent.click()
-                device.waitForIdle(250)
+        // v0.4 adds a second horizontally scrollable row. Select its explicit accessible
+        // navigation group rather than an arbitrary first scroll container.
+        val group = if (destination in listOf("History", "Sessions", "Matches", "Capture sync")) "Tracking destinations" else "Main destinations"
+        repeat(6) {
+            if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+            var node = device.findObject(By.desc("Navigate to $destination"))
+            if (node != null) {
+                while (!node!!.isClickable && node!!.parent != null) node = node!!.parent
+                if (node!!.isChecked || node!!.isSelected) return
+                node!!.click(); device.waitForIdle(500)
                 val until = System.currentTimeMillis() + 2000
                 while (System.currentTimeMillis() < until) {
-                    if (device.findObject(By.text(destination))?.parent?.isChecked == true) return
+                    if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+                    var current = device.findObject(By.desc("Navigate to $destination"))
+                    while (current != null && !current.isClickable && current.parent != null) current = current.parent
+                    if (current?.isChecked == true || current?.isSelected == true) return
                     android.os.SystemClock.sleep(50)
                 }
             }
-            device.findObjects(By.scrollable(true)).firstOrNull()?.scroll(
-                if (destination == "Maps" || destination == "Ranked progress") Direction.LEFT else Direction.RIGHT, 0.8f, 1000)
+            device.findObject(By.desc(group))?.scroll(
+                if (destination == "Maps" || destination == "Ranked progress" || destination == "History") Direction.LEFT else Direction.RIGHT, 0.8f, 1000)
         }
+        val folder = File(InstrumentationRegistry.getInstrumentation().targetContext.externalMediaDirs.first(), "additional_test_output").apply { mkdirs() }
+        device.dumpWindowHierarchy(File(folder, "v04-legacy-navigation-failure.xml"))
         fail("Navigation destination not visible: $destination")
     }
     private fun saveManualUi(rp: String) {
@@ -244,13 +260,32 @@ class HistoryScreenTest {
         refreshAccessibility()
     }
     private fun clickText(text: String) {
-        refreshAccessibility()
-        var node = device.findObject(By.text(text)) ?: error("Missing control: $text")
-        while (!node.isClickable && node.parent != null) node = node.parent
-        assertTrue("Control is not clickable: $text", node.isClickable)
-        node.click()
-        device.waitForIdle(250)
-        refreshAccessibility()
+        // A section heading can have the same text as a button (Delete saved history).
+        // Resolve an enabled actionable ancestor, skipping non-actionable headings.
+        val automation = InstrumentationRegistry.getInstrumentation().uiAutomation
+        fun action(node: android.view.accessibility.AccessibilityNodeInfo): android.view.accessibility.AccessibilityNodeInfo? {
+            var candidate: android.view.accessibility.AccessibilityNodeInfo? = node
+            repeat(4) {
+                val current = candidate ?: return null
+                if (current.isClickable && current.isEnabled) return current
+                candidate = current.parent
+            }
+            return null
+        }
+        fun find(node: android.view.accessibility.AccessibilityNodeInfo): android.view.accessibility.AccessibilityNodeInfo? {
+            if (node.text?.toString() == text) action(node)?.let { return it }
+            for (index in 0 until node.childCount) node.getChild(index)?.let { child -> find(child)?.let { return it } }
+            return null
+        }
+        val deadline = System.currentTimeMillis() + 5000
+        var node: android.view.accessibility.AccessibilityNodeInfo? = null
+        while (node == null && System.currentTimeMillis() < deadline) {
+            refreshAccessibility(); node = automation.rootInActiveWindow?.let(::find)
+            if (node == null) android.os.SystemClock.sleep(50)
+        }
+        assertNotNull("Enabled accessible control missing: $text", node)
+        assertTrue(node!!.performAction(android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK))
+        device.waitForIdle(500); refreshAccessibility()
     }
     private fun importThroughUi() {
         scrollTo("Import backup")
@@ -267,19 +302,27 @@ class HistoryScreenTest {
         var attempts = 0
         while (attempts++ < 12) {
             refreshAccessibility()
-            if (device.hasObject(selector)) return
+            if (fullyVisible(selector)) return
             if (!verticalSwipe(towardTop = true)) break
         }
         attempts = 0
         while (attempts++ < 45) {
             refreshAccessibility()
-            if (device.hasObject(selector)) return
+            if (fullyVisible(selector)) return
             if (!verticalSwipe(towardTop = false)) break
         }
-        if (device.hasObject(selector)) return
+        if (fullyVisible(selector)) return
         capture("v03-ui-failure.png")
         device.dumpWindowHierarchy(File(InstrumentationRegistry.getInstrumentation().targetContext.filesDir, "v03-ui-failure.xml"))
         fail("Missing expected UI: $description")
+    }
+    private fun fullyVisible(selector: BySelector): Boolean {
+        val node = device.findObject(selector) ?: return false
+        val bounds = node.visibleBounds
+        val viewport = device.findObject(By.clazz("android.widget.ScrollView"))?.visibleBounds ?: return true
+        // Require an actual visible control rather than a clipped one-pixel edge.
+        // Associated descriptions are explicitly scrolled into view by their assertions.
+        return bounds.height() >= 30 && bounds.width() >= 30 && bounds.top >= viewport.top + 8 && bounds.bottom <= viewport.bottom - 30
     }
     private fun verticalSwipe(towardTop: Boolean): Boolean {
         val scroller = device.findObject(By.clazz("android.widget.ScrollView")) ?: return false
