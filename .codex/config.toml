@@ -1,0 +1,8 @@
+# Apex Companion: project-scoped Codex defaults.
+# The coordinator's model is selected in the main Codex session, not here.
+# This file is loaded only if the project is trusted by Codex.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "medium"

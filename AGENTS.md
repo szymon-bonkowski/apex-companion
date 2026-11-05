@@ -48,6 +48,24 @@ For substantive work: `README.md`, `docs/KMP_SETUP.md`, `docs/ARCHITECTURE.md`, 
 6. Review diff, privacy, runtime permissions, app group entitlements, provider limits and dependency licensing.
 7. Update specs/ADRs/plan with exact command output and known blockers. Move a plan to completed only when every exit criterion has evidence.
 
+## v0.6 - Human-directed design and agent cost policy
+
+- Read `docs/design/DESIGN_BRIEF.md` and the owner-approved per-screen record
+  before any v0.6 UI implementation. Design decisions belong to the human
+  maintainer; agents implement, explain feasibility and validate.
+- Do not advance to the next screen or widget until the current one has
+  explicit owner acceptance based on real UI, not an AI aesthetic rating.
+- Preserve four selectable styles but do not treat palette and radii changes
+  as evidence of an approved redesign. Follow the approved screen layouts.
+- Main coordinator: the strong model selected by the owner. Use
+  `.codex/agents/implementer.toml` (Luna Medium) for bounded coding,
+  `.codex/agents/quality-assurance.toml` (Sol High) for independent QA.
+  For other subagents use inexpensive defaults when available. Do not spawn
+  extra agents for trivial work, and never assume a configured agent ran.
+- Prefer targeted tests during implementation and evidence-backed full
+  Android/shared validation at review gates. Do not trade correctness for
+  superficial token savings. Preserve the existing iOS and provider gates.
+
 ## Local working rules
 
 - Never force-push, publish releases, submit stores, rotate production secrets or perform destructive remote actions without explicit human permission.

@@ -25,6 +25,17 @@ Today selects one/two columns based on width, style and font scale; Editorial ma
 
 Validation must use actual device/emulator captures and screen-reader focus, not concept images. See [v0.5 report](validation/v0.5-report.md), [customization](APPEARANCE_CUSTOMIZATION.md) and [native widgets](WIDGET_THEMING.md). Android results do not prove VoiceOver or WidgetKit. iOS source remains **Implemented — Not Verified** under ADR0007.
 
+## v0.6 superseding visual authority
+
+This document describes **v0.5 as implemented**, not as owner-accepted
+visual design. Its token architecture and data isolation are reusable, but
+its layout, hierarchy and four style identities may be changed by explicit
+owner-approved v0.6 screen specifications. Do not infer owner acceptance
+from v0.5 screenshot matrices or contrast/unit test results.
+
+Source: [owner design brief](design/DESIGN_BRIEF.md) and
+[v0.6 specification](specs/v0-6-design-overhaul.md).
+
 ## Native iOS material evaluation
 
 A bounded `UIVisualEffectView`/`UIGlassEffect` adapter was considered for a small navigation region. Apple's [material guidance](https://developer.apple.com/design/human-interface-guidelines/materials) places Liquid Glass primarily in controls/navigation rather than large content-card layers; [UIGlassEffect](https://developer.apple.com/documentation/uikit/uiglasseffect) is a native effect API, not a Compose surface. The existing host shares its full screen through Compose and targets iOS18.2. A native adapter would need SDK/OS availability guards, separate focus/hit-testing/lifecycle integration and actual power/contrast measurement. Those cannot be established by an Android build, and Apple tooling is deliberately deferred under ADR0007. This milestone therefore ships the actual bounded Compose alpha/gradient design on both app targets, with solid accessibility fallbacks. It does not insert an unverified native backdrop behind the entire shared canvas or claim native Liquid Glass. A future narrowly scoped navigation adapter requires final Mac/device evidence before adoption.

@@ -15,3 +15,16 @@ Use for implementation spanning multiple changes/files, migrations, platform wid
 *Implement shared RP goal arithmetic in commonMain and both native goal widgets. Add deterministic goal tests, serialize one `MANUAL` widget projection, validate Android Glance launcher, verify WidgetKit app-group read on Xcode simulator, and record which actual checks executed.*
 
 An agent never promotes pack/heirloom work from excluded scope or changes KMP platforms merely because a task description is shorter. Keep any research blocked on API rights separate from offline implementation.
+
+## Human-directed design approval gates (v0.6+)
+
+For visual work, the ExecPlan must record the owner-approved design
+reference, interaction contract, allowed files and test/evidence for each
+screen or widget. Completing a compile/test checklist does not establish
+aesthetic acceptance. Keep status blocked/unapproved until the maintainer
+explicitly signs off on real UI screenshots and interactions.
+
+Prefer one bounded implementation task per approved screen; independent
+agents may only work concurrently on non-overlapping scopes. Run strong
+QA at useful review gates, use a lower-cost implementer for straightforward
+coding, and keep full Android/shared regression at integration milestones.

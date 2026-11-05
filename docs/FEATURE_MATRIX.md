@@ -24,6 +24,8 @@ This records product scope and explicit capability gates. See the [v0.5 report](
 | Android APK distribution | Signed APK with checksum | v1.0 | Release security and source terms |
 | Event/ALGS/store/squad extras | Additional sources and user consent | Future | Separate evidence and scope decision |
 
+| Human-directed UX, visual and haptic redesign | Owner-approved screen references, existing shared/native UI | v0.6 | Explicit owner acceptance after actual implementation screenshots/interaction tests; no model-generated design approval |
+
 **Not planned:** packs/heirloom tracker (withdrawn); no code/schema/widget should be created for it.
 
 Favorite-map notification preferences exist with delivery explicitly disabled while authorized trustworthy future scheduling is unresolved. No speculative/DEMO alerts or extra polling. [v0.5 evidence](validation/v0.5-report.md).

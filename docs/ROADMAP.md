@@ -56,6 +56,24 @@ Owner-expanded implementation: complete Carbon/Liquid/Editorial/Tactical present
 
 **Exit:** actual Android/shared builds/tests, inspected four-style screen/widget matrix, restart/migration/accessibility/performance evidence and accurate limitations in [report](validation/v0.5-report.md). iOS source Implemented — Not Verified; Apple verification at final stabilization under ADR0007.
 
+## v0.6 - Human-Directed Design Overhaul
+
+**Planned, human approval gated.** The owner explicitly rejected the visual
+quality and user experience of the v0.5 implementation despite completed
+Android/shared functional validation. v0.6 will redesign navigation,
+hierarchy, components, interactions, haptics and native widget presentation
+screen-by-screen from the maintainer's approved references. Carbon, Liquid,
+Editorial and Tactical remain available, but no theme/UX choice is made
+autonomously by an LLM. Functional and privacy semantics are preserved.
+
+Each screen requires explicit approval after implementation screenshots and
+interaction evidence; technical tests alone do not imply visual acceptance.
+Follow [v0.6 spec](specs/v0-6-design-overhaul.md),
+[owner design brief](design/DESIGN_BRIEF.md) and
+[active plan](../plans/active/2026-11-05-v0-6-human-directed-design.md).
+v0.4 Windows Auto Capture remains separate unfinished work. iOS remains
+Implemented - Not Verified until the final stabilization gate.
+
 ## v1.0 — Independent open-source mobile releases
 
 Android GitHub signed APK release and an explicitly selected compliant iOS distribution channel (Xcode source build/TestFlight/App Store, subject to Apple account/review). Android and iOS can be labelled distinct readiness states; do not claim a universal installable iOS IPA without correct signing and distribution.

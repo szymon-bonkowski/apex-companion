@@ -15,6 +15,39 @@ The owner delegates code, validation and research to AI agents. Parallelism is f
 | Reviewer/architect | ADR impacts, privacy, release readiness | Independent findings | Push/publish without approval |
 | Integrator | Merge, tests, docs/plan consistency | Verified scoped diff | Ignore failure or quietly delete iOS scope |
 
+## v0.6 cost-aware roles and design ownership
+
+The **coordinator** is the architecture/integration decision-maker and uses
+the strong model selected in the primary Codex session (e.g. GPT-6.1 Sol
+High). The maintainer alone approves visual/product decisions.
+
+Use `.codex/agents/implementer.toml` (`gpt-6-luna`, medium) for bounded code
+tasks, including Dashboard and native Widgets once a design is approved.
+An implementation agent may test its scope but must not invent missing
+design direction or make major schema/security decisions without escalation.
+Use `.codex/agents/quality-assurance.toml` (`gpt-6.1-sol`, high) for
+independent, periodic code/security/accessibility/behavior review. QA must
+not self-approve visual taste; it checks objective differences against the
+owner's approved references and records actual test evidence.
+
+`[agents]` in `.codex/config.toml` limits concurrent child threads to 2
+and defaults unnamed subagents to Luna Medium. Custom agent role files and
+explicit spawn overrides may take precedence. Confirm actual model/effort
+in Codex before starting expensive tasks. Unavailable model IDs must be
+replaced with models actually offered by the signed-in account.
+
+Cost policy:
+- Prefer no subagent for a short/sequential task.
+- Assign explicit allowed files and finish criteria; avoid full-context
+  duplication and overlapping edit ownership.
+- Run cheap automated checks during coding; request strong QA after a
+  meaningful integration stage, not every pixel adjustment.
+- Run the full test matrix at milestone gates and after high-risk changes.
+- Report any high-model escalation and the reason.
+
+During intermediate milestones, iOS source is Implemented - Not Verified;
+do not launch Apple tooling. Never push/tag/merge without owner permission.
+
 ## Delegation request template
 
 Specify `Goal`, `Input documents`, `Allowed files/modules`, `Out of scope`, `Dependencies`, `Tests to run`, `Expected output`, and `Escalation if blocked`. For example:
