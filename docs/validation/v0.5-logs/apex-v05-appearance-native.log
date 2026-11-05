@@ -1,0 +1,125 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest:
+INSTRUMENTATION_STATUS: test=corruptAndInvalidUtf8SettingsStayReadOnlyUntilExplicitRecovery
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=corruptAndInvalidUtf8SettingsStayReadOnlyUntilExplicitRecovery
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: expected null, but was:<DashboardLayout(items=[DashboardItem(module=MAP_ROTATION, visible=true, size=EXPANDED), DashboardItem(module=UPCOMING_MAP, visible=true, size=STANDARD), DashboardItem(module=RECENT_MATCH, visible=true, size=STANDARD), DashboardItem(module=GOAL_PROGRESS, visible=true, size=STANDARD), DashboardItem(module=RANKED_PROFILE, visible=true, size=STANDARD), DashboardItem(module=PREDATOR_THRESHOLD, visible=false, size=STANDARD), DashboardItem(module=RP_TREND, visible=true, size=STANDARD), DashboardItem(module=SESSION_SUMMARY, visible=true, size=STANDARD), DashboardItem(module=CAPTURE_STATUS, visible=true, size=STANDARD)], hideUnavailable=true, mapModeId=battle_royale)>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest$nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets$1.invokeSuspend(AppearancePersistenceInstrumentedTest.kt:130)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.UndispatchedCoroutine.afterResume(CoroutineContext.kt:266)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest.nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets(AppearancePersistenceInstrumentedTest.kt:114)
+
+INSTRUMENTATION_STATUS: stream=
+Error in nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets(io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest):
+java.lang.AssertionError: expected null, but was:<DashboardLayout(items=[DashboardItem(module=MAP_ROTATION, visible=true, size=EXPANDED), DashboardItem(module=UPCOMING_MAP, visible=true, size=STANDARD), DashboardItem(module=RECENT_MATCH, visible=true, size=STANDARD), DashboardItem(module=GOAL_PROGRESS, visible=true, size=STANDARD), DashboardItem(module=RANKED_PROFILE, visible=true, size=STANDARD), DashboardItem(module=PREDATOR_THRESHOLD, visible=false, size=STANDARD), DashboardItem(module=RP_TREND, visible=true, size=STANDARD), DashboardItem(module=SESSION_SUMMARY, visible=true, size=STANDARD), DashboardItem(module=CAPTURE_STATUS, visible=true, size=STANDARD)], hideUnavailable=true, mapModeId=battle_royale)>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest$nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets$1.invokeSuspend(AppearancePersistenceInstrumentedTest.kt:130)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.UndispatchedCoroutine.afterResume(CoroutineContext.kt:266)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest.nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets(AppearancePersistenceInstrumentedTest.kt:114)
+
+INSTRUMENTATION_STATUS: test=nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=interruptedNativeWriteRetainsPreviousSettingsAndPublishedState
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=interruptedNativeWriteRetainsPreviousSettingsAndPublishedState
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=allDesignsAndDashboardSurviveNativeStoreReopenWithoutChangingGameFiles
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=allDesignsAndDashboardSurviveNativeStoreReopenWithoutChangingGameFiles
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 0.087
+There was 1 failure:
+1) nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets(io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest)
+java.lang.AssertionError: expected null, but was:<DashboardLayout(items=[DashboardItem(module=MAP_ROTATION, visible=true, size=EXPANDED), DashboardItem(module=UPCOMING_MAP, visible=true, size=STANDARD), DashboardItem(module=RECENT_MATCH, visible=true, size=STANDARD), DashboardItem(module=GOAL_PROGRESS, visible=true, size=STANDARD), DashboardItem(module=RANKED_PROFILE, visible=true, size=STANDARD), DashboardItem(module=PREDATOR_THRESHOLD, visible=false, size=STANDARD), DashboardItem(module=RP_TREND, visible=true, size=STANDARD), DashboardItem(module=SESSION_SUMMARY, visible=true, size=STANDARD), DashboardItem(module=CAPTURE_STATUS, visible=true, size=STANDARD)], hideUnavailable=true, mapModeId=battle_royale)>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest$nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets$1.invokeSuspend(AppearancePersistenceInstrumentedTest.kt:130)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.UndispatchedCoroutine.afterResume(CoroutineContext.kt:266)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest.nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets(AppearancePersistenceInstrumentedTest.kt:114)
+
+FAILURES!!!
+Tests run: 4,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

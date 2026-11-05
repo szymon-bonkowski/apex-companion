@@ -1,0 +1,131 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest:
+INSTRUMENTATION_STATUS: test=fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance$1.invokeSuspend(AppearanceScreenTest.kt:264)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(AppearanceScreenTest.kt:223)
+
+INSTRUMENTATION_STATUS: stream=
+Error in fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance$1.invokeSuspend(AppearanceScreenTest.kt:264)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(AppearanceScreenTest.kt:223)
+
+INSTRUMENTATION_STATUS: test=fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Missing fully visible UI BySelector [DESC='\QAppearance preview Liquid. DEMO values only.\E']
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.scrollTo(AppearanceScreenTest.kt:361)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.access$scrollTo(AppearanceScreenTest.kt:27)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation$1.invokeSuspend(AppearanceScreenTest.kt:141)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(AppearanceScreenTest.kt:123)
+
+INSTRUMENTATION_STATUS: stream=
+Error in unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest):
+java.lang.AssertionError: Missing fully visible UI BySelector [DESC='\QAppearance preview Liquid. DEMO values only.\E']
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.scrollTo(AppearanceScreenTest.kt:361)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.access$scrollTo(AppearanceScreenTest.kt:27)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation$1.invokeSuspend(AppearanceScreenTest.kt:141)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(AppearanceScreenTest.kt:123)
+
+INSTRUMENTATION_STATUS: test=unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 33.849
+There were 2 failures:
+1) fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance$1.invokeSuspend(AppearanceScreenTest.kt:264)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(AppearanceScreenTest.kt:223)
+2) unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest)
+java.lang.AssertionError: Missing fully visible UI BySelector [DESC='\QAppearance preview Liquid. DEMO values only.\E']
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.scrollTo(AppearanceScreenTest.kt:361)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.access$scrollTo(AppearanceScreenTest.kt:27)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation$1.invokeSuspend(AppearanceScreenTest.kt:141)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(AppearanceScreenTest.kt:123)
+
+FAILURES!!!
+Tests run: 2,  Failures: 2
+
+
+INSTRUMENTATION_CODE: -1

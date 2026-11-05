@@ -1,0 +1,19 @@
+{
+  "style": "CARBON",
+  "kind": "predator",
+  "sizeDp": [
+    300,
+    220
+  ],
+  "syntheticData": true,
+  "androidApi": 37,
+  "densityDpi": 420,
+  "systemFontScale": 1.0,
+  "captureMechanism": "Actual emulator Glance RemoteViews.apply, measured/layout/draw to bitmap; not launcher or iOS",
+  "fixtureTimeSeconds": 1793707200,
+  "commandMetadata": "docs/validation/v0.5-logs/native-and-route-final.meta.json",
+  "geometry": {
+    "pass": true,
+    "findings": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "completedUtc": "2026-11-04T05:49:49.056089+00:00",
+  "stages": [
+    {
+      "command": [
+        "adb",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "am",
+        "instrument",
+        "-w",
+        "-r",
+        "-e",
+        "class",
+        "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+        "-e",
+        "v05Style",
+        "EDITORIAL",
+        "-e",
+        "v05Variant",
+        "dark",
+        "-e",
+        "v05Mode",
+        "DARK",
+        "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+      ],
+      "exitCode": 0,
+      "startedUtc": "2026-11-04T05:49:25.930025+00:00",
+      "finishedUtc": "2026-11-04T05:49:48.895439+00:00",
+      "wallSeconds": 22.965409165000892,
+      "instrumentation": {
+        "success": false,
+        "testsPassed": null
+      },
+      "log": "docs/validation/v0.5-logs/remaining-final-editorial-dark.log"
+    }
+  ],
+  "adbRetries": [],
+  "restoredDisplay": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  },
+  "accessibilityServices": "null"
+}

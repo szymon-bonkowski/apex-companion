@@ -1,0 +1,71 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest:
+INSTRUMENTATION_STATUS: test=studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState$1.invokeSuspend(AppearanceScreenTest.kt:73)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState(AppearanceScreenTest.kt:62)
+
+INSTRUMENTATION_STATUS: stream=
+Error in studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState$1.invokeSuspend(AppearanceScreenTest.kt:73)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState(AppearanceScreenTest.kt:62)
+
+INSTRUMENTATION_STATUS: test=studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 27.066
+There was 1 failure:
+1) studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState$1.invokeSuspend(AppearanceScreenTest.kt:73)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState(AppearanceScreenTest.kt:62)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "tools/check_docs.py"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T11:55:15.706327+00:00",
+  "finishedUtc": "2026-11-04T11:55:15.822831+00:00",
+  "wallSeconds": 0.11650680498860311
+}

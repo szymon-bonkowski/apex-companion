@@ -1,0 +1,12 @@
+{
+  "command": [
+    "./gradlew",
+    ":androidApp:connectedDebugAndroidTest",
+    "-Pandroid.testInstrumentationRunnerArguments.v05Variant=regression",
+    "--console=plain"
+  ],
+  "exitCode": 1,
+  "startedUtc": "2026-11-04T11:20:22.126331+00:00",
+  "finishedUtc": "2026-11-04T11:32:33.193854+00:00",
+  "wallSeconds": 731.0675266260077
+}

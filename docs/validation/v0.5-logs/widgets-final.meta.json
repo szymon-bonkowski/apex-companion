@@ -1,0 +1,30 @@
+{
+  "command": [
+    "adb",
+    "-s",
+    "emulator-5554",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T06:00:26.822596+00:00",
+  "finishedUtc": "2026-11-04T06:00:45.423892+00:00",
+  "wallSeconds": 18.601296272987383,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 4
+  },
+  "display": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  },
+  "log": "docs/validation/v0.5-logs/widgets-final.log"
+}

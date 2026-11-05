@@ -1,0 +1,34 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "CARBON",
+    "-e",
+    "v05Variant",
+    "phone",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:12:19.364164+00:00",
+  "finishedUtc": "2026-11-03T23:12:38.698625+00:00",
+  "wallSeconds": 19.334456858006888,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "log": "/tmp/apex-v05-carbon-phone-final.log",
+  "display": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  }
+}

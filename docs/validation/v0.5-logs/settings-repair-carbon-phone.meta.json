@@ -1,0 +1,39 @@
+{
+  "command": [
+    "adb",
+    "-s",
+    "emulator-5554",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "CARBON",
+    "-e",
+    "v05Variant",
+    "phone",
+    "-e",
+    "v05SettingsOnly",
+    "true",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T05:59:27.647271+00:00",
+  "finishedUtc": "2026-11-04T05:59:33.186217+00:00",
+  "wallSeconds": 5.538946519998717,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "display": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  },
+  "log": "docs/validation/v0.5-logs/settings-repair-carbon-phone.log"
+}

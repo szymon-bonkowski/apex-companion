@@ -213,9 +213,8 @@ class HistoryScreenTest {
         assertTrue(device.wait(Until.hasObject(By.text("Maps")), 10_000))
     }
     private fun navigate(destination: String) {
-        // v0.4 adds a second horizontally scrollable row. Select its explicit accessible
-        // navigation group rather than an arbitrary first scroll container.
-        val group = if (destination in listOf("History", "Sessions", "Matches", "Capture sync")) "Tracking destinations" else "Main destinations"
+        // Select the explicit navigation group rather than an arbitrary horizontal field.
+        val group = if (destination in listOf("History", "Sessions", "Profile", "Capture sync", "About")) "Tracking destinations" else "Main destinations"
         repeat(6) {
             if (android.os.Build.VERSION.SDK_INT >= 37) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
             var node = device.findObject(By.desc("Navigate to $destination"))

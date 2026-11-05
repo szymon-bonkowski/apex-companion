@@ -2,14 +2,17 @@ package io.github.szymonbonkowski.apexcompanion.history
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import io.github.szymonbonkowski.apexcompanion.appearance.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import io.github.szymonbonkowski.apexcompanion.ranked.*
@@ -98,15 +101,15 @@ fun ColumnScope.HistoryScreen(history: HistoryRepository, ranked: RankedReposito
         RpTrend(visible)
         Text("Points are recorded observations. Lines connect compatible contexts only. Unknown contexts, quarantined samples and long gaps remain visually separate.",
             style = MaterialTheme.typography.bodySmall)
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             OutlinedButton(enabled = currentPage < pages - 1, onClick = { page = currentPage + 1 }) { Text("Older samples") }
             OutlinedButton(enabled = currentPage > 0, onClick = { page = currentPage - 1 }) { Text("Newer samples") }
         }
         visible.forEachIndexed { index, observation ->
             val previous = observations.getOrNull(start + index - 1)
             val interval = previous?.let { rpInterval(it, observation) }
-            Card(Modifier.fillMaxWidth()) {
-                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            ThemedCard(Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Text("${observation.rp} RP · ${historyTime(observation.observedAtSeconds)}", style = MaterialTheme.typography.titleMedium)
                     Text("${sourceLabel(observation.source)} · ${observation.quality.name}", style = MaterialTheme.typography.labelMedium)
                     Text("${observation.season ?: "Season unknown"} / ${observation.split ?: "Split unknown"} · ${observation.verification.name}")
@@ -188,8 +191,8 @@ fun ColumnScope.SessionsScreen(history: HistoryRepository, ranked: RankedReposit
         } }) { Text("Start session") }
         Text("Starting does not create an RP sample or make a network request. A valid available sample may be used as an anchor.", style = MaterialTheme.typography.bodySmall)
     } else {
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        ThemedCard(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("ACTIVE SESSION", style = MaterialTheme.typography.labelLarge)
                 // Never display another player's observations after a profile/source switch.
                 if (active.identity == selected.identity && active.source == selected.source) {
@@ -216,8 +219,8 @@ fun ColumnScope.SessionsScreen(history: HistoryRepository, ranked: RankedReposit
     if (completed.isEmpty()) Text("No completed sessions for this identity and source.")
     completed.take(visibleCount).forEach { session ->
         val result = sessionResult(session, record.observations)
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        ThemedCard(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text(historyTime(session.startedAtSeconds), style = MaterialTheme.typography.titleMedium)
                 Text("${result.classification.name} · ${signedRp(result.deltaRp)}")
                 Text("Session duration ${elapsed(session.endedAtSeconds!! - session.startedAtSeconds)}")
@@ -268,13 +271,18 @@ fun ColumnScope.HistorySettingsScreen(history: HistoryRepository, ranked: Ranked
     } }
     Text("Local history and backup", style = MaterialTheme.typography.titleLarge)
     HistoryIdentityLabel(selected)
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text("Record local RP history", Modifier.weight(1f).padding(end = 12.dp))
-        Switch(checked = record.recording, enabled = !busy && !historyState.readOnly,
-            onCheckedChange = { enabled -> action {
+    Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+        .toggleable(value = record.recording, enabled = !busy && !historyState.readOnly,
+            role = Role.Switch, onValueChange = { enabled -> action {
                 message = if (history.setRecording(enabled)) (if (enabled) "Local recording enabled for future observations." else "Recording stopped. Saved history is retained.")
                     else "Recording settings could not be saved."
-            } }, modifier = Modifier.semantics { contentDescription = "Record local RP history" })
+            } })
+        .semantics { contentDescription = "Record local RP history" },
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+        Text("Record local RP history", Modifier.weight(1f).padding(end = 12.dp))
+        Switch(checked = record.recording, enabled = !busy && !historyState.readOnly,
+            onCheckedChange = null)
     }
     RecordingStatus(record, rankedState)
     Text("Opt-in history stores RP, UTC observation times, source, season/split context, player UID/platform for provider samples, and session boundaries privately on this device. It is never uploaded or placed in widget snapshots. Turning recording off retains saved history and closes an active session with its uncertainty visible.")
@@ -348,8 +356,8 @@ fun ColumnScope.HistorySettingsScreen(history: HistoryRepository, ranked: Ranked
 
 @Composable
 private fun HistoryNotice(title: String, body: String) {
-    Card(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
             Text(body)
         }

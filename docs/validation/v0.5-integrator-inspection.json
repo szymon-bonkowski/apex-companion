@@ -1,0 +1,50 @@
+{
+  "v05-carbon-phone-today.png": {
+    "inspected": true,
+    "sha256": "dfb9275a6d5dec6df3674bfb371f1479f91d9fdfdfe8c47c1c24c3e4dff4bd2b",
+    "reviewer": "integrator",
+    "findings": [
+      "Final safe-drawing layout inspected; readable theme roles and source labels, no overlapping controls in visible viewport."
+    ]
+  },
+  "v05-liquid-phone-match-detail.png": {
+    "inspected": true,
+    "sha256": "89e2832adcd90dc989344fe70dfd8cd6967a01907dabb204ce43c18fc21f3bbb",
+    "reviewer": "integrator",
+    "findings": [
+      "Final safe-drawing layout inspected; readable theme roles and source labels, no overlapping controls in visible viewport."
+    ]
+  },
+  "v05-editorial-phone-studio.png": {
+    "inspected": true,
+    "sha256": "ce4831f521903f1202173cb5766d147b6d458ff8c18f5f9018949c151cecbabf",
+    "reviewer": "integrator",
+    "findings": [
+      "Final safe-drawing layout inspected; readable theme roles and source labels, no overlapping controls in visible viewport."
+    ]
+  },
+  "v05-carbon-small-today.png": {
+    "inspected": true,
+    "sha256": "cef5d1070189c8c9504658644aa46e68b42e2d38bae24441d0edc67f74ff2882",
+    "reviewer": "integrator",
+    "findings": [
+      "Actual final compact/wide viewport inspected; full primary navigation words fit, scrolling remains available, body and source labels readable."
+    ]
+  },
+  "v05-carbon-small-studio.png": {
+    "inspected": true,
+    "sha256": "231c7cefcbe2d73e485f5c08f101c2bfafb71972e0a6457055b882ceb01b13ed",
+    "reviewer": "integrator",
+    "findings": [
+      "Actual final compact/wide viewport inspected; full primary navigation words fit, scrolling remains available, body and source labels readable."
+    ]
+  },
+  "v05-liquid-expanded-today.png": {
+    "inspected": true,
+    "sha256": "fd19012e3df3bfe1937399e197995387db568e933f6be2d60966a2f0f481ee1b",
+    "reviewer": "integrator",
+    "findings": [
+      "Actual final compact/wide viewport inspected; full primary navigation words fit, scrolling remains available, body and source labels readable."
+    ]
+  }
+}

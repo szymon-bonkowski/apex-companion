@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "recordedUtc": "2026-11-03T22:50:57.616951+00:00",
+  "emulator": {
+    "avd": "ApexCompanion_API37",
+    "avdHome": "/home/boniek/.config/.android/avd",
+    "serial": "emulator-5554",
+    "launchCommand": "ANDROID_AVD_HOME=/home/boniek/.config/.android/avd /home/boniek/Android/Sdk/emulator/emulator -avd ApexCompanion_API37 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot-save",
+    "wipeData": false,
+    "renderer": "SwiftShader software renderer; not physical-device performance evidence"
+  },
+  "initialState": {
+    "osRelease": {
+      "command": [
+        "adb",
+        "shell",
+        "getprop",
+        "ro.build.version.release"
+      ],
+      "exitCode": 0,
+      "output": "17"
+    },
+    "sdk": {
+      "command": [
+        "adb",
+        "shell",
+        "getprop",
+        "ro.build.version.sdk"
+      ],
+      "exitCode": 0,
+      "output": "37"
+    },
+    "displaySize": {
+      "command": [
+        "adb",
+        "shell",
+        "wm",
+        "size"
+      ],
+      "exitCode": 0,
+      "output": "Physical size: 1080x2400"
+    },
+    "density": {
+      "command": [
+        "adb",
+        "shell",
+        "wm",
+        "density"
+      ],
+      "exitCode": 0,
+      "output": "Physical density: 420"
+    },
+    "fontScale": {
+      "command": [
+        "adb",
+        "shell",
+        "settings",
+        "get",
+        "system",
+        "font_scale"
+      ],
+      "exitCode": 0,
+      "output": "1.0"
+    },
+    "accessibilityServices": {
+      "command": [
+        "adb",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "enabled_accessibility_services"
+      ],
+      "exitCode": 0,
+      "output": "null"
+    }
+  },
+  "ios": {
+    "appleToolsExecuted": false,
+    "status": "Implemented \u2014 Not Verified"
+  },
+  "limitations": [
+    "No physical Android device connected",
+    "TalkBack installed but initially disabled; availability is not a passed screen-reader test",
+    "Existing AVD cold-booted without wipe; native data must remain isolated from screenshot fixtures"
+  ]
+}

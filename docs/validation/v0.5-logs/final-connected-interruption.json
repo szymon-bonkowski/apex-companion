@@ -1,0 +1,18 @@
+{
+  "command": [
+    "./gradlew",
+    ":androidApp:connectedDebugAndroidTest",
+    "-Pandroid.testInstrumentationRunnerArguments.v05Variant=regression",
+    "--console=plain"
+  ],
+  "result": "INTERRUPTED_NOT_ACCEPTANCE",
+  "runnerExitCode": 143,
+  "buildExitCodeObservedInLog": "FAILED",
+  "exactWallSeconds": null,
+  "note": "Run incomplete after emulator/runner exit. Before interruption the matrix source-label visibility assertion and recreated dialog dismissal assertion also failed. Those are being reproduced and repaired; this run is not accepted.",
+  "reportedTotals": {
+    "tests": 18,
+    "failures": 4,
+    "skipped": 0
+  }
+}

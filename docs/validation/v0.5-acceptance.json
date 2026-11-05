@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "decidedUtc": "2026-11-04T11:53:32.096338+00:00",
+  "scope": "Authorized Android/shared intermediate milestone; iOS source only under ADR0007",
+  "criteria": [
+    {
+      "id": "V05-01",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-qa-inspection.json",
+        "v0.5-source-manifest.json"
+      ]
+    },
+    {
+      "id": "V05-02",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-evidence.json",
+        "v0.5-logs/final-connected-accepted.meta.json"
+      ]
+    },
+    {
+      "id": "V05-03",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-restart-evidence.json",
+        "v0.5-evidence.json"
+      ]
+    },
+    {
+      "id": "V05-04",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-evidence.json",
+        "v0.5-source-manifest.json"
+      ]
+    },
+    {
+      "id": "V05-05",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-widget-inspection.json",
+        "v0.5-widget-geometry.json",
+        "v0.5-evidence.json"
+      ]
+    },
+    {
+      "id": "V05-06",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-inspection.json"
+      ]
+    },
+    {
+      "id": "V05-07",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-talkback-evidence.json",
+        "v0.5-keyboard-evidence.json",
+        "v0.5-evidence.json"
+      ]
+    },
+    {
+      "id": "V05-08",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-evidence.json",
+        "v0.5-logs/final-docs.meta.json",
+        "v0.5-logs/final-diff.meta.json"
+      ]
+    },
+    {
+      "id": "V05-09",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-privacy-audit.json",
+        "v0.5-source-manifest.json"
+      ]
+    },
+    {
+      "id": "V05-10",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-evidence.json",
+        "../APPEARANCE_CUSTOMIZATION.md"
+      ]
+    },
+    {
+      "id": "V05-11",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-source-manifest.json",
+        "v0.5-report.md"
+      ]
+    },
+    {
+      "id": "V05-12",
+      "status": "MET_INTERMEDIATE",
+      "evidence": [
+        "v0.5-report.md",
+        "v0.5-evidence.json",
+        "v0.5-performance.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "iOS Implemented \u2014 Not Verified; no Apple tooling",
+    "Physical/OEM Android and native widget large-font qualification pending",
+    "Full spoken TalkBack and VoiceOver usability pending",
+    "Public providers and actual favorite-map notification delivery gated",
+    "v0.4 Windows/Apex automatic capture remains unaccepted"
+  ],
+  "publishOrCommitPerformed": false
+}

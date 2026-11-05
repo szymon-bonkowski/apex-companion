@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "recordedUtc": "2026-11-04T11:53:57.518764+00:00",
+  "standaloneEvidenceSha256": {
+    "v0.5-talkback-evidence.json": "0c9517ae0001105a81ef3dfdc44d839bf6c1c2a4c354f3ac5ac20088cccfb730",
+    "v0.5-keyboard-evidence.json": "9c9613cd08d30dd3bd3b04bf68ff3ab885dafd2fb0babd935ded1a148d49af98"
+  },
+  "verifiedFinalDeviceState": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0",
+    "accessibilityEnabled": "0",
+    "accessibilityServices": "null"
+  },
+  "fixtureOriginalExisted": false,
+  "fixtureRestored": true,
+  "taskMockStopRequested": true,
+  "taskEmulatorStopRequested": true,
+  "scope": "Task-owned fixture/mock cleanup and verified display/font/reader settings. Does not claim an exhaustive audit of all emulator settings.",
+  "taskEmulatorStopCommandAccepted": true
+}

@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "recordedUtc": "2026-11-04T11:38:55.869857+00:00",
+  "baseline": "06daf6ede7706ee67a4d56cd5b811f846788273f",
+  "scope": "Changed and untracked implementation/test/config/tool files at start of final connected run. Documentation and derived captures excluded.",
+  "files": [
+    {
+      "path": "androidApp/build.gradle.kts",
+      "sha256": "2b44712e8142701703f5bed6d56ebd27fce5e2374fc4330ca39a2d6e0921bade",
+      "bytes": 2057
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/AppearancePersistenceInstrumentedTest.kt",
+      "sha256": "4032c7ad47d745fc172b1d4f9db9639c667eb1f8f63d89b7c1cd49288c2140d9",
+      "bytes": 8348
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceScreenTest.kt",
+      "sha256": "f6e81b0f124e85c496f4735c8d7117af426a594c0b67256bd95982a963dba184",
+      "bytes": 26559
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceTalkBackInstrumentedTest.kt",
+      "sha256": "78acb1dc37837b99619c68075628fb391a35c3d78ec3d57164f54730d4cef39c",
+      "bytes": 12632
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/HistoryScreenTest.kt",
+      "sha256": "4f647a4093a5eaabd2aad83123477be233996e419a02ba410768366126b54f13",
+      "bytes": 20747
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/MapScreenTest.kt",
+      "sha256": "93e96b26a389ea0e9b5a485d1d00373b992de51cd49a4a510c32b1e26c6b6163",
+      "bytes": 3986
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/RankedDeveloperLiveTest.kt",
+      "sha256": "651251eea499788520ff0c92169dd89943ea6759fc005beb8a946aa66181e26b",
+      "bytes": 6429
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/RankedScreenTest.kt",
+      "sha256": "c64c21445e4870a477cca3f6db748d9a3c70cc76057a1af010597e96ad656184",
+      "bytes": 10331
+    },
+    {
+      "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/widget/WidgetAppearanceInstrumentedTest.kt",
+      "sha256": "ae4d127feb25b5a561ef1f665643be6f13a9ce18040b046ab57186c2f37c141c",
+      "bytes": 19865
+    },
+    {
+      "path": "androidApp/src/main/AndroidManifest.xml",
+      "sha256": "de3f2bde0758c5c18e19ec42a6cc7a6559643052b12d7185eb267094f5cff478",
+      "bytes": 3089
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/MainActivity.kt",
+      "sha256": "012b1c1685881ec7b1ae327a4d993f02349022c9557cba71af24563065094806",
+      "bytes": 5543
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/platform/AndroidAppearanceRuntime.kt",
+      "sha256": "9182926edde865eef23ec7e94481957c59d9ed4563c835f14751cb9a99fbb67a",
+      "bytes": 850
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/MapRotationWidget.kt",
+      "sha256": "a2a4893daeed976b8574a248be6eaa13991beb82263113656adc8dbd26d3a489",
+      "bytes": 9746
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/RankedWidgets.kt",
+      "sha256": "3c934662172c5779fd96a9f400b8a493901da9a00e8a76c90a0522523e50ae4e",
+      "bytes": 10410
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/WidgetAppearance.kt",
+      "sha256": "4523e3527df41069c10c4b2135ee703bff7f52782711bf30dbf78073a7265007",
+      "bytes": 7301
+    },
+    {
+      "path": "androidApp/src/main/kotlin/io/github/szymonbonkowski/apexcompanion/widget/WidgetAppearanceActivity.kt",
+      "sha256": "431fd16c3f1b27df76877318c29ae523ccd775da2095807e2ea21cf79bac4e1b",
+      "bytes": 7955
+    },
+    {
+      "path": "iosApp/Configuration/Config.xcconfig",
+      "sha256": "3d49de874357ee7aac4d34d66f7b7533fa6db8df7dfa63b86cfdad08db2e0318",
+      "bytes": 400
+    },
+    {
+      "path": "iosApp/WidgetExtension/MapWidget.swift",
+      "sha256": "38417f955fb9acfde3f7b361d6b1cd5e7aa152d59149e606279c83f4dfcb0500",
+      "bytes": 12950
+    },
+    {
+      "path": "iosApp/WidgetExtension/RankedWidget.swift",
+      "sha256": "b5b694f58f3102e7d2663927bd6c9722b85a81f3efaf40c179df531c65772913",
+      "bytes": 12245
+    },
+    {
+      "path": "iosApp/WidgetExtension/WidgetAppearance.swift",
+      "sha256": "6bc2c8bcfd5329067100e132fa1c20f0f6eea1934e34ea6c2cb8c87ec10fa4db",
+      "bytes": 7451
+    },
+    {
+      "path": "iosApp/iosApp/ContentView.swift",
+      "sha256": "d55bf411733ea636aa8bfe9a2c80b74c68f3414844cccc6f1097ee2996428d26",
+      "bytes": 600
+    },
+    {
+      "path": "iosApp/iosApp/RotationStorage.swift",
+      "sha256": "2adefe7cd14e4d86320448443d6b4f30c061e5b970de47ee8f944da496623aeb",
+      "bytes": 10162
+    },
+    {
+      "path": "shared/src/androidMain/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceEnvironment.android.kt",
+      "sha256": "c24e75001172dadcee8c09a3a80b0e651be4d174e6365cfd6149a3979aaa94b4",
+      "bytes": 2996
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/App.kt",
+      "sha256": "fc7d70fef937c2306b1206ec54441ad4d89defab2fa2298c525095643ec413ce",
+      "bytes": 35749
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/WidgetNavigation.kt",
+      "sha256": "1b08412dc8315e3ad35be2f5a402a2217d86cdbedf4e38936b461f375bb29dad",
+      "bytes": 437
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceCodec.kt",
+      "sha256": "2c59bd396d53f34f9662289fd2b92ca54828e2c28d9db1dae17098ac7439b7a0",
+      "bytes": 10202
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceModels.kt",
+      "sha256": "f0ffba5d660d71182804e86ddefb56d9e862c6e1bb5ae9e77e189ee6df6d01b6",
+      "bytes": 7509
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceRepository.kt",
+      "sha256": "bb1624f20fba87cb5ef450b3b0c50be5e381ad139367b5f4c18c0bf944917c68",
+      "bytes": 4926
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceStudio.kt",
+      "sha256": "a6de74b0fd279dfe134ae9fa20b67f48c3ff2ee3512c4c09dc561219d2d1bb8e",
+      "bytes": 28225
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceWidgetProjection.kt",
+      "sha256": "6faed9aef8e2a0d5210a4465e949c15a0f8904e32bce407461ae9a137bbdff31",
+      "bytes": 682
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/DashboardScreen.kt",
+      "sha256": "adc773079dc35c6bf39f3ab06558404a936d01defe03b440ccfdcdde3bb40842",
+      "bytes": 28073
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/DesignTheme.kt",
+      "sha256": "d39ea5cbaa3c8323bbaa1a7a9c5f8f507300ba60623b950a4801c5a7d6566342",
+      "bytes": 21096
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/FavoriteMapNotifications.kt",
+      "sha256": "5eac3308147568b06d880197404016e76642867cb66c32b97c4fe84a44b03956",
+      "bytes": 5683
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/PlatformAppearance.kt",
+      "sha256": "72c29d663d505fdfbbb9628c1b9aa528be7dcc4a8d5f8482e2a8c9776ee63d03",
+      "bytes": 273
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/WidgetAppearance.kt",
+      "sha256": "09b2820b891709197bedd333908f7cfe2c2d582f703e57a201a562241caa1413",
+      "bytes": 5678
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/history/HistoryScreens.kt",
+      "sha256": "ae569ef06a95f9820b65db2bc5f1efb4ad57e9c5060c47e5253299af0eacad18",
+      "bytes": 27554
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/matches/MatchScreens.kt",
+      "sha256": "6a8fd4a5399d266d71bd5c80459d875817fd0410222fffe2bb45a51d969918f8",
+      "bytes": 32289
+    },
+    {
+      "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedScreens.kt",
+      "sha256": "301d434a6bf9cb0703d563f3baffd1e209b72fc8e07d0ae7087b33a847982ad6",
+      "bytes": 22305
+    },
+    {
+      "path": "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/AppearanceTest.kt",
+      "sha256": "b9423072f2d037bb74395a6088018aa2efa404fa6ac4e47174fd37716337868a",
+      "bytes": 14440
+    },
+    {
+      "path": "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/DashboardProjectionTest.kt",
+      "sha256": "c42781b8df27daa178d8f01b2707a0f1b0d30ebce37d1c23935590162ba1d303",
+      "bytes": 9474
+    },
+    {
+      "path": "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/WidgetAppearanceTest.kt",
+      "sha256": "0760cb2bdc721ef5a54ad14786d811ec105e9699d16f7658cb6cc0984500774b",
+      "bytes": 4444
+    },
+    {
+      "path": "shared/src/commonTest/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/WidgetNavigationTest.kt",
+      "sha256": "7a9e5b61910de984bfa02795f791c72e084d632e0f6b63b3d81669993a97596a",
+      "bytes": 701
+    },
+    {
+      "path": "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceEnvironment.ios.kt",
+      "sha256": "732797879774cc376702e3b507d7d1ebdc753a80f85be715d6a6d9facb79a290",
+      "bytes": 979
+    },
+    {
+      "path": "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/MainViewController.kt",
+      "sha256": "a0341910042e68f323a3afd9b683f36974b6a76bc8401e01f3328eabfa80078f",
+      "bytes": 7186
+    },
+    {
+      "path": "tools/audit_v05_privacy.py",
+      "sha256": "f6f69b459925d72e90f3e297ff73c2214eda2048452852e85449e8b3fed79397",
+      "bytes": 3789
+    },
+    {
+      "path": "tools/check_v05_android_restart.py",
+      "sha256": "dd5516c067f97506b05fbe5a32be93e327640e42352ab88ec54a5e9c7ee84144",
+      "bytes": 5440
+    },
+    {
+      "path": "tools/collect_v05_evidence.py",
+      "sha256": "65e5b5578f2d2faa8d2d09e1ebcbef94b6e48f44058803ec4375e433e0ede1c3",
+      "bytes": 5790
+    },
+    {
+      "path": "tools/pull_v05_captures.py",
+      "sha256": "c5506f166939f5139f562fded0dcf702260f836a3cb8874b38b02f5c62563376",
+      "bytes": 2911
+    }
+  ]
+}

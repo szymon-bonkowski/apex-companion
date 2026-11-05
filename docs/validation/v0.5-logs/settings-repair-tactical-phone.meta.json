@@ -1,0 +1,39 @@
+{
+  "command": [
+    "adb",
+    "-s",
+    "emulator-5554",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "TACTICAL",
+    "-e",
+    "v05Variant",
+    "phone",
+    "-e",
+    "v05SettingsOnly",
+    "true",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T05:59:46.393941+00:00",
+  "finishedUtc": "2026-11-04T05:59:52.883216+00:00",
+  "wallSeconds": 6.489275941989035,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "display": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  },
+  "log": "docs/validation/v0.5-logs/settings-repair-tactical-phone.log"
+}

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:09:01.414259+00:00",
+  "finishedUtc": "2026-11-03T23:09:23.367690+00:00",
+  "wallSeconds": 21.95343591099663,
+  "instrumentation": {
+    "success": false,
+    "testsPassed": null
+  },
+  "log": "/tmp/apex-v05-talkback-first.log"
+}

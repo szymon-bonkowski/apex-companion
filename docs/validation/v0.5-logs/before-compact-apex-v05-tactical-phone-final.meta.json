@@ -1,0 +1,34 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "TACTICAL",
+    "-e",
+    "v05Variant",
+    "phone",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:13:34.345592+00:00",
+  "finishedUtc": "2026-11-03T23:13:49.714750+00:00",
+  "wallSeconds": 15.369155527005205,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "log": "/tmp/apex-v05-tactical-phone-final.log",
+  "display": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  }
+}

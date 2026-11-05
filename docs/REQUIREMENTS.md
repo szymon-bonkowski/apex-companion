@@ -45,3 +45,7 @@ The maintainer v0.4 scope extension (ADR0009) promotes FR-014 to P0 and FR-015 t
 ## State model
 
 `LIVE` = validated source freshness and validity; `STALE` = last known snapshot with age/failed refresh; `UNAVAILABLE` = no trustworthy value; `DEMO` = explicitly synthetic fixtures; `MANUAL` = user-provided inputs. Unknown values must not become zero. Season-specific thresholds and rotation pools must be source-backed and dated, not hardcoded.
+
+## Owner-approved v0.5 expansion — 2026-11-03
+
+FR-007 now requires four complete functional Carbon/Liquid/Editorial/Tactical designs across shared screens and native widgets, dedicated preview/apply Appearance Studio, independent durable appearance/preset CRUD, adjustable palette/mode/density/geometry/type/motion, per-module Today configuration and per-instance native widget appearance. Cosmetics cannot reset game data or alter polling. Corrupt/future cosmetic records are preserved until explicit appearance-only recovery. FR-012 is capability-gated until trustworthy authorized future schedules exist; preferences may be prepared locally, while disabled delivery is explained. [Exact acceptance IDs](specs/v0-5-polish.md), [verification](validation/v0.5-report.md). iOS execution remains deferred under ADR0007.

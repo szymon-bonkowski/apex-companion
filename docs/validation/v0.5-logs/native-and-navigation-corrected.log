@@ -1,0 +1,124 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest:
+INSTRUMENTATION_STATUS: test=everyDesignRendersNativeSmallAndWideFamiliesWithProvenance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Critical native widget text is clipped:
+v05-widget-carbon-manual-progress-spacious-details-300.png: Clipped 'Open app' line 0 ink=RectF(606.0, 497.0, 734.0, 527.0) visible=RectF(605.0, 471.0, 735.0, 525.0)
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend(WidgetAppearanceInstrumentedTest.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:98)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest.everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(WidgetAppearanceInstrumentedTest.kt:112)
+
+INSTRUMENTATION_STATUS: stream=
+Error in everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest):
+java.lang.AssertionError: Critical native widget text is clipped:
+v05-widget-carbon-manual-progress-spacious-details-300.png: Clipped 'Open app' line 0 ink=RectF(606.0, 497.0, 734.0, 527.0) visible=RectF(605.0, 471.0, 735.0, 525.0)
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend(WidgetAppearanceInstrumentedTest.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:98)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest.everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(WidgetAppearanceInstrumentedTest.kt:112)
+
+INSTRUMENTATION_STATUS: test=everyDesignRendersNativeSmallAndWideFamiliesWithProvenance
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest:
+INSTRUMENTATION_STATUS: test=widgetLinksOpenTheirDestinationAndSurviveRecreation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:52)
+	Suppressed: java.lang.AssertionError: Activity never becomes requested state "[DESTROYED]" (last lifecycle transition = "PAUSED")
+		at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+		at androidx.test.core.app.ActivityScenario.moveToState(ActivityScenario.java:689)
+		at androidx.test.core.app.ActivityScenario.close(ActivityScenario.java:421)
+		at kotlin.io.CloseableKt.closeFinally(Closeable.kt:50)
+		at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:47)
+
+INSTRUMENTATION_STATUS: stream=
+Error in widgetLinksOpenTheirDestinationAndSurviveRecreation(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:52)
+	Suppressed: java.lang.AssertionError: Activity never becomes requested state "[DESTROYED]" (last lifecycle transition = "PAUSED")
+		at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+		at androidx.test.core.app.ActivityScenario.moveToState(ActivityScenario.java:689)
+		at androidx.test.core.app.ActivityScenario.close(ActivityScenario.java:421)
+		at kotlin.io.CloseableKt.closeFinally(Closeable.kt:50)
+		at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:47)
+
+INSTRUMENTATION_STATUS: test=widgetLinksOpenTheirDestinationAndSurviveRecreation
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 84.734
+There were 2 failures:
+1) everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest)
+java.lang.AssertionError: Critical native widget text is clipped:
+v05-widget-carbon-manual-progress-spacious-details-300.png: Clipped 'Open app' line 0 ink=RectF(606.0, 497.0, 734.0, 527.0) visible=RectF(605.0, 471.0, 735.0, 525.0)
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend(WidgetAppearanceInstrumentedTest.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:98)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest.everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(WidgetAppearanceInstrumentedTest.kt:112)
+2) widgetLinksOpenTheirDestinationAndSurviveRecreation(io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:52)
+	Suppressed: java.lang.AssertionError: Activity never becomes requested state "[DESTROYED]" (last lifecycle transition = "PAUSED")
+		at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+		at androidx.test.core.app.ActivityScenario.moveToState(ActivityScenario.java:689)
+		at androidx.test.core.app.ActivityScenario.close(ActivityScenario.java:421)
+		at kotlin.io.CloseableKt.closeFinally(Closeable.kt:50)
+		at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.widgetLinksOpenTheirDestinationAndSurviveRecreation(AppearanceScreenTest.kt:47)
+		... 33 more
+
+FAILURES!!!
+Tests run: 2,  Failures: 2
+
+
+INSTRUMENTATION_CODE: -1

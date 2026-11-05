@@ -1,0 +1,14 @@
+{
+  "style": "LIQUID",
+  "kind": "manual-progress",
+  "sizeDp": [
+    300,
+    220
+  ],
+  "syntheticData": true,
+  "androidApi": 37,
+  "densityDpi": 420,
+  "systemFontScale": 1.0,
+  "captureMechanism": "Actual Android emulator Glance RemoteViews.apply, measured/layout/draw to bitmap; not a launcher screenshot or iOS render",
+  "fixtureTimeSeconds": 1793707200
+}

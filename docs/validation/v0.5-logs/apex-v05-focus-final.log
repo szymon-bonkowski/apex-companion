@@ -1,0 +1,198 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest:
+INSTRUMENTATION_STATUS: test=dashboardControlsSaveOrderVisibilitySizeAndResetWhileNotificationsRemainGated
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=dashboardControlsSaveOrderVisibilitySizeAndResetWhileNotificationsRemainGated
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest:
+INSTRUMENTATION_STATUS: test=boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Accessibility focus did not move to labelled navigation
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:155)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:93)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+
+INSTRUMENTATION_STATUS: stream=
+Error in boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest):
+java.lang.AssertionError: Accessibility focus did not move to labelled navigation
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:155)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:93)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+
+INSTRUMENTATION_STATUS: test=boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest:
+INSTRUMENTATION_STATUS: test=independentNativePreferencesSurviveReloadAndAppAppearancePublication
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=independentNativePreferencesSurviveReloadAndAppAppearancePublication
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=everyDesignRendersNativeSmallAndWideFamiliesWithProvenance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: CARBON/demo-map missing update: APEX COMPANION  DEMO · Pubs  Example Highlands Ends 1:30 PM  Next: Example Harbor · 1:30 PM Synced 1:00 PM · cached schedule Synthetic demonstration   Mode   Look   Refresh 
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend$lambda$6(WidgetAppearanceInstrumentedTest.kt:132)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1$$ExternalSyntheticLambda6.run(D8$$SyntheticClass:0)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2675)
+	at android.os.Handler.handleCallback(Handler.java:1082)
+	at android.os.Handler.dispatchMessageImpl(Handler.java:135)
+	at android.os.Handler.dispatchMessage(Handler.java:126)
+	at android.os.Looper.loopOnce(Looper.java:295)
+	at android.os.Looper.loop(Looper.java:398)
+	at android.app.ActivityThread.main(ActivityThread.java:9569)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:575)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+
+INSTRUMENTATION_STATUS: stream=
+Error in everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest):
+java.lang.AssertionError: CARBON/demo-map missing update: APEX COMPANION  DEMO · Pubs  Example Highlands Ends 1:30 PM  Next: Example Harbor · 1:30 PM Synced 1:00 PM · cached schedule Synthetic demonstration   Mode   Look   Refresh 
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend$lambda$6(WidgetAppearanceInstrumentedTest.kt:132)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1$$ExternalSyntheticLambda6.run(D8$$SyntheticClass:0)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2675)
+	at android.os.Handler.handleCallback(Handler.java:1082)
+	at android.os.Handler.dispatchMessageImpl(Handler.java:135)
+	at android.os.Handler.dispatchMessage(Handler.java:126)
+	at android.os.Looper.loopOnce(Looper.java:295)
+	at android.os.Looper.loop(Looper.java:398)
+	at android.app.ActivityThread.main(ActivityThread.java:9569)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:575)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+
+INSTRUMENTATION_STATUS: test=everyDesignRendersNativeSmallAndWideFamiliesWithProvenance
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nativeEditorRestoresDraftAndAppliesOnlySelectedInstance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeEditorRestoresDraftAndAppliesOnlySelectedInstance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=concurrentPublishAndReadKeepCompleteCosmeticRecords
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=concurrentPublishAndReadKeepCompleteCosmeticRecords
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 54.803
+There were 2 failures:
+1) boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest)
+java.lang.AssertionError: Accessibility focus did not move to labelled navigation
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:155)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:93)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+2) everyDesignRendersNativeSmallAndWideFamiliesWithProvenance(io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest)
+java.lang.AssertionError: CARBON/demo-map missing update: APEX COMPANION  DEMO · Pubs  Example Highlands Ends 1:30 PM  Next: Example Harbor · 1:30 PM Synced 1:00 PM · cached schedule Synthetic demonstration   Mode   Look   Refresh 
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1.invokeSuspend$lambda$6(WidgetAppearanceInstrumentedTest.kt:132)
+	at io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest$everyDesignRendersNativeSmallAndWideFamiliesWithProvenance$1$$ExternalSyntheticLambda6.run(D8$$SyntheticClass:0)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2675)
+	at android.os.Handler.handleCallback(Handler.java:1082)
+	at android.os.Handler.dispatchMessageImpl(Handler.java:135)
+	at android.os.Handler.dispatchMessage(Handler.java:126)
+	at android.os.Looper.loopOnce(Looper.java:295)
+	at android.os.Looper.loop(Looper.java:398)
+	at android.app.ActivityThread.main(ActivityThread.java:9569)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:575)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+
+FAILURES!!!
+Tests run: 6,  Failures: 2
+
+
+INSTRUMENTATION_CODE: -1

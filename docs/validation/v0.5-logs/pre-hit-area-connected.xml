@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="43" failures="1" errors="0" skipped="1" time="0.000" timestamp="2026-11-04T11:32:31" hostname="localhost">
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.102" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="corruptAndInvalidUtf8SettingsStayReadOnlyUntilExplicitRecovery" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.029" />
+    <testcase name="nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.032" />
+    <testcase name="interruptedNativeWriteRetainsPreviousSettingsAndPublishedState" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.008" />
+    <testcase name="allDesignsAndDashboardSurviveNativeStoreReopenWithoutChangingGameFiles" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.033" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" tests="6" failures="0" errors="0" skipped="0" time="165.307" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="hardwareTabAndEnterNavigateToStudioAndBackWithoutTouchActions" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="8.687" />
+    <testcase name="studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="67.783" />
+    <testcase name="fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="53.177" />
+    <testcase name="dashboardControlsSaveOrderVisibilitySizeAndResetWhileNotificationsRemainGated" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="13.736" />
+    <testcase name="unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="18.304" />
+    <testcase name="widgetLinksOpenTheirDestinationAndSurviveRecreation" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="3.620" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="6.713" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns" classname="io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest" time="6.713" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="10.744" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="systemPickerExportsThenReadsPortableJsonAndCancellationDoesNotChangeData" classname="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" time="10.744" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.296" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="oversizedInvalidUtf8AndFutureRecordsFailClosedWithoutOverwrite" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.058" />
+    <testcase name="interruptedImportKeepsCommittedBytesThenRestoresIdempotently" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.122" />
+    <testcase name="offlineStopWithMissingEndRemainsPartialInsteadOfZero" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.065" />
+    <testcase name="activeSessionAndObservationAnchorsSurviveReopenWithoutExtraSamples" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.051" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" tests="3" failures="1" errors="0" skipped="0" time="285.900" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="22.347">
+      <failure>java.lang.AssertionError: Expected durable state was not published
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.await(HistoryScreenTest.kt:354)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.access$await(HistoryScreenTest.kt:25)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest$optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals$1.invokeSuspend(HistoryScreenTest.kt:58)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.HistoryScreenTest.optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals(HistoryScreenTest.kt:47)
+</failure>
+    </testcase>
+    <testcase name="backupPreviewRequiresConfirmationAndDeletePreservesRestoredGoal" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="172.669" />
+    <testcase name="sessionUiRestoresActiveStateAndDistinguishesManualFromPartial" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="90.884" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MapScreenTest" tests="2" failures="0" errors="0" skipped="0" time="5.698" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="durableCacheRecoversAfterNetworkFailureAndNeverExtendsExpiredMap" classname="io.github.szymonbonkowski.apexcompanion.MapScreenTest" time="0.021" />
+    <testcase name="unavailableAndDemoRemainDistinctAcrossModesAndRecreation" classname="io.github.szymonbonkowski.apexcompanion.MapScreenTest" time="5.677" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" tests="6" failures="0" errors="0" skipped="0" time="15.852" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="pairingIsKeystoreEncryptedPersistsAndCanBeRevokedLocally" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.035" />
+    <testcase name="actualSystemPhotoPickerCancellationReturnsNoDraft" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="4.048" />
+    <testcase name="unreadableFutureAndOversizedJournalFailClosedWithoutOverwrite" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.016" />
+    <testcase name="linuxMockPinnedHttpsRejectsUnauthorizedAndImportsReplaySafely" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="5.688" />
+    <testcase name="actualPhotoPickerSelectedSyntheticImageProducesDigestOnlyDraft" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="6.038" />
+    <testcase name="matchAtomicFileRestartsRecoversInterruptedWriteAndPreservesRankedBytes" classname="io.github.szymonbonkowski.apexcompanion.MatchPlatformInstrumentedTest" time="0.027" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" tests="2" failures="0" errors="0" skipped="0" time="181.742" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="manualResultCorrectionStatisticsAndRepeatRestoreUseActualControls" classname="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" time="121.806" />
+    <testcase name="automaticAggregatesRequireOptInAndScreenshotDraftRequiresConfirmation" classname="io.github.szymonbonkowski.apexcompanion.MatchScreenTest" time="59.936" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest" tests="1" failures="0" errors="0" skipped="1" time="0.005" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="authorizedAndroidProfileUiCacheColdStoreAndDisconnect" classname="io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest" time="0.005">
+      <skipped>org.junit.AssumptionViolatedException: Authorized developer test is opt-in
+	at org.junit.Assume.assumeTrue(Assume.java:68)
+	at io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest$authorizedAndroidProfileUiCacheColdStoreAndDisconnect$1.invokeSuspend(RankedDeveloperLiveTest.kt:22)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.RankedDeveloperLiveTest.authorizedAndroidProfileUiCacheColdStoreAndDisconnect(RankedDeveloperLiveTest.kt:21)
+</skipped>
+    </testcase>
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedPersistenceInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="0.040" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="androidAtomicRecordsRestoreGoalsProfilesAndGlobalCacheWithoutTouchingMaps" classname="io.github.szymonbonkowski.apexcompanion.RankedPersistenceInstrumentedTest" time="0.040" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" tests="3" failures="0" errors="0" skipped="0" time="14.414" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="profileNameHintAndInvalidLookupAreVisible" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="3.141" />
+    <testcase name="profileScreenResolvesNameLinksUidAndDisconnectKeepsManualGoal" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="7.208" />
+    <testcase name="manualRankedGoalSurvivesRepositoryRestartAndKeepsMapsSeparate" classname="io.github.szymonbonkowski.apexcompanion.RankedScreenTest" time="4.065" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" tests="3" failures="0" errors="0" skipped="0" time="3.471" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="sourceScheduleRendersCurrentNextAndNeverKeepsExpiredMapLive" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="0.960" />
+    <testcase name="twoInstancesRenderAndKeepIndependentModes" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="2.500" />
+    <testcase name="refreshWithoutAuthorizedProviderCreatesNoNetworkWork" classname="io.github.szymonbonkowski.apexcompanion.widget.MapWidgetInstrumentedTest" time="0.011" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" tests="2" failures="0" errors="0" skipped="0" time="2.970" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="boundInstancesKeepIndependentConfiguration" classname="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" time="1.817" />
+    <testcase name="nativeCardsShowCachedLiveStaleManualAndGoalValuesWithoutRequests" classname="io.github.szymonbonkowski.apexcompanion.widget.RankedWidgetInstrumentedTest" time="1.153" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="32.112" timestamp="2026-11-04T11:32:31" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="independentNativePreferencesSurviveReloadAndAppAppearancePublication" classname="io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest" time="1.822" />
+    <testcase name="everyDesignRendersNativeSmallAndWideFamiliesWithProvenance" classname="io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest" time="27.137" />
+    <testcase name="nativeEditorRestoresDraftAndAppliesOnlySelectedInstance" classname="io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest" time="3.134" />
+    <testcase name="concurrentPublishAndReadKeepCompleteCosmeticRecords" classname="io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest" time="0.019" />
+  </testsuite>
+</testsuites>

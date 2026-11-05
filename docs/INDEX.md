@@ -24,5 +24,9 @@ Accepted ADR/Architecture outrank specs and active plans, after explicit owner/l
 
 ## Current implementation evidence
 
+- [v0.5 design/personalization report](validation/v0.5-report.md), [appearance customization](APPEARANCE_CUSTOMIZATION.md), [widget theming](WIDGET_THEMING.md), [v0.5 plan](../plans/completed/2026-11-03-v0-5-design-personalization.md).
+- [v0.4 partial capture/journal report](validation/v0.4-report.md); real automatic capture remains unaccepted.
+- [v0.3 private history/sessions report](validation/v0.3-report.md).
+
 - [v0.2 Ranked/Profile report](validation/v0.2-report.md), [provider contract](validation/v0.2-provider-contract.md), [machine-readable evidence](validation/v0.2-evidence.json).
 - [v0.1 Maps report](validation/v0.1-report.md) and [remaining v0.0 scope](../plans/active/2026-11-02-v0-0-offline-vertical-slice.md).

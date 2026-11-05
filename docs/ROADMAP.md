@@ -1,6 +1,6 @@
 # Capability-led roadmap — Apex Companion
 
-**Status:** v0.1 Maps, v0.2 Ranked/Profile and v0.3 private RP history/sessions/trends/backup are implemented for authorized private developer use. [v0.3 evidence](validation/v0.3-report.md) separates Android/shared validation from iOS source, which is Implemented — Not Verified under ADR0007. Public activation remains blocked. v0.2 supplies the missing minimum goal/settings foundations; v0.3 supplies the earlier missing backup/import; broader v0.0 navigation/settings and platform polish remain separate work.
+**Status:** v0.5 design/personalization is implemented locally with validation tracked in its report; v0.4 automatic capture remains unaccepted. v0.1 Maps, v0.2 Ranked/Profile and v0.3 private RP history/sessions/trends/backup are implemented for authorized private developer use. [v0.3 evidence](validation/v0.3-report.md) separates Android/shared validation from iOS source, which is Implemented — Not Verified under ADR0007. Public activation remains blocked. v0.2 supplies the missing minimum goal/settings foundations; v0.3 supplies the earlier missing backup/import; broader v0.0 navigation/settings and platform polish remain separate work.
 
 ## Dependencies
 
@@ -50,11 +50,11 @@ Maintainer scope change adds an optional Windows selected-window capture compani
 
 **Exit:** successive real matches collected without per-match entry, truthful provenance, no duplicates/overwrite, secure offline/reconnect sync, complete independent manual journal, measured recognition quality, Android/shared regression and explicit Windows/iOS statuses. [Spec](specs/v0-4-match-import.md).
 
-## v0.5 — Polished mobile companion
+## v0.5 — Four designs, personalization and reliability
 
-Original design and configurable native widget visuals, phone/tablet adaptive layouts, VoiceOver/TalkBack support, background budget testing, map-change notification opt-in and backup/migration QA.
+Owner-expanded implementation: complete Carbon/Liquid/Editorial/Tactical presentation, durable Appearance Studio/presets, configurable Today, independent native widget design/accent/density/surface settings, responsive/accessibility fallbacks and gated favorite-map preferences. Existing semantics/storage/provider gates and unfinished v0.4 capture are preserved. [Spec](specs/v0-5-polish.md), [completed plan](../plans/completed/2026-11-03-v0-5-design-personalization.md).
 
-**Exit:** visual and accessibility matrix on both platforms, privacy/performance evidence, no stale data masquerading as live. [Spec](specs/v0-5-polish.md).
+**Exit:** actual Android/shared builds/tests, inspected four-style screen/widget matrix, restart/migration/accessibility/performance evidence and accurate limitations in [report](validation/v0.5-report.md). iOS source Implemented — Not Verified; Apple verification at final stabilization under ADR0007.
 
 ## v1.0 — Independent open-source mobile releases
 

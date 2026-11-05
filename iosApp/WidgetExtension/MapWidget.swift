@@ -18,6 +18,11 @@ struct MapConfiguration: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Map rotation"
     static var description = IntentDescription("Choose the playlist for this widget. Missing source data stays unavailable.")
     @Parameter(title: "Playlist", default: .ranked) var mode: RotationMode
+    @Parameter(title: "Design", default: .follow) var design: NativeWidgetStyle
+    @Parameter(title: "Accent", default: .theme) var accent: NativeWidgetAccent
+    @Parameter(title: "Density", default: .follow) var density: NativeWidgetDensity
+    @Parameter(title: "Surface", default: .follow) var surface: NativeWidgetSurface
+    var appearance: NativeWidgetAppearance { .resolve(style: design, accent: accent, density: density, surface: surface) }
 }
 
 // This wire projection is created by RotationWidgetCodec in shared Kotlin.
@@ -76,6 +81,7 @@ struct MapEntry: TimelineEntry {
     let lastSync: Date?
     let isDemo: Bool
     let validUntil: Date?
+    var appearance = NativeWidgetAppearance()
 
     static func unavailable(_ date: Date, mode: String) -> MapEntry {
         MapEntry(date: date, modeLabel: mode, state: "UNAVAILABLE", currentName: nil,
@@ -160,12 +166,17 @@ struct MapTimelineProvider: AppIntentTimelineProvider {
     }
 
     func snapshot(for configuration: MapConfiguration, in context: Context) async -> MapEntry {
-        SnapshotReader.timeline(mode: configuration.mode, now: Date())[0]
+        var entry = SnapshotReader.timeline(mode: configuration.mode, now: Date())[0]
+        entry.appearance = configuration.appearance
+        return entry
     }
 
     func timeline(for configuration: MapConfiguration, in context: Context) async -> Timeline<MapEntry> {
         let now = Date()
-        return Timeline(entries: SnapshotReader.timeline(mode: configuration.mode, now: now),
+        let entries = SnapshotReader.timeline(mode: configuration.mode, now: now).map { original in
+            var entry = original; entry.appearance = configuration.appearance; return entry
+        }
+        return Timeline(entries: entries,
                         policy: .after(now.addingTimeInterval(15 * 60)))
     }
 }
@@ -182,15 +193,17 @@ struct MapWidgetView: View {
         let nextVisible = entry.nextStarts.map { now <= $0 } ?? false
         let displayState = !currentVisible ? (entry.isDemo ? "DEMO" : "UNAVAILABLE")
             : entry.state == "LIVE" && (entry.validUntil.map { now >= $0 } ?? false) ? "STALE" : entry.state
-        VStack(alignment: .leading, spacing: 8) {
+        let appearance = entry.appearance
+        VStack(alignment: .leading, spacing: family == .systemSmall ? 3 : appearance.spacing) {
+            if family != .systemSmall || appearance.style == .editorial { NativeWidgetIdentity(appearance: appearance, title: "Map rotation") }
             HStack {
                 Text(entry.modeLabel).font(.caption.weight(.semibold))
                 Spacer(minLength: 0)
                 Text(displayState).font(.caption2.weight(.bold))
-                    .foregroundStyle(displayState == "LIVE" ? Color.teal : Color.orange)
+                    .foregroundStyle(appearance.accent)
             }
             Text(currentVisible ? (entry.currentName ?? "Map unavailable") : "Map unavailable")
-                .font(family == .systemSmall ? .headline : .title2.bold())
+                .font(.system(family == .systemSmall ? .headline : (appearance.style == .editorial ? .title : .title2), design: appearance.fontDesign).weight(.bold))
                 .minimumScaleFactor(0.8).lineLimit(2)
             if currentVisible, let ends = entry.currentEnds {
                 HStack(spacing: 4) {
@@ -211,29 +224,30 @@ struct MapWidgetView: View {
                     }.font(.subheadline)
                 }
             } else {
-                Text("Next map not provided").font(.caption2).foregroundStyle(.secondary)
+                Text("Next map not provided").font(.caption2).foregroundStyle(appearance.muted)
             }
-            if family != .systemSmall {
-                if let synced = entry.lastSync {
-                    HStack(spacing: 4) {
-                        Text("Last sync")
-                        Text(synced, style: .relative)
-                    }.font(.caption2).foregroundStyle(.secondary)
-                }
-            }
+            if let synced = entry.lastSync {
+                HStack(spacing: 4) {
+                    Text("Updated")
+                    Text(synced, style: .time)
+                }.font(.caption2).foregroundStyle(appearance.muted)
+            } else { Text("No successful update").font(.caption2).foregroundStyle(appearance.muted) }
             Spacer(minLength: 0)
             Text(entry.isDemo ? "DEMO · Not live game data" : "Apex Legends Status · Cached schedule")
-                .font(.caption2).foregroundStyle(.secondary).lineLimit(2)
+                .font(.caption2).foregroundStyle(appearance.muted).lineLimit(2)
             if family == .systemLarge && !entry.isDemo {
                 Link("Data provided by Apex Legends Status", destination: URL(string: "https://apexlegendsstatus.com")!)
                     .font(.caption2)
             }
             if entry.currentName == nil && family != .systemSmall {
                 Text("Open Apex Companion to synchronize. Refresh timing is controlled by iOS.")
-                    .font(.caption2).foregroundStyle(.secondary)
+                    .font(.caption2).foregroundStyle(appearance.muted)
             }
         }
-        .containerBackground(.fill.tertiary, for: .widget)
+        .foregroundStyle(appearance.ink)
+        .tint(appearance.accent)
+        .environment(\.colorScheme, appearance.dark ? .dark : .light)
+        .containerBackground(for: .widget) { NativeWidgetBackground(appearance: appearance) }
         .widgetURL(URL(string: "apexcompanion://maps"))
         .accessibilityElement(children: .combine)
     }

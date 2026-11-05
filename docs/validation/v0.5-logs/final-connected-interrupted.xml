@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="18" failures="4" errors="0" skipped="0" time="0.000" timestamp="2026-11-04T11:15:12" hostname="localhost">
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.074" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="corruptAndInvalidUtf8SettingsStayReadOnlyUntilExplicitRecovery" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.024" />
+    <testcase name="nativePresetsRestoreCosmeticsAndLayoutAfterRestartThenResetWithoutDeletingOtherPresets" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.025" />
+    <testcase name="interruptedNativeWriteRetainsPreviousSettingsAndPublishedState" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.003" />
+    <testcase name="allDesignsAndDashboardSurviveNativeStoreReopenWithoutChangingGameFiles" classname="io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest" time="0.022" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" tests="6" failures="2" errors="0" skipped="0" time="112.582" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="hardwareTabAndEnterNavigateToStudioAndBackWithoutTouchActions" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="7.469" />
+    <testcase name="studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="67.075" />
+    <testcase name="fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="1.962">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance$1.invokeSuspend(AppearanceScreenTest.kt:264)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance(AppearanceScreenTest.kt:223)
+</failure>
+    </testcase>
+    <testcase name="dashboardControlsSaveOrderVisibilitySizeAndResetWhileNotificationsRemainGated" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="12.866" />
+    <testcase name="unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="19.232">
+      <failure>java.lang.AssertionError: Missing fully visible UI BySelector [DESC='\QAppearance preview Liquid. DEMO values only.\E']
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.scrollTo(AppearanceScreenTest.kt:361)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.access$scrollTo(AppearanceScreenTest.kt:27)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest$unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation$1.invokeSuspend(AppearanceScreenTest.kt:141)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest.unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation(AppearanceScreenTest.kt:123)
+</failure>
+    </testcase>
+    <testcase name="widgetLinksOpenTheirDestinationAndSurviveRecreation" classname="io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest" time="3.978" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="6.496" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns" classname="io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest" time="6.496" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="12.035" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="systemPickerExportsThenReadsPortableJsonAndCancellationDoesNotChangeData" classname="io.github.szymonbonkowski.apexcompanion.HistoryDocumentsInstrumentedTest" time="12.035" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.295" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="oversizedInvalidUtf8AndFutureRecordsFailClosedWithoutOverwrite" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.063" />
+    <testcase name="interruptedImportKeepsCommittedBytesThenRestoresIdempotently" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.133" />
+    <testcase name="offlineStopWithMissingEndRemainsPartialInsteadOfZero" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.062" />
+    <testcase name="activeSessionAndObservationAnchorsSurviveReopenWithoutExtraSamples" classname="io.github.szymonbonkowski.apexcompanion.HistoryPersistenceInstrumentedTest" time="0.037" />
+  </testsuite>
+  <testsuite name="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" tests="1" failures="1" errors="0" skipped="0" time="29.019" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="optInContextAndManualSamplesRenderUnknownAndCompatibleIntervals" classname="io.github.szymonbonkowski.apexcompanion.HistoryScreenTest" time="29.019">
+      <failure>Test failed with status -1</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="android-test" tests="1" failures="1" errors="0" skipped="0" time="0.000" timestamp="2026-11-04T11:15:12" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="testRunFailed" classname="android-test" time="0.000">
+      <failure>Test run failed to complete. Expected 43 tests, received 16</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -2,7 +2,7 @@
 
 **A free, independent, open-source Apex Legends companion app for Android and iOS, built with Kotlin Multiplatform.**
 
-> **Project state (2026-11-03):** v0.4 implementation adds a durable match journal, shared manual/detail/statistics screens, native screenshot-assisted drafts and secure local PC sync, preserving v0.1–v0.3 functionality. The Windows WGC/Tesseract companion source crosscompiles, but **real Apex automatic capture is not verified and production auto-acceptance is disabled**. Native mobile OCR is not implemented. See [v0.4 report](docs/validation/v0.4-report.md) and [last completed v0.3 evidence](docs/validation/v0.3-report.md). iOS source is **Implemented — Not Verified** under ADR0007; public providers remain gated.
+> **Project state (2026-11-04):** v0.5 adds four design systems, Appearance Studio, local presets, configurable Today and native widget appearance. [v0.5 evidence](docs/validation/v0.5-report.md) distinguishes executed Android/shared checks from pending final visual/regression work. v0.4 journal/local sync is preserved; **real Windows/Apex automatic capture is not verified and production auto-acceptance is disabled**. Native mobile OCR is not implemented. iOS source is **Implemented — Not Verified** under ADR0007; public providers remain gated.
 
 The experience centers on map rotation, ranked progress, goals, carefully labeled data freshness and high-quality home-screen widgets. Core rules and UI are shared where practical; Android widgets use Glance and iOS widgets use SwiftUI/WidgetKit. The project has no ads, subscriptions, forced account creation or mandatory telemetry.
 
@@ -63,6 +63,12 @@ Install `androidApp/build/outputs/apk/debug/androidApp-debug.apk`. The Maps scre
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [LEGAL_ASSETS.md](docs/LEGAL_ASSETS.md). Original source and documentation are MIT-licensed; this grants no right to redistribute third-party game art or API content.
 
 **This project is not endorsed by or affiliated with EA or its licensors.** Apex Legends and related trademarks belong to their respective owners.
+
+## v0.5 design and personalization
+
+Local implementation adds four complete selectable design identities — **Carbon, Liquid, Editorial and Tactical** — with Settings → Appearance Studio, DEMO previews, local saved presets and adjustable colors, density, geometry, typography and motion. Today projects real local/source data and supports module visibility, order, size and playlist. Glance/WidgetKit retain native per-instance appearance and optional follow-app. Appearance uses its own atomic file, preserving all game data and existing backups. Notification delivery remains gated pending authorized trustworthy future schedules. [Design](docs/DESIGN_SYSTEM.md), [customization](docs/APPEARANCE_CUSTOMIZATION.md), [widgets](docs/WIDGET_THEMING.md), [v0.5 evidence](docs/validation/v0.5-report.md).
+
+iOS source is **Implemented — Not Verified**. v0.4 automatic Apex capture remains unfinished with production autoacceptance disabled. No public release is implied.
 
 ## v0.4 implementation status
 

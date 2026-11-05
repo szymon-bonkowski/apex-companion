@@ -1,0 +1,8 @@
+{
+  "syntheticData": true,
+  "style": "LIQUID",
+  "actualEmulatorCapture": true,
+  "visuallyInspected": true,
+  "finding": "Body/headings inherited black LocalContentColor on dark transparent Surface; root fixing explicit onSurface.",
+  "finalAcceptanceEvidence": false
+}

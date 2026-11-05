@@ -1,0 +1,34 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "TACTICAL",
+    "-e",
+    "v05Variant",
+    "landscape",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:18:00.624138+00:00",
+  "finishedUtc": "2026-11-03T23:18:58.201875+00:00",
+  "wallSeconds": 57.577734172999044,
+  "instrumentation": {
+    "success": false,
+    "testsPassed": null
+  },
+  "log": "/tmp/apex-v05-tactical-landscape-final.log",
+  "display": {
+    "size": "Physical size: 1080x2400\nOverride size: 2400x1080",
+    "density": "Physical density: 420",
+    "fontScale": "1.0"
+  }
+}

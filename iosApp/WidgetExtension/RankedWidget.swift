@@ -15,6 +15,11 @@ struct RankedConfiguration: WidgetConfigurationIntent {
     static var description = IntentDescription("Uses the app's cached projection. No widget provider requests.")
     @Parameter(title: "Predator platform", default: .player) var platform: RankedPlatform
     @Parameter(title: "Show update details", default: true) var details: Bool
+    @Parameter(title: "Design", default: .follow) var design: NativeWidgetStyle
+    @Parameter(title: "Accent", default: .theme) var accent: NativeWidgetAccent
+    @Parameter(title: "Density", default: .follow) var density: NativeWidgetDensity
+    @Parameter(title: "Surface", default: .follow) var surface: NativeWidgetSurface
+    var appearance: NativeWidgetAppearance { .resolve(style: design, accent: accent, density: density, surface: surface) }
 }
 private struct RankedProjection: Decodable {
     let schemaVersion: Int
@@ -69,8 +74,9 @@ struct RankedEntry: TimelineEntry {
     let projected: RankedProjectedEntry?
     let platform: RankedPlatform
     let details: Bool
+    var appearance = NativeWidgetAppearance()
     static func unavailable(_ date: Date, configuration: RankedConfiguration) -> RankedEntry {
-        RankedEntry(date: date, projected: nil, platform: configuration.platform, details: configuration.details)
+        RankedEntry(date: date, projected: nil, platform: configuration.platform, details: configuration.details, appearance: configuration.appearance)
     }
 }
 private enum RankedSnapshotReader {
@@ -88,10 +94,10 @@ private enum RankedSnapshotReader {
             return [.unavailable(now, configuration: configuration)]
         }
         let current = projection.entries.last { $0.effectiveAtEpochSeconds <= epoch }
-        var result = [RankedEntry(date: now, projected: current, platform: configuration.platform, details: configuration.details)]
+        var result = [RankedEntry(date: now, projected: current, platform: configuration.platform, details: configuration.details, appearance: configuration.appearance)]
         result += projection.entries.filter { $0.effectiveAtEpochSeconds > epoch }.map {
             RankedEntry(date: Date(timeIntervalSince1970: Double($0.effectiveAtEpochSeconds)), projected: $0,
-                        platform: configuration.platform, details: configuration.details)
+                        platform: configuration.platform, details: configuration.details, appearance: configuration.appearance)
         }
         return result
     }
@@ -121,21 +127,26 @@ struct RankedNativeView: View {
         let originalState = kind == .predator ? (threshold?.state ?? "UNAVAILABLE") : (projected?.state ?? "UNAVAILABLE")
         let state = originalState == "LIVE" && !fresh ? "STALE" : originalState
         let validMath = projected.map { now < $0.validUntilEpochSeconds } ?? false
-        VStack(alignment: .leading, spacing: 7) {
-            Text(kind == .predator ? "Predator cutoff" : kind == .goal ? "Ranked goal" : "Rank progress").font(.caption.weight(.semibold))
-            Text(state).font(.caption2.weight(.bold)).foregroundStyle(.secondary)
+        let appearance = entry.appearance
+        VStack(alignment: .leading, spacing: family == .systemSmall ? 3 : appearance.spacing) {
+            if family != .systemSmall || appearance.style == .editorial { NativeWidgetIdentity(appearance: appearance, title: "Ranked telemetry") }
+            HStack {
+                Text(kind == .predator ? "Predator cutoff" : kind == .goal ? "Ranked goal" : "Rank progress").font(.caption.weight(.semibold)).lineLimit(1)
+                Spacer(minLength: 2)
+                Text(state).font(.caption2.weight(.bold)).foregroundStyle(appearance.accent)
+            }
             if kind == .predator {
-                Text(threshold.map { "\($0.rp) RP" } ?? "Cutoff unavailable").font(.title2.weight(.bold)).minimumScaleFactor(0.7)
+                Text(threshold.map { "\($0.rp) RP" } ?? "Cutoff unavailable").font(.system(appearance.style == .editorial ? .title : .title2, design: appearance.fontDesign).weight(.bold)).minimumScaleFactor(0.7)
                 Text(selectedPlatform).font(.caption)
                 Text(threshold?.remainingRp.map { "\($0) RP to cutoff" } ?? "Player RP unavailable").font(.caption)
-                if family != .systemSmall { Text("Dynamic cutoff · no position guaranteed").font(.caption2).foregroundStyle(.secondary) }
+                if family != .systemSmall { Text("Dynamic cutoff · no position guaranteed").font(.caption2).foregroundStyle(appearance.muted) }
                 if family == .systemLarge, let population = threshold?.masterPopulation { Text("\(population) Master + Predator players").font(.caption) }
             } else {
-                if kind == .progress { Text(projected?.rankLabel ?? "Rank unavailable").font(.headline).lineLimit(1) }
-                Text(projected?.currentRp.map { "\($0) RP" } ?? "RP unavailable").font(.title2.weight(.bold)).minimumScaleFactor(0.7)
+                if kind == .progress && family != .systemSmall { Text(projected?.rankLabel ?? "Rank unavailable").font(.headline).lineLimit(1) }
+                Text(projected?.currentRp.map { "\($0) RP" } ?? "RP unavailable").font(.system(appearance.style == .editorial ? .title : .title2, design: appearance.fontDesign).weight(.bold)).minimumScaleFactor(0.7)
                 if let target = projected?.targetRp {
-                    Text("Target \(target) RP").font(.caption)
-                    Text(projected?.remainingRp.map { "\($0) RP remaining" } ?? "Current RP required").font(.caption)
+                    Text("Target \(target) RP").font(.caption).lineLimit(1)
+                    if family != .systemSmall { Text(projected?.remainingRp.map { "\($0) RP remaining" } ?? "Current RP required").font(.caption) }
                     ProgressView(value: projected?.fraction ?? 0).accessibilityLabel("Goal progress")
                     if validMath, let daily = projected?.rpPerDay { Text("\(daily) RP/day").font(.caption) }
                     else if let status = projected?.goalStatus { Text(status.lowercased().replacingOccurrences(of: "_", with: " ")).font(.caption2) }
@@ -145,14 +156,17 @@ struct RankedNativeView: View {
             if let observed = observed {
                 if entry.details {
                     Text(Date(timeIntervalSince1970: Double(observed)), format: .dateTime.month().day().hour().minute())
-                        .font(.caption2).foregroundStyle(.secondary)
+                        .font(.caption2).foregroundStyle(appearance.muted)
                 } else {
-                    HStack(spacing: 4) { Text("Updated"); Text(Date(timeIntervalSince1970: Double(observed)), style: .relative) }.font(.caption2).foregroundStyle(.secondary)
+                    HStack(spacing: 4) { Text("Updated"); Text(Date(timeIntervalSince1970: Double(observed)), style: .relative) }.font(.caption2).foregroundStyle(appearance.muted)
                 }
-            }
-            Text(kind == .predator ? "Apex Legends Status" : (projected?.source ?? "Open app to configure")).font(.caption2).foregroundStyle(.secondary).lineLimit(2)
+            } else { Text("No successful update").font(.caption2).foregroundStyle(appearance.muted) }
+            Text(kind == .predator ? "Apex Legends Status" : (projected?.source ?? "Open app to configure")).font(.caption2).foregroundStyle(appearance.muted).lineLimit(2)
         }
-        .containerBackground(.fill.tertiary, for: .widget)
+        .foregroundStyle(appearance.ink)
+        .tint(appearance.accent)
+        .environment(\.colorScheme, appearance.dark ? .dark : .light)
+        .containerBackground(for: .widget) { NativeWidgetBackground(appearance: appearance) }
         .widgetURL(URL(string: "apexcompanion://ranked"))
         .accessibilityElement(children: .combine)
     }

@@ -1,0 +1,36 @@
+Calculating task graph as no cached configuration is available for tasks: help --task :androidApp:connectedDebugAndroidTest
+
+> Configure project :shared
+w: ⚠️ Native task 'iosSimulatorArm64Test' is disabled
+Task 'iosSimulatorArm64Test' for target 'ios_simulator_arm64' cannot run on the current host (linux-x86_64).
+Reason: simulator tests require macOS
+Solution: To suppress this warning, add 'kotlin.native.ignoreDisabledTargets=true' to gradle.properties.
+
+
+> Task :help
+Detailed task information for :androidApp:connectedDebugAndroidTest
+
+Path
+     :androidApp:connectedDebugAndroidTest (registered by plugin 'com.android.internal.application')
+
+Type
+     DeviceProviderInstrumentTestTask (com.android.build.gradle.internal.tasks.DeviceProviderInstrumentTestTask)
+
+Options
+     --serial     The serial of the device to test against. This will take precedence over the serials specified in the ANDROID_SERIAL environment variable. In addition, when this argument is specified the test task will fail if it cannot connect to the device. 
+
+Multiple devices can be specified by specifying the command multiple times. i.e. myAndroidTestTask --serial deviceSerial1 --serial deviceSerial2
+
+     --rerun     Causes the task to be re-run even if up-to-date.
+
+Description
+     Installs and runs the tests for debug on connected devices.
+
+Group
+     verification
+
+[Incubating] Problems report is available at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 543ms
+1 actionable task: 1 executed
+Configuration cache entry stored.

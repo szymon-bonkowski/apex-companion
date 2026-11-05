@@ -1,0 +1,482 @@
+{
+  "v05-widget-carbon-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-demo-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-demo-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-demo-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-live-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-live-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-live-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-demo-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-demo-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-demo-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-live-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-live-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-live-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-demo-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-demo-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-demo-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-live-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-live-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-live-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-demo-map-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-demo-map-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-demo-map-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-live-predator-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-live-predator-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-live-predator-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-150.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-250.png": {
+    "pass": true,
+    "findings": []
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-300.png": {
+    "pass": true,
+    "findings": []
+  }
+}

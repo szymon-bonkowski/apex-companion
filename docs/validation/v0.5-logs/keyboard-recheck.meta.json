@@ -1,0 +1,22 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#hardwareTabAndEnterNavigateToStudioAndBackWithoutTouchActions",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "instrumentation": {
+    "success": false,
+    "testsPassed": null
+  },
+  "startedUtc": "2026-11-04T06:07:42.035987+00:00",
+  "finishedUtc": "2026-11-04T06:07:50.893730+00:00",
+  "wallSeconds": 8.857757341000251
+}

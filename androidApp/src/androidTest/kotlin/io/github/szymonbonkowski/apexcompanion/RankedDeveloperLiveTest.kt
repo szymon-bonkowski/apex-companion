@@ -55,7 +55,9 @@ class RankedDeveloperLiveTest {
                 assertEquals(ApexPlatform.PC, profile.identity.platform)
                 repeat(5) { device.swipe(device.displayWidth/2, device.displayHeight/3, device.displayWidth/2, device.displayHeight*4/5,20) }
                 assertTrue("Linked UID was not visible", device.wait(Until.hasObject(By.text("UID: ${profile.identity.uid}")),5_000))
-                device.findObject(By.text("Ranked progress")).click()
+                var rankedNavigation = device.findObject(By.desc("Navigate to Ranked progress"))
+                while (!rankedNavigation.isClickable && rankedNavigation.parent != null) rankedNavigation = rankedNavigation.parent
+                rankedNavigation.click()
                 assertTrue("Ranked RP was not displayed", device.wait(Until.hasObject(By.text("${profile.rp} RP")),5_000))
                 assertTrue(device.hasObject(By.text("LIVE · Apex Legends Status")))
                 val privateRecord = File(context.filesDir,"ranked-profile-v1.json").readText()

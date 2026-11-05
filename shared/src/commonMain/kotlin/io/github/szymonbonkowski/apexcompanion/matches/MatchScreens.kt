@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import io.github.szymonbonkowski.apexcompanion.appearance.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
@@ -25,8 +26,8 @@ private fun provenance(record: MatchRecord) = "${record.source.name} · ${record
 
 @Composable
 private fun MatchNotice(title: String, message: String) {
-    Card(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
             Text(message)
         }
@@ -52,6 +53,7 @@ fun ColumnScope.MatchHistoryScreen(repository: MatchRepository, linkedIdentity: 
     val records = state.records.filter { it.identity == identity }.sortedByDescending { it.timestampSeconds }
     var page by rememberSaveable(identity) { mutableStateOf("list") }
     var selectedId by rememberSaveable(identity) { mutableStateOf<String?>(null) }
+    var filtersExpanded by rememberSaveable(identity) { mutableStateOf(false) }
     var mode by rememberSaveable(identity) { mutableStateOf<String?>(null) }
     var map by rememberSaveable(identity) { mutableStateOf<String?>(null) }
     var legend by rememberSaveable(identity) { mutableStateOf<String?>(null) }
@@ -72,7 +74,7 @@ fun ColumnScope.MatchHistoryScreen(repository: MatchRepository, linkedIdentity: 
     val selected = records.firstOrNull { it.id == selectedId }
     Text("Match History", style = MaterialTheme.typography.headlineLarge)
     Text(identity?.let { "${it.platform.label} · UID ${it.uid}" } ?: "Independent journal · no linked player")
-    if (linkedIdentity != null) Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    if (linkedIdentity != null) FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         FilterChip(!independent, { independent = false; page = "list" }, label = { Text("Linked player") })
         FilterChip(independent, { independent = true; page = "list" }, label = { Text("Independent journal") })
     }
@@ -116,19 +118,26 @@ fun ColumnScope.MatchHistoryScreen(repository: MatchRepository, linkedIdentity: 
         }
         page == "statistics" -> MatchStatistics(records)
         else -> {
+            val activeFilters = listOf(mode, map, legend, quality, source).count { it != null }
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                OutlinedButton(onClick = { filtersExpanded = !filtersExpanded }) { Text(if (filtersExpanded) "Hide filters" else "Filter matches") }
+                if (activeFilters > 0) TextButton(onClick = { mode = null; map = null; legend = null; quality = null; source = null }) { Text("Clear $activeFilters filters") }
+            }
+            if (filtersExpanded) {
             MatchChoices("modes", records.map { it.mode.name }.distinct().sorted(), mode) { mode = it }
             if (records.any { it.map != null }) MatchChoices("maps", records.mapNotNull { it.map }.distinct().sorted(), map) { map = it }
             if (records.any { it.legend != null }) MatchChoices("legends", records.mapNotNull { it.legend }.distinct().sorted(), legend) { legend = it }
             MatchChoices("provenance", records.map { it.quality.name }.distinct().sorted(), quality) { quality = it }
             MatchChoices("sources", records.map { it.source.name }.distinct().sorted(), source) { source = it }
+            }
             val filtered = records.filter { (mode == null || it.mode.name == mode) && (map == null || it.map == map) &&
                 (legend == null || it.legend == legend) && (quality == null || it.quality.name == quality) && (source == null || it.source.name == source) }
             Text("${filtered.size} recorded matches", style = MaterialTheme.typography.titleMedium)
             if (filtered.isEmpty()) Text("No matching records. Add a manual result or pair your companion in Capture sync.")
             val safeOffset = offset.coerceIn(0, ((filtered.size - 1).coerceAtLeast(0) / 25) * 25)
             filtered.drop(safeOffset).take(25).forEach { record ->
-                Card(onClick = { selectedId = record.id; page = "detail" }, modifier = Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                ThemedCard(onClick = { selectedId = record.id; page = "detail" }, modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                         Text(matchTime(record.timestampSeconds), style = MaterialTheme.typography.titleMedium)
                         Text("${record.mode.name} · ${record.map ?: "Map unknown"} · ${record.legend ?: "Legend unknown"}")
                         Text("Kills ${matchNumber(record.kills)} · Assists ${matchNumber(record.assists)} · Damage ${matchNumber(record.damage)}")
@@ -140,7 +149,7 @@ fun ColumnScope.MatchHistoryScreen(repository: MatchRepository, linkedIdentity: 
                     }
                 }
             }
-            if (filtered.size > 25) Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (filtered.size > 25) FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 TextButton({ offset = (safeOffset - 25).coerceAtLeast(0) }, enabled = safeOffset > 0) { Text("Newer matches") }
                 TextButton({ offset = safeOffset + 25 }, enabled = safeOffset + 25 < filtered.size) { Text("Older matches") }
             }
@@ -188,20 +197,43 @@ fun ColumnScope.MatchHistoryScreen(repository: MatchRepository, linkedIdentity: 
 
 @Composable
 private fun ColumnScope.MatchDetail(record: MatchRecord, duplicate: Boolean) {
+    var evidenceExpanded by rememberSaveable(record.id) { mutableStateOf(record.quality == MatchQuality.REVIEW_REQUIRED) }
     Text("Match details", style = MaterialTheme.typography.headlineSmall)
-    Text(matchTime(record.timestampSeconds)); Text("Timestamp source: ${record.timestampSource.name}")
-    Text("Mode: ${record.mode.name}"); Text("Map: ${record.map ?: "Unknown"}"); Text("Legend: ${record.legend ?: "Unknown"}")
-    Text("Kills: ${matchNumber(record.kills)}"); Text("Assists: ${matchNumber(record.assists)}"); Text("Damage: ${matchNumber(record.damage)}")
-    Text("Placement: ${matchNumber(record.placement)}"); Text("RP delta: ${matchNumber(record.rpDelta)}")
-    Text(provenance(record)); Text("Revision: ${record.revision}")
+    DesignCard(Modifier.fillMaxWidth()) {
+        Text(provenance(record), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        Text("Map: ${record.map ?: "Unknown"}", style = MaterialTheme.typography.headlineMedium)
+        Text("Legend: ${record.legend ?: "Unknown"}", style = MaterialTheme.typography.titleMedium)
+        Text("Mode: ${record.mode.name}", style = MaterialTheme.typography.labelLarge)
+        Text(matchTime(record.timestampSeconds), style = MaterialTheme.typography.bodySmall)
+    }
+    Text("Result", style = MaterialTheme.typography.titleLarge)
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val columns = if (maxWidth >= 420.dp && androidx.compose.ui.platform.LocalDensity.current.fontScale < 1.5f) 2 else 1
+        val metrics = listOf("Kills: ${matchNumber(record.kills)}", "Assists: ${matchNumber(record.assists)}", "Damage: ${matchNumber(record.damage)}",
+            "Placement: ${matchNumber(record.placement)}", "RP delta: ${matchNumber(record.rpDelta)}")
+        Column(verticalArrangement = Arrangement.spacedBy(LocalThemeTokens.current.gap / 2)) {
+            metrics.chunked(columns).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(LocalThemeTokens.current.gap / 2)) {
+                    row.forEach { value -> DesignCard(Modifier.weight(1f)) { Text(value, style = MaterialTheme.typography.titleLarge) } }
+                    if (row.size < columns) Spacer(Modifier.weight(1f))
+                }
+            }
+        }
+    }
     if (record.source != MatchSource.MANUAL) Text("Machine-derived result. AUTO_ACCEPTED is not an official server result; USER_CONFIRMED means a user reviewed the saved fields.")
-    if (record.quality == MatchQuality.REVIEW_REQUIRED) Text("Review required. This record contributes to no aggregate until confirmed.")
-    Text("Unknown means unavailable or unsupported by recognized evidence. It is never counted as zero.")
+    if (record.quality == MatchQuality.REVIEW_REQUIRED) MatchNotice("Review required", "This record contributes to no aggregate until confirmed.")
+    Text("Unknown means unavailable or unsupported by recognized evidence. It is never counted as zero.", style = MaterialTheme.typography.bodySmall)
     if (duplicate) MatchNotice("Possible duplicate", "Similar fields and nearby timestamps exist. Both events are retained; inspect their identities before correcting.")
-    record.fieldConfidence.toSortedMap().forEach { (field, confidence) -> Text("$field: ${round(confidence * 100).toInt()}% extraction confidence") }
-    Text("Record ID: ${record.id}", style = MaterialTheme.typography.bodySmall)
-    record.evidenceEventId?.let { Text("Capture event: $it", style = MaterialTheme.typography.bodySmall) }
-    record.parserVersion?.let { Text("Parser/layout: $it", style = MaterialTheme.typography.bodySmall) }
+    OutlinedButton(onClick = { evidenceExpanded = !evidenceExpanded }) { Text(if (evidenceExpanded) "Hide evidence details" else "Show evidence details") }
+    if (evidenceExpanded) DesignCard(Modifier.fillMaxWidth()) {
+        Text("Evidence details", style = MaterialTheme.typography.titleMedium)
+        Text("Timestamp source: ${record.timestampSource.name}")
+        Text("Revision: ${record.revision}")
+        record.fieldConfidence.toSortedMap().forEach { (field, confidence) -> Text("$field: ${round(confidence * 100).toInt()}% extraction confidence") }
+        Text("Record ID: ${record.id}", style = MaterialTheme.typography.bodySmall)
+        record.evidenceEventId?.let { Text("Capture event: $it", style = MaterialTheme.typography.bodySmall) }
+        record.parserVersion?.let { Text("Parser/layout: $it", style = MaterialTheme.typography.bodySmall) }
+    }
 }
 
 @Composable
@@ -214,16 +246,21 @@ private fun ColumnScope.MatchStatistics(records: List<MatchRecord>) {
     }
     val total = aggregateMatches(records, automatic)
     Text("Policy: ${if (automatic) "user-confirmed and automatically accepted" else "user-confirmed only"}. Review-required records excluded.")
-    Text("${total.total} eligible recorded matches · ${total.confirmed} user-confirmed · ${total.automatic} automatically accepted")
-    Text("These are collected records, not total matches played. Each field uses its own known-value denominator.")
-    AggregateRows(total)
+    DesignCard(Modifier.fillMaxWidth()) {
+        Text("${total.total} eligible recorded matches · ${total.confirmed} user-confirmed · ${total.automatic} automatically accepted", style = MaterialTheme.typography.titleLarge)
+        Text("These are collected records, not total matches played. Each field uses its own known-value denominator.", style = MaterialTheme.typography.bodySmall)
+    }
+    DesignCard(Modifier.fillMaxWidth()) {
+        Text("Your recorded averages", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+        AggregateRows(total)
+    }
     Text("Map performance", style = MaterialTheme.typography.titleMedium)
     matchGroups(records, false, automatic).filterValues { it.total > 0 }.forEach { (name, aggregate) ->
-        Text(name, style = MaterialTheme.typography.titleSmall); AggregateRows(aggregate)
+        DesignCard(Modifier.fillMaxWidth()) { Text(name, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary); AggregateRows(aggregate) }
     }
     Text("Legend performance", style = MaterialTheme.typography.titleMedium)
     matchGroups(records, true, automatic).filterValues { it.total > 0 }.forEach { (name, aggregate) ->
-        Text(name, style = MaterialTheme.typography.titleSmall); AggregateRows(aggregate)
+        DesignCard(Modifier.fillMaxWidth()) { Text(name, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary); AggregateRows(aggregate) }
     }
     Text("Session RP and match RP have different coverage. Neither overwrites the other; no session association is inferred.", style = MaterialTheme.typography.bodySmall)
 }

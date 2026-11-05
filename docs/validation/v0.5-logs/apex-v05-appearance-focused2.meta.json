@@ -1,0 +1,23 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest,io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#studioPreviewApplyAndPresetControlsMutateOnlyCosmeticState,io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#unappliedStudioDraftAndPresetDialogSurviveRealActivityRecreation",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T22:59:17.837531+00:00",
+  "finishedUtc": "2026-11-03T23:01:11.210895+00:00",
+  "wallSeconds": 113.37336778399185,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 6
+  },
+  "log": "/tmp/apex-v05-appearance-focused2.log"
+}

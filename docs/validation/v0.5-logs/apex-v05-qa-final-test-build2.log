@@ -1,0 +1,106 @@
+Reusing configuration cache.
+> Task :shared:androidPreBuild UP-TO-DATE
+> Task :androidApp:preBuild UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :shared:generateAndroidMainAssets UP-TO-DATE
+> Task :shared:preAndroidMainBuild UP-TO-DATE
+> Task :shared:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:generateComposeResClass UP-TO-DATE
+> Task :shared:generateExpectResourceCollectorsForCommonMain UP-TO-DATE
+> Task :shared:generateAndroidMainEmptyResourceFiles UP-TO-DATE
+> Task :shared:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :shared:kmpPartiallyResolvedDependenciesChecker
+> Task :shared:writeAndroidMainAarMetadata UP-TO-DATE
+> Task :shared:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :androidApp:preDebugBuild UP-TO-DATE
+> Task :shared:processAndroidMainManifest UP-TO-DATE
+> Task :shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:mapAndroidMainSourceSetPaths UP-TO-DATE
+> Task :shared:copyNonXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :androidApp:javaPreCompileDebug UP-TO-DATE
+> Task :shared:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :androidApp:generateDebugResources UP-TO-DATE
+> Task :androidApp:mapDebugSourceSetPaths UP-TO-DATE
+> Task :androidApp:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :androidApp:preDebugAndroidTestBuild SKIPPED
+> Task :shared:prepareComposeResourcesTaskForCommonMain UP-TO-DATE
+> Task :androidApp:extractDeepLinksDebug UP-TO-DATE
+> Task :androidApp:mergeDebugJniLibFolders UP-TO-DATE
+> Task :shared:mergeAndroidMainJniLibFolders UP-TO-DATE
+> Task :shared:generateResourceAccessorsForAndroidMain NO-SOURCE
+> Task :shared:copyAndroidMainComposeResourcesToAndroidAssets UP-TO-DATE
+> Task :shared:generateResourceAccessorsForCommonMain UP-TO-DATE
+> Task :androidApp:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :androidApp:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestResources UP-TO-DATE
+> Task :shared:generateActualResourceCollectorsForAndroidMain UP-TO-DATE
+> Task :androidApp:generateDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :shared:mergeAndroidMainAssets UP-TO-DATE
+> Task :androidApp:packageDebugResources UP-TO-DATE
+> Task :androidApp:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :shared:packageAndroidMainResources UP-TO-DATE
+> Task :androidApp:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :androidApp:packageDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :shared:compileAndroidMainLibraryResources UP-TO-DATE
+> Task :shared:parseAndroidMainLocalResources UP-TO-DATE
+> Task :androidApp:parseDebugAndroidTestLocalResources UP-TO-DATE
+> Task :androidApp:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :androidApp:checkDebugAarMetadata UP-TO-DATE
+> Task :androidApp:processDebugNavigationResources UP-TO-DATE
+> Task :androidApp:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :shared:generateAndroidMainRFile UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :androidApp:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :shared:mergeAndroidMainNativeLibs NO-SOURCE
+> Task :androidApp:generateDebugAndroidTestRFile UP-TO-DATE
+> Task :androidApp:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :shared:copyAndroidMainJniLibsProjectOnly UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestManifest UP-TO-DATE
+> Task :androidApp:processDebugAndroidTestManifest UP-TO-DATE
+> Task :androidApp:compileDebugNavigationResources UP-TO-DATE
+> Task :androidApp:parseDebugLocalResources UP-TO-DATE
+> Task :androidApp:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :androidApp:mergeDebugResources UP-TO-DATE
+> Task :androidApp:generateDebugRFile UP-TO-DATE
+> Task :androidApp:processDebugMainManifest UP-TO-DATE
+> Task :androidApp:processDebugManifest UP-TO-DATE
+> Task :androidApp:processDebugManifestForPackage UP-TO-DATE
+> Task :androidApp:mergeDebugNativeLibs UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :androidApp:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :androidApp:processDebugAndroidTestResources UP-TO-DATE
+> Task :androidApp:processDebugResources UP-TO-DATE
+
+> Task :shared:compileAndroidMain
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedGoals.kt:34:54 Unnecessary safe call on a non-null receiver of type 'RankedSnapshot'.
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/ranked/RankedGoals.kt:42:63 Unnecessary safe call on a non-null receiver of type 'RankedSnapshot'.
+
+> Task :shared:compressAndroidMainJavaRes UP-TO-DATE
+> Task :shared:bundleAndroidMainClassesToCompileJar
+> Task :shared:bundleLibRuntimeToDirAndroidMain
+> Task :androidApp:compileDebugKotlin UP-TO-DATE
+> Task :androidApp:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidApp:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :androidApp:mergeLibDexDebugAndroidTest UP-TO-DATE
+
+> Task :androidApp:compileDebugAndroidTestKotlin
+w: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceTalkBackInstrumentedTest.kt:128:61 'val externalMediaDirs: Array<(out) File!>!' is deprecated. Deprecated in Java.
+
+> Task :androidApp:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :androidApp:compressDebugAndroidTestJavaRes UP-TO-DATE
+> Task :androidApp:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :androidApp:dexBuilderDebugAndroidTest
+> Task :androidApp:mergeProjectDexDebugAndroidTest
+> Task :androidApp:packageDebugAndroidTest
+> Task :androidApp:assembleDebugAndroidTest
+> Task :androidApp:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+
+[Incubating] Problems report is available at: file:///home/boniek/Programming%20Projects/AndroidStudio/Apex%20Companion/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 4s
+73 actionable tasks: 8 executed, 65 up-to-date
+Configuration cache entry reused.

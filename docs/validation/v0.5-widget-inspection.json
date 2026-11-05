@@ -1,0 +1,1802 @@
+{
+  "v05-widget-carbon-demo-map-150.png": {
+    "inspected": true,
+    "sha256": "774f658ca289a20eb97027322b1c57b2c5344606fabff50b6d42bd6e2ac68279",
+    "contextSha256": "d45d58f602914a43a8fbcc238cd3253b7368ddc6adcd4285c7ab65dc30667b58",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.990753+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-demo-map-250.png": {
+    "inspected": true,
+    "sha256": "2500177fabd1a67a670d375f3ecce58c0c89f56f0f9a54f40de6f22dbcef3e16",
+    "contextSha256": "01e5d29ebd6e52ea729c0ec9dac9a330e8a8e38ef65435ae337cb680c87235c8",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.990828+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-demo-map-300.png": {
+    "inspected": true,
+    "sha256": "934d83a62c6da1c3c990c32f9299464ad0804ce7261893a77902a80efd446c52",
+    "contextSha256": "0bc50af7c5622fe82ec7fa36576e793615f97e5233b45c7ea1ccbac10d59d5c6",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992540+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-goal-150.png": {
+    "inspected": true,
+    "sha256": "9a356ae9bc3c0cde9d8c0ae71d897436faa83d74ee21aac9482a0eecf136324b",
+    "contextSha256": "af91df64f38a2cf4c01c0d240ddcba1ff7deaa7772a3f5ab435611d122a3860a",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992609+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-goal-250.png": {
+    "inspected": true,
+    "sha256": "f39814ceaeefbe86b29c9a8e889f09c06f41520ee72a8cb15c5ec54a3c2ee55e",
+    "contextSha256": "29665967fc73bbcb9fa645ec39004c59040c5db65e6c28ed9fab5b90f8a717b4",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992662+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-goal-300.png": {
+    "inspected": true,
+    "sha256": "cf6904006779ec14a738c43ba1e404976d1e31d078d0efd5e0a748a1a8b7d005",
+    "contextSha256": "81411ed32bfa9ae73fa204a68c275a1ae6e960ee47698c9352f339a601c2cc4b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992717+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-live-predator-150.png": {
+    "inspected": true,
+    "sha256": "115320311511d9c48227b0d84d3f01c512f16bbebb1d7b27d426d55c9ed04441",
+    "contextSha256": "2942af93a57ca37a97daa96afade5cf5218c0d942e244d404f52f8dd1ca9953f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992766+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-live-predator-250.png": {
+    "inspected": true,
+    "sha256": "54e0a21b33239821ec1663be828e6201e13b25b30ee1258ae8d6de9b7372a617",
+    "contextSha256": "91bb3e007ad165baadc0fa64251e96f09e09d28eb854743a6f1ba105b178c56e",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992816+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-live-predator-300.png": {
+    "inspected": true,
+    "sha256": "e517fe15fbdd851bbff7cf480d9883d3b294a76fca3450d9e68bd76790532f71",
+    "contextSha256": "4ce4bc39c3863665d43e347d29e7f08c683dafd6af3072d6fe809f6e02741103",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992883+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-150.png": {
+    "inspected": true,
+    "sha256": "8eb4e88f7287d0604e6bc683056311b0e7f2e97aadf038a223aed0086d7b37f0",
+    "contextSha256": "68cbec4ae896b71d3316ea8e20bc4debdd842f948cdb21a87e21b9de66b0f6eb",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992933+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-250.png": {
+    "inspected": true,
+    "sha256": "6dada0b8e195ea800835547283f5057b4f5b1380e7417a4bf8b74e00fb4a5a9c",
+    "contextSha256": "6034b8190551bd6765c2e7647a8daf0f6be8ceb225f7eb3917cfd65a7fc2a9e0",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.992975+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-300.png": {
+    "inspected": true,
+    "sha256": "6db7e3e07f6d3af8e169cc0dd6f5ac499be3e0e3bbe4e8be4e0bf1538ba36972",
+    "contextSha256": "a7fb914903014ed31c5f3bcf70db6e6af4157e56ca413fa0e604304b55156014",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993022+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "d5f967ce76c9676ebce523a42b48c0f582afdf2adfb272fe4bbe2a7db90cc37a",
+    "contextSha256": "12bc94664509df3af633b4087e73d11062649fd4ed332c3963aeca82a682b8e2",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993065+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "91479df7f53e3d473ead8cf67f48aa088b3452516cfebd3edc78eafbec8f701d",
+    "contextSha256": "19ad32300a44f827e65085b54ec51012ba082f4bdbd787055aa0326806d149fc",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993106+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-goal-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "03d07b2ac2438acb1fa866f4740213bc482cbce0c4fdc535ee0b15385ea6dd3b",
+    "contextSha256": "fe560126c7f854184b985b7413e8332aba08eb8f509de1307d5bb26e6e41d92d",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993156+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-150.png": {
+    "inspected": true,
+    "sha256": "90835464277a5cf6346e6ba8388dde62c4691e6922fa7ee70fb621cfe5c8fa62",
+    "contextSha256": "0629fc5553908351872ccbfc10ef1a00fd5897cf7d940640fce8bd22a07b19cc",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993196+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-250.png": {
+    "inspected": true,
+    "sha256": "30327a063f9500dd12141548f1e31c9da7d617ff9933adcb224671487d954ceb",
+    "contextSha256": "f2a4927c46a84d28791959c7734ee01f455e5df168cd2044336795a0d29d2866",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993236+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-300.png": {
+    "inspected": true,
+    "sha256": "961b530733c4a99874037dbce26618547e68e6e08ba7c6edf4ccd004a635de99",
+    "contextSha256": "993499156dbe70211558247094183846488fe7ff40bfa9ee99fad41df91285f1",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993289+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "702a00aed96834fa3d4f32b9005ec73552e7a0755654df3d53d97707b3908811",
+    "contextSha256": "21059e28775743869041947c90a092eb94abf57a1725e47b6245e56e988efe7b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993330+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "72f24d5f6659926c6dce3d8fa71adab97a86173ce737e33876278eb7c4ab191c",
+    "contextSha256": "24ac02a412324ecc58e2a8cd4d63ec81e15d0b1514c62e2dd4dc080b7c75e84b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993371+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-manual-progress-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "3427e506c2e5edb50c017f693eb2d5d5db8ec10b9676a3d02b87482c9cb88532",
+    "contextSha256": "10d8674745a5f1a815e706b5106f95e650167f3b363c7e5d4ac9d0c7dc741c0f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993422+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-map-150.png": {
+    "inspected": true,
+    "sha256": "f2e20c83d21b83fea888188c4eb4e27151542b36ed4d6bef5b30432b4b2d6126",
+    "contextSha256": "039c1493f7bf73ca2c38dbf11855a7484f3b412006348f6cdfbe85a66113eb2d",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993464+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-map-250.png": {
+    "inspected": true,
+    "sha256": "421153d6b8f9241a5ed6001abbe1ae5079395580dfe8915dd2775dc6038dd841",
+    "contextSha256": "ad8a63a0300bcdcc76b9f5a54da509ae80c40b3a8473e6fa14bcc44da5515940",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993510+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-map-300.png": {
+    "inspected": true,
+    "sha256": "9e89e1da8aded4e9f942128075e84d9d5dd5b4b7137f9d039c3ad9e0ebbad748",
+    "contextSha256": "ce8ad69ff597f7a28a3aea78f2c80ed164c66273b1f4337b2e8d5f17feddd689",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993558+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-predator-150.png": {
+    "inspected": true,
+    "sha256": "10fa348601238715a1d1ca4bf178ad1cdc8a670857dadffcaaa8229019fb6c4d",
+    "contextSha256": "866a5147f3355a3c7822b050b02091f24f6779623408ebca1e709a2effef5cda",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993597+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-predator-250.png": {
+    "inspected": true,
+    "sha256": "0369dba18586e45b2ee5a029953ee4d79e3cc3c4ce7bd8599a47dd0871cfc13a",
+    "contextSha256": "ed81377b580eecb56c57fedb7d9de199e7e0c1927a6c318cc3d9f54c1e0b79e6",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993635+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-predator-300.png": {
+    "inspected": true,
+    "sha256": "5e1f530de81a8d72f8bb504dc912bcc93749a936bbd6464f5e6d2ad2656b1962",
+    "contextSha256": "e03da91b23185aa725f11b637b6594c82214947374757ed30f9aa49fd5a29821",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993684+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-progress-150.png": {
+    "inspected": true,
+    "sha256": "df9f676246cd6153fca8b92425a324e56cb8825ac70a55ee136ccd73b05b12ee",
+    "contextSha256": "b7602835c88d74a8b1d39973705547753b850a05e62b4282b6a53cc0ec74be57",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993722+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-progress-250.png": {
+    "inspected": true,
+    "sha256": "022e90a6af8bc442cd7758fddb9826c8e301724277efd61bda1af8c820cb2d38",
+    "contextSha256": "ef1c0b157581298c5bb7903c4637613bee71deed2f84a2aa46eac0fdeaa58d6f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993761+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-carbon-progress-300.png": {
+    "inspected": true,
+    "sha256": "8a17333e14f633c8ea808d605a40bf2579784389ee730ac5110a1ae27740748c",
+    "contextSha256": "d0b6b63f1dd7a101999978df3596a4b379dc95ef7cb4d61a6a44655e781eea13",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993806+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-demo-map-150.png": {
+    "inspected": true,
+    "sha256": "22d3986629f4664ad09a8d234106e14371d77fe4deb1c3a72026217122ec985a",
+    "contextSha256": "c82639db5b3ad41bb3700c574a04ceadfeb3a9209a5ccc159a2c6864bf120215",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993845+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-demo-map-250.png": {
+    "inspected": true,
+    "sha256": "90b7e056412ec9b1ea144323a65010571e2f6cad2a9153722e08062fa0111cfa",
+    "contextSha256": "c1530b4d0debd96e28c97648dc1ca15a8c07654a8c4a42c2cd123610ec7f6cf7",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993893+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-demo-map-300.png": {
+    "inspected": true,
+    "sha256": "f3ea3fac33621fa687d86eee2c6b27ce8cb5efbec3d81bbb2f9873532f5622d3",
+    "contextSha256": "518a294cb1734203ad9927624a6a105f26160ea21c1bafac2278bd6abaf6d4f0",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.993954+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-goal-150.png": {
+    "inspected": true,
+    "sha256": "ad3ba16a06d2b17afd36d368fcb4608633b46bcba0d0f375a71c822886de7591",
+    "contextSha256": "8deabf8fc2527b8fe64149cff4b59fc0f01416d3ac2b94fcaf968c7953311dcd",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994001+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-goal-250.png": {
+    "inspected": true,
+    "sha256": "b47f1a4d0906f875c79b27e552defca22d7ce166ebd05340492ea0259fce0d05",
+    "contextSha256": "27ed932a7599e862181b519bd343c62522de02f996fc66ef49c5d92eb9cfe7cc",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994049+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-goal-300.png": {
+    "inspected": true,
+    "sha256": "0f02d10813b67a63896c371fc3626af1225ab9a65a916bebab937072021255c7",
+    "contextSha256": "c47cf99c423fe0d15ddf876fe18eae87139b265d94f975bda1ba2441f8a0f2be",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994101+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-live-predator-150.png": {
+    "inspected": true,
+    "sha256": "500ff5e122216cd57c747b1a652c56a33471b3b1b381deb0bfe2fdd735afe0fd",
+    "contextSha256": "5fb6f25b7080dc4343e9129736d01bdc749117e5e5af326f103a07a06ceaddb3",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994149+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-live-predator-250.png": {
+    "inspected": true,
+    "sha256": "4ebbb6e080befed1da3a4bd5e1dac50984b8ee3a6dd5cb56b108bcdaf89c7b30",
+    "contextSha256": "9ac301ecf720219848674411972cfe88529ccbb3eb95693b356bd36c8727e54f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994197+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-live-predator-300.png": {
+    "inspected": true,
+    "sha256": "0d4e2bd2be73e0eda29e1b3f91e6c6e0feeae1b20d41f1ff36a45c0f88272eb6",
+    "contextSha256": "e89a4bb7fcf8e636b60fa527aa42f5d1d8ec204ab698cc5669cb4f3daecf05ac",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994258+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-150.png": {
+    "inspected": true,
+    "sha256": "6e9f6dcdc2acf8063e7163ce9fa417edd54d451bc3a36c299359619839ceb13c",
+    "contextSha256": "8a5415c9efa16c1f6acdc46dd9a58b320b1c15e768633a4173842a258c569d0c",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994308+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-250.png": {
+    "inspected": true,
+    "sha256": "31105f12e2dc757cab7cc3f8587d6fc0b0e5a28517b02e66a9400c1347b89283",
+    "contextSha256": "3e6bd057916ef381b09377f2cf045a8c4ccf9df55b4656f6245fa4c675e21dbd",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994358+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-300.png": {
+    "inspected": true,
+    "sha256": "62d2280a7e587820b2dfd8bc7ec51994492d93c33818aacb665431a6464f59e5",
+    "contextSha256": "359f861a0a28d10950f4b8d0a8a8e0e69349222bf188a5ba9043b32c543a80a4",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994413+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "c231843e251ecd9647a1c77442e7a4659dd04df8f9506e0704c777bc7dbe7c8d",
+    "contextSha256": "71ebd89777822ce04bc6af51bc81bd415f34a1250e3f41b8e6b298c627a9a719",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994466+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "28eb98cdfc4fbd6a2450c3ae0dd585f7736c7f8e552c27c162970a2e50e12d35",
+    "contextSha256": "7d60f20c1bddf38e65f225cbb3d0576048bb62ed66d591fba56df845e676b424",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994518+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-goal-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "23302bd79a0fae0458801f1e5f50b61215fb3295822f82c8cba0bc4781fd11c1",
+    "contextSha256": "fc9e2bdd1d949b1990bbb18c905a0d7263b523a37fb8dfd40a009e65cd70ea1f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994575+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-150.png": {
+    "inspected": true,
+    "sha256": "21d4e203382a261d29e063ad6e916995d6c7be44312eff9d4b7451b5eb53b17e",
+    "contextSha256": "403279cda919dce7e27b25bb649e58ce5100a72c06d706f4e957950cfa3189d3",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994617+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-250.png": {
+    "inspected": true,
+    "sha256": "7d2e3462a7a0fc8acdd3320a37804c34682e7dcf4b3059275c19463932b48b48",
+    "contextSha256": "3ac0a2b55c07accf7861bf03207a7595c7e59d9f19ad68e03e549eb4913c53ca",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994657+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-300.png": {
+    "inspected": true,
+    "sha256": "dbd366f6025caed033735704f14c91b3df39ac4736e053ae3880e6d335012aff",
+    "contextSha256": "3182e8c0c0c7ba480850965b564858e3dfe8b83eb56217e763292f8d5b15303f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994704+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "bff76d78125900955ef1f7fa6a62cc73896787fbe4edd5f892a1b8bb864a903e",
+    "contextSha256": "6de11318beecfab2739cef86952bbb14b4a114c0a8c252da826346f8fcc268cd",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994744+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "6df884d3ac40b9ff4e929bb296e3ec9b5e3e54877683a5795b59f55e585b1fd6",
+    "contextSha256": "104ca1b40493b176d40bdf18411d76d17913c63dc1bbcfa5f99dbbae6854bc7e",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994784+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-manual-progress-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "f9903fbb91389a85586bee48e4c0d8f873ff5340325a1cd49e5cc5c3a72ea391",
+    "contextSha256": "bf70172b34f21bdfd07e204e2928f4c82882aff22f018b9c904580f15aee7545",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994834+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-map-150.png": {
+    "inspected": true,
+    "sha256": "2ee43fcab791b2a38d56c2966b3df3ccf68eb4a5e755a188e824dd3544dd59b2",
+    "contextSha256": "3cc48660726d3d784672623514e2224253578c916ee74755194b74e0b5d6cd96",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994877+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-map-250.png": {
+    "inspected": true,
+    "sha256": "735121f5173e0d6ccf32d25e35ab9c3adad811a5525f9b0deec15686726f96f2",
+    "contextSha256": "6d47c58c25b1eeafbc659d72b9299d6d65558ecec76c01f1b2c919ee342d33ef",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994930+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-map-300.png": {
+    "inspected": true,
+    "sha256": "fe9befebd47c100e13591dd58d35e67c16220335393e3783f9322f49fe6393ee",
+    "contextSha256": "c60dfce9ae5f966c682a1abcbd478b819fd6b900fa0fae93efb03be64bcd839c",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.994982+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-predator-150.png": {
+    "inspected": true,
+    "sha256": "74305dd03cea736fa5415919bfcba1c7520b7fa51167d516294ec495237c25c7",
+    "contextSha256": "d254957826dbf2b51c8249ef6ffb52ce8509763f9d11920ba77ab4e5413fe246",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995021+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-predator-250.png": {
+    "inspected": true,
+    "sha256": "806cc7dfa7ba67333b97e8d1f38c06b3474bc17741ff7c708908db8c19132597",
+    "contextSha256": "70ac511f464f4755670d4b4531bd2c9fd4e1434a0bc965cc6a96408a82474d6e",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995062+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-predator-300.png": {
+    "inspected": true,
+    "sha256": "8abdd88470af5a1a1fae82271aeef5f4dc8af73a18972474d2be2444c8a5047f",
+    "contextSha256": "56e1b08b2a9de00c9dd016a8dd0a7c52e4a751a36cb203614189edf9254ecbaf",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995112+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-progress-150.png": {
+    "inspected": true,
+    "sha256": "3c55128a790f574a5c406f4c4b114305918ba4623771c21421a7b293cb846dbc",
+    "contextSha256": "c55f8e731fb2913b6d3136cd8b81700f88bce81dd7fda9b942255c9202da4c63",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995152+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-progress-250.png": {
+    "inspected": true,
+    "sha256": "45b87abacee8c454afdf65f5736ad4de369c630e873a60d55671463b780e5285",
+    "contextSha256": "10743cf3acb84d54a212dc1386dbc0310b2dbbdff250dd107f4890f29c084d1f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995194+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-editorial-progress-300.png": {
+    "inspected": true,
+    "sha256": "9098e0b0ce9917275fe01d931b3e129f3ee1118643c4299332f6ff2bcb82fd66",
+    "contextSha256": "097f1d8d15119aebe32df215fbd6a3f802230e4125df2260c866f16e7d435379",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995242+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-demo-map-150.png": {
+    "inspected": true,
+    "sha256": "42c3db4c4faf0ceea0160e4b0948b5eee86c91c9a4072680c294ee551fc761f2",
+    "contextSha256": "688d5c6dc80b05aa86c87002b224c1ac215d60a1adf1bb51b5830039f5aad3c1",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995285+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-demo-map-250.png": {
+    "inspected": true,
+    "sha256": "f596f65fdccc7d6800984992ea6e60055aba6615189e5cad2cad1e150e28d54d",
+    "contextSha256": "a9ce5dd6b485998fc991f03d735208810756c7d55e4185ecaade779d4036e6ba",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995327+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-demo-map-300.png": {
+    "inspected": true,
+    "sha256": "11a9eca6f9112403a192e10c28b7441aad14b34df17ea8e7085f9694951e68b8",
+    "contextSha256": "aed6af5e6a0b2b9a989297b9d5991d171d8dcd546f939a9d99f50a53e11c19ca",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995379+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-goal-150.png": {
+    "inspected": true,
+    "sha256": "f37927546043490ae397db9944eaeb0ddd01a27c5de6b32e7d99a14a3e320034",
+    "contextSha256": "3d3688d4d21b3d452b23f61714e4a77fe8b84876135eb1f3cd3ce59c90ed7830",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995421+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-goal-250.png": {
+    "inspected": true,
+    "sha256": "d97cc0c580eea4fbd0d359c589bf5d6a35f9d61ea230106ae0d3b01ba52a5a21",
+    "contextSha256": "aee3005292273a25d223e8477935c1804641f44f3f299e1f5d10f4f3f5b2e3a2",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995461+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-goal-300.png": {
+    "inspected": true,
+    "sha256": "c29d0277aeb25824a935339ca7f16522ba56532ce33acf0b9ca1b44da8c9e855",
+    "contextSha256": "ecbbeab725a357380112a19c1f30b5e9ecfa784078a12eb9b7fd7201334663bd",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995508+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-live-predator-150.png": {
+    "inspected": true,
+    "sha256": "673ee70e48c92765b9ad50b449c5876ced6e687c8d6ea59217913277a93577ad",
+    "contextSha256": "570c15cccb74279df8bec0cdeb21a8543f62845593059cbd71105d9b5c87d041",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995548+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-live-predator-250.png": {
+    "inspected": true,
+    "sha256": "477ff757e651bebcaafaf611ec010f66453fe9a03d7f6c240c791fd542508b2c",
+    "contextSha256": "52ddfcf9779c18c6e47aada3905960e0023941d23feedea8c76e7b629933289f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995606+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-live-predator-300.png": {
+    "inspected": true,
+    "sha256": "82bc6ecd89305f358ac03821f198f70a7b70505a23706dc0f89cf8f790f16c39",
+    "contextSha256": "8937cbdd7fdecdc2122545b0922bd188ffc22105f25ee06b0679a2c49792be9d",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995682+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-150.png": {
+    "inspected": true,
+    "sha256": "63b8ae9a15b498711a786a1a0bedb0270a48ba35f7b8d10d194dc22d6b7cbc2e",
+    "contextSha256": "06ae2b81a3d584e380dce9de71d330e017b84bb093f5d467a43ae6a629da341f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995738+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-250.png": {
+    "inspected": true,
+    "sha256": "91e7acbe0cc1ec52f7bd64c9ade2552ff152849e1d2f943a5bd9cce57d5c922d",
+    "contextSha256": "ce519c8c38e325891c591af6ae4ae8941302fb66e59d49f68c1702411e736b41",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995793+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-300.png": {
+    "inspected": true,
+    "sha256": "e2f9acf1339db85a9cf499910a222e95278b66d7b1f5de056e28b12b8f266dea",
+    "contextSha256": "8fbc8308cf32cc4d7ed0e38abb62d8de230ba4f336e98a3ae20b4431428e2b54",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995864+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "9e4d2c48f1ee7ff593c316ad2973a0edd36c821b0871a0bca797ca849ac3a6a8",
+    "contextSha256": "4e6038f86139eb5dbf37fe27e72685129280a443a97f42ec4c4cd6b4385c316d",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995934+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "af693146a945c6f211d296421f80a3f81c7fd9a101a7b2d2f5f8cc911aee339e",
+    "contextSha256": "282784960477678b1a4717c0016dda96436cbd850a108a5e768e1c25663c299b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.995990+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-goal-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "970856ccda1aedb599ac4f2cab2a7e93e41c4d3d69b190968641b0adf64a48c5",
+    "contextSha256": "1ee464ec17487c264cf8211c8df01726c8a9bb70c384c1334a62f63f591399b0",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996053+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-150.png": {
+    "inspected": true,
+    "sha256": "37e99142f50b299451da016840d0d04585f9d47055cd5deb320f92e0b4771339",
+    "contextSha256": "fdb548797e7e0c0bcf4bd0446a9b4cdda6e9fea22444bdf4a331e6164d74141f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996107+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-250.png": {
+    "inspected": true,
+    "sha256": "7972d102401430c595653005261a2178275465fb4386f78602bb3478d1d9a0bf",
+    "contextSha256": "3ace0888e7dfc110ef075eefe721a84dc2425e0a957a7f51005d933813224868",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996159+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-300.png": {
+    "inspected": true,
+    "sha256": "1e3983b1fd33a9dcae9fd3352a12ca0eecb524e380f83fed8812f7d667a8fda3",
+    "contextSha256": "a35a871101cddbf826b20a2abaa3cdbfd1f1057be99b927ad4e1ce309abe70af",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996221+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "67f361f3c78a0daca6047654eedbb13e96f9f122459078cf048a935c44c6c981",
+    "contextSha256": "ca93a272869b08252473fb566bd837d4af9668909bfd69800efc9a2f5a683652",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996273+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "1fbbfa3fd3fc1de670c189a4839b4e2061a785cab508f9baa71247eb1b2d310c",
+    "contextSha256": "678efec79af48a600bbe135a6c51a0fecd5c4f6cb7d14bf3a243a369b5e3fd6b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.996331+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-manual-progress-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "625749b32bfd16f47e3016310fc82036c10f858330bec06ec8cd957d8377b75f",
+    "contextSha256": "0953d3c3900d8a6881f1708cba81881b800ef3cfbafccb53a640500fb7f4ecab",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997604+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-map-150.png": {
+    "inspected": true,
+    "sha256": "0c40b48fca84d12e3571b8994863369b843c809454e494fd7b64adbd13eeda3c",
+    "contextSha256": "ca19ec44eedd9e0e3a510f3eb6363f6d180b2315f74366595731322615ab59cb",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997669+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-map-250.png": {
+    "inspected": true,
+    "sha256": "9ce586ff6bb8069015c78115b8479f2cda2dcbaf4d058bbc816a34b4958f7ea8",
+    "contextSha256": "02af97bd44e16c36806a16e253bffbe57b5e42e6566c828721120cb272b98c44",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997723+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-map-300.png": {
+    "inspected": true,
+    "sha256": "37893fa1b77b5493ac1156330d81901b47e1b23f44cd0a118df64e882d2f43e2",
+    "contextSha256": "088b23d695a05dd2352e7b7941aeabc463cb65f1510d5375e8fc6ca5c3b8afa3",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997779+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-predator-150.png": {
+    "inspected": true,
+    "sha256": "f45fa2da1b2a25b25c9ff47b8b9851f4b71c3bb8764d51d1f0e17e8039596f32",
+    "contextSha256": "98534b9899e4f33b7a15707fc531681dd9fc3218c90ae0df2e3ad039e746625b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997830+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-predator-250.png": {
+    "inspected": true,
+    "sha256": "29d0fbabb8f39bd79b4a9c60b3ae518808aee087be7d2d36a3e21bba72e576b1",
+    "contextSha256": "69501bd7469ff6e31c5d46468ef55fd70fd37eb813bd18068c4eb686895ff67b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997885+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-predator-300.png": {
+    "inspected": true,
+    "sha256": "ef4946d4cff01ba496793491826e9a1513505810ed3c1483ba4a02ecd728b9db",
+    "contextSha256": "69ad695f1f8d1a354c91f56d1126293f100c8ad8290c1b5fd3a9046c2f0ce6d4",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997950+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-progress-150.png": {
+    "inspected": true,
+    "sha256": "9df7c509c162319c3fa529dc44680acca94391eb2760415a955088e04d746b7b",
+    "contextSha256": "3855718069570c0ffde96110a65381de86692e5fd2901b00b8d612f7ad2c494f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.997999+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-progress-250.png": {
+    "inspected": true,
+    "sha256": "f392f82b3d4476ae5104bab9daccfb308af035c6d296192557ac741c7f3362c6",
+    "contextSha256": "506d32e2abc9122ac996d8e495daddf1327c15513000634cbb8b50498debd8a1",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998047+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-liquid-progress-300.png": {
+    "inspected": true,
+    "sha256": "b18d4456ef61e45cbd9faa3c2fb5c7d9dd9867db0233da4b84dcb84f5774cedc",
+    "contextSha256": "e9247506f29e114d9a1ec38153e1473b96b0826658acc0841368952c000641b9",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998102+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-demo-map-150.png": {
+    "inspected": true,
+    "sha256": "21741cd67302e38e8a1c5d1a82027f7b479cbe4ac2fd4679d125a39faeb0a988",
+    "contextSha256": "4f832d3d302587b9b824956238618b1f09e30c2268dfa338737bbf38be82011b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998149+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-demo-map-250.png": {
+    "inspected": true,
+    "sha256": "103f5f63e7b7964540b6d266d0dd18ad4c9590bd98b85d9b055c62592faed450",
+    "contextSha256": "8acbbf973e52b5138ec7021c4e7cda0b7639b9d490969f9c4e3416739428eecb",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998201+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-demo-map-300.png": {
+    "inspected": true,
+    "sha256": "f01c8063d734ac017f04326ff89bf7ac7a01926fcc84733b34556a68dfbf6091",
+    "contextSha256": "b19e01eda486a16bac0f0f989b7f1380d12e36ffac6b29c12dbd9b321b4e4397",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998257+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-goal-150.png": {
+    "inspected": true,
+    "sha256": "fe604694225c1db88b29455f15d40c2bd6c731eae67c11c9e0dd4a83f7700220",
+    "contextSha256": "b0cb8dedc4877eb02ff183745a0f23d4c39e25e2e1a6ddfd760abd124c0e23d4",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998304+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-goal-250.png": {
+    "inspected": true,
+    "sha256": "76cdcfe9d882da80d5c582b6da2ccb41ed9fd654f443262eaae9fe2d6f8b389f",
+    "contextSha256": "426772d3c07879be2d4a65bf03982ef8167120b14017340b28baff8df6e30b14",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998350+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-goal-300.png": {
+    "inspected": true,
+    "sha256": "5d1a77f65287e19440abf702585e429d15510f64bda91ba72d9f8e4290d64bc0",
+    "contextSha256": "1ecfd9a9d3421ed64c712e7f0fd3bbba57ac365250bf988562bd6ed6682cce7f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998404+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-live-predator-150.png": {
+    "inspected": true,
+    "sha256": "3553183fff78c06eb2e4f8a2aac7ea07b54a86904b2834746d05e6b6f11c200d",
+    "contextSha256": "8fc5bb180c58e7c4916fbac341e01ae0e4daed589ac05a4a9c779bc8e509f46e",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998454+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-live-predator-250.png": {
+    "inspected": true,
+    "sha256": "a5c2e35b575a2c1e007162d90b658a4bff2ba04625a48f6749af036544510890",
+    "contextSha256": "cd14c7968e3462687850f51072bb839941020fbfafca353b3b64670876145384",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998501+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-live-predator-300.png": {
+    "inspected": true,
+    "sha256": "bce645bdaeaa666cb0189d3871678984739200871b4b852740ad00dc41254d86",
+    "contextSha256": "fb0e9a0c0845a4115cf151875f46e9d30746b41f28dc36b93beb997fddc00337",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998564+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-150.png": {
+    "inspected": true,
+    "sha256": "02ff07200f2e22396dd0c9fe4f8a914931051bb332cf78d3b973e0ce4de9bdc5",
+    "contextSha256": "bf374c0092009965e4108a2854da8626f280f898cabcc75d37a711782344362c",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998613+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-250.png": {
+    "inspected": true,
+    "sha256": "c7ff04f3c70d24dd556a9458c99a170a268b80e5d4e02d2302e21d2e1a0fc18b",
+    "contextSha256": "e34dca2b173a674339947f5112b37fc45d3d3d7ada85851eb8631e590866bf87",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998661+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-300.png": {
+    "inspected": true,
+    "sha256": "d49efa8306c343b1ba75e64a17a8520e633f84a718154560f7218f3ed594bb59",
+    "contextSha256": "989880f0f5ea2adf9898000db99fee0f06786c8173765a0ef51411bf17961a8b",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998718+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "81407e60e309b3c28071286d168d1ee86bbfcc87b455f05c711698612a39e159",
+    "contextSha256": "bedc61407bff470dfbbab42a3511d49a412c7ecd14b0e933ab1a400d74a7db7a",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998771+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "1c085b0e64299281b8d13a55e55c8c45c397be62364d7d140c3deb0e5cda7cd6",
+    "contextSha256": "4547e1aaa9bd8c6b677275b623cb28417b43fc011b1cadafb1d17ac7c0feac59",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998821+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-goal-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "eba458bcc56c8eeee3374fe46f439ed0e71b87cd75f1fd70795e7c60a9abfc61",
+    "contextSha256": "bd3d9721f6396c5cc28bb7e7bb9ff610c0ec4419dd205f1187975783f6a8f676",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998884+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-150.png": {
+    "inspected": true,
+    "sha256": "2e38487ad69a52478545075418d54f596fae874d788de4b9aa247d6a5fd2af85",
+    "contextSha256": "548c89b70f5d2d68d56368cd19d9f399b2297d08a69e55a6544669e02681abe0",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998934+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-250.png": {
+    "inspected": true,
+    "sha256": "12bd4fc7f4f5390949e07438a8dfecf6459c1f05c781256fca82fa74dbd4fc8d",
+    "contextSha256": "c8c6d7a05d2dad248827b8003fb92f715a00da186fece89cb34cdfe4094611e5",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:49.998982+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-300.png": {
+    "inspected": true,
+    "sha256": "7b98a4881c0fa573d3037a748e31c95b256a3b22f2ef3c812ae057e1c3a8f7ec",
+    "contextSha256": "156b51e571b66229a5d0a3b0c4de74eb30b43866b056083c9cd467a9a0f2a758",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.000881+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-150.png": {
+    "inspected": true,
+    "sha256": "a3cb231ef1ef9232300295fb4315e1ef6406daa8e335b4deb63647804f1d7cf1",
+    "contextSha256": "6a6cfe59b90ae3d23ea1755f705610abfd774b657e96760f04e10044d644b1ae",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001013+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-250.png": {
+    "inspected": true,
+    "sha256": "cda2625e5ba031213f42a2e2d09f37b5bf3216d05d218b7e065588ca1d774ddf",
+    "contextSha256": "ef2bd70b8c7edadbad42c6f2bef0cd819ffb0431f1fc905a46116853772800ad",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001083+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-manual-progress-spacious-details-300.png": {
+    "inspected": true,
+    "sha256": "c7ea18345d90c6e9822b49a098243fdc8da1b68d732132950585bcb8ef0772b7",
+    "contextSha256": "bd9258d05db33a75698d5b0de836f53756cf0cdb8d507764a53ad1275eda236e",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001158+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-map-150.png": {
+    "inspected": true,
+    "sha256": "2103e6a835f600b050c5d99f012c11ce9fd3ea31a155ac08cec616b4d43594bb",
+    "contextSha256": "edfe71543cc19a9afb76ba995b8c234abd3705cdf14e74a23bea6c8231edbc19",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001216+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-map-250.png": {
+    "inspected": true,
+    "sha256": "cee600012c6b35217194797f10b1291e054dce33dfe0af7e1ca94f6cbf62799b",
+    "contextSha256": "9a92db9d892a9a56af03425c4a43c4d22f7df0dfef5191e0787abc555a9d2d93",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001269+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-map-300.png": {
+    "inspected": true,
+    "sha256": "d92b2cb89a8ead056b1f9cee316e9eb19dca86b74e212601fd8d1e7c9c45ba2c",
+    "contextSha256": "43584e2405d12d54277d8db55368f1702e5e89b105d330e3bc18fe5bec3ff9e6",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001329+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-predator-150.png": {
+    "inspected": true,
+    "sha256": "2ccdc891b8bd3a4a50b7f071d8c2441e30cb020189432524042a3edd976f2422",
+    "contextSha256": "315619c9f56297da81ad6699acf8e373f4f107d2e00c295c106fa32a59acf815",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001378+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-predator-250.png": {
+    "inspected": true,
+    "sha256": "fc8f5f18da6a8e8752ccaf45a3ef83e25e3bf3af2c3f191352747cef16990f15",
+    "contextSha256": "0fc5e54bfefc330229b82bc2d380ac0774440fcdb7c3d64d6a375f9be272d253",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001432+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-predator-300.png": {
+    "inspected": true,
+    "sha256": "41ca8b4af916d98396b005e1be311e9dcaa5610e2c3edcb77d06dbe70ec5e663",
+    "contextSha256": "d97b11f3d924ce2cc295f2f65297f91362d2fa8c2039db9d26d8415f9118c544",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001491+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-progress-150.png": {
+    "inspected": true,
+    "sha256": "7f44d86b3956a7bd106e86d1e414687a48988efaab3bb0303e710bae06706581",
+    "contextSha256": "867942f924423b9b2b31690fc79d7107fef9b022178ee9921f1eceb6aad7e11f",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001538+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-progress-250.png": {
+    "inspected": true,
+    "sha256": "fd1b37000d375a0039e5751122013a2f22b242e359fea0fcef0b98bfea105e39",
+    "contextSha256": "ce78bfe8ec3141e09b924efac5eb1630690bfaaff649b5dbe5aa15e78b86ac18",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001586+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  },
+  "v05-widget-tactical-progress-300.png": {
+    "inspected": true,
+    "sha256": "1526608f46a5aec6dc14011f322d95fcc78c6b7120545d877b027ee6bfb97a92",
+    "contextSha256": "0f1974d2242414b1aaead63008677ab93fbd90235ccce785ce09fe057debbe46",
+    "method": "Viewed actual Android Glance PNG in final 12-image family contact sheet; critical stress and long-map small cases additionally viewed standalone. Runtime glyph geometry separately checked.",
+    "inspectedUtc": "2026-11-04T11:14:50.001640+00:00",
+    "findings": [],
+    "geometry": {
+      "pass": true,
+      "findings": []
+    },
+    "limitations": [
+      "System font scale1.0; emulator RemoteViews host, not OEM launcher/WidgetKit"
+    ]
+  }
+}

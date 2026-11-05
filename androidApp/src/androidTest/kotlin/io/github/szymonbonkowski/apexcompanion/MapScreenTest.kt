@@ -19,6 +19,10 @@ class MapScreenTest {
     @Test fun unavailableAndDemoRemainDistinctAcrossModesAndRecreation() {
         val device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+            assertTrue(device.wait(Until.hasObject(By.desc("Navigate to Maps")), 10_000))
+            var maps = device.findObject(By.desc("Navigate to Maps"))
+            while (!maps.isClickable && maps.parent != null) maps = maps.parent
+            maps.click()
             assertTrue(device.wait(Until.hasObject(By.text("Rotation unavailable")), 10_000))
             assertTrue(device.hasObject(By.text("UNAVAILABLE")))
             device.findObject(By.text("Preview demo")).click()

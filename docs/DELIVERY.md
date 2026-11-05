@@ -2,7 +2,7 @@
 
 ## Current state
 
-This is a documentation and agent workflow kit. The **maintainer generates the actual KMP Wizard project** with Android + iOS shared Compose UI. It is false to claim any APK/IPA, Xcode project, Gradle wrapper, tests or live provider integration shipped with this starter archive.
+The Wizard-generated Android+iOS KMP project exists and is authoritative. Android debug/release builds and shared/device tests have local evidence; v0.5 adds four designs/personalization. iOS source and registered WidgetKit extension are Implemented — Not Verified under ADR0007. No public release, universal IPA installability or accepted Windows automatic tracking is implied. The documentation overlay described below is setup history; never regenerate the existing modules. See the [v0.5 evidence](validation/v0.5-report.md) and [v0.4 partial report](validation/v0.4-report.md).
 
 ## Bootstrap
 

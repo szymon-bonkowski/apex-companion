@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "repositoryFilesScanned": 1279,
+  "artifacts": [
+    {
+      "path": "androidApp/build/outputs/apk/androidTest/debug/androidApp-debug-androidTest.apk",
+      "sha256": "8e318fc9b16356527db0d876671f26baa72e0ae76679e36c62d9371db9246a8e",
+      "bytes": 706732,
+      "entries": 11,
+      "releasePrivateReaderPresent": false
+    },
+    {
+      "path": "androidApp/build/outputs/apk/debug/androidApp-debug.apk",
+      "sha256": "9dd6495ccf59c8671c7a25790402f48872f0fe4580875fcaec2f9ec52a17def9",
+      "bytes": 18345163,
+      "entries": 1153,
+      "releasePrivateReaderPresent": false
+    },
+    {
+      "path": "androidApp/build/outputs/apk/release/androidApp-release-unsigned.apk",
+      "sha256": "8044dc8ba923cd2b76fb0ef45c19bb4b28a2aacd66c42024d4fad5526b2ec2e2",
+      "bytes": 13003080,
+      "entries": 1143,
+      "releasePrivateReaderPresent": false
+    }
+  ],
+  "hits": [],
+  "knownValueKinds": [
+    "syntheticTlsMockToken"
+  ],
+  "newAndroidPermissions": [],
+  "versionCatalogChanged": false,
+  "productionCapturePolicyUnchanged": true,
+  "appleArtifactsAudited": false,
+  "scope": "Known-value/private-key-block source and APK scan; manifest/catalog/capture-policy comparison. No proof about arbitrary unknown secrets, no Apple binary claim."
+}

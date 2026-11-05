@@ -1,0 +1,23 @@
+{
+  "derivedMontage": true,
+  "conceptImage": false,
+  "notice": "Resized actual Android emulator Today captures of isolated synthetic fixtures. Original pixels and metadata remain in v0.5-captures.",
+  "sources": [
+    {
+      "path": "docs/validation/v0.5-captures/v05-carbon-phone-today.png",
+      "sha256": "dfb9275a6d5dec6df3674bfb371f1479f91d9fdfdfe8c47c1c24c3e4dff4bd2b"
+    },
+    {
+      "path": "docs/validation/v0.5-captures/v05-liquid-phone-today.png",
+      "sha256": "6d3f5c8627a0ebef40fa01bf6acd69d6551c282920ab2274440c9a6a19eba6ab"
+    },
+    {
+      "path": "docs/validation/v0.5-captures/v05-editorial-phone-today.png",
+      "sha256": "42f10de2f045d8afb8bc24c646a07128493ad6fef3d150eac59891c936473ca6"
+    },
+    {
+      "path": "docs/validation/v0.5-captures/v05-tactical-phone-today.png",
+      "sha256": "55af71fca4ed5f18e18116139cb48b0e47edb1ce46172b3fe4367efbf44febed"
+    }
+  ]
+}

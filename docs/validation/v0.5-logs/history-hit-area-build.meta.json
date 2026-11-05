@@ -1,0 +1,17 @@
+{
+  "command": [
+    "./gradlew",
+    ":androidApp:assembleDebug",
+    ":androidApp:assembleRelease",
+    ":androidApp:assembleDebugAndroidTest",
+    ":shared:testAndroidHostTest",
+    ":androidApp:testDebugUnitTest",
+    ":androidApp:lintDebug",
+    ":androidApp:lintRelease",
+    "--console=plain"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T11:33:35.237244+00:00",
+  "finishedUtc": "2026-11-04T11:34:00.936807+00:00",
+  "wallSeconds": 25.699565604008967
+}

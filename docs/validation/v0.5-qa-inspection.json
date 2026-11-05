@@ -1,0 +1,731 @@
+{
+  "v05-carbon-phone-today.png": {
+    "inspected": true,
+    "sha256": "dfb9275a6d5dec6df3674bfb371f1479f91d9fdfdfe8c47c1c24c3e4dff4bd2b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663019+00:00"
+  },
+  "v05-carbon-phone-maps-demo.png": {
+    "inspected": true,
+    "sha256": "3ffde556c597e573b316edc8736b5a8dd10c477b5e1b6800fb4dc1438217844c",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663170+00:00"
+  },
+  "v05-carbon-phone-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "8a35a6d53d26d782068634113f471e5903fbe665558533dd5bc658466e851e29",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663291+00:00"
+  },
+  "v05-carbon-phone-ranked.png": {
+    "inspected": true,
+    "sha256": "86e74a0cfa2482fa467ed186fe6fe8eaf0d1a33a791a0665fda6d3cbef44d9af",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663379+00:00"
+  },
+  "v05-carbon-phone-matches.png": {
+    "inspected": true,
+    "sha256": "01fff922d29b76335c526a2fcfe15901b888ed27ec94fed5805d96b88165054c",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663485+00:00"
+  },
+  "v05-carbon-phone-match-detail.png": {
+    "inspected": true,
+    "sha256": "bf599dadf344525d38fcee9b9c46ee9ef5bc1601ae331c4779131c4f3f0df3f9",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663572+00:00"
+  },
+  "v05-carbon-phone-match-statistics.png": {
+    "inspected": true,
+    "sha256": "467409b4015d59c6001e56dab829cdc64d97ef2b6900696729734f75b3ef8f89",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663675+00:00"
+  },
+  "v05-carbon-phone-studio.png": {
+    "inspected": true,
+    "sha256": "bf129f813edd40def1af31c5264569ffefce56a0d930fabe51a5431e7504210e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.663767+00:00"
+  },
+  "v05-liquid-phone-today.png": {
+    "inspected": true,
+    "sha256": "6d3f5c8627a0ebef40fa01bf6acd69d6551c282920ab2274440c9a6a19eba6ab",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.664235+00:00"
+  },
+  "v05-liquid-phone-maps-demo.png": {
+    "inspected": true,
+    "sha256": "89a02de9099feed1a8d4f8832f3ae391bddfd99f790b84876736112d56ce9463",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.664596+00:00"
+  },
+  "v05-liquid-phone-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "1b43ec7a7f8b06fea61e9065be062f1665fa8211382cefedec5464aed3c15b01",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.664879+00:00"
+  },
+  "v05-liquid-phone-ranked.png": {
+    "inspected": true,
+    "sha256": "c05f1caef05aa9a7a0deaaf5c4117d7bc3e17ebc46f0e419d52e0609205ced89",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.665169+00:00"
+  },
+  "v05-liquid-phone-matches.png": {
+    "inspected": true,
+    "sha256": "a64270b1a7e9e26b168e5bc5192147b69bf05d97a98853efc330ebd19eb3b2d6",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.665434+00:00"
+  },
+  "v05-liquid-phone-match-detail.png": {
+    "inspected": true,
+    "sha256": "89e2832adcd90dc989344fe70dfd8cd6967a01907dabb204ce43c18fc21f3bbb",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.665704+00:00"
+  },
+  "v05-liquid-phone-match-statistics.png": {
+    "inspected": true,
+    "sha256": "98ee8ed2df66f532ebbf1d0f40405cfd79aee605af68664083027a45b3b98164",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.665982+00:00"
+  },
+  "v05-liquid-phone-studio.png": {
+    "inspected": true,
+    "sha256": "5602bb5fce99a4fec48e40855ff54091244db2efaaf025d2e2122af7c538d794",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666247+00:00"
+  },
+  "v05-editorial-phone-today.png": {
+    "inspected": true,
+    "sha256": "42f10de2f045d8afb8bc24c646a07128493ad6fef3d150eac59891c936473ca6",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666326+00:00"
+  },
+  "v05-editorial-phone-maps-demo.png": {
+    "inspected": true,
+    "sha256": "37311b4745ee8a6227e7f58618d4301dd16f74c6e000e6e3216ead84e6451b82",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666407+00:00"
+  },
+  "v05-editorial-phone-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "25331f96f00f8dbb538f84d8b90a6572230becba4bab00311113094251d7f768",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666483+00:00"
+  },
+  "v05-editorial-phone-ranked.png": {
+    "inspected": true,
+    "sha256": "376d1dc928eb002e78b069c599a482483298510204488425525cdb96ba80250a",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666569+00:00"
+  },
+  "v05-editorial-phone-matches.png": {
+    "inspected": true,
+    "sha256": "27a6486145a6e5fa6b550baf53fb537b05bff389583d45da5f491b5d0efce6bc",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666662+00:00"
+  },
+  "v05-editorial-phone-match-detail.png": {
+    "inspected": true,
+    "sha256": "c1cd0f4c524283f1b53ed50e90aa591df2d34da17cb23d4624d0c0f9cffce14b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666755+00:00"
+  },
+  "v05-editorial-phone-match-statistics.png": {
+    "inspected": true,
+    "sha256": "85c5b00311a31b7bbd182cd7d57ccceba6a603fb5f4b13af45e70355d1bddfd3",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666862+00:00"
+  },
+  "v05-editorial-phone-studio.png": {
+    "inspected": true,
+    "sha256": "ce4831f521903f1202173cb5766d147b6d458ff8c18f5f9018949c151cecbabf",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.666956+00:00"
+  },
+  "v05-tactical-phone-today.png": {
+    "inspected": true,
+    "sha256": "55af71fca4ed5f18e18116139cb48b0e47edb1ce46172b3fe4367efbf44febed",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.667182+00:00"
+  },
+  "v05-tactical-phone-maps-demo.png": {
+    "inspected": true,
+    "sha256": "25a251aea1485642fce71d116c0eaee0dbf30702781f4a5cc292c44a24dce11e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.667366+00:00"
+  },
+  "v05-tactical-phone-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "ebae2ec63ecc0481ad83a6f4fccf10fc3d176ba8995448f73bc069042c487177",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.667527+00:00"
+  },
+  "v05-tactical-phone-ranked.png": {
+    "inspected": true,
+    "sha256": "a172755f9b9a9b245954ffc3846d654b7421ff4739ac2b7b75134946c60e472a",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.667719+00:00"
+  },
+  "v05-tactical-phone-matches.png": {
+    "inspected": true,
+    "sha256": "7df792356a9e6120d5123b13ea5c43b3641d39a5787ea12f9c2bb281cbe0688a",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.667878+00:00"
+  },
+  "v05-tactical-phone-match-detail.png": {
+    "inspected": true,
+    "sha256": "d331f9dc5a071c6f1f40c76fa05120292d1b8665b6761ec0d2354c8fc9929584",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668049+00:00"
+  },
+  "v05-tactical-phone-match-statistics.png": {
+    "inspected": true,
+    "sha256": "5320c5f9ac2ef9763bfa306f4e30cb8f3730d3b8556a6325b0283493b4641a5d",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668232+00:00"
+  },
+  "v05-tactical-phone-studio.png": {
+    "inspected": true,
+    "sha256": "3785fb29ae8f1c763765034afda98806446685c0242e94c5c609943b4648207d",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668351+00:00"
+  },
+  "v05-carbon-small-today.png": {
+    "inspected": true,
+    "sha256": "cef5d1070189c8c9504658644aa46e68b42e2d38bae24441d0edc67f74ff2882",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668438+00:00"
+  },
+  "v05-carbon-small-maps-demo.png": {
+    "inspected": true,
+    "sha256": "9a74876fd9f513095679d5b9652a4bb813020487c42a7426f2b3e744ede435d3",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668504+00:00"
+  },
+  "v05-carbon-small-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "f5db776865576891a3410166992c1af7a6b9aadb65b5aff14cc08c467b90d630",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668559+00:00"
+  },
+  "v05-carbon-small-ranked.png": {
+    "inspected": true,
+    "sha256": "5e7ea1637f8ef5cf9cb55235bca9a012555c4356d65da8ad306e65c02d22a5d4",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668621+00:00"
+  },
+  "v05-carbon-small-matches.png": {
+    "inspected": true,
+    "sha256": "55cc4292ba3c13b047a9da2a73684343205f1b7567c5c2ddf52dfe82e3eab691",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668688+00:00"
+  },
+  "v05-carbon-small-match-detail.png": {
+    "inspected": true,
+    "sha256": "44556bdb21d69517acf2e25f8fd42a2b3ff52c7e0b22d6dc9d78527b4d18810e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668757+00:00"
+  },
+  "v05-carbon-small-match-statistics.png": {
+    "inspected": true,
+    "sha256": "f2ce76ec7ecea37b8cae416509807e5df062d6a979b2d63cfaa8b4f6779f9f78",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668826+00:00"
+  },
+  "v05-carbon-small-studio.png": {
+    "inspected": true,
+    "sha256": "231c7cefcbe2d73e485f5c08f101c2bfafb71972e0a6457055b882ceb01b13ed",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Earlier side-gesture padding/nav word-break defect resolved in this exact capture."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.668890+00:00"
+  },
+  "v05-liquid-expanded-today.png": {
+    "inspected": true,
+    "sha256": "fd19012e3df3bfe1937399e197995387db568e933f6be2d60966a2f0f481ee1b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.669162+00:00"
+  },
+  "v05-liquid-expanded-maps-demo.png": {
+    "inspected": true,
+    "sha256": "e81019454734b0fd6567d48bf34a1d4b003257375f781a2a4f17a10f389f1703",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.669402+00:00"
+  },
+  "v05-liquid-expanded-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "b2efbbe77f9311b63e3c0ba2e7119899d79f536603765588642f9347230aa57e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.669640+00:00"
+  },
+  "v05-liquid-expanded-ranked.png": {
+    "inspected": true,
+    "sha256": "2a54f9de526c1d4cc00f84b0d59978b6ed62b14a3c69d50047f26b3c2ea11315",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.669884+00:00"
+  },
+  "v05-liquid-expanded-matches.png": {
+    "inspected": true,
+    "sha256": "baaf0a77f8c4f45f8d88f014b16935baedc03db3f70b5b91db54d059f8dc878b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.670133+00:00"
+  },
+  "v05-liquid-expanded-match-detail.png": {
+    "inspected": true,
+    "sha256": "69cba0d48899c1cb56cfb950a40d40a70d13d292a5def6e150d52533d1aef989",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.670376+00:00"
+  },
+  "v05-liquid-expanded-match-statistics.png": {
+    "inspected": true,
+    "sha256": "5ab8b9df86d18f5412877ccb94aeae744352d5bd9d94011ef7908e1d829c4e7f",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.670618+00:00"
+  },
+  "v05-liquid-expanded-studio.png": {
+    "inspected": true,
+    "sha256": "9ef93b87d17ee5e765181f2650cd86abf44b0910fc69b1ab29e6f8f8253c98e4",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. Expanded layout inspected at 1280dp; Today uses a full-width hero with two-column remaining modules."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.670856+00:00"
+  },
+  "v05-editorial-large-text-today.png": {
+    "inspected": true,
+    "sha256": "ed7bc6f3df064cc7894fd431d7964768b1e3714ccb7877ebf1dea9fc0e70828b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.670940+00:00"
+  },
+  "v05-editorial-large-text-maps-demo.png": {
+    "inspected": true,
+    "sha256": "7fcd98c513ebba497e7c966b4e84947f7716ad02f1c8c28a7a4a358438f4255b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671024+00:00"
+  },
+  "v05-editorial-large-text-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "c18f23f50200c8551dba8349399dc339e0835189d1546edd18586c39a3d6943d",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671100+00:00"
+  },
+  "v05-editorial-large-text-ranked.png": {
+    "inspected": true,
+    "sha256": "fabaec6a031eb618bc79648f0b8bfc179c8e0fa9436902dd97b38933397e6874",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671183+00:00"
+  },
+  "v05-editorial-large-text-matches.png": {
+    "inspected": true,
+    "sha256": "65507a55d9242d63f8132b1932f540dd1943d7aa487b48d0d194bdb5b479d792",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671276+00:00"
+  },
+  "v05-editorial-large-text-match-detail.png": {
+    "inspected": true,
+    "sha256": "ac5927ce7002029c1ae8d2646b76f83691b9dc66ef377036b23c32672705b432",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671376+00:00"
+  },
+  "v05-editorial-large-text-match-statistics.png": {
+    "inspected": true,
+    "sha256": "5d50fe24c74d3f933798e5e0010f482b37b5fa15d5b977e03b334c7f25c0ed71",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671469+00:00"
+  },
+  "v05-editorial-large-text-studio.png": {
+    "inspected": true,
+    "sha256": "0a36862888e95e251a58eb1cf859b68f8a4d5a4a7cec6b63510b994faf42d3fb",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity/style/provenance consistent; readable text, no overlapping critical content observed. Long content scrolls vertically. 200% system font: 3+2 navigation labels remain whole; body text wraps and scrolls."
+    ],
+    "reviewedUtc": "2026-11-04T06:01:22.671559+00:00"
+  },
+  "v05-carbon-phone-settings.png": {
+    "inspected": true,
+    "sha256": "16f199e135d11cf7e30a4cb6a48a1c85e41c18f283e8567a1f8ca51a2277613d",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.990979+00:00"
+  },
+  "v05-liquid-phone-settings.png": {
+    "inspected": true,
+    "sha256": "ccb193b170fa3809445acc9c4fee67df5f370810912d09b8689dee3a788c9795",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.991510+00:00"
+  },
+  "v05-editorial-phone-settings.png": {
+    "inspected": true,
+    "sha256": "6d0868fd6738df153f482dc28c61a3ce41c14ea2981f6e2990fc6dbebdc9b50b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.991614+00:00"
+  },
+  "v05-tactical-phone-settings.png": {
+    "inspected": true,
+    "sha256": "e481b3e5fdd327d7ce35fd505023a41378b9beef4293fdd804d2e77dba13549e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.991854+00:00"
+  },
+  "v05-carbon-small-settings.png": {
+    "inspected": true,
+    "sha256": "d4f91dd2abd4abbeb0cc95d06bd86c08e3633c94013969ee2db1c40a1e327276",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.991940+00:00"
+  },
+  "v05-liquid-expanded-settings.png": {
+    "inspected": true,
+    "sha256": "bddb1cfb9b1a71190aa4d872641865aa4e898e49bf879475c15625fecaa8f66a",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992222+00:00"
+  },
+  "v05-editorial-large-text-settings.png": {
+    "inspected": true,
+    "sha256": "5e9793679621bb52bd1fe4415f0e1809db626e073d4e0e7bdcc5c167904c1443",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992325+00:00"
+  },
+  "v05-editorial-dark-settings.png": {
+    "inspected": true,
+    "sha256": "21a873b3777b4ad881f32fe2cd08531dfab3bb74d8642d73bea5b5a08574f1fa",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992415+00:00"
+  },
+  "v05-tactical-landscape-settings.png": {
+    "inspected": true,
+    "sha256": "4ba6e25ab61ca1f08b15d4bb7b62d38a9c4d2eefe962043f1c37f07f4c0e5f2e",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Repaired capture visibly shows Your companion / Personalize your space and Appearance Studio entry; prior Statistics miscapture is superseded. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992521+00:00"
+  },
+  "v05-editorial-dark-today.png": {
+    "inspected": true,
+    "sha256": "0a42f795720cc34001fef0f7e401b95c08ee756e2adfb4e74d3e9776f83f9ff4",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992606+00:00"
+  },
+  "v05-editorial-dark-maps-demo.png": {
+    "inspected": true,
+    "sha256": "e3b6611e109b86e5b78f4967e88eaa776cf6dfab4219c04b55a86dcb400021b8",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992693+00:00"
+  },
+  "v05-editorial-dark-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "22f0c65113723b77d14f4449fb5edc9061be2296d26b7f0b8211dafd2132b9dd",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992773+00:00"
+  },
+  "v05-editorial-dark-ranked.png": {
+    "inspected": true,
+    "sha256": "57bd2402a14ff511a9176c9d7eb219df90ca1d694593c7de1ee55a7652b83ae1",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992854+00:00"
+  },
+  "v05-editorial-dark-matches.png": {
+    "inspected": true,
+    "sha256": "a938222434215e68e456feef788909c632e77413a4309ce90c648ad5722445d7",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.992950+00:00"
+  },
+  "v05-editorial-dark-match-detail.png": {
+    "inspected": true,
+    "sha256": "59a48c3e57fc56889cf2107b2806db5bdc030f0177f27039d9a0ffa2c91b800b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993044+00:00"
+  },
+  "v05-editorial-dark-match-statistics.png": {
+    "inspected": true,
+    "sha256": "4db258e2583ef92f2c9f63fa848a4a07b29ec4c8bc4e3db895c37070a98d4111",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993144+00:00"
+  },
+  "v05-editorial-dark-studio.png": {
+    "inspected": true,
+    "sha256": "0457a78f2888b736869e1198b73ca7a665402327c2e9abf66b9d238c4dc1846d",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993230+00:00"
+  },
+  "v05-tactical-landscape-today.png": {
+    "inspected": true,
+    "sha256": "c453869f5ae3e089d8e7f17c7dc75caac995339bce3f2291a558b10a8a859d90",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993298+00:00"
+  },
+  "v05-tactical-landscape-maps-demo.png": {
+    "inspected": true,
+    "sha256": "d43a7bdb13d26d396d8239f959855d3a807749d4424585c7d0c57a546efc7856",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993382+00:00"
+  },
+  "v05-tactical-landscape-maps-unavailable.png": {
+    "inspected": true,
+    "sha256": "16b18c0955185bfe54b014db34b0db50c32ba1a179542ec4c0f31bbf6cc14f50",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993469+00:00"
+  },
+  "v05-tactical-landscape-ranked.png": {
+    "inspected": true,
+    "sha256": "8a69dc671b00287deb8c09f9e1d47ef159d1be8b84b08e4cfeb1c4e42e45eacf",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993567+00:00"
+  },
+  "v05-tactical-landscape-matches.png": {
+    "inspected": true,
+    "sha256": "b8a7505b2b932ec3fca69c4cdef0bbd07056189bc32598aabc6d859f4df16679",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993653+00:00"
+  },
+  "v05-tactical-landscape-match-detail.png": {
+    "inspected": true,
+    "sha256": "a708341c5ad2815dc03885dcb831e6185c5c695690c8357980c958b5e294fb25",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993747+00:00"
+  },
+  "v05-tactical-landscape-match-statistics.png": {
+    "inspected": true,
+    "sha256": "70459240ca7d8af96b5a1800065bfe58e0b0ad5eea505b2fed0b8d8e0efbd34b",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993810+00:00"
+  },
+  "v05-tactical-landscape-studio.png": {
+    "inspected": true,
+    "sha256": "4639aa9272a3560592626b4c9ea0cd0a97ef867bbff31953a9e1693436fc8777",
+    "pageIdentityVerified": true,
+    "findings": [
+      "Actual rendered viewport inspected: page identity, style and data labels match capture metadata; readable foreground/background, no overlapped controls observed. Short landscape viewport requires vertical scrolling; sampled top Today/Studio views do not show all card values or the entire preview at once. Navigation stays visible and source/value pages remain readable."
+    ],
+    "reviewedUtc": "2026-11-04T06:06:21.993869+00:00"
+  }
+}

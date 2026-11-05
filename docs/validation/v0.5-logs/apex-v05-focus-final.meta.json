@@ -1,0 +1,23 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#dashboardControlsSaveOrderVisibilitySizeAndResetWhileNotificationsRemainGated,io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest,io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:09:42.821730+00:00",
+  "finishedUtc": "2026-11-03T23:10:38.296022+00:00",
+  "wallSeconds": 55.47429651899438,
+  "instrumentation": {
+    "success": false,
+    "testsPassed": null
+  },
+  "log": "/tmp/apex-v05-focus-final.log"
+}

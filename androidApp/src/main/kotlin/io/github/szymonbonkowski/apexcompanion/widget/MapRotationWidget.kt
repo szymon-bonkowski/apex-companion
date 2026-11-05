@@ -19,10 +19,13 @@ import androidx.glance.action.ActionParameters
 import androidx.glance.action.actionStartActivity
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.GlanceAppWidget
+import androidx.glance.appwidget.GlanceAppWidgetManager
+import io.github.szymonbonkowski.apexcompanion.appearance.*
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.appwidget.action.actionRunCallback
+import androidx.glance.appwidget.action.actionStartActivity
 import androidx.glance.appwidget.provideContent
 import androidx.glance.appwidget.state.updateAppWidgetState
 import androidx.glance.background
@@ -61,13 +64,16 @@ class MapRotationWidget(
         val repository = repositoryOverride ?: runtime.repository
         repository.initialize() // durable app-owned projection; never performs an HTTP request
         if (repositoryOverride == null) MapSyncScheduler.scheduleBoundary(context)
+        val appAppearance = WidgetAppearancePublisher.read(context)
+        val widgetId = runCatching { GlanceAppWidgetManager(context).getAppWidgetId(id) }.getOrDefault(android.appwidget.AppWidgetManager.INVALID_APPWIDGET_ID)
         provideContent {
             val repositoryState by repository.state.collectAsState()
             val modeId = currentState<Preferences>()[MODE_KEY] ?: DEFAULT_MODE
             val cache = repositoryState.cache
             val modeLabel = cache?.playlists?.firstOrNull { it.id == modeId }?.label ?: fallbackModeLabel(modeId)
             val view = projectRotation(cache, modeId, nowSeconds(), repositoryState.error)
-            MapCard(view, modeLabel)
+            val appearance = resolveWidgetAppearance(appAppearance, widgetInstanceAppearance(currentState<Preferences>()))
+            MapCard(view, modeLabel, appearance, widgetLookIntent(context, widgetId), widgetOpenIntent(context, "maps"))
         }
     }
 
@@ -85,36 +91,36 @@ class MapRotationWidget(
 }
 
 @Composable
-private fun MapCard(view: RotationView, modeLabel: String) {
-    val roomy = LocalSize.current.width >= 250.dp
+private fun MapCard(view: RotationView, modeLabel: String, appearance: WidgetAppearance, lookIntent: Intent, openIntent: Intent) {
+    val roomy = LocalSize.current.width >= 250.dp && LocalSize.current.height >= 200.dp
     val tall = LocalSize.current.height >= 200.dp
-    val foreground = ColorProvider(Color(0xFFF2F5F7))
-    val secondary = ColorProvider(Color(0xFFB5C4CE))
-    val accent = ColorProvider(Color(0xFF7AE4D5))
+    val longCompactName = !roomy && (view.current?.mapName?.length ?: 0) > 13
+    val palette = widgetPalette(appearance)
+    val foreground = ColorProvider(Color(palette.foreground))
+    val secondary = ColorProvider(Color(palette.secondary))
+    val accent = ColorProvider(Color(palette.accent))
     Column(
-        modifier = GlanceModifier.fillMaxSize().background(Color(0xFF151E28)).padding(if (roomy) 16.dp else 12.dp),
+        modifier = widgetContainer(appearance, roomy),
         verticalAlignment = Alignment.Vertical.Top,
     ) {
-        if (roomy) {
-            Text("APEX COMPANION", style = TextStyle(color = accent, fontSize = 10.sp, fontWeight = FontWeight.Bold), maxLines = 1)
-        }
+        WidgetIdentityRule(appearance, roomy, "MAP ROTATION")
         Text("${view.state.name} · $modeLabel", style = TextStyle(color = secondary, fontSize = 12.sp), maxLines = 1)
         Spacer(GlanceModifier.height(if (roomy) 6.dp else 4.dp))
-        Column(GlanceModifier.fillMaxWidth().clickable(actionStartActivity<MainActivity>())) {
-            Text(view.current?.mapName ?: "Map unavailable", style = TextStyle(color = foreground, fontSize = if (roomy) 22.sp else 17.sp, fontWeight = FontWeight.Bold), maxLines = if (roomy) 2 else 1)
-            Text(view.current?.let { "Ends ${localTime(it.endSeconds)}" } ?: "Open app for source status", style = TextStyle(color = secondary, fontSize = 12.sp), maxLines = 1)
+        Column(GlanceModifier.fillMaxWidth().clickable(actionStartActivity(openIntent))) {
+            Text(view.current?.mapName ?: if (roomy) "Map unavailable" else "Map unknown", style = TextStyle(color = foreground, fontSize = if (roomy) (if (appearance.style == WidgetDesign.EDITORIAL) 25.sp else 22.sp) else if (longCompactName) 15.sp else 17.sp, fontWeight = FontWeight.Bold, fontFamily = appearance.fontFamily()), maxLines = if (roomy || longCompactName) 2 else 1)
+            Text(view.current?.let { "Ends ${localTime(it.endSeconds)}" } ?: if (roomy) "Open app for source status" else "Open app for details", style = TextStyle(color = secondary, fontSize = 12.sp), maxLines = 1)
             if (roomy) Spacer(GlanceModifier.height(4.dp))
-            Text(view.next?.let { "Next: ${it.mapName} · ${localTime(it.startSeconds)}" } ?: "Next map not supplied", style = TextStyle(color = foreground, fontSize = if (roomy) 13.sp else 11.sp), maxLines = if (roomy) 2 else 1)
-            if (tall) {
-                Text(view.lastSyncedAtSeconds?.let { "Synced ${localTime(it)} · cached schedule" } ?: "No successful synchronization", style = TextStyle(color = secondary, fontSize = 11.sp), maxLines = 1)
-            }
+            if (!longCompactName) Text(view.next?.let { "Next: ${it.mapName} · ${localTime(it.startSeconds)}" } ?: "Next map not supplied", style = TextStyle(color = foreground, fontSize = if (roomy) 13.sp else 11.sp), maxLines = if (roomy) 2 else 1)
+            Text(view.lastSyncedAtSeconds?.let { if (tall) "Synced ${localTime(it)} · cached schedule" else "Updated ${localTime(it)}" } ?: "No successful update", style = TextStyle(color = secondary, fontSize = 10.sp), maxLines = 1)
             Text(view.source, style = TextStyle(color = secondary, fontSize = 10.sp), maxLines = 1)
         }
         Spacer(GlanceModifier.defaultWeight())
         Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.Vertical.CenterVertically) {
-            Text("Mode", modifier = GlanceModifier.clickable(actionRunCallback<CycleMapModeAction>()).padding(vertical = 10.dp, horizontal = 6.dp), style = TextStyle(color = accent, fontSize = 13.sp, fontWeight = FontWeight.Bold))
+            Text("Mode", modifier = GlanceModifier.clickable(actionRunCallback<CycleMapModeAction>()).padding(vertical = if (roomy) 10.dp else 8.dp, horizontal = if (roomy) 6.dp else 2.dp), style = TextStyle(color = accent, fontSize = if (roomy) 13.sp else 12.sp, fontWeight = FontWeight.Bold))
             Spacer(GlanceModifier.defaultWeight())
-            Text("Refresh", modifier = GlanceModifier.clickable(actionRunCallback<RefreshMapsAction>()).padding(vertical = 10.dp, horizontal = 6.dp), style = TextStyle(color = accent, fontSize = 13.sp, fontWeight = FontWeight.Bold))
+            Text("Look", modifier = GlanceModifier.clickable(actionStartActivity(lookIntent)).padding(vertical = if (roomy) 10.dp else 8.dp, horizontal = if (roomy) 6.dp else 2.dp), style = TextStyle(color = accent, fontSize = if (roomy) 13.sp else 12.sp, fontWeight = FontWeight.Bold))
+            Spacer(GlanceModifier.defaultWeight())
+            Text("Refresh", modifier = GlanceModifier.clickable(actionRunCallback<RefreshMapsAction>()).padding(vertical = if (roomy) 10.dp else 8.dp, horizontal = if (roomy) 6.dp else 2.dp), style = TextStyle(color = accent, fontSize = if (roomy) 13.sp else 12.sp, fontWeight = FontWeight.Bold))
         }
     }
 }

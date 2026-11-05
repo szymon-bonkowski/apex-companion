@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity android:name=".widget.WidgetAppearanceActivity" android:exported="false" />
         <activity
             android:exported="true"
             android:name=".MainActivity">

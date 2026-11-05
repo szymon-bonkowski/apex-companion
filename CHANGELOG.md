@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — v0.5 design and personalization (2026-11-03)
+
+- Four resolved design systems across shared UI, dedicated Appearance Studio/preview/preset CRUD and independent atomic cosmetic settings.
+- Real-data customizable Today; native Glance/WidgetKit per-instance style/accent/density/surface and app-following cosmetic projection.
+- Contrast-safe accents, responsive/large-type layouts, OS motion/transparency/power fallbacks, explicitly gated favorite-map preferences.
+- Android/shared checks and actual visual evidence recorded in docs/validation/v0.5-report.md. iOS Implemented — Not Verified; v0.4 automatic capture still unfinished. No publication/commit/push.
+
 ## v0.4 in progress — automatic collection and match history
 
 - Shared strict durable match journal, original machine provenance/corrections, explicit manual/screenshot-assisted entry, denominated analytics and match-only portable archive; existing RP history/settings remain compatible.

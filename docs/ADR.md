@@ -18,3 +18,5 @@ The former pack event-ledger design was **withdrawn**, not migrated. Packs/heirl
 
 | [0009](adr/0009-windows-match-capture.md) | Accepted (owner v0.4 instruction) | Optional Windows capture, machine provenance and pinned local synchronization |
 | [0010](adr/0010-match-journal-storage.md) | Accepted (v0.4 implementation) | Separate bounded atomic match journal and match-only archive |
+
+| [0011](adr/0011-cosmetic-state-and-design-resolution.md) | Accepted (owner v0.5 implementation) | Independent cosmetic record, four resolved designs, dashboard and native widget presentation |

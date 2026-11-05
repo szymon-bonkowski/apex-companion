@@ -1,0 +1,71 @@
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest:
+INSTRUMENTATION_STATUS: test=boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: TalkBack service did not bind
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:154)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+
+INSTRUMENTATION_STATUS: stream=
+Error in boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest):
+java.lang.AssertionError: TalkBack service did not bind
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:154)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+
+INSTRUMENTATION_STATUS: test=boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 21.287
+There was 1 failure:
+1) boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest)
+java.lang.AssertionError: TalkBack service did not bind
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.await(AppearanceTalkBackInstrumentedTest.kt:154)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.access$await(AppearanceTalkBackInstrumentedTest.kt:26)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest$boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns$1.invokeSuspend(AppearanceTalkBackInstrumentedTest.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:94)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:70)
+	at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-e9cd411643619aec65ee77b57a0abf1562b78a94:1)
+	at io.github.szymonbonkowski.apexcompanion.AppearanceTalkBackInstrumentedTest.boundTalkBackCanFocusNavigationAndProvenanceAcrossFourDesigns(AppearanceTalkBackInstrumentedTest.kt:34)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

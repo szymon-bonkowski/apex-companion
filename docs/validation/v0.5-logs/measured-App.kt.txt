@@ -1,0 +1,664 @@
+package io.github.szymonbonkowski.apexcompanion
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.repeatOnLifecycle
+import io.github.szymonbonkowski.apexcompanion.appearance.*
+import io.github.szymonbonkowski.apexcompanion.history.*
+import io.github.szymonbonkowski.apexcompanion.maps.*
+import io.github.szymonbonkowski.apexcompanion.matches.*
+import io.github.szymonbonkowski.apexcompanion.ranked.*
+import kotlin.time.Clock
+import kotlin.time.Instant
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+
+fun formatRotationTime(
+    epochSeconds: Long,
+    zone: TimeZone = TimeZone.currentSystemDefault(),
+): String {
+    val local = Instant.fromEpochSeconds(epochSeconds).toLocalDateTime(zone)
+    return "${local.date} ${local.hour.toString().padStart(2, '0')}:${local.minute.toString().padStart(2, '0')}"
+}
+
+/**
+ * Shared UI for Android and iOS; platform hosts supply durable repositories and snapshot
+ * publication.
+ */
+@Composable
+fun App(
+    repository: RotationRepository? = null,
+    onProjectionChanged: suspend (String) -> Unit = {},
+    rankedRepository: RankedRepository? = null,
+    onRankedProjectionChanged: suspend (String) -> Unit = {},
+    historyRepository: HistoryRepository? = null,
+    historyDocuments: HistoryDocuments? = null,
+    matchRepository: MatchRepository? = null,
+    matchSync: MatchSyncController? = null,
+    matchDocuments: HistoryDocuments? = null,
+    matchScreenshots: MatchScreenshotPicker? = null,
+    appearanceRepository: AppearanceRepository? = null,
+    appearanceEnvironment: AppearanceEnvironment? = null,
+    onAppearanceProjectionChanged: suspend (String) -> Unit = {},
+    backNavigation: @Composable (Boolean, () -> Unit) -> Unit = { _, _ -> },
+) {
+    val appearanceFallback = remember {
+        AppearanceRepository(
+            object : RotationStore {
+                override suspend fun read(): String? = null
+
+                override suspend fun write(value: String) {}
+            }
+        )
+    }
+    val appearance = appearanceRepository ?: appearanceFallback
+    val appearanceState by appearance.state.collectAsState()
+    val environment = appearanceEnvironment ?: platformAppearanceEnvironment()
+    LaunchedEffect(appearance) { appearance.initialize() }
+    val resolved = resolveTheme(appearanceState.record.preferences, environment)
+    val appearanceProjectionLock = remember { Mutex() }
+    var appearanceProjectionError by remember { mutableStateOf(false) }
+    LaunchedEffect(
+        resolved.style,
+        resolved.accent,
+        resolved.dark,
+        resolved.density,
+        appearanceState.record.preferences.trueBlack,
+    ) {
+        try {
+            appearanceProjectionLock.withLock {
+                onAppearanceProjectionChanged(
+                    appearanceWidgetWire(resolved, appearanceState.record.preferences.trueBlack)
+                )
+            }
+            appearanceProjectionError = false
+        } catch (cancelled: kotlinx.coroutines.CancellationException) {
+            throw cancelled
+        } catch (_: Exception) {
+            appearanceProjectionError = true
+        }
+    }
+    val fallback = remember {
+        RotationRepository(
+            UnconfiguredRotationProvider,
+            object : RotationStore {
+                override suspend fun read(): String? = null
+
+                override suspend fun write(value: String) {}
+            },
+            RotationClock { Clock.System.now().epochSeconds },
+        )
+    }
+    val rankedFallback = remember {
+        RankedRepository(
+            UnconfiguredRankedProvider,
+            object : RotationStore {
+                override suspend fun read(): String? = null
+
+                override suspend fun write(value: String) {}
+            },
+            RotationClock { Clock.System.now().epochSeconds },
+        )
+    }
+    val ranked = rankedRepository ?: rankedFallback
+    val rankedState by ranked.state.collectAsState()
+    val maps = repository ?: fallback
+    val state by maps.state.collectAsState()
+    var now by remember { mutableStateOf(Clock.System.now().epochSeconds) }
+    var screen by rememberSaveable { mutableStateOf("Today") }
+    backNavigation(screen != "Today") {
+        screen = if (screen in listOf("Appearance Studio", "Notifications")) "Settings" else "Today"
+    }
+    var mode by rememberSaveable { mutableStateOf("battle_royale") }
+    var demo by rememberSaveable { mutableStateOf(false) }
+    val demoCache = remember(demo) { if (demo) demoRotation(now) else null }
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    val scope = rememberCoroutineScope()
+    val uriHandler = LocalUriHandler.current
+    var projectionError by remember { mutableStateOf(false) }
+    var rankedProjectionError by remember { mutableStateOf(false) }
+
+    LaunchedEffect(maps, ranked, lifecycle) {
+        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            maps.initialize()
+            ranked.initialize()
+            launch {
+                ranked.refresh()
+                if (ranked.state.value.profile != null) ranked.refreshPredator()
+            }
+            launch { maps.refresh() }
+            var lastTick = Clock.System.now().epochSeconds
+            var nextSync = lastTick + ROTATION_FRESH_SECONDS
+            var nextRankedSync = lastTick + PROFILE_FRESH_SECONDS
+            while (isActive) {
+                now = Clock.System.now().epochSeconds
+                val crossedBoundary =
+                    maps.state.value.cache?.playlists.orEmpty().any { playlist ->
+                        playlist.segments.any { segment ->
+                            (segment.startSeconds > lastTick && segment.startSeconds <= now) ||
+                                (segment.endSeconds > lastTick && segment.endSeconds <= now)
+                        }
+                    }
+                if (
+                    (now >= nextSync || crossedBoundary) &&
+                        maps.state.value.error != RotationError.ACCESS_NOT_CONFIGURED
+                ) {
+                    launch { maps.refresh() }
+                    nextSync = now + ROTATION_FRESH_SECONDS
+                }
+                if (now >= nextRankedSync) {
+                    launch {
+                        ranked.refresh()
+                        if (ranked.state.value.profile != null) ranked.refreshPredator()
+                    }
+                    nextRankedSync = now + PROFILE_FRESH_SECONDS
+                }
+                lastTick = now
+                delay(1000)
+            }
+        }
+    }
+    LaunchedEffect(matchRepository, matchSync, lifecycle) {
+        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            matchRepository?.initialize()
+            matchSync?.initialize()
+            while (isActive) {
+                if (matchSync?.state?.value?.paired == true && !matchSync.state.value.busy)
+                    matchSync.synchronize()
+                delay(30_000) // Foreground only; lifecycle cancellation stops retries.
+            }
+        }
+    }
+    LaunchedEffect(state.cache, state.error) {
+        try {
+            onProjectionChanged(RotationWidgetCodec.encode(state.cache, now, state.error))
+            projectionError = false
+        } catch (cancelled: kotlinx.coroutines.CancellationException) {
+            throw cancelled
+        } catch (_: Exception) {
+            projectionError = true
+        }
+    }
+    val modes = if (demo) defaultPlaylists else maps.availableModes()
+    val selected = modes.firstOrNull { it.id == mode } ?: modes.first()
+    val view =
+        if (demo) projectRotation(demoCache, selected.id, now) else maps.view(selected.id, now)
+    val zone = TimeZone.currentSystemDefault()
+
+    val today = Instant.fromEpochSeconds(now).toLocalDateTime(zone).date
+    // Native projections include future freshness/midnight entries. Publish on state/day changes
+    // only.
+    LaunchedEffect(rankedState, today) {
+        try {
+            onRankedProjectionChanged(RankedWidgetCodec.encode(rankedState, now, today))
+            rankedProjectionError = false
+        } catch (cancelled: kotlinx.coroutines.CancellationException) {
+            throw cancelled
+        } catch (_: Exception) {
+            rankedProjectionError = true
+        }
+    }
+
+    DesignTheme(appearanceState.record.preferences, environment) {
+        val tokens = LocalThemeTokens.current
+        val appColors = MaterialTheme.colorScheme
+        Surface(
+            Modifier.fillMaxSize(),
+            color = Color.Transparent,
+            contentColor = MaterialTheme.colorScheme.onSurface,
+        ) {
+            Column(
+                Modifier.fillMaxSize().background(designBackground()).safeDrawingPadding(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Column(
+                    Modifier.widthIn(max = 1120.dp)
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .padding(horizontal = tokens.cardPadding, vertical = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(tokens.gap),
+                ) {
+                    FlowRow(
+                        Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalArrangement = Arrangement.spacedBy(4.dp),
+                    ) {
+                        Column {
+                            Text(
+                                if (tokens.style == DesignStyle.TACTICAL) "AC / FIELD JOURNAL"
+                                else "APEX COMPANION",
+                                style = MaterialTheme.typography.labelLarge,
+                                color = appColors.primary,
+                            )
+                            Text(
+                                when (tokens.style) {
+                                    DesignStyle.CARBON -> "A clearer perspective."
+                                    DesignStyle.LIQUID -> "Find your flow."
+                                    DesignStyle.EDITORIAL -> "The ranked journal"
+                                    DesignStyle.TACTICAL -> "PERSONAL TELEMETRY"
+                                },
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                        Text(
+                            tokens.style.title,
+                            style = MaterialTheme.typography.labelMedium,
+                            color = appColors.onSurfaceVariant,
+                        )
+                    }
+                    Row(
+                        Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).semantics {
+                            contentDescription = "Tracking destinations"
+                        },
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        listOf("History", "Sessions", "Profile", "Capture sync", "About").forEach {
+                            destination ->
+                            FilterChip(
+                                selected = screen == destination,
+                                onClick = { screen = destination },
+                                label = { Text(destination) },
+                                modifier =
+                                    Modifier.semantics {
+                                        contentDescription = "Navigate to $destination"
+                                    },
+                            )
+                        }
+                    }
+                    key(screen) {
+                        Column(
+                            Modifier.weight(1f)
+                                .fillMaxWidth()
+                                .verticalScroll(rememberScrollState()),
+                            verticalArrangement = Arrangement.spacedBy(tokens.gap),
+                        ) {
+                            if (screen in listOf("Appearance Studio", "Notifications"))
+                                TextButton(onClick = { screen = "Settings" }) {
+                                    Text("Back to Settings")
+                                }
+                            if (screen == "Maps") {
+                                Text("Map rotation", style = MaterialTheme.typography.headlineLarge)
+                                Text(
+                                    "Your next drop, at a glance.",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                )
+                                FlowRow(
+                                    Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                ) {
+                                    FilterChip(
+                                        selected = !demo,
+                                        onClick = { demo = false },
+                                        label = { Text("Live maps") },
+                                    )
+                                    FilterChip(
+                                        selected = demo,
+                                        onClick = { demo = true },
+                                        label = { Text("Preview demo") },
+                                    )
+                                }
+                                if (demo)
+                                    Notice(
+                                        "DEMO · Synthetic schedule",
+                                        "Preview only. These are example maps, not current Apex rotations. Widgets continue to use the provider cache.",
+                                    )
+                                Row(
+                                    Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                ) {
+                                    modes.forEach { playlist ->
+                                        FilterChip(
+                                            selected = selected.id == playlist.id,
+                                            onClick = { mode = playlist.id },
+                                            label = { Text(playlist.label) },
+                                        )
+                                    }
+                                }
+                                ThemedCard(Modifier.fillMaxWidth()) {
+                                    Column(
+                                        Modifier.padding(tokens.cardPadding),
+                                        verticalArrangement = Arrangement.spacedBy(10.dp),
+                                    ) {
+                                        Text(
+                                            "${view.state.name}${if (view.cached) " · CACHED SCHEDULE" else ""}",
+                                            style = MaterialTheme.typography.labelLarge,
+                                            color = appColors.primary,
+                                        )
+                                        Text(
+                                            selected.label,
+                                            style = MaterialTheme.typography.titleMedium,
+                                        )
+                                        Text(
+                                            view.current?.mapName ?: "Rotation unavailable",
+                                            style = MaterialTheme.typography.headlineMedium,
+                                        )
+                                        view.current?.eventName?.let {
+                                            Text(it, style = MaterialTheme.typography.titleMedium)
+                                        }
+                                        if (view.current != null) {
+                                            Text(
+                                                formatCountdown(
+                                                    countdownSeconds(view.current.endSeconds, now)
+                                                ),
+                                                style = MaterialTheme.typography.displaySmall,
+                                            )
+                                            Text(
+                                                "Until rotation · ends ${formatRotationTime(view.current.endSeconds, zone)}"
+                                            )
+                                        } else {
+                                            Text("No validated map covers the current time.")
+                                            view.lastKnown?.let {
+                                                Text(
+                                                    "Last known: ${it.mapName} · ended ${formatRotationTime(it.endSeconds, zone)}"
+                                                )
+                                            }
+                                        }
+                                        HorizontalDivider()
+                                        Text("NEXT", style = MaterialTheme.typography.labelMedium)
+                                        Text(
+                                            view.next?.mapName ?: "Not supplied by source",
+                                            style = MaterialTheme.typography.titleLarge,
+                                        )
+                                        view.next?.let {
+                                            Text(
+                                                "Starts ${formatRotationTime(it.startSeconds, zone)}"
+                                            )
+                                        }
+                                    }
+                                }
+                                if (!demo && state.error != null)
+                                    Notice(
+                                        if (state.error == RotationError.ACCESS_NOT_CONFIGURED)
+                                            "Live access pending"
+                                        else "Sync did not complete",
+                                        errorMessage(state.error, state.retryAtSeconds, zone),
+                                    )
+                                if (projectionError)
+                                    Notice(
+                                        "Widget update unavailable",
+                                        "The app could not publish the widget snapshot. Open the app again to retry.",
+                                    )
+                                if (view.state == DataState.STALE)
+                                    Text("Cached schedule · server information may have changed.")
+                                if (view.upcoming.isNotEmpty()) {
+                                    Text(
+                                        "Upcoming rotations",
+                                        style = MaterialTheme.typography.titleLarge,
+                                    )
+                                    view.upcoming.forEach { segment ->
+                                        Row(
+                                            Modifier.fillMaxWidth()
+                                                .background(appColors.surface, tokens.shape)
+                                                .padding(16.dp),
+                                            horizontalArrangement = Arrangement.SpaceBetween,
+                                        ) {
+                                            Column(
+                                                Modifier.weight(1f),
+                                                verticalArrangement = Arrangement.spacedBy(4.dp),
+                                            ) {
+                                                Text(
+                                                    segment.mapName,
+                                                    style = MaterialTheme.typography.titleMedium,
+                                                )
+                                                Text(
+                                                    "${formatRotationTime(segment.startSeconds, zone)} – ${formatRotationTime(segment.endSeconds, zone)}",
+                                                    style = MaterialTheme.typography.bodySmall,
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                                Text(
+                                    "Last successful sync: ${view.lastSyncedAtSeconds?.let { formatRotationTime(it, zone) } ?: "Never"}",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                )
+                                Text(
+                                    "Times shown in ${zone.id}. Background updates depend on your operating system.",
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
+                                Button(
+                                    enabled =
+                                        !demo &&
+                                            !state.refreshing &&
+                                            !state.forbidden &&
+                                            (state.retryAtSeconds == null ||
+                                                now >= state.retryAtSeconds!!),
+                                    onClick = { scope.launch { maps.refresh(force = true) } },
+                                ) {
+                                    Text(if (state.refreshing) "Refreshing…" else "Refresh maps")
+                                }
+                                TextButton(
+                                    onClick = {
+                                        uriHandler.openUri("https://apexlegendsstatus.com")
+                                    }
+                                ) {
+                                    Text(
+                                        if (demo) "Source information: Apex Legends Status"
+                                        else "Data provider: Apex Legends Status"
+                                    )
+                                }
+                            } else {
+                                when (screen) {
+                                    "Today" ->
+                                        DashboardScreen(
+                                            appearance,
+                                            maps,
+                                            ranked,
+                                            historyRepository,
+                                            matchRepository,
+                                            matchSync,
+                                            now,
+                                        ) {
+                                            screen = it
+                                        }
+                                    "Appearance Studio" -> AppearanceStudio(appearance, environment)
+                                    "Notifications" -> FavoriteMapSettings(appearance, maps)
+                                    "About" -> {
+                                        Text(
+                                            "About Apex Companion",
+                                            style = MaterialTheme.typography.headlineLarge,
+                                        )
+                                        DesignCard(Modifier.fillMaxWidth()) {
+                                            Text(
+                                                "Your game. Your journal.",
+                                                style = MaterialTheme.typography.headlineSmall,
+                                            )
+                                            Text(
+                                                "An independent, offline-first companion. No ads, required accounts, payments or hidden analytics."
+                                            )
+                                            Text(
+                                                "Windows automatic match acceptance is disabled pending real-game validation. iOS source is Implemented — Not Verified."
+                                            )
+                                            Text(
+                                                "Original system typography and interface. No EA game artwork or proprietary fonts."
+                                            )
+                                        }
+                                    }
+                                    "Ranked progress" -> RankedScreen(ranked, now, today)
+                                    "Profile" -> ProfileScreen(ranked, now)
+                                    "History" ->
+                                        if (historyRepository != null)
+                                            HistoryScreen(historyRepository, ranked, now)
+                                        else Text("History requires durable platform storage.")
+                                    "Sessions" ->
+                                        if (historyRepository != null)
+                                            SessionsScreen(historyRepository, ranked, now)
+                                        else Text("Sessions require durable platform storage.")
+                                    "Matches" ->
+                                        if (matchRepository != null)
+                                            MatchHistoryScreen(
+                                                matchRepository,
+                                                rankedState.profile?.identity?.historyIdentity(),
+                                                matchDocuments,
+                                                now,
+                                                matchScreenshots,
+                                            )
+                                        else
+                                            Text("Match History requires durable platform storage.")
+                                    "Capture sync" ->
+                                        if (matchSync != null)
+                                            MatchSyncScreen(
+                                                matchSync,
+                                                rankedState.profile?.identity?.historyIdentity(),
+                                            )
+                                        else
+                                            Text(
+                                                "Local sync requires a native secure pairing adapter."
+                                            )
+                                    "Settings" -> {
+                                        Text(
+                                            "Your companion",
+                                            style = MaterialTheme.typography.headlineLarge,
+                                        )
+                                        DesignCard(Modifier.fillMaxWidth()) {
+                                            Text(
+                                                "Personalize your space",
+                                                style = MaterialTheme.typography.titleLarge,
+                                            )
+                                            Text(
+                                                "Four distinct designs, local presets and a dashboard arranged around you."
+                                            )
+                                            Button(onClick = { screen = "Appearance Studio" }) {
+                                                Text("Appearance Studio")
+                                            }
+                                            OutlinedButton(onClick = { screen = "Notifications" }) {
+                                                Text("Favorite map notifications")
+                                            }
+                                        }
+                                        if (appearanceProjectionError)
+                                            Notice(
+                                                "Widget appearance unavailable",
+                                                "Appearance was saved, but the native widget projection could not be updated. Open the app again to retry.",
+                                            )
+                                        RankedSettingsScreen(ranked)
+                                        if (historyRepository != null)
+                                            HistorySettingsScreen(
+                                                historyRepository,
+                                                ranked,
+                                                historyDocuments,
+                                                now,
+                                            )
+                                    }
+                                }
+                                if (rankedProjectionError)
+                                    Notice(
+                                        "Ranked widget update unavailable",
+                                        "The app could not publish the ranked widget snapshot. Open the app again to retry.",
+                                    )
+                            }
+                            Text(
+                                "Independent fan utility. This project is not endorsed by or affiliated with EA or its licensors.",
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                    }
+                }
+                Column(
+                    Modifier.widthIn(max = 1120.dp).fillMaxWidth().semantics {
+                        contentDescription = "Main destinations"
+                    }
+                ) {
+                    val destinations =
+                        listOf("Today", "Maps", "Ranked progress", "Matches", "Settings")
+                    val navigationColumns = if (LocalDensity.current.fontScale >= 1.5f) 3 else 5
+                    destinations.chunked(navigationColumns).forEach { row ->
+                        Row(
+                            Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp),
+                            horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        ) {
+                            row.forEach { destination ->
+                                val selectedDestination =
+                                    screen == destination ||
+                                        (destination == "Settings" &&
+                                            screen in listOf("Appearance Studio", "Notifications"))
+                                TextButton(
+                                    onClick = { screen = destination },
+                                    contentPadding =
+                                        PaddingValues(horizontal = 2.dp, vertical = 10.dp),
+                                    colors =
+                                        ButtonDefaults.textButtonColors(
+                                            containerColor =
+                                                if (selectedDestination) appColors.primaryContainer
+                                                else Color.Transparent,
+                                            contentColor =
+                                                if (selectedDestination) appColors.primary
+                                                else appColors.onSurfaceVariant,
+                                        ),
+                                    modifier =
+                                        Modifier.weight(1f).heightIn(min = 48.dp).semantics {
+                                            contentDescription = "Navigate to $destination"
+                                            this.selected = selectedDestination
+                                        },
+                                ) {
+                                    Text(
+                                        if (destination == "Ranked progress") "Ranked"
+                                        else destination,
+                                        style = MaterialTheme.typography.labelMedium,
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun Notice(title: String, body: String) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Text(title, style = MaterialTheme.typography.titleMedium)
+            Text(body, style = MaterialTheme.typography.bodyMedium)
+        }
+    }
+}
+
+private fun errorMessage(error: RotationError?, retryAt: Long?, zone: TimeZone): String {
+    val message =
+        when (error) {
+            RotationError.ACCESS_NOT_CONFIGURED ->
+                "Live data needs approved provider access. Use Preview demo to explore the layout."
+            RotationError.FORBIDDEN ->
+                "Provider access was denied. Refresh stays disabled until the access configuration is resolved."
+            RotationError.RATE_LIMITED ->
+                "The source asked us to wait. Cached data has been retained."
+            RotationError.TIMEOUT -> "The request timed out. Cached data has been retained."
+            RotationError.SCHEMA ->
+                "The source returned an unsupported schedule. Cached data has been retained."
+            RotationError.STORAGE ->
+                "Local storage could not be read or saved. The last usable state is retained where possible."
+            else -> "The source could not be reached. Cached data has been retained."
+        }
+    return message +
+        if (
+            retryAt != null &&
+                error != RotationError.ACCESS_NOT_CONFIGURED &&
+                error != RotationError.FORBIDDEN
+        )
+            " Retry after ${formatRotationTime(retryAt, zone)}."
+        else ""
+}

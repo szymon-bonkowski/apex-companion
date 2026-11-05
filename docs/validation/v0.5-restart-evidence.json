@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "test": "actual-android-cold-process-appearance-restart",
+  "syntheticFixture": true,
+  "passed": true,
+  "gameFilesAccessed": false,
+  "deviceSerial": "emulator-5554",
+  "originalFilesRestored": true,
+  "fixtureSha256": "ed4f1e4c3b9108d50dff39bd5619109b14f1454329af20db8455ef47e86be575",
+  "coldLaunches": 2,
+  "restoredAppRelaunched": true
+}

@@ -1,0 +1,34 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "LIQUID",
+    "-e",
+    "v05Variant",
+    "expanded",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T23:14:47.563227+00:00",
+  "finishedUtc": "2026-11-03T23:16:17.678170+00:00",
+  "wallSeconds": 90.11493761600286,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "log": "/tmp/apex-v05-liquid-expanded-final.log",
+  "display": {
+    "size": "Physical size: 1080x2400\nOverride size: 1920x1200",
+    "density": "Physical density: 420\nOverride density: 240",
+    "fontScale": "1.0"
+  }
+}

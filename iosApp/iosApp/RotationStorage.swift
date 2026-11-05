@@ -142,8 +142,44 @@ final class RotationStorage: NSObject, IosRotationStorageBridge {
     }
     func cancelHistoryDocument() { HistoryDocumentPicker.shared.cancel() }
 
+    // Implemented — Not Verified. Appearance-only private record; no history migration.
+    private let appearanceLock = NSLock()
+    func readAppearanceCache() -> String? {
+        appearanceLock.lock(); defer { appearanceLock.unlock() }
+        guard let url = privateURL("appearance-v1.json") else { return "UNREADABLE_APPEARANCE" }
+        guard files.fileExists(atPath: url.path) else { return nil }
+        do { return try readBoundedHistoryJSON(at: url, maxBytes: 131_072) }
+        catch { return "UNREADABLE_APPEARANCE" }
+    }
+    func writeAppearanceCache(value: String) -> Bool {
+        appearanceLock.lock(); defer { appearanceLock.unlock() }
+        guard let data = value.data(using: .utf8), data.count <= 131_072,
+              let url = privateURL("appearance-v1.json") else { return false }
+        do {
+            try data.write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            return true
+        } catch { return false }
+    }
+    func publishAppearanceSnapshot(value: String) -> Bool {
+        appearanceLock.lock(); defer { appearanceLock.unlock() }
+        guard let identifier = Bundle.main.object(forInfoDictionaryKey: "ApexAppGroup") as? String,
+              let directory = files.containerURL(forSecurityApplicationGroupIdentifier: identifier),
+              let data = value.data(using: .utf8), data.count <= 2048 else { return false }
+        let url = directory.appendingPathComponent("widget-appearance-v1.json")
+        let existingSize = (try? files.attributesOfItem(atPath: url.path)[.size] as? NSNumber)?.intValue
+        let unchanged = existingSize.map { $0 <= 2048 } == true && (try? Data(contentsOf: url)) == data
+        do {
+            if !unchanged {
+                try data.write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            }
+            // Also recovers a previous committed write whose reload request was interrupted.
+            WidgetCenter.shared.reloadAllTimelines()
+            return true
+        } catch { return false }
+    }
+
     func clear() {
-        for name in ["ranked-cache-v1.json", "predator-cache-v1.json"] {
+        for name in ["ranked-cache-v1.json", "predator-cache-v1.json", "appearance-v1.json"] {
             if let url = privateURL(name) { try? files.removeItem(at: url) }
         }
         if let url = privateCacheURL { try? files.removeItem(at: url) }
@@ -151,6 +187,7 @@ final class RotationStorage: NSObject, IosRotationStorageBridge {
            let directory = files.containerURL(forSecurityApplicationGroupIdentifier: identifier) {
             try? files.removeItem(at: directory.appendingPathComponent(snapshotName))
             try? files.removeItem(at: directory.appendingPathComponent("ranked-widget-v1.json"))
+            try? files.removeItem(at: directory.appendingPathComponent("widget-appearance-v1.json"))
         }
         if let url = try? historyURL() { try? files.removeItem(at: url) }
         WidgetCenter.shared.reloadAllTimelines()

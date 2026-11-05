@@ -1,0 +1,6 @@
+{
+                "schemaVersion":1,"syntheticData":true,"passed":true,
+                "input":"Injected Android KEYCODE_TAB, KEYCODE_ENTER and KEYCODE_BACK; no touch or accessibility click action",
+                "settingsTabCount":19,"studioTabCount":6,
+                "settingsActivated":true,"studioActivated":true,"backReturnedToSettings":true
+            }

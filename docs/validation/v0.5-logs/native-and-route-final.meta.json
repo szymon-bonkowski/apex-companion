@@ -1,0 +1,22 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.widget.WidgetAppearanceInstrumentedTest#everyDesignRendersNativeSmallAndWideFamiliesWithProvenance,io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#widgetLinksOpenTheirDestinationAndSurviveRecreation",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T11:11:29.640834+00:00",
+  "finishedUtc": "2026-11-04T11:12:05.523821+00:00",
+  "wallSeconds": 35.88299192900013,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 2
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "./gradlew",
+    ":androidApp:assembleDebugAndroidTest",
+    "--console=plain"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T11:07:36.011373+00:00",
+  "finishedUtc": "2026-11-04T11:07:37.423320+00:00",
+  "wallSeconds": 1.4119497869978659
+}

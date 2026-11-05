@@ -38,7 +38,9 @@ class RankedScreenTest {
         first.saveGoal(RankGoal(16000, 13000))
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             scenario.onActivity { it.setContent { App(rankedRepository = first) } }
-            assertTrue(device.wait(Until.hasObject(By.text("Map rotation")), 10_000))
+            assertTrue(device.wait(Until.hasObject(By.desc("Navigate to Maps")), 10_000))
+            clickNavigation(device, "Maps")
+            assertTrue(device.wait(Until.hasObject(By.text("Map rotation")), 5_000))
             clickNavigation(device, "Ranked progress")
             assertTrue(device.wait(Until.hasObject(By.text("13460 RP")), 5_000))
             assertTrue(device.hasObject(By.text("MANUAL · User entered")))
@@ -134,7 +136,8 @@ class RankedScreenTest {
             try {
                 if (android.os.Build.VERSION.SDK_INT >= 37)
                     InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
-                val chip = device.findObject(By.clickable(true).hasDescendant(By.text(text)))
+                var chip = device.findObject(By.desc("Navigate to $text"))
+                while (chip != null && !chip.isClickable && chip.parent != null) chip = chip.parent
                 if (chip != null) { chip.click(); return }
             } catch (_: androidx.test.uiautomator.StaleObjectException) {
                 // Re-query the clickable chip while replacement semantics settle.

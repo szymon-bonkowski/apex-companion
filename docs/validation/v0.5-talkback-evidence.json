@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "syntheticData": true,
+  "passed": true,
+  "serviceBound": true,
+  "settingsRestored": true,
+  "readerNotificationPermissionRestored": true,
+  "focusEventCount": 12,
+  "focusEvents": [
+    "Navigate to Maps",
+    "Navigate to Ranked progress",
+    "",
+    "Navigate to Maps",
+    "Navigate to Ranked progress",
+    "",
+    "Navigate to Maps",
+    "Navigate to Ranked progress",
+    "",
+    "Navigate to Maps",
+    "Navigate to Ranked progress",
+    ""
+  ],
+  "styles": [
+    {
+      "style": "CARBON",
+      "namedNavigationFocused": 2,
+      "manualProvenanceAccessible": true,
+      "sourceFocusActionAccepted": true
+    },
+    {
+      "style": "LIQUID",
+      "namedNavigationFocused": 2,
+      "manualProvenanceAccessible": true,
+      "sourceFocusActionAccepted": true
+    },
+    {
+      "style": "EDITORIAL",
+      "namedNavigationFocused": 2,
+      "manualProvenanceAccessible": true,
+      "sourceFocusActionAccepted": true
+    },
+    {
+      "style": "TACTICAL",
+      "namedNavigationFocused": 2,
+      "manualProvenanceAccessible": true,
+      "sourceFocusActionAccepted": true
+    }
+  ],
+  "speechAudited": false,
+  "fullUsabilityAudit": false,
+  "scope": "Installed TalkBack bound alongside non-suppressing UiAutomation; real accessibility focus actions and source semantics. No speech-quality claim."
+}

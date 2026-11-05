@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import io.github.szymonbonkowski.apexcompanion.appearance.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
@@ -35,9 +36,8 @@ fun ColumnScope.RankedScreen(repository: RankedRepository, now: Long, today: Loc
     } }
     Text("Ranked", style = MaterialTheme.typography.headlineLarge)
     Text("Your next goal, one day at a time.", style = MaterialTheme.typography.bodyLarge)
-    Card(Modifier.fillMaxWidth(), shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
-        Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text("${view.state.name} · ${view.source}", style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary)
             Text(if (manualSelected) "Personal ranked progress" else
@@ -46,7 +46,7 @@ fun ColumnScope.RankedScreen(repository: RankedRepository, now: Long, today: Loc
             if (manualSelected && state.profile != null) Text("Linked profile is retained; its provider RP is not selected.",
                 style = MaterialTheme.typography.bodySmall)
             // Original typographic badge; no proprietary rank artwork.
-            Surface(shape = RoundedCornerShape(12.dp), color = MaterialTheme.colorScheme.primaryContainer) {
+            Surface(shape = LocalThemeTokens.current.shape, color = MaterialTheme.colorScheme.primaryContainer) {
                 Text(if (manualSelected) "Manual RP" else
                     listOfNotNull(view.snapshot?.rankName, view.snapshot?.division?.let { "Division $it" })
                         .joinToString(" · ").ifBlank { "Rank unavailable" },
@@ -75,8 +75,8 @@ fun ColumnScope.RankedScreen(repository: RankedRepository, now: Long, today: Loc
     Text("Personal goal", style = MaterialTheme.typography.titleLarge)
     if (view.goal == null) Text("Set a target RP to calculate your progress. Your goal stays local and survives profile changes.")
     view.goal?.let { goal ->
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        ThemedCard(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text("Target ${goal.targetRp} RP", style = MaterialTheme.typography.titleLarge)
                 Text(goal.deadline?.let { "Target date: $it" } ?: "No deadline")
                 view.progress?.let { progress ->
@@ -109,8 +109,8 @@ fun ColumnScope.RankedScreen(repository: RankedRepository, now: Long, today: Loc
     } else if (cutoff == null) {
         Text("No validated Predator cutoff is available for ${platform.label}.")
     } else {
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        ThemedCard(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 val fresh = state.predatorError == null && now >= cutoff.observedAtSeconds &&
                     now - cutoff.observedAtSeconds < PREDATOR_FRESH_SECONDS
                 Text("${if (fresh) "LIVE" else "STALE"} · Apex Legends Status · ${platform.label}",
@@ -139,8 +139,8 @@ private fun ManualRpEditor(repository: RankedRepository, manualRp: Long?, useMan
     var input by rememberSaveable(manualRp) { mutableStateOf(manualRp?.toString().orEmpty()) }
     var error by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
-    Card(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text("Offline manual RP", style = MaterialTheme.typography.titleMedium)
             Text("Manual values stay separate from the linked profile and are never uploaded.", style = MaterialTheme.typography.bodySmall)
             OutlinedTextField(value = input, onValueChange = { input = it; error = null }, label = { Text("Manual current RP") },
@@ -173,8 +173,8 @@ private fun GoalEditor(repository: RankedRepository, goal: RankGoal?, currentRp:
     var date by rememberSaveable(goal?.deadline) { mutableStateOf(goal?.deadline?.toString().orEmpty()) }
     var error by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
-    Card(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text(if (goal == null) "Create goal" else "Edit goal", style = MaterialTheme.typography.titleMedium)
             OutlinedTextField(value = target, onValueChange = { target = it; error = null }, label = { Text("Target RP") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number), singleLine = true, modifier = Modifier.fillMaxWidth())
@@ -220,8 +220,8 @@ fun ColumnScope.ProfileScreen(repository: RankedRepository, now: Long) {
         Text("Looking up the selected public profile…")
     }
     state.profile?.let { profile ->
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        ThemedCard(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 val fresh = state.error == null && now >= profile.observedAtSeconds &&
                     now - profile.observedAtSeconds < PROFILE_FRESH_SECONDS
                 Text("${if (fresh) "LIVE" else "STALE"} · Apex Legends Status", style = MaterialTheme.typography.labelLarge)
@@ -247,7 +247,7 @@ fun ColumnScope.ProfileScreen(repository: RankedRepository, now: Long) {
                 label = { Text(option.label) })
         }
     }
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         FilterChip(selected = !byUid, enabled = platform != ApexPlatform.SWITCH, onClick = { byUid = false }, label = { Text("EA account name") })
         FilterChip(selected = byUid, onClick = { byUid = true }, label = { Text("Player UID") })
     }
@@ -293,8 +293,8 @@ fun ColumnScope.RankedSettingsScreen(repository: RankedRepository) {
 
 @Composable
 private fun RankedNotice(title: String, body: String) {
-    Card(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    ThemedCard(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(LocalThemeTokens.current.cardPadding), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
             Text(body, style = MaterialTheme.typography.bodyMedium)
         }

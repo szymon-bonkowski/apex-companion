@@ -1,0 +1,39 @@
+{
+  "command": [
+    "adb",
+    "-s",
+    "emulator-5554",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+    "-e",
+    "v05Style",
+    "LIQUID",
+    "-e",
+    "v05Variant",
+    "expanded",
+    "-e",
+    "v05SettingsOnly",
+    "true",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-04T06:00:00.851901+00:00",
+  "finishedUtc": "2026-11-04T06:00:06.935950+00:00",
+  "wallSeconds": 6.084049709999817,
+  "instrumentation": {
+    "success": true,
+    "testsPassed": 1
+  },
+  "display": {
+    "size": "Physical size: 1080x2400\nOverride size: 1920x1200",
+    "density": "Physical density: 420\nOverride density: 240",
+    "fontScale": "1.0"
+  },
+  "log": "docs/validation/v0.5-logs/settings-repair-liquid-expanded.log"
+}

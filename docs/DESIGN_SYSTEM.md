@@ -1,29 +1,30 @@
-# Apex Companion — design system
+# Apex Companion — four design systems
 
-Original, legible at mobile-widget scale and honest about source status. Wingman screenshots are inspiration for **functionality and polish**, not a layout, artwork or typography license.
+One shared application resolves design defaults, cosmetic preferences and OS accessibility signals into presentation tokens. Semantic Maps/Ranked/History/Matches data remains independent. Implementation: `shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/`. [ADR0011](adr/0011-cosmetic-state-and-design-resolution.md) explains persistence and native boundaries.
 
-## Identity
+| Design | Typography and hierarchy | Surfaces and geometry | Dashboard and motion |
+|---|---|---|---|
+| Carbon | Sans headings, aligned monospace numeric emphasis, precise labels | Graphite/teal, measured16dp default corners, fine outlined panels | Map-led summary, comfortable spacing,150ms restrained progress |
+| Liquid | Softer sans hierarchy, luminous numeric emphasis | Violet depth,30dp corners, bounded diagonal highlight gradients, raised layers | Floating map/next/journal flow, spacious spacing,300ms progress |
+| Editorial | System serif display/headings, large narrative values, fine rules | Warm cream by default selection,3dp corners, flat publication panels; dark alternative | Numbered one-column daily brief, generous spacing,220ms calm progress |
+| Tactical | System monospace headings/numbers, technical labels | Steel/orange, cut corners, leading accent rule, structured outlined clusters | Ranked/capture-led compact telemetry, wide two-column layout,100ms crisp progress |
 
-- Original abstract map/navigation/progress iconography; **never** bundle Apex/EA game logo as app icon.
-- Deep graphite + optional teal, amber, violet accents; dark/light, optional true-dark, clear text/contrast.
-- On Android support Material You when available; on iOS fit native color, text and safe-area conventions. Shared Compose UI can branch on platform capabilities without duplicating business logic.
-- Status conveyed through text **and** icon, not color alone. Use tabular numerals for RP and end times.
-- Native widget visuals differ by platform family/material effects but should share values, type hierarchy and provenance semantics.
+The four styles cover Today, Maps, Ranked/goals/Predator, Profile, History/trends, Sessions, Matches/manual/detail/statistics/backup, Capture sync/pairing, Settings/import/export, Studio, notification preferences and About. Existing Material buttons, pickers, chips, inputs and dialogs inherit resolved color/typography/geometry. Explicit card variants carry each design's surface identity. Source/status/time remain text, including empty, stale and unavailable states.
 
-## Components and pages
+## Tokens and customization
 
-`MetricCard` = label, value, units, quality/status and observedAt. `ProgressTrack` has accessible numeric summary. `FreshnessIndicator` labels `LIVE/STALE/UNAVAILABLE/DEMO/MANUAL`. `TimeLabel` formats UTC in user's current zone. `WidgetSurface` is native by platform with semantic style tokens.
+`DesignStyle` definitions resolve into `ThemeTokens`: color roles, spacing/padding, corner geometry, border/elevation, density, gradient/opacity, animation duration and numeric emphasis. Preferences choose mode, six-digit RGB accent/presets, Android dynamic accent when available, OLED black, surface temperature, density, corners, flat/outline/elevation, border strength, opacity, gradient intensity, safe85–130% additional type scale, numeric emphasis, motion and accessibility overrides. OS font scaling is retained and nested previews apply custom scaling once.
 
-Initial shared Compose navigation: **Today**, **Maps**, **Ranked**, **Settings** and **About**. Do not show unimplemented features as dead menu buttons. Disconnected Ranked always offers a useful manual goal screen.
+Custom accents are adjusted to at least4.5:1 against both app/card surfaces. Body/secondary contrast is tested in all four modes. OS high contrast, reduced motion/transparency and low-power signals override effects without overwriting choices. Full/Reduced/Off controls affect app-owned progress transitions and the Material motion scheme. No infinite decorative animation or provider request is created by visual changes. Device-level Material control/system motion behavior remains platform-owned and requires native accessibility testing.
 
-## Interaction and accessibility
+Liquid uses bounded gradients/highlights over readable solid base surfaces. Liquid surface opacity is bounded to70–100% over an opaque local theme backdrop; foreground roles are checked against actual composited card/page gradient stops. It ships no full-screen real-time blur, shader, native Liquid Glass claim or per-second widget animation. Reduced transparency/contrast/power remove those layers. System typefaces require no redistributed font assets. No game artwork/reference mockups were added or claimed inspected.
 
-- Respect OS reduce-motion, larger text, contrast, screen-reader and locale options; test **TalkBack and VoiceOver**.
-- Theme changes persist independently of widget instance/user preset; data always takes precedence over decoration.
-- Rebuild/refresh only when useful; no continuous background glows, charts or polling solely to animate a countdown.
-- Treat map expiry, missing profile and unsupported modes as visible states, not blank exception views.
-- Test small/wide Android launcher widgets and iOS WidgetKit families with 200% text equivalents when feasible.
+## Layout and access
 
-## Review standard
+Today selects one/two columns based on width, style and font scale; Editorial maintains narrative reading order. Forms use available width in a bounded content area and controls wrap with FlowRow where appropriate. Persistent top secondary destinations and bottom primary destinations expose named semantics. Studio preserves preview/dialog state across recreation. Dashboard order uses accessible Move up/Move down actions; no drag-only control.
 
-Capture screenshots at actual Android launcher and iOS simulator/real device widget sizes, both themes and significant text scaling. Document device/OS, family/launcher and visible truncation; prioritize important map/RP/state data over optional detail.
+Validation must use actual device/emulator captures and screen-reader focus, not concept images. See [v0.5 report](validation/v0.5-report.md), [customization](APPEARANCE_CUSTOMIZATION.md) and [native widgets](WIDGET_THEMING.md). Android results do not prove VoiceOver or WidgetKit. iOS source remains **Implemented — Not Verified** under ADR0007.
+
+## Native iOS material evaluation
+
+A bounded `UIVisualEffectView`/`UIGlassEffect` adapter was considered for a small navigation region. Apple's [material guidance](https://developer.apple.com/design/human-interface-guidelines/materials) places Liquid Glass primarily in controls/navigation rather than large content-card layers; [UIGlassEffect](https://developer.apple.com/documentation/uikit/uiglasseffect) is a native effect API, not a Compose surface. The existing host shares its full screen through Compose and targets iOS18.2. A native adapter would need SDK/OS availability guards, separate focus/hit-testing/lifecycle integration and actual power/contrast measurement. Those cannot be established by an Android build, and Apple tooling is deliberately deferred under ADR0007. This milestone therefore ships the actual bounded Compose alpha/gradient design on both app targets, with solid accessibility fallbacks. It does not insert an unverified native backdrop behind the entire shared canvas or claim native Liquid Glass. A future narrowly scoped navigation adapter requires final Mac/device evidence before adoption.

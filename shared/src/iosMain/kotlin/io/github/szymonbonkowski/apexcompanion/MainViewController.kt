@@ -1,6 +1,10 @@
 package io.github.szymonbonkowski.apexcompanion
 
 import androidx.compose.ui.window.ComposeUIViewController
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import kotlinx.coroutines.flow.MutableStateFlow
+import io.github.szymonbonkowski.apexcompanion.appearance.*
 import io.github.szymonbonkowski.apexcompanion.maps.*
 import io.github.szymonbonkowski.apexcompanion.ranked.*
 import io.github.szymonbonkowski.apexcompanion.history.*
@@ -16,6 +20,9 @@ interface IosHistoryDocumentCompletion { fun complete(value: String?) }
 
 /** Implemented — Not Verified. Swift owns atomic private files and the sanitized App Group copy. */
 interface IosRotationStorageBridge {
+    fun readAppearanceCache(): String?
+    fun writeAppearanceCache(value: String): Boolean
+    fun publishAppearanceSnapshot(value: String): Boolean
     fun readCache(): String?
     fun writeCache(value: String): Boolean
     fun publishWidgetSnapshot(value: String): Boolean
@@ -77,8 +84,22 @@ private class IosHistoryDocuments(private val bridge: IosRotationStorageBridge) 
         }
     }
 }
+/** Implemented — Not Verified. SwiftUI forwards only allowlisted widget URLs. */
+object IosWidgetNavigation {
+    internal val request = MutableStateFlow<WidgetNavigationRequest?>(null)
+    fun open(url: String) {
+        widgetDestination(url)?.let { request.value = WidgetNavigationRequest(it, (request.value?.sequence ?: 0L) + 1L) }
+    }
+}
+
 fun MainViewController(storage: IosRotationStorageBridge, matchStorage: IosMatchStorageBridge) = run {
     // Public access stays disabled. No developer credential route is installed on iOS.
+    val appearance = AppearanceRepository(object : RotationStore {
+        override suspend fun read(): String? = withContext(Dispatchers.Default) { storage.readAppearanceCache() }
+        override suspend fun write(value: String) = withContext(Dispatchers.Default) {
+            check(storage.writeAppearanceCache(value)) { "Appearance could not be committed" }
+        }
+    })
     val clock = RotationClock { Clock.System.now().epochSeconds }
     val repository = RotationRepository(UnconfiguredRotationProvider, IosRotationStore(storage), clock)
     val history = HistoryRepository(IosHistoryStore(storage), clock)
@@ -87,7 +108,12 @@ fun MainViewController(storage: IosRotationStorageBridge, matchStorage: IosMatch
     val matchSync = MatchSyncController(matches, IosMatchSyncPlatform(matchStorage), clock)
     val ranked = RankedRepository(UnconfiguredRankedProvider, IosRankedStore(storage, false), clock, IosRankedStore(storage, true), history = history)
     ComposeUIViewController {
-        App(repository = repository, rankedRepository = ranked,
+        val widgetNavigation by IosWidgetNavigation.request.collectAsState()
+        App(widgetNavigation = widgetNavigation, repository = repository, rankedRepository = ranked,
+            appearanceRepository = appearance,
+            onAppearanceProjectionChanged = { projection -> withContext(Dispatchers.Default) {
+                check(storage.publishAppearanceSnapshot(projection)) { "Widget appearance could not be committed" }
+            } },
             historyRepository = history, historyDocuments = documents,
             matchRepository = matches, matchSync = matchSync, matchDocuments = IosMatchDocuments(matchStorage),
             matchScreenshots = IosMatchScreenshots(matchStorage),

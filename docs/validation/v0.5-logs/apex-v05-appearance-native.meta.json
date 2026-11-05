@@ -1,0 +1,26 @@
+{
+  "command": [
+    "adb",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "io.github.szymonbonkowski.apexcompanion.AppearancePersistenceInstrumentedTest",
+    "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "exitCode": 0,
+  "startedUtc": "2026-11-03T22:57:14.715305+00:00",
+  "finishedUtc": "2026-11-03T22:57:15.473886+00:00",
+  "wallSeconds": 0.7585838959930697,
+  "log": "/tmp/apex-v05-appearance-native.log",
+  "instrumentation": {
+    "tests": 4,
+    "failures": 1,
+    "passed": 3,
+    "success": false,
+    "reason": "QA expectation assumed style reset clears dashboard; current implementation deliberately preserves dashboard configuration."
+  }
+}

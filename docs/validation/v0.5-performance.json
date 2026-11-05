@@ -1,0 +1,1499 @@
+{
+  "schemaVersion": 1,
+  "recordedUtc": "2026-11-04T06:03:09.086487+00:00",
+  "status": "EMULATOR_NAVIGATION_OBSERVATIONS_ONLY",
+  "platform": "Android",
+  "environmentSource": {
+    "path": "docs/validation/v0.5-environment.json",
+    "sha256": "8beb7b7a275e84b2f2a24fc6c06efc9ca7539909615edc7ba9457bca279fa344",
+    "bytes": 2083
+  },
+  "runMetadataSources": [
+    {
+      "path": "docs/validation/v0.5-logs/final-carbon-phone.meta.json",
+      "sha256": "5c3dbdc7cac22db724d1f403b6644b6e8f3f5371de732730d9bdc53669736cae",
+      "bytes": 824
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-carbon-small.meta.json",
+      "sha256": "86fc9943a3e4bd71c7922c26be861cd06d8dd7b68b2220a72aa5759423a5b7e0",
+      "bytes": 848
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-editorial-large-text.meta.json",
+      "sha256": "8df26f21e018be92dc4bf3e4f2ec4c1878c209fcec7c621f2e3ffe1a53422b13",
+      "bytes": 1112
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-editorial-phone.meta.json",
+      "sha256": "d8f2998622dab5c718b9d558e624c782badf5a8068c98f34cc91a322a595a708",
+      "bytes": 830
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-liquid-expanded.meta.json",
+      "sha256": "5c4d3bff380d44c00ff7e51c6ff774cec31079eb4e77f1144208059806465733",
+      "bytes": 879
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-liquid-phone.meta.json",
+      "sha256": "1c972b7470191e990d10181db191e5bb5e35f97ba6c1d34a36c971876cf769b1",
+      "bytes": 824
+    },
+    {
+      "path": "docs/validation/v0.5-logs/final-tactical-phone.meta.json",
+      "sha256": "1dee21ff49097cadfb354e8439c1e43de2c10fe40a53789dedca9aabff319f9c",
+      "bytes": 827
+    },
+    {
+      "path": "docs/validation/v0.5-logs/finish-editorial-dark.meta.json",
+      "sha256": "d2e2b7332e64c39934af3216134fc99eec8fdb46aa9e24ad28e633817f540d58",
+      "bytes": 909
+    },
+    {
+      "path": "docs/validation/v0.5-logs/finish-tactical-landscape.meta.json",
+      "sha256": "af63ad6704adc03e6c45fcf580d50179cb362e440974d722b4260d74f276f985",
+      "bytes": 905
+    }
+  ],
+  "environment": {
+    "avd": "ApexCompanion_API37",
+    "serial": "emulator-5554",
+    "launchCommand": "ANDROID_AVD_HOME=/home/boniek/.config/.android/avd /home/boniek/Android/Sdk/emulator/emulator -avd ApexCompanion_API37 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot-save",
+    "renderer": "SwiftShader software renderer",
+    "androidRelease": "17",
+    "androidApi": 37
+  },
+  "measurementProtocol": {
+    "resetCommand": "dumpsys gfxinfo io.github.szymonbonkowski.apexcompanion reset",
+    "readCommand": "dumpsys gfxinfo io.github.szymonbonkowski.apexcompanion",
+    "resetTiming": "Once immediately before each style's appearance change and nine-page navigation/capture workload",
+    "pagesInOrder": [
+      "today",
+      "maps-unavailable",
+      "maps-demo",
+      "ranked",
+      "matches",
+      "match-detail",
+      "match-statistics",
+      "settings",
+      "studio"
+    ],
+    "fixtureData": "Isolated synthetic local repositories; public provider unconfigured",
+    "framePercentiles": "Android gfxinfo histogram percentiles as reported, in milliseconds",
+    "jankDefinition": "Android gfxinfo's current and legacy classifications are preserved separately",
+    "comparison": "No controlled workload synchronization, baseline or causal comparison between themes",
+    "laterSettingsRepair": "Nine Settings PNG/JSON captures were repaired after the original nine-page workloads; those later context captures did not reset or overwrite the gfxinfo files. They are marked separately per observation."
+  },
+  "observations": [
+    {
+      "style": "CARBON",
+      "variant": "phone",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-carbon-phone-gfxinfo.txt",
+        "sha256": "050f67fffd07bc717fb42195ddb9bc7d76de9e95ca28580d0dec8819cd54c3d1",
+        "bytes": 4716
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-carbon-phone.meta.json",
+          "sha256": "5c3dbdc7cac22db724d1f403b6644b6e8f3f5371de732730d9bdc53669736cae",
+          "bytes": 824
+        },
+        "startedUtc": "2026-11-03T23:23:17.223628+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:23:28.032704+00:00",
+        "wallSecondsAsRecorded": 10.809068068003398,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "CARBON",
+          "-e",
+          "v05Variant",
+          "phone",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 309,
+      "jankyFrames": {
+        "count": 40,
+        "percentReported": 12.94
+      },
+      "legacyJankyFrames": {
+        "count": 285,
+        "percentReported": 92.23
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 32,
+        "90": 48,
+        "95": 53,
+        "99": 113
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 20,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 11,
+        "highInputLatency": 521,
+        "slowUiThread": 18,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 37,
+        "frameDeadlineMissed": 40
+      },
+      "statisticsSinceUptimeNs": 2219206950545,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-today.json",
+          "sha256": "caf6c98aea6d729ac54bdc68707e4522211d53d9ddf84be626be320dbfe0734f",
+          "bytes": 338,
+          "capturedUtcMillis": 1793748199558,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-maps-unavailable.json",
+          "sha256": "74946703d026e67214314529b56ef8caf0273cedb2a78a90a4f8723c81ca8915",
+          "bytes": 349,
+          "capturedUtcMillis": 1793748199830,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-maps-demo.json",
+          "sha256": "39a57a1fc316d76f4245742059c3b7d9650b2de5ae160d8213b317798584ab1f",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748202359,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-ranked.json",
+          "sha256": "ccc87a16cac88cd6626cd260f0d8f3576028fdfa0d1c737567e549c582ae7e72",
+          "bytes": 339,
+          "capturedUtcMillis": 1793748202726,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-matches.json",
+          "sha256": "f3a66fd3f1833d84c55f6672230abe2026ec20dd8cdc046928b6ac7e5c1bb86e",
+          "bytes": 340,
+          "capturedUtcMillis": 1793748202939,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-match-detail.json",
+          "sha256": "668edc5fab97ef22100978251f2ce6a0af558063488033bf1845f5c54a5a71a8",
+          "bytes": 345,
+          "capturedUtcMillis": 1793748204932,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-match-statistics.json",
+          "sha256": "f70f6e0e443000466b8d68198204e23812e7e81dcdda4411ef4770367ccb93c0",
+          "bytes": 349,
+          "capturedUtcMillis": 1793748206564,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-settings.json",
+          "sha256": "2cdc25fa0ef14f57bef5956773a6901148f4679ca874d419e3f49e2b205b0267",
+          "bytes": 341,
+          "capturedUtcMillis": 1793771972543,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-phone-studio.json",
+          "sha256": "b470ddc70b5f2900941e5e960a98445a9b3fd8b15dd66ace49928e450341d0e1",
+          "bytes": 339,
+          "capturedUtcMillis": 1793748207038,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "CARBON",
+      "variant": "small",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-carbon-small-gfxinfo.txt",
+        "sha256": "4c231f4c18ae54195f255bc4b1e6e0f55a85240c33451f63b3c88c27e2bf8457",
+        "bytes": 4718
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-carbon-small.meta.json",
+          "sha256": "86fc9943a3e4bd71c7922c26be861cd06d8dd7b68b2220a72aa5759423a5b7e0",
+          "bytes": 848
+        },
+        "startedUtc": "2026-11-03T23:24:21.495345+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:24:44.959044+00:00",
+        "wallSecondsAsRecorded": 23.46369579900056,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "CARBON",
+          "-e",
+          "v05Variant",
+          "small",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400\nOverride size: 840x1680",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 840,
+        "heightPixels": 1680,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 1030,
+      "jankyFrames": {
+        "count": 66,
+        "percentReported": 6.41
+      },
+      "legacyJankyFrames": {
+        "count": 115,
+        "percentReported": 11.17
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 16,
+        "90": 26,
+        "95": 27,
+        "99": 53
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 13,
+        "90": 22,
+        "95": 24,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 4,
+        "highInputLatency": 1199,
+        "slowUiThread": 13,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 58,
+        "frameDeadlineMissed": 66
+      },
+      "statisticsSinceUptimeNs": 2283339649835,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-today.json",
+          "sha256": "cd62868e05867589a65f6053486cd6a88e8f83625849679ff775a6eed4362ee9",
+          "bytes": 337,
+          "capturedUtcMillis": 1793748263669,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-maps-unavailable.json",
+          "sha256": "4febd06ceed6b279b7df68a4b8e7084e609f7861f671bc5eece32764da8fe595",
+          "bytes": 348,
+          "capturedUtcMillis": 1793748267574,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-maps-demo.json",
+          "sha256": "5801674215da3d8eb1a4f36511b4c01e9a967e86ac0899fefe58d5d3e604ba04",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748273047,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-ranked.json",
+          "sha256": "022e11a6ab54fe39812a35ab35504b9b080db77d0e264939bb62077b85ce2451",
+          "bytes": 338,
+          "capturedUtcMillis": 1793748276440,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-matches.json",
+          "sha256": "7ac36ea73ccf13e6824cc24e8f3276ac57a86daea0033110c59d12aa72bf6184",
+          "bytes": 339,
+          "capturedUtcMillis": 1793748280384,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-match-detail.json",
+          "sha256": "dfa35397984c28c5549370a18e0043879f1398cdeba7a685535fb681feec6cc3",
+          "bytes": 344,
+          "capturedUtcMillis": 1793748281632,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-match-statistics.json",
+          "sha256": "5f6ffa5d4f6b06a9ed39522d11625438b72f389475f1c8c4297a6888f18a6b1d",
+          "bytes": 348,
+          "capturedUtcMillis": 1793748283799,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-settings.json",
+          "sha256": "00d127532398dd9d447c73dd3ad4ef0f0260707fd1547e516c7dd75300331402",
+          "bytes": 340,
+          "capturedUtcMillis": 1793771999121,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-carbon-small-studio.json",
+          "sha256": "b11e833213e12a1ea16f0e55fa18419f16017367c59018dc6c5d91cbd99bcb30",
+          "bytes": 338,
+          "capturedUtcMillis": 1793748284232,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "EDITORIAL",
+      "variant": "large-text",
+      "mode": "LIGHT",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-editorial-large-text-gfxinfo.txt",
+        "sha256": "c292e36f4450b87916d89415263cc80717627a4755c8245a48fe0677aa59245c",
+        "bytes": 4739
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-editorial-large-text.meta.json",
+          "sha256": "8df26f21e018be92dc4bf3e4f2ec4c1878c209fcec7c621f2e3ffe1a53422b13",
+          "bytes": 1112
+        },
+        "startedUtc": null,
+        "finishedUtcAsRecorded": "2026-11-03T23:25:43.290336+00:00",
+        "wallSecondsAsRecorded": null,
+        "reportedTestSeconds": 38.379,
+        "timingLimitation": "Runner died after terminal instrumentation success before metadata publication; log filesystem modification time is retained, exact command start/wall time unavailable.",
+        "metadataRecoveredAfterInterruptedRunner": true,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "EDITORIAL",
+          "-e",
+          "v05Variant",
+          "large-text",
+          "-e",
+          "v05Mode",
+          "LIGHT",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "2.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 2.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 1522,
+      "jankyFrames": {
+        "count": 386,
+        "percentReported": 25.36
+      },
+      "legacyJankyFrames": {
+        "count": 288,
+        "percentReported": 18.92
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 16,
+        "90": 30,
+        "95": 32,
+        "99": 57
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 14,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 2,
+        "highInputLatency": 1452,
+        "slowUiThread": 21,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 375,
+        "frameDeadlineMissed": 386
+      },
+      "statisticsSinceUptimeNs": 2326358163434,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-today.json",
+          "sha256": "e8d6f9671c65250205e8029d5206a3b900dd3e41f5bca81c71fa7d6c0f7ea87d",
+          "bytes": 345,
+          "capturedUtcMillis": 1793748306827,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-maps-unavailable.json",
+          "sha256": "cd9c75bf32043be3b37d9127ec66ff6fd70a55a4b60b9975987487ad6199fcec",
+          "bytes": 356,
+          "capturedUtcMillis": 1793748310522,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-maps-demo.json",
+          "sha256": "c6d7927a7cec5ea0029f559de677af1a5653897c1a9a1f7245b760fb5b3201d6",
+          "bytes": 349,
+          "capturedUtcMillis": 1793748321356,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-ranked.json",
+          "sha256": "76ccc3267ba6ab3fa0b718b8a945448154b553515fe86429b7a577e6da660900",
+          "bytes": 346,
+          "capturedUtcMillis": 1793748328833,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-matches.json",
+          "sha256": "90917f6fbb85bc94eda399fd78d0a7c0ae7978fdaa86a6d3fe2977df49f5173f",
+          "bytes": 347,
+          "capturedUtcMillis": 1793748339268,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-match-detail.json",
+          "sha256": "3d6d25ddd6f2ed2f473a30a565aa4e94b1b38c96e783915baeedaa15e3029c96",
+          "bytes": 352,
+          "capturedUtcMillis": 1793748340965,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-match-statistics.json",
+          "sha256": "c1048e8f5bda88f83c5a7cfa0d327b8e1c5f8beb06f0851a1c62feb83bb5fc93",
+          "bytes": 356,
+          "capturedUtcMillis": 1793748342206,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-settings.json",
+          "sha256": "68a9f67ea07cc105c02a3c5e536a5805e45fc948a22a56d0279c43dd4befd14e",
+          "bytes": 348,
+          "capturedUtcMillis": 1793772012133,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-large-text-studio.json",
+          "sha256": "b80ece4d920bf07bc5f0cff831eb90f319ac88378b4bd72aea84bdf28ad9e0e0",
+          "bytes": 346,
+          "capturedUtcMillis": 1793748342620,
+          "relationToGfxWorkload": "recoveredEndBoundOnly"
+        }
+      ]
+    },
+    {
+      "style": "EDITORIAL",
+      "variant": "phone",
+      "mode": "LIGHT",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-editorial-phone-gfxinfo.txt",
+        "sha256": "df5383912d616bcd15ac2e592bb610209593810f6943c68783a47e0364322cc6",
+        "bytes": 4721
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-editorial-phone.meta.json",
+          "sha256": "d8f2998622dab5c718b9d558e624c782badf5a8068c98f34cc91a322a595a708",
+          "bytes": 830
+        },
+        "startedUtc": "2026-11-03T23:23:51.034951+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:24:02.415569+00:00",
+        "wallSecondsAsRecorded": 11.380614674999379,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "EDITORIAL",
+          "-e",
+          "v05Variant",
+          "phone",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 371,
+      "jankyFrames": {
+        "count": 26,
+        "percentReported": 7.01
+      },
+      "legacyJankyFrames": {
+        "count": 231,
+        "percentReported": 62.26
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 25,
+        "90": 36,
+        "95": 44,
+        "99": 117
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 17,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 4,
+        "highInputLatency": 624,
+        "slowUiThread": 13,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 24,
+        "frameDeadlineMissed": 26
+      },
+      "statisticsSinceUptimeNs": 2253161573896,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-today.json",
+          "sha256": "8d1beb5ee01ad4332e73545efc375d0da158250db71abba2f35c31775627e18b",
+          "bytes": 340,
+          "capturedUtcMillis": 1793748233635,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-maps-unavailable.json",
+          "sha256": "be2b3587d4fdcaa174fb9ca526c45c735609bffffa314adcef122afc7f9096f5",
+          "bytes": 351,
+          "capturedUtcMillis": 1793748235830,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-maps-demo.json",
+          "sha256": "3f8717d0130fef9a620ba716215400317e700418605b6f87fb05a40deb5608c6",
+          "bytes": 344,
+          "capturedUtcMillis": 1793748236015,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-ranked.json",
+          "sha256": "395764ffda71a4dac974f68c3a4b3be16d39621083c597b62397cf97c913b971",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748237976,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-matches.json",
+          "sha256": "44b4b1fd265df3ae9bb21bbd20800055894067a1f2ef1931f728cf124b01d60b",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748239571,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-match-detail.json",
+          "sha256": "04d4521190008ec7082d228879fedf7042e7d9ddb30f6ef1bcee3b3116f10e1f",
+          "bytes": 347,
+          "capturedUtcMillis": 1793748241123,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-match-statistics.json",
+          "sha256": "cb1eed6a2ba9fa87bea2df1b30cd7987d6cc3ba9476bfa5b28ee73c3c5fcca0a",
+          "bytes": 351,
+          "capturedUtcMillis": 1793748241287,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-settings.json",
+          "sha256": "dc3a072f5cddc920b057df304460ffada14ab264930da66249ac5f6dc0dab446",
+          "bytes": 343,
+          "capturedUtcMillis": 1793771984916,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-phone-studio.json",
+          "sha256": "40952b5c1a0ec7f373dad6ef3cea66832747dc31c0b0a9ce9af58b294da66072",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748241741,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "LIQUID",
+      "variant": "expanded",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-liquid-expanded-gfxinfo.txt",
+        "sha256": "ca1c4d8c0729ed0a49613f73a9ce6a8b6d41bd4e71348a652630aac907b8ebe9",
+        "bytes": 4568
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-liquid-expanded.meta.json",
+          "sha256": "5c4d3bff380d44c00ff7e51c6ff774cec31079eb4e77f1144208059806465733",
+          "bytes": 879
+        },
+        "startedUtc": "2026-11-03T23:24:47.567979+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:25:01.515677+00:00",
+        "wallSecondsAsRecorded": 13.947695007998846,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "LIQUID",
+          "-e",
+          "v05Variant",
+          "expanded",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400\nOverride size: 1920x1200",
+          "density": "Physical density: 420\nOverride density: 240",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1920,
+        "heightPixels": 1200,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 429,
+      "jankyFrames": {
+        "count": 28,
+        "percentReported": 6.53
+      },
+      "legacyJankyFrames": {
+        "count": 232,
+        "percentReported": 54.08
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 28,
+        "90": 36,
+        "95": 46,
+        "99": 97
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 24,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 4,
+        "highInputLatency": 681,
+        "slowUiThread": 19,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 24,
+        "frameDeadlineMissed": 28
+      },
+      "statisticsSinceUptimeNs": 2309818583332,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-today.json",
+          "sha256": "17cacd2f213a3e5fecb2db7de240a1df6f7d35dca1f63d818a8b04c0bde40614",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748290407,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-maps-unavailable.json",
+          "sha256": "4c101399dba8667513c1640edac3ce9ed1a7ac5ff75f1c8627e6121ade357882",
+          "bytes": 352,
+          "capturedUtcMillis": 1793748292662,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-maps-demo.json",
+          "sha256": "b73e04a5fcddb14f81f1f43b901e08d472eef270ca1cf326bf4127944037b515",
+          "bytes": 345,
+          "capturedUtcMillis": 1793748294337,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-ranked.json",
+          "sha256": "0372ea3fd563f4099aa1deb9b0d8ff347b229575eb8e6264bc346ca2289bda23",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748294792,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-matches.json",
+          "sha256": "d441f8e546007c93239153ec8ecd10c6112d7910e95ff9dc8f70ebce84fc238c",
+          "bytes": 343,
+          "capturedUtcMillis": 1793748296561,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-match-detail.json",
+          "sha256": "5f25f5b692cf4bbc0510e11eac0595baa3d2b4423a5bebe3aecc3d2cbace2efe",
+          "bytes": 348,
+          "capturedUtcMillis": 1793748298159,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-match-statistics.json",
+          "sha256": "630d2c209dcbd60f4ab4b85e06351e88339b224c46d9b5b5b35035ed12f7b0bd",
+          "bytes": 352,
+          "capturedUtcMillis": 1793748299775,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-settings.json",
+          "sha256": "9ade420c67862b50509a59dffcd78a2d2e785fb6776f5bdab129e78f4ce83b41",
+          "bytes": 344,
+          "capturedUtcMillis": 1793772005302,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-expanded-studio.json",
+          "sha256": "d1e9d0336efaf1924939ed4d076727a81bd52266cc1d3b07f08829f723736f5a",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748300897,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "LIQUID",
+      "variant": "phone",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-liquid-phone-gfxinfo.txt",
+        "sha256": "30f4636a3d18b1b1e63b312fe9d959c2c4ceee63ccc548d8e92e7f16f66598ec",
+        "bytes": 4587
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-liquid-phone.meta.json",
+          "sha256": "1c972b7470191e990d10181db191e5bb5e35f97ba6c1d34a36c971876cf769b1",
+          "bytes": 824
+        },
+        "startedUtc": "2026-11-03T23:23:30.368025+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:23:48.528425+00:00",
+        "wallSecondsAsRecorded": 18.160398312000325,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "LIQUID",
+          "-e",
+          "v05Variant",
+          "phone",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 606,
+      "jankyFrames": {
+        "count": 135,
+        "percentReported": 22.28
+      },
+      "legacyJankyFrames": {
+        "count": 601,
+        "percentReported": 99.17
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 34,
+        "90": 48,
+        "95": 57,
+        "99": 101
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 23,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 30,
+        "highInputLatency": 940,
+        "slowUiThread": 80,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 132,
+        "frameDeadlineMissed": 135
+      },
+      "statisticsSinceUptimeNs": 2232271840225,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-today.json",
+          "sha256": "33c403f72b25f0f761c17229fa7133ed2b9caf3b6ea0c366fbeca09534a10d08",
+          "bytes": 338,
+          "capturedUtcMillis": 1793748212859,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-maps-unavailable.json",
+          "sha256": "00b49cdf8a2f0ebfc725294b878687c31322160c275007a166efa4b915952bb1",
+          "bytes": 349,
+          "capturedUtcMillis": 1793748215533,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-maps-demo.json",
+          "sha256": "0df73ae0eb36c00f73fadafa285f5d877185fbb67bae3d8c9858dac084ca9bb4",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748217960,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-ranked.json",
+          "sha256": "708c4d736cccfeea4e6db2e6b3fcea9050100e0b0bb95bd9fe1f67b8e6eaece4",
+          "bytes": 339,
+          "capturedUtcMillis": 1793748220430,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-matches.json",
+          "sha256": "3d6b0dc5a8712c0d61b7785ae6c319917ba349796ebf548a05c7e7ebc2d8de71",
+          "bytes": 340,
+          "capturedUtcMillis": 1793748222742,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-match-detail.json",
+          "sha256": "881056828962767debe474593137240aeee6bb8fad66cf7b0e846329b6726346",
+          "bytes": 345,
+          "capturedUtcMillis": 1793748225106,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-match-statistics.json",
+          "sha256": "bf125794a648f66154238a6e5108abdb61fcf8db1c27afe7f9e41c38403c34ee",
+          "bytes": 349,
+          "capturedUtcMillis": 1793748227177,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-settings.json",
+          "sha256": "3d8e4cbd2b0d40eadd78ff906e82c38036497f176d56e8de72a1d2d5aebfb23a",
+          "bytes": 341,
+          "capturedUtcMillis": 1793771978955,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-liquid-phone-studio.json",
+          "sha256": "a3767e79531d7d1e5d5a6f83791b24ae3348ef8901da40733355be3f684c123c",
+          "bytes": 339,
+          "capturedUtcMillis": 1793748227797,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "TACTICAL",
+      "variant": "phone",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-tactical-phone-gfxinfo.txt",
+        "sha256": "cc37ed447ac4f4f7f5bc02405f7666f14ec18145c33d0515411aedadfebafcc8",
+        "bytes": 4587
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/final-tactical-phone.meta.json",
+          "sha256": "1dee21ff49097cadfb354e8439c1e43de2c10fe40a53789dedca9aabff319f9c",
+          "bytes": 827
+        },
+        "startedUtc": "2026-11-03T23:24:04.851509+00:00",
+        "finishedUtcAsRecorded": "2026-11-03T23:24:18.964312+00:00",
+        "wallSecondsAsRecorded": 14.11279910999292,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "TACTICAL",
+          "-e",
+          "v05Variant",
+          "phone",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 426,
+      "jankyFrames": {
+        "count": 84,
+        "percentReported": 19.72
+      },
+      "legacyJankyFrames": {
+        "count": 419,
+        "percentReported": 98.36
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 34,
+        "90": 48,
+        "95": 61,
+        "99": 117
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 22,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 12,
+        "highInputLatency": 683,
+        "slowUiThread": 61,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 83,
+        "frameDeadlineMissed": 84
+      },
+      "statisticsSinceUptimeNs": 2266929068251,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-today.json",
+          "sha256": "c3d4738656a4e775a24bca21611ebaeb7ad3df107d397d7f9363bb88eb246448",
+          "bytes": 340,
+          "capturedUtcMillis": 1793748247448,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-maps-unavailable.json",
+          "sha256": "37352d6ec5a52eb8cb41734ee3f5b8259a8b98e3204d40e9fd133ea536a63809",
+          "bytes": 351,
+          "capturedUtcMillis": 1793748250021,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-maps-demo.json",
+          "sha256": "9886c2cc65742645d2b4d8920f3e18334eba0741ddcf9ab9b7e0b821118851df",
+          "bytes": 344,
+          "capturedUtcMillis": 1793748250299,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-ranked.json",
+          "sha256": "d346041d6b2713f3a91ee73e0332fe9dd35850bc58bbcb85e7ec90e3dbc343ac",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748253093,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-matches.json",
+          "sha256": "1cf16790e7798f027ccaf8228af599356160572abd1f4a5e7976dc8b9aab829d",
+          "bytes": 342,
+          "capturedUtcMillis": 1793748255259,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-match-detail.json",
+          "sha256": "687a5200bb5dae9a8c510276e6a81d4b9d46f93d38851e77a591c86caa9cf0c9",
+          "bytes": 347,
+          "capturedUtcMillis": 1793748255474,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-match-statistics.json",
+          "sha256": "162311300987aa9b733b1baf431413375ffcccf0bb2e57b5c57fb2924f5672fb",
+          "bytes": 351,
+          "capturedUtcMillis": 1793748257766,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-settings.json",
+          "sha256": "8ed7f44e5a38f932582c4af56a8d82ddcbd41f69fc98bf82ed9d2655a5d4ab8f",
+          "bytes": 343,
+          "capturedUtcMillis": 1793771991904,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-phone-studio.json",
+          "sha256": "860d4ca0553cef7b9d0ffa3a02272f1b12a22b14c44cf9310ff479c01c241543",
+          "bytes": 341,
+          "capturedUtcMillis": 1793748258264,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "EDITORIAL",
+      "variant": "dark",
+      "mode": "DARK",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-editorial-dark-gfxinfo.txt",
+        "sha256": "b717df3a6ff65a4a2a6d94c26b5461ca7b03d92b086a4e7724b0a3491cfbd26e",
+        "bytes": 4585
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/finish-editorial-dark.meta.json",
+          "sha256": "d2e2b7332e64c39934af3216134fc99eec8fdb46aa9e24ad28e633817f540d58",
+          "bytes": 909
+        },
+        "startedUtc": "2026-11-04T05:58:02.066241+00:00",
+        "finishedUtcAsRecorded": "2026-11-04T05:58:16.048789+00:00",
+        "wallSecondsAsRecorded": 13.982548044994473,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "EDITORIAL",
+          "-e",
+          "v05Variant",
+          "dark",
+          "-e",
+          "v05Mode",
+          "DARK",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 1080,
+        "heightPixels": 2400,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 507,
+      "jankyFrames": {
+        "count": 29,
+        "percentReported": 5.72
+      },
+      "legacyJankyFrames": {
+        "count": 406,
+        "percentReported": 80.08
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 29,
+        "90": 36,
+        "95": 38,
+        "99": 93
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 24,
+        "90": 4950,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 3,
+        "highInputLatency": 939,
+        "slowUiThread": 13,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 26,
+        "frameDeadlineMissed": 29
+      },
+      "statisticsSinceUptimeNs": 25904170568161,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-today.json",
+          "sha256": "feeda20daf30c1c345c970fcaada827507b40ed8cb0a25bd702a490d32bababf",
+          "bytes": 338,
+          "capturedUtcMillis": 1793771884673,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-maps-unavailable.json",
+          "sha256": "314766c27a48b3341889079c8dc15d2c2d279d92e270ae5494c006bb5a3b0db6",
+          "bytes": 349,
+          "capturedUtcMillis": 1793771886755,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-maps-demo.json",
+          "sha256": "b033a2a5f605ce91479b13ac5de0c405df05185a57e456f4ad6ca04b44626c2a",
+          "bytes": 342,
+          "capturedUtcMillis": 1793771888506,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-ranked.json",
+          "sha256": "2bfa2530589f063e2bb2ece24855b75cb11cf1f7f11b599038f8a6b685f24074",
+          "bytes": 339,
+          "capturedUtcMillis": 1793771890462,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-matches.json",
+          "sha256": "bd648d532bb7dc373e5e7035865c35877ae85f44bc1a9a795c12f0c4668ddb9c",
+          "bytes": 340,
+          "capturedUtcMillis": 1793771892073,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-match-detail.json",
+          "sha256": "49c8acf586028162522f0d53355b0b1182cccdea3b015c5b0de8cb95580abab5",
+          "bytes": 345,
+          "capturedUtcMillis": 1793771892231,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-match-statistics.json",
+          "sha256": "0512f2854e8b244572bf35a2df1cfc4b5dad3fcfe6b3d47d3b62f0b95c8ba434",
+          "bytes": 349,
+          "capturedUtcMillis": 1793771892408,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-settings.json",
+          "sha256": "32c3cbe6cc89e5f3ee4786714f75414d511d45eb51096b524bc4b077b3fa3e96",
+          "bytes": 341,
+          "capturedUtcMillis": 1793772018851,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-editorial-dark-studio.json",
+          "sha256": "8367f24ee1554157f63fdf69ca1ced87b6f7702b98ea1e38ddc8cf1e16673289",
+          "bytes": 339,
+          "capturedUtcMillis": 1793771895320,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    },
+    {
+      "style": "TACTICAL",
+      "variant": "landscape",
+      "mode": "SYSTEM",
+      "source": {
+        "path": "docs/validation/v0.5-captures/v05-tactical-landscape-gfxinfo.txt",
+        "sha256": "6121e580045d560c796d8ac1c976ac1e8792aa171ac16db6fed35a06772016cc",
+        "bytes": 4601
+      },
+      "collection": {
+        "metadataSource": {
+          "path": "docs/validation/v0.5-logs/finish-tactical-landscape.meta.json",
+          "sha256": "af63ad6704adc03e6c45fcf580d50179cb362e440974d722b4260d74f276f985",
+          "bytes": 905
+        },
+        "startedUtc": "2026-11-04T05:58:16.919762+00:00",
+        "finishedUtcAsRecorded": "2026-11-04T05:59:26.818736+00:00",
+        "wallSecondsAsRecorded": 69.89897550700698,
+        "reportedTestSeconds": null,
+        "timingLimitation": null,
+        "metadataRecoveredAfterInterruptedRunner": false,
+        "instrumentationCommand": [
+          "adb",
+          "-s",
+          "emulator-5554",
+          "shell",
+          "am",
+          "instrument",
+          "-w",
+          "-r",
+          "-e",
+          "class",
+          "io.github.szymonbonkowski.apexcompanion.AppearanceScreenTest#fourStyleScreenshotMatrixUsesActualScreensAndPreservesProvenance",
+          "-e",
+          "v05Style",
+          "TACTICAL",
+          "-e",
+          "v05Variant",
+          "landscape",
+          "io.github.szymonbonkowski.apexcompanion.test/androidx.test.runner.AndroidJUnitRunner"
+        ],
+        "instrumentationExitCode": 0,
+        "workloadPassed": true,
+        "displayAsRecorded": {
+          "size": "Physical size: 1080x2400\nOverride size: 2400x1080",
+          "density": "Physical density: 420",
+          "fontScale": "1.0"
+        }
+      },
+      "viewport": {
+        "widthPixels": 2400,
+        "heightPixels": 1080,
+        "systemFontScale": 1.0,
+        "androidApi": 37
+      },
+      "totalFramesRendered": 2611,
+      "jankyFrames": {
+        "count": 652,
+        "percentReported": 24.97
+      },
+      "legacyJankyFrames": {
+        "count": 118,
+        "percentReported": 4.52
+      },
+      "frameTimingPercentilesMsReported": {
+        "50": 16,
+        "90": 18,
+        "95": 28,
+        "99": 32
+      },
+      "gpuTimingPercentilesMsReported": {
+        "50": 15,
+        "90": 16,
+        "95": 4950,
+        "99": 4950
+      },
+      "counterValuesReported": {
+        "missedVsync": 2,
+        "highInputLatency": 2261,
+        "slowUiThread": 17,
+        "slowBitmapUploads": 0,
+        "slowIssueDrawCommands": 642,
+        "frameDeadlineMissed": 652
+      },
+      "statisticsSinceUptimeNs": 25918724283040,
+      "graphicsPipelineReported": "Skia (OpenGL)",
+      "captureMetadataSources": [
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-today.json",
+          "sha256": "be0903280c5366c1444209fdbdf7fda2d4b3ecf659170448daee26a208a5d91b",
+          "bytes": 344,
+          "capturedUtcMillis": 1793771899186,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-maps-unavailable.json",
+          "sha256": "383c3dbfdfa7146c96baf09b67f9a5607dc5cf492d76474f618f834b78f4bd90",
+          "bytes": 355,
+          "capturedUtcMillis": 1793771906288,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-maps-demo.json",
+          "sha256": "98192e1fea6f3e295b5d1301d9235dad7a3534e76309340a6057a5624263c075",
+          "bytes": 348,
+          "capturedUtcMillis": 1793771928526,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-ranked.json",
+          "sha256": "5bec07bbf60b0ef22d60ef2263a934bf5481d0b6c2267f91e9cbff286b96ba8e",
+          "bytes": 345,
+          "capturedUtcMillis": 1793771943159,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-matches.json",
+          "sha256": "4c9839dae979cbe9c5686e4953a1800778ba14664f2ca5e4d146af644db98532",
+          "bytes": 346,
+          "capturedUtcMillis": 1793771960765,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-match-detail.json",
+          "sha256": "c2e546bfead337bd9686d121a13918aab0df74cbac73409862cf89fa2d797720",
+          "bytes": 351,
+          "capturedUtcMillis": 1793771961974,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-match-statistics.json",
+          "sha256": "0d0e42a7568eea300b2efc36fe90662564f3ae32d2efbfd579b1493547f2073f",
+          "bytes": 355,
+          "capturedUtcMillis": 1793771964221,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-settings.json",
+          "sha256": "a697b2d1b1ba444e4a3127d9eed9c188f2d7b29421f4189947cd9a82d429936c",
+          "bytes": 347,
+          "capturedUtcMillis": 1793772025159,
+          "relationToGfxWorkload": "laterSettingsRepair"
+        },
+        {
+          "path": "docs/validation/v0.5-captures/v05-tactical-landscape-studio.json",
+          "sha256": "01915fbdb7cc5d8d83450644ffd100c5ec05cf59861b047996f11824e44a51dd",
+          "bytes": 345,
+          "capturedUtcMillis": 1793771966147,
+          "relationToGfxWorkload": "withinRecordedWindow"
+        }
+      ]
+    }
+  ],
+  "sourceAudit": {
+    "scope": "Read-only inspection of Liquid drawing/motion and platform signal sources; not a profiler or Apple runtime result",
+    "sources": [
+      {
+        "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/DesignTheme.kt",
+        "sha256": "d39ea5cbaa3c8323bbaa1a7a9c5f8f507300ba60623b950a4801c5a7d6566342",
+        "bytes": 21096
+      },
+      {
+        "path": "shared/src/commonMain/kotlin/io/github/szymonbonkowski/apexcompanion/appearance/DashboardScreen.kt",
+        "sha256": "adc773079dc35c6bf39f3ab06558404a936d01defe03b440ccfdcdde3bb40842",
+        "bytes": 28073
+      },
+      {
+        "path": "shared/src/androidMain/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceEnvironment.android.kt",
+        "sha256": "c24e75001172dadcee8c09a3a80b0e651be4d174e6365cfd6149a3979aaa94b4",
+        "bytes": 2996
+      },
+      {
+        "path": "shared/src/iosMain/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceEnvironment.ios.kt",
+        "sha256": "732797879774cc376702e3b507d7d1ebdc753a80f85be715d6a6d9facb79a290",
+        "bytes": 979
+      },
+      {
+        "path": "androidApp/src/androidTest/kotlin/io/github/szymonbonkowski/apexcompanion/AppearanceScreenTest.kt",
+        "sha256": "f6e81b0f124e85c496f4735c8d7117af426a594c0b67256bd95982a963dba184",
+        "bytes": 26559
+      }
+    ],
+    "constraints": [
+      "Three-stop static card/page linear gradients; no full-screen blur, RenderEffect, shader, backdrop capture or infinite decorative animation APIs in reviewed theme source.",
+      "Liquid surface opacity is bounded 70\u2013100% over a local opaque theme backdrop; maximum shadow 6dp.",
+      "Full Liquid Material controls use finite spring specifications; other motion uses finite tweens. Dashboard goal progress uses finite tween.",
+      "OS reduce motion or low power resolves motion to 0ms. Low power, high contrast and reduced effects disable gradients/elevation and force opaque surfaces; reduced transparency also removes gradients and forces opacity 1.",
+      "Existing foreground map countdown and foreground 30-second sync are semantic lifecycle work. Appearance does not add provider polling.",
+      "The Today mini-chart uses at most 12 selected observations; Studio has four static theme previews."
+    ]
+  },
+  "limitations": [
+    "SwiftShader emulator observations do not establish physical Android GPU, battery, CPU, RAM or power behavior.",
+    "Automated scrolling, theme changes, app navigation, screenshot readback and test waits affect these counters; they are not steady-state idle or gameplay measurements.",
+    "No FPS, battery life, energy use, sound-to-photon or input-to-photon latency is inferred.",
+    "No cross-style performance ranking, optimization claim or causal comparison is supported by these unsynchronized runs.",
+    "GPU histogram values including the 4950ms bucket are retained exactly as Android reports them on the software emulator; they are not interpreted as physical GPU latency.",
+    "gfxinfo counters need not represent disjoint or unique frames; current and legacy jank use different classifications.",
+    "No physical-device benchmark, release acceptance threshold or Apple/iOS performance execution was performed.",
+    "The interrupted large-text runner has a recovered log modification timestamp but no exact command start or wall time. Null timing fields and its recorded uncertainty are preserved.",
+    "Source audit hashes identify current reviewed code; the observation runs span test-harness selector/capture repairs and are not synchronized benchmark workloads.",
+    "Final source review includes later allowlisted widget navigation, test additions and visibility/dialog harness fixes. Raw navigation observations predate those changes; no native widget performance claim is derived from app gfxinfo."
+  ]
+}
